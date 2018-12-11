@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.css}">
+    <link type="text/css" rel="stylesheet" th:href="@{css/animate.css}">
+    <link type="text/css" rel="stylesheet" th:href="@{css/style.css}">
+    <!-- Modernizr JS -->
+    <script th:src="@{js/modernizr-2.6.2.min.js}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script th:src="@{js/respond.min.js}"></script>
+    <![endif]-->
+    <script th:src="@{js/jquery-3.3.1.min.js}"></script>
+    <script th:src="@{js/bootstrap.min.js}"></script>
+    <!-- Placeholder -->
+    <script th:src="@{js/jquery.placeholder.min.js}"></script>
+    <!-- Waypoints -->
+    <script th:src="@{js/jquery.waypoints.min.js}"></script>
+    <!-- Main JS -->
+    <script th:src="@{js/main.js}"></script>
+    <!--Login Js-->
+    <script th:src="@{js/login.js}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Start Sign In Form -->
+                <form  class="fh5co-form animate-box" id="loginForm" data-animate-effect="fadeInLeft">
+                    <h2>登录</h2>
+                    <div class="form-group">
+                        <div class="alert alert-success" hidden="hidden" role="alert">Wrong password!</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_id" class="sr-only">身份证号</label>
+                        <input type="text" name="user_id" class="form-control" id="user_id" placeholder="身份证号" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="user_password" class="sr-only">密码</label>
+                        <input type="password" name="user_password" class="form-control" id="user_password" placeholder="密码" autocomplete="off">
+                    </div>
+
+                    <!--<div class="form-group">-->
+                        <!--<label for="remember"><input type="checkbox" id="remember"> Remember Me</label>-->
+                    <!--</div>-->
+                    <div class="form-group">
+                        <p>未注册？<a th:href="@{signup}">注册</a>
+                            <!--| <a th:href="@{forgot}">Forgot Password?</a></p>-->
+                    </div>
+                    <div class="form-group">
+                        <input type="button" onclick="login()" id="loginBtn"  value="登录" class="btn btn-primary">
+                    </div>
+                </form>
+                <!-- END Sign In Form -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

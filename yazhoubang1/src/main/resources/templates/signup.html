@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Minimal and Clean Sign up / Login and Forgot Form by FreeHTML5.co</title>
+	<link rel="stylesheet" th:href="@{css/bootstrap.css}">
+	<link rel="stylesheet" th:href="@{css/animate.css}">
+	<link rel="stylesheet" th:href="@{css/style.css}">
+    <link rel="stylesheet" th:href="@{css/bootstrap-datetimepicker.min.css}">
+    <script th:src="@{js/signup.js}"></script>
+	<script th:src="@{js/modernizr-2.6.2.min.js}"></script>
+	<script th:src="@{js/respond.min.js}"></script>
+	<script th:src="@{js/jquery-3.3.1.min.js}"></script>
+	<script th:src="@{js/bootstrap.min.js}"></script>
+	<script th:src="@{js/jquery.placeholder.min.js}"></script>
+	<script th:src="@{js/jquery.waypoints.min.js}"></script>
+	<script th:src="@{js/main.js}"></script>
+    <script th:src="@{js/bootstrap-datetimepicker.min.js}"></script>
+
+	</head>
+	<body class="style-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<!-- Start Sign In Form -->
+				<form class="fh5co-form animate-box" id="signupForm" data-animate-effect="fadeInLeft">
+					<h2>注册</h2>
+					<div class="form-group">
+						<div class="alert alert-success" id="errorInfo" hidden="hidden" role="alert">Your info has been saved.</div>
+					</div>
+					<div class="form-group">
+						<label for="id" class="sr-only">身份证号</label>
+						<input type="text" class="form-control" id="id" name="id" placeholder="身份证号" autocomplete="off">
+					</div>
+					<div class="form-group">
+						<label for="name" class="sr-only">姓名</label>
+						<input type="text" class="form-control" id="name" name="name" placeholder="姓名" autocomplete="off">
+					</div>
+                    <div class="form-group">
+                        <label for="birthday" class="sr-only">出生日期</label>
+                        <input type="date" class="form-control" id="birthday" name="birthday" placeholder="出生日期" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="sex" class="sr-only">性别</label>
+                        <select class="form-control" id="sex" name="sex" placeholder="性别" autocomplete="off">
+                            <option value="0">男</option>
+                            <option value="1">女</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone_num" class="sr-only">手机号码</label>
+                        <input type="text" class="form-control" id="phone_num" name="phone_num" placeholder="手机号码" autocomplete="off">
+                    </div>
+					<div class="form-group">
+						<label for="password" class="sr-only">密码</label>
+						<input type="password" class="form-control" id="password" name="password" placeholder="密码" autocomplete="off">
+					</div>
+					<!--<div class="form-group">-->
+						<!--<label for="email" class="sr-only">Email</label>-->
+						<!--<input type="email" class="form-control" id="email" placeholder="Email" autocomplete="off">-->
+					<!--</div>-->
+					<div class="form-group">
+						<label for="re-password" class="sr-only">确认密码</label>
+						<input type="password" class="form-control" id="re-password" name="re-password" placeholder="确认密码" autocomplete="off">
+					</div>
+					<div class="form-group">
+						<label for="role" class="sr-only">角色</label>
+						<select class="form-control" id="role" name="role" placeholder="角色" autocomplete="off">
+							<option value="0">患者</option>
+							<option value="1">医生</option>
+						</select>
+					</div>
+					<!--<div class="form-group">-->
+						<!--<label for="remember"><input type="checkbox" id="remember"> Remember Me</label>-->
+					<!--</div>-->
+					<div class="form-group">
+						<p>已注册? <a th:href="@{/login}">登录</a></p>
+					</div>
+					<div class="form-group">
+						<input type="button" onclick="signup()" id="signupBtn" value="注册" class="btn btn-primary">
+					</div>
+				</form>
+				<!-- END Sign In Form -->
+			</div>
+		</div>
+	</div>
+
+	</body>
+</html>
+
