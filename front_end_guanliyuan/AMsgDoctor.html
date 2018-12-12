@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Tables</title>
+    <title>msg_doctor</title>
     <!-- Mobile specific metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Force IE9 to render in normal mode -->
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="author" content="SuggeElson" />
-    <meta name="description" content=""
-    />
-    <meta name="keywords" content=""
-    />
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
     <meta name="application-name" content="sprFlat admin template" />
     <!-- Import google fonts - Heading first/ text second -->
     <link rel='stylesheet' type='text/css'
@@ -588,49 +586,74 @@
             <!-- Start .outlet -->
             <!-- Page start here ( usual with .row ) -->
             <div class="row">
-                <div class="col-lg-12">
-                    <!-- col-lg-12 start here -->
-                    <div class="panel panel-default plain toggle panelClose panelRefresh">
-                        <!-- Start .panel -->
-                        <div class="panel-heading white-bg">
-                            <h4 class="panel-title">认证</h4>
+            <div id="page-wrapper">
+                <div class="col-md-12 graphs">
+
+                    <div class="xs">
+                        <h3>Patients List</h3>
+                        <div class="addPatients" align="right">
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addModal">AddPatients</button>
                         </div>
-                        <div class="panel-body">
-                            <table class="table display" id="datatable">
+                        <div class="bs-example4" data-example-id="contextual-table">
+                            <table class="table" id="PatientsList">
                                 <thead>
-                                <tr>
-                                    <th>姓名</th>
-                                    <th>身份证号</th>
-                                    <th>所属医院</th>
-                                    <th>通过</th>
-                                    <th>确认</th>
-                                </tr>
+                                    <tr>
+                                        <th width="5%">#</th>
+                                        <th width="10%">Name</th>
+                                        <th width="20%">Phone</th>
+                                        <th width="20%">ID</th>
+                                        <th width="30%">Last Check</th>
+                                        <th width="5%">#Delete#</th>
+                                        <th width="5%">#Edit#</th>
+                                        <th width="5%">#View#</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>
-                                        <button class="btn btn-success">通过</button>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-danger">确认</button>
-                                    </td>
-                                </tr>
+                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)" id="line1">
+                                        <td>1</td>
+                                        <td>刘德华</td>
+                                        <td>18916271729</td>
+                                        <td>444444444444444444</td>
+                                        <td>2018-08-24</td>
+                                        <td>
+                                            <button id="line1delete" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients('444444444444444444')">Delete</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" id="line1edit" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" id="line1view" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
+                                        </td>
+                                    </tr>
+                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)" id="line2">
+                                        <td>2</td>
+                                        <td>张伟健</td>
+                                        <td>1333333333</td>
+                                        <td>444444444444444443</td>
+                                        <td>2017-08-24</td>
+                                        <td>
+                                            <button id="line2delete" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients('444444444444444443')">Delete</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" id="line2edit" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" id="line2view" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
+                                        </td>
+                                    </tr>
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>姓名</th>
-                                    <th>身份证号</th>
-                                    <th>所属医院</th>
-                                    <th>通过</th>
-                                    <th>确认</th>
-                                </tr>
-                                </tfoot>
                             </table>
+                            <div>
+                                <button type="button" class="btn btn-sm btn-info" onclick="searchPatients()">Search</button>
+                                <form class="navbar-form navbar-brand">
+                                    <input type="text" class="form-control1" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}"
+                                        style="color:#000000;width:100%" id="searchPatients">
+                                </form>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
                     <!-- End .panel -->
                 </div>
                 <!-- col-lg-12 end here -->
@@ -642,7 +665,6 @@
     </div>
     <!-- End .content-wrapper -->
     <div class="clearfix"></div>
-</div>
 <!-- End #content -->
 <!-- Javascripts -->
 <!-- Load pace first -->
@@ -691,5 +713,84 @@
 <script src="assets/js/jquery.sprFlat.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/pages/data-tables.js"></script>
+    <script>
+        function lineover(line) {
+            $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
+
+            seq = $(line).find("td:eq(0)").html();
+            $("#line" + seq + "delete").css('display', 'block');
+            $("#line" + seq + "view").css('display', 'block');
+            $("#line" + seq + "edit").css('display', 'block');
+        }
+
+        //鼠标离开该行
+        function lineout(line) {
+            var count = 0;
+            $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
+            var seq = $(line).children("td").html();
+            $("#PatientsList tr").each(
+                function () {
+                    var seq = parseInt($(this).children("td").html());
+                    $("#line" + seq + "delete").css('display', 'none');
+                    $("#line" + seq + "view").css('display', 'none');
+                    $("#line" + seq + "edit").css('display', 'none');
+                }
+            );
+        }
+        //搜索病人
+        function searchPatients() {
+            var pname = document.getElementById("searchPatients");
+            //TODO:根据名字获取病人信息，回调函数成功则显示表格，失败则弹框提示
+        }
+        //添加病人
+        function addPatients() {
+            var pname = document.getElementById("addname");
+            var phone = document.getElementById("addphone");
+            var pid = document.getElementById("addid");
+            //TODO:发送新增信息，成功则刷新页面，失败则弹框提示
+            //success:window.location.reload(); 
+            //fail:alert("新增失败")
+        }
+        //初始化病人列表
+        function initPatientsList() {
+            //TODO:获取所有病人信息，回调函数成功则显示表格，失败则弹框提示
+            //fail:alert("初始化失败")
+            //success：
+            //传入数据格式未知，先不写
+
+        }
+        //删除病人
+        function deletePatients(id) {
+            var pid = id;
+            //TODO:根据id发送删除信息，回调函数成功则刷新页面，失败则弹框提示
+            //success:window.location.reload(); 
+            //fail:alert("删除失败")
+
+        }
+        //查看该病人的所有表格
+        function moreInfo() {
+            $('#infoModal').modal('hide')
+            $('#teethModal').modal('show')
+        }
+        //修改病人信息
+        function editInfo() {
+            var pname = document.getElementById("editname");
+            var phone = document.getElementById("editphone");
+            var pid = document.getElementById("editid");
+            //TODO:发送修改信息，成功则刷新页面，失败则弹框提示
+            //success:window.location.reload(); 
+            //fail:alert("更新失败")
+            window.location.reload();
+        }
+        //新增检查表
+        function addPatientsCheckList() {
+            $('#infoModal').modal('hide')
+            $('#addTeethModal').modal('show')
+        }
+        //确认增加检查表
+        function confirmAdd() {
+
+        }
+    </script>
 </body>
 </html>
