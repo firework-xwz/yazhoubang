@@ -71,7 +71,7 @@ $(document).ready(function() {
 	            lines: {
             		show: true,
             		fill: false,
-            		lineWidth: 2.5
+            		lineWidth: 3
 	            },
 	            points: {
 	            	show:true,
@@ -81,7 +81,7 @@ $(document).ready(function() {
 	            	fillColor: colours.blue
 	            }
 	        },
-	        colors: [colours.white],
+	        colors: [colours.green],
 	        legend: { 
 	        	position: "ne", 
 	        	margin: [0,-25], 
@@ -129,7 +129,7 @@ $(document).ready(function() {
 	});
 
 	//------------- LIne charts only -------------//
-	$(function() {
+	/*$(function() {
 
 		// line chart
 		var d1 = [];
@@ -156,11 +156,11 @@ $(document).ready(function() {
 			    aboveData: true,
 			    color: colours.textcolor ,
 			    labelMargin: 20,
-			    axisMargin: 0, 
+			    axisMargin: 0,
 			    borderWidth: 0,
 			    borderColor:null,
 			    minBorderMargin: 5 ,
-			    clickable: true, 
+			    clickable: true,
 			    hoverable: true,
 			    autoHighlight: true,
 			    mouseActiveRadius: 100,
@@ -180,9 +180,9 @@ $(document).ready(function() {
 	            }
 	        },
 	        colors: [colours.blue],
-	        legend: { 
-	        	position: "ne", 
-	        	margin: [0,-25], 
+	        legend: {
+	        	position: "ne",
+	        	margin: [0,-25],
 	        	noColumns: 0,
 	        	labelBoxBorderColor: null,
 	        	labelFormatter: function(label, series) {
@@ -190,7 +190,7 @@ $(document).ready(function() {
 				},
 				backgroundColor: colours.white,
     			backgroundOpacity: 0.5,
-    			hideSquare: true //hide square color helper 
+    			hideSquare: true //hide square color helper
 	    	},
 	        shadowSize:0,
 	        tooltip: true, //activate tooltip
@@ -204,30 +204,30 @@ $(document).ready(function() {
 				theme: 'dark',
 				defaultTheme: false
 			},
-			yaxis: { 
+			yaxis: {
 				min: 0
 			},
-			xaxis: { 
+			xaxis: {
 	        	mode: "time",
 	        	minTickSize: tickSize,
 	        	timeformat: tformat,
 	        	min: chartMinDate,
 	        	max: chartMaxDate,
 	        	tickLength: 0,
-	            
+
 	        }
     	}
 
 		var plot = $.plot($("#line-chart"),[{
-    			label: "Earnings", 
+    			label: "Earnings",
     			data: d1
     		}], options
     	);
-		
-	});
+
+	});*/
 
 	//------------- LIne charts filled -------------//
-	$(function() {
+	/*$(function() {
 
 		// line chart
 		var d1 = [];
@@ -322,10 +322,10 @@ $(document).ready(function() {
     		}], options
     	);
 		
-	});
+	});*/
 
 	//------------- Line charts style 2 -------------//
-	$(function() {
+	/*$(function() {
 
 		//visiotrs
 		var d1 = [["MON", randNum()], ["TUE", randNum()], ["WED", randNum()], ["THU", randNum()], ["FRI", randNum()], ["SAT", randNum()], ["SUN", randNum()]];
@@ -392,9 +392,9 @@ $(document).ready(function() {
     	);
 
 	});
-
+*/
 	//------------- Bars chart -------------//
-	$(function () {	
+	/*$(function () {
     	
     	var data = [ ["JAN", 1500], ["FEB", 1345], ["MAR", 1800], ["APR", 1670], ["MAY", 1780], ["JUN", 1500], ["JUL", 1350], ["AUG", 1700], ["SEP", 1890], ["OCT", 2000], ["NOV", 1950], ["DEC", 2000] ];
     	
@@ -446,7 +446,7 @@ $(document).ready(function() {
 		};
 		 
 		$.plot($("#bars-chart"), [data, d1], options);
-	});
+	});*/
 
 	//------------- Ordered bars chart -------------//
 	$(function () {
@@ -522,7 +522,7 @@ $(document).ready(function() {
 	});
 
 	//------------- Pie chart -------------//
-	$(function () {
+	/*$(function () {
 		var options = {
 			series: {
 				pie: { 
@@ -569,10 +569,10 @@ $(document).ready(function() {
 		];
 	    $.plot($("#pie-chart"), data, options);
 
-	});
+	});*/
 
 	//------------- Donut chart -------------//
-	$(function () {
+	/*$(function () {
 		var options = {
 			series: {
 				pie: { 
@@ -620,7 +620,7 @@ $(document).ready(function() {
 		];
 	    $.plot($("#donut-chart"), data, options);
 
-	});
+	});*/
 
 	//------------- Autoupdate chart -------------//
 	$(function () {
@@ -703,7 +703,7 @@ $(document).ready(function() {
 	});
 
 	//------------- Sparklines -------------//
-	$('.sparkline-positive').sparkline([5,12,18,15,22, 14,26,28,32,34], {
+	/*$('.line-positive').sparkline([5,12,18,15,22, 14,26,28,32,34], {
 		width: '55px',
 		height: '20px',
 		lineColor: colours.green,
@@ -737,7 +737,7 @@ $(document).ready(function() {
 		width: '100%',
 		height: '18px',
 		barColor: colours.red,
-	});
+	});*/
 
 	//------------- Sparklines in sidebar -------------//
 	$('#usage-sparkline').sparkline([35,46,24,56,68, 35,46,24,56,68], {
