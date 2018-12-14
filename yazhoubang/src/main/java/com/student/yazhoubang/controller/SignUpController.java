@@ -148,18 +148,10 @@ public class SignUpController {
         return signUpCheck;
     }
 
-    @PostMapping("/main")
-    public String main(){
-        System.out.println("----main-------");
-        return "main";
-    }
+//    @PostMapping("/main")
+//    public String main(){
+//        System.out.println("----main-------");
+//        return "main";
+//    }
 
-    @RequestMapping("/test")
-    public String test(Model model,HttpSession httpSession){
-        System.out.println(httpSession.getMaxInactiveInterval());
-        String test=(String)httpSession.getAttribute("test");
-        System.out.println(test);
-        model.addAttribute("test",test);
-        return "test";
-    }
 }
