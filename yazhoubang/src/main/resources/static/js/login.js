@@ -1,21 +1,19 @@
 function login() {
-    var loginData=$("#loginForm").serializeArray();
-    console.log(loginData);
-    var s={};
-    $.each(loginData,function (i,field) {
-        s[field.name]=field.value;
-    });
-    console.log(s);
-    var data=s.stringify();
+    var data={
+        "user_id":$("#user_id").val(),
+        "user_password":$("#user_password").val()
+    };
     console.log(data);
     $.ajax({
         url:"/login",
         type:"POST",
-        contentType: "application/json;charset=utf-8",
         data: data,
+        dataType:"json",
         success:function (result) {
-            console.log("success");
-            alert(result);
+            alert(result.msg);
+            if(result.status==0){
+                window.location.href="./main"
+            }
         },
         error:function () {
             console.log("fail");
