@@ -4,6 +4,7 @@ import com.student.yazhoubang.damain.Patient;
 import org.apache.ibatis.annotations.*;
 
 import javax.persistence.criteria.CriteriaBuilder;
+import java.util.List;
 
 @Mapper
 public interface PatientDao {
@@ -14,4 +15,6 @@ public interface PatientDao {
     public Integer deletePatientById(String p_id);
     @Select("select * from patient where p_id=#{p_id}")
     public Patient selectPatientById(String p_id);
+    @Select("select * from patient")
+    public List<Patient> getAll();
 }

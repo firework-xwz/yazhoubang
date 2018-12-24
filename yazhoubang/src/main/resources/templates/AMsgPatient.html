@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>AMsgDoctor</title>
@@ -816,6 +816,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)" th:each="i:${patientList}">
+                                        <td>1</td>
+                                        <td th:text = "${i.getName()}"></td>
+                                        <td th:text = "${i.getPhone_num()}"></td>
+                                        <td th:text = "${i.getP_id()}"></td>
+                                        <!--<td th:text = "${i.p_id}"></td>-->
+                                        <!--<td th:text = "${i.p_id}"></td>-->
+                                    </tr>
                                     <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)" id="line1">
                                         <td>1</td>
                                         <td>刘德华</td>
