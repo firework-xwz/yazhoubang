@@ -805,7 +805,7 @@
                             <table class="table" id="PatientsList">
                                 <thead>
                                     <tr>
-                                        <th width="5%">#</th>
+                                        <!--<th width="5%">#</th>-->
                                         <th width="10%">Name</th>
                                         <th width="20%">Phone</th>
                                         <th width="20%">ID</th>
@@ -821,8 +821,16 @@
                                         <td th:text = "${i.getName()}"></td>
                                         <td th:text = "${i.getPhone_num()}"></td>
                                         <td th:text = "${i.getP_id()}"></td>
-                                        <!--<td th:text = "${i.p_id}"></td>-->
-                                        <!--<td th:text = "${i.p_id}"></td>-->
+                                        <td th:text = "${i.getP_id()}"></td>
+                                        <td>
+                                            <button id="line1delete" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients('444444444444444444')">Delete</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" id="line1edit" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
+                                        </td>
+                                        <td>
+                                            <button type="button" id="line1view" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
+                                        </td>
                                     </tr>
                                     <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)" id="line1">
                                         <td>1</td>
