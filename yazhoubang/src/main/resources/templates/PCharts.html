@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <title>PCharts</title>
-    <!-- Mobile specific metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- Force IE9 to render in normal mode -->
-    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
-    <meta name="author" content="SuggeElson" />
-    <meta name="description" content=""
-    />
-    <meta name="keywords" content=""
-    />
-    <meta name="application-name" content="sprFlat admin template" />
-    <!-- Import google fonts - Heading first/ text second -->
-    <link rel='stylesheet' type='text/css'>
-    <!--[if lt IE 9]>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
-    <![endif]-->
-    <!-- Css files -->
-    <!-- Icons -->
-    <link th:href="@{assets/css/icons.css" rel="stylesheet}" />
-    <!-- jQueryUI -->
-    <link th:href="@{assets/css/sprflat-theme/jquery.ui.all.css}" rel="stylesheet" />
-    <!-- Bootstrap stylesheets (included template modifications) -->
-    <link th:href="@{assets/css/bootstrap.css}" rel="stylesheet" />
-    <!-- Plugins stylesheets (all plugin custom css) -->
-    <link th:href="@{assets/css/plugins.css}" rel="stylesheet" />
-    <!-- Main stylesheets (template main css file) -->
-    <link th:href="@{assets/css/main.css}" rel="stylesheet" />
-    <!-- Custom stylesheets ( Put your own changes here ) -->
-    <link th:href="@{assets/css/custom.css}" rel="stylesheet" />
-    <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" th:href="@{assets/img/ico/apple-touch-icon-144-precomposed.png}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" th:href="@{assets/img/ico/apple-touch-icon-114-precomposed.png}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" th:href="@{assets/img/ico/apple-touch-icon-72-precomposed.png}">
-    <link rel="apple-touch-icon-precomposed" th:href="@{assets/img/ico/apple-touch-icon-57-precomposed.png}">
-    <link rel="icon" href="assets/img/ico/favicon.ico" type="image/png">
-    <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
+    <head>
+        <meta charset="utf-8">
+        <title>PCharts</title>
+        <!-- Mobile specific metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Force IE9 to render in normal mode -->
+        <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+        <meta name="author" content="SuggeElson" />
+        <meta name="description" content=""
+        />
+        <meta name="keywords" content=""
+        />
+        <meta name="application-name" content="sprFlat admin template" />
+        <!-- Import google fonts - Heading first/ text second -->
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' />
+        <!--[if lt IE 9]>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+<![endif]-->
+        <!-- Css files -->
+        <!-- Icons -->
+        <link th:href="@{assets/css/icons.css}" rel="stylesheet" />
+        <!-- jQueryUI -->
+        <link th:href="@{assets/css/sprflat-theme/jquery.ui.all.css}" rel="stylesheet" />
+        <!-- Bootstrap stylesheets (included template modifications) -->
+        <link th:href="@{assets/css/bootstrap.css}" rel="stylesheet" />
+        <!-- Plugins stylesheets (all plugin custom css) -->
+        <link th:href="@{assets/css/plugins.css}" rel="stylesheet" />
+        <!-- Main stylesheets (template main css file) -->
+        <link th:href="@{assets/css/main.css}" rel="stylesheet" />
+        <!-- Custom stylesheets ( Put your own changes here ) -->
+        <link th:href="@{assets/css/custom.css}" rel="stylesheet" />
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" th:href="@{assets/img/ico/apple-touch-icon-144-precomposed.png}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" th:href="@{assets/img/ico/apple-touch-icon-114-precomposed.png}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" th:href="@{assets/img/ico/apple-touch-icon-72-precomposed.png}">
+        <link rel="apple-touch-icon-precomposed" th:href="@{assets/img/ico/apple-touch-icon-57-precomposed.png}">
+        <link rel="icon" href="assets/img/ico/favicon.ico" type="image/png">
+        <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
         <meta name="msapplication-TileColor" content="#3399cc" />
     </head>
     <body>
@@ -49,7 +49,7 @@
             <div class="container-fluid">
                 <div class="navbar">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="PCharts.html">
+                        <a class="navbar-brand" href="PCharts">
                             <i class="im-windows8 text-logo-element animated bounceIn"></i><span class="text-slogan">牙周帮</span> 
                         </a>
                     </div>
@@ -299,7 +299,7 @@
                     </li>-->
                     <!--<li><a href="index.html">Dashboard <i class="im-screen"></i></a>
                     </li>-->
-                    <li><a href="PCharts.html">Charts <i class="st-chart"></i></a>
+                    <li><a href="PCharts">Charts <i class="st-chart"></i></a>
                     </li>
                    <!-- <li>
                         <a href="#"> Forms <i class="im-paragraph-justify"></i></a>
@@ -314,7 +314,7 @@
                             </li>
                         </ul>
                     </li>-->
-                    <li><a href="PData-tables.html"><i class="im-table2"></i> Data tables</a>
+                    <li><a href="PData-tables"><i class="im-table2"></i> Data tables</a>
                         <!--<ul class="nav sub">
                             <li><a href="tables.html"><i class="en-arrow-right7"></i> Static tables</a>
                             </li>
@@ -322,7 +322,7 @@
                             </li>
                         </ul>-->
                     </li>
-                    <li><a href="PCalendar.html"><i class="im-calendar2"></i> Calendar</a>
+                    <li><a href="PCalendar"><i class="im-calendar2"></i> Calendar</a>
                        <!-- <ul class="nav sub">
                             <li><a href="notifications.html"><i class="fa-bell"></i> Notifications</a>
                             </li>
@@ -699,23 +699,27 @@
                                 <!-- Start .panel -->
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                Auto updating chart
-                                                <span class="caret"></span>
-                                            </a>
-                                            <ul class="dropdown-menu" id="menu">
-                                                <li ><a href="#" id="line_chart">Line chart with dots</a></li>
-                                                <li ><a href="#" id="O_Bars_chart">Ordered Bars chart</a></li>
-                                                <li ><a href="#" id="auto_updating_chart">Auto updating chart</a></li>
-                                            </ul>
-                                        </li>
+                                        <div class="form-inline">
+                                            <div class="form-group">
+                                                <select id="type" class="selectpicker">
+                                                    <option value="maf" id="maf">mobility and FI</option>
+                                                    <option value="im" id="im">implant</option>
+                                                    <option value="GBP" id="GBP">GI,BI and PI</option>
+                                                    <option value="PaC" id="PaC">PD and CEJ</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <select id="chart-type" class="selectpicker">
+                                                    <option value="zx" id="zx">折线图</option>
+                                                    <option value="ld" id="ld">雷达图</option>
+                                                    <option value="order" id="order">柱状图</option>
+                                                </select>
+                                            </div>
+                                        </div>
                                     </h4>
                                 </div>
-                                <div class="panel-body">
-                                    <div id="autoupdate-chart" style="width: 100%; height:600px;"></div>
-                                    <div id="line-chart-dots" style="width: 100%; height:600px;"></div>
-                                    <div id="ordered-bars-chart" style="width: 100%; height:600px;"></div>
+                                <div  id="panel" class="panel-body">
+                                    <div id="chart" style="width: 100%; height:750px;"></div>
                                 </div>
                             </div>
                             <!-- End .panel -->
@@ -996,16 +1000,16 @@
         <!-- Important javascript libs(put in all pages) -->
         <script th:src="@{assets/js/jquery-1.8.3.min.js}"></script>
         <script>
-            window.jQuery || document.write('<script th:src="@{assets/js/libs/jquery-2.1.1.min.js}">\x3C/script>')
+        window.jQuery || document.write('<script th:src="@{assets/js/libs/jquery-2.1.1.min.js}">\x3C/script>')
         </script>
         <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <script>
-            window.jQuery || document.write('<script th:src="@{assets/js/libs/jquery-ui-1.10.4.min.js}">\x3C/script>')
+        window.jQuery || document.write('<script th:src="@{assets/js/libs/jquery-ui-1.10.4.min.js}">\x3C/script>')
         </script>
         <!--[if lt IE 9]>
-        <script type="text/javascript" th:src="@{assets/js/libs/excanvas.min.js}"></script>
-        <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <script type="text/javascript" th:src="@{assets/js/libs/respond.min.js}"></script>
+  <script type="text/javascript" th:src="@{assets/js/libs/excanvas.min.js}"></script>
+  <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <script type="text/javascript" th:src="@{assets/js/libs/respond.min.js}"></script>
 <![endif]-->
         <!-- Bootstrap plugins -->
         <script th:src="@{assets/js/bootstrap/bootstrap.js}"></script>
@@ -1045,6 +1049,13 @@
         <script th:src="@{assets/js/jquery.sprFlat.js}"></script>
         <script th:src="@{assets/js/app.js}"></script>
         <script th:src="@{assets/js/pages/charts.js}"></script>
-        <script th:src="@{assets/js/myOwnchart.js}"></script>
+        <script th:src="@{js/bmap.min.js}"></script>
+        <script th:src="@{js/dataTool.min.js}"></script>
+        <script th:src="@{js/echarts-gl.min.js}"></script>
+        <script th:src="@{js/ecStat.min.js}"></script>
+        <script th:src="@{js/simplex.js}"></script>
+        <script src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+        <script th:src="@{js/myOwnchart.js}"></script>
+
     </body>
 </html>
