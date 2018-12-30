@@ -25,7 +25,7 @@ public class PatientChartController {
     public List<Map> chartData(@RequestParam(value = "name")String type){
         //PatientChart data=patientChartDao.selectChartById(2);
         //return data;//待定
-        List<PatientChart>chart=patientChartDao.selectChartById("1600");
+        List<PatientChart>chart=patientChartDao.selectChartById("111111111111111111");
         List<Map>result=new ArrayList<>();
         result.clear();
         if(type.equals("mobility and FI")){
