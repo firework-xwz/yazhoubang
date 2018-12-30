@@ -42,6 +42,46 @@ $(document).ready(function() {
 		});
 		
 	});
+var events=[];
+var haveEvents=0;
+	/*get  appointment data from database*/
+	$(function () {
+		var optionJson=[];
+		var data={
+			id:"1",
+			s_time:"2018-10-10 22:00:00",
+			type:"select",
+			};
+		data=JSON.stringify(data);
+		$.ajax(
+			{
+			type:"POST",
+			url:"/PCalendar",
+			contentType: "application/json;charset=utf-8",
+			data:data,
+			success:function (result) {
+				optionJson=result;
+				if(optionJson.status=="empty")
+				{
+					events=[];
+				}
+				else {
+					var item={
+						title: "Appointment",
+						start: optionJson.start,
+						//end: new Date(y, m, d, 14, 0),
+						allDay: false,
+						id:optionJson.start
+					}
+					events.push(item);
+					haveEvents=1;
+				}
+			},
+			error:function () {
+				console.log("fail");
+			}
+		});
+	})
 
 
 	/* initialize the calendar
@@ -51,7 +91,7 @@ $(document).ready(function() {
 	var m = date.getMonth();
 	var y = date.getFullYear();
 
-	$('#calendar').fullCalendar({
+	var calendar = $('#calendar').fullCalendar({
 		header: {
 			left: 'prev,next today',
 			center: 'title',
@@ -77,7 +117,14 @@ $(document).ready(function() {
 			
 			// render the event on the calendar
 			// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
-			$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+			if(date<(new Date())){
+				alert("请在合适时间进行预约")
+			}
+			else if(haveEvents==1){
+				alert("请先完成已有预约");
+			}
+			else{
+			$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);}
 			
 			// is the "remove after drop" checkbox checked?
 			if ($('#drop-remove').is(':checked')) {
@@ -85,22 +132,108 @@ $(document).ready(function() {
 				$(this).remove();
 			}	
 		},
-        events: [
-        	{
-				title: 'Meeting',
-				start: new Date(y, m, d, 12, 0),
-				end: new Date(y, m, d, 14, 0),
-				allDay: false,
-				description: 'Morning meeting with all staff.',
-			},
-			{
-				title: 'Important',
-				start: new Date(y, m, d, 12, 0),
-				end: new Date(y, m, d, 14, 0),
-				allDay: false,
-				description: 'Important backup on some servers.',
+        eventClick : function(event, jsEvent, view){
+			var time;
+			//执行一个laydate实例
+			laydate.render({
+				elem: '#test2',
+				format: 'yyyy-MM-dd HH:mm:ss',
+				value:formate(event.start),
+				type: 'datetime',
+				min:(new Date()).Format('yyyy-MM-dd HH:mm:ss'),
+				done: function(value, date, endDate){
+					time=value;
+				}
+			});
+			document.getElementById("btn_delete").style.display="inline-block";
+			document.getElementById("txt_departmentname").style.display="none";
+			var data={
+				id:1,
+				s_time:time,
+				type:"update"
+				};
+			data=JSON.stringify(data);
+			$('#myModal').modal();
+			$('#btn_submit').click(function () {
+				if(time!=event.start){
+					$.ajax({
+						type:"POST",
+						url:"/PCalendar",
+						contentType: "application/json;charset=utf-8",
+						data:data,
+						success:function (result) {
+							haveEvents=1;
+							alter("提交成功");
+							$("#calendar").fullCalendar("removeEvents",event.id);
+							calendar.fullCalendar('renderEvent',
+								{
+									title: 'Appointment',
+									start: time,
+									allDay: false,
+									id:time
+								}
+							);
+						},
+						error:function () {
+							console.log("fail");
+						}
+					})
+				}
+			});
+			data={
+				id:"1",
+				s_time:"2018-12-29 00:00:00",
+				type:"delete",
+			};
+			data=JSON.stringify(data);
+			$('#btn_delete').click(function () {
+				$("#calendar").fullCalendar("removeEvents",event.id);
+				$.ajax({
+					type:"POST",
+					url:"/PCalendar",
+					contentType: "application/json;charset=utf-8",
+					data:data,
+					success:function (result) {
+						haveEvents=0;
+						alter("删除成功");
+						$("#calendar").fullCalendar("removeEvents",event.id);
+					},
+					error:function () {
+						console.log("fail");
+					}
+				})
+			})
+        },
+		eventDrop : function(event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view){
+			if(event.start<(new Date())){
+				revertFunc()
 			}
-        ]
+			else{
+				event.id=formate(event.start)
+				var data={
+					id:"1",
+					s_time:formate(event.start),
+					contentType: "application/json;charset=utf-8",
+					type:"update"
+					};
+				data=JSON.stringify(data);
+				$.ajax({
+					type:"POST",
+					url:"/PCalendar",
+					data:data,
+					success:function (result) {
+						alert("修改时间成功")
+					},
+					error:function () {
+						console.log("fail");
+						revertFunc()
+					}
+				})
+			}
+		},
+
+
+		events:events
 
 	});
 	
@@ -163,4 +296,33 @@ var initPieChart = function(lineWidth, size, animateTime, colours) {
         size: size,
         animate: animateTime
     });
+}
+function add0(m){return m<10?'0'+m:m }
+function formate(time)
+{
+	var y = time.getFullYear();
+	var m = time.getMonth()+1;
+	var d = time.getDate();
+	var h = time.getHours();
+	var mm = time.getMinutes();
+	var s = time.getSeconds();
+	return y+'-'+add0(m)+'-'+add0(d)+' '+add0(h)+':'+add0(mm)+':'+add0(s);
+}
+Date.prototype.Format = function(fmt)
+{ //author: meizz
+	var o = {
+		"M+" : this.getMonth()+1,                 //月份
+		"d+" : this.getDate(),                    //日
+		"h+" : this.getHours(),                   //小时
+		"m+" : this.getMinutes(),                 //分
+		"s+" : this.getSeconds(),                 //秒
+		"q+" : Math.floor((this.getMonth()+3)/3), //季度
+		"S"  : this.getMilliseconds()             //毫秒
+	};
+	if(/(y+)/.test(fmt))
+		fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+	for(var k in o)
+		if(new RegExp("("+ k +")").test(fmt))
+			fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+	return fmt;
 }

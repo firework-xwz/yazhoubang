@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
         <title>Calendar</title>
@@ -23,22 +23,22 @@
 <![endif]-->
         <!-- Css files -->
         <!-- Icons -->
-        <link href="assets/css/icons.css" rel="stylesheet" />
+        <link th:href="@{assets/css/icons.css}" rel="stylesheet" />
         <!-- jQueryUI -->
-        <link href="assets/css/sprflat-theme/jquery.ui.all.css" rel="stylesheet" />
+        <link th:href="@{assets/css/sprflat-theme/jquery.ui.all.css}" rel="stylesheet" />
         <!-- Bootstrap stylesheets (included template modifications) -->
-        <link href="assets/css/bootstrap.css" rel="stylesheet" />
+        <link th:href="@{assets/css/bootstrap.css}" rel="stylesheet" />
         <!-- Plugins stylesheets (all plugin custom css) -->
-        <link href="assets/css/plugins.css" rel="stylesheet" />
+        <link th:href="@{assets/css/plugins.css}" rel="stylesheet" />
         <!-- Main stylesheets (template main css file) -->
-        <link href="assets/css/main.css" rel="stylesheet" />
+        <link th:href="@{assets/css/main.css}" rel="stylesheet" />
         <!-- Custom stylesheets ( Put your own changes here ) -->
-        <link href="assets/css/custom.css" rel="stylesheet" />
+        <link th:href="@{assets/css/custom.css}" rel="stylesheet" />
         <!-- Fav and touch icons -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/img/ico/apple-touch-icon-57-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" th:href="@{assets/img/ico/apple-touch-icon-144-precomposed.png}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" th:href="@{assets/img/ico/apple-touch-icon-114-precomposed.png}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72"th:href="@{assets/img/ico/apple-touch-icon-72-precomposed.png}">
+        <link rel="apple-touch-icon-precomposed" th:href="@{assets/img/ico/apple-touch-icon-57-precomposed.png}">
         <link rel="icon" href="assets/img/ico/favicon.ico" type="image/png">
         <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
         <meta name="msapplication-TileColor" content="#3399cc" />
@@ -49,7 +49,7 @@
             <div class="container-fluid">
                 <div class="navbar">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="PCharts.html">
+                        <a class="navbar-brand" href="PCharts">
                             <i class="im-windows8 text-logo-element animated bounceIn"></i><span class="text-slogan">牙周帮</span> 
                         </a>
                     </div>
@@ -299,7 +299,7 @@
                     </li>-->
                     <!--<li><a href="index.html">Dashboard <i class="im-screen"></i></a>
                     </li>-->
-                    <li><a href="PCharts.html">Charts <i class="st-chart"></i></a>
+                    <li><a href="PCharts">Charts <i class="st-chart"></i></a>
                     </li>
                     <!-- <li>
                          <a href="#"> Forms <i class="im-paragraph-justify"></i></a>
@@ -314,7 +314,7 @@
                              </li>
                          </ul>
                      </li>-->
-                    <li><a href="PData-tables.html"><i class="im-table2"></i> Data tables</a>
+                    <li><a href="PData-tables"><i class="im-table2"></i> Data tables</a>
                         <!--<ul class="nav sub">
                             <li><a href="tables.html"><i class="en-arrow-right7"></i> Static tables</a>
                             </li>
@@ -322,7 +322,7 @@
                             </li>
                         </ul>-->
                     </li>
-                    <li><a href="PCalendar.html"><i class="im-calendar2"></i> Calendar</a>
+                    <li><a href="PCalendar"><i class="im-calendar2"></i> Calendar</a>
                         <!-- <ul class="nav sub">
                              <li><a href="notifications.html"><i class="fa-bell"></i> Notifications</a>
                              </li>
@@ -690,6 +690,33 @@
                     <!-- End .page-header -->
                 </div>
                 <!-- End .row -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">新增</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label for="txt_departmentname">note</label>
+                                    <input type="text" name="txt_departmentname" class="form-control" id="txt_departmentname" placeholder="note">
+                                </div>
+                                <div class="form-group">
+                                    <label for="txt_departmentname">time</label>
+                                    <input type="text" id="test2" name="txt_departmentname" class="form-control" placeholder="time">
+                                    <script src="layDate/laydate/laydate.js"></script> <!-- 改成你的路径 -->
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal"><span  aria-hidden="true"></span>close</button>
+                                <button type="button" id="btn_submit" class="btn btn-primary" data-dismiss="modal"><span  aria-hidden="true"></span>save</button>
+                                <button type="button" id="btn_delete" class="btn btn-primary" data-dismiss="modal"><span  aria-hidden="true"></span>delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="outlet">
                     <!-- Start .outlet -->
                     <!-- Page start here ( usual with .row ) -->
@@ -715,11 +742,7 @@
                                 </h4>
                             </div>
                             <div id="external-events">
-                                <div class="external-event">Meeting with SEO</div>
-                                <div class="external-event">Hire support assistant</div>
-                                <div class="external-event">Meeting staff</div>
-                                <div class="external-event">New project begin</div>
-                                <div class="external-event">Repair car</div>
+                                <div class="external-event">Appointment</div>
                             </div>
                         </div>
                         <!-- col-lg-4 end here -->
@@ -734,47 +757,50 @@
         <!-- End #content -->
         <!-- Javascripts -->
         <!-- Load pace first -->
-        <script src="assets/plugins/core/pace/pace.min.js"></script>
+        <script th:src="@{assets/plugins/core/pace/pace.min.js}"></script>
         <!-- Important javascript libs(put in all pages) -->
-        <script src="assets/js/jquery-1.8.3.min.js"></script>
+        <script th:src="@{assets/js/jquery-1.8.3.min.js}"></script>
         <script>
-        window.jQuery || document.write('<script src="assets/js/libs/jquery-2.1.1.min.js">\x3C/script>')
+        window.jQuery || document.write('<script src="@{assets/js/libs/jquery-2.1.1.min.js}">\x3C/script>')
         </script>
         <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <script>
-        window.jQuery || document.write('<script src="assets/js/libs/jquery-ui-1.10.4.min.js">\x3C/script>')
+        window.jQuery || document.write('<script th:src="@{assets/js/libs/jquery-ui-1.10.4.min.js}">\x3C/script>')
         </script>
         <!--[if lt IE 9]>
-  <script type="text/javascript" src="assets/js/libs/excanvas.min.js"></script>
+  <script type="text/javascript" th:src="@{assets/js/libs/excanvas.min.js}"></script>
   <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <script type="text/javascript" src="assets/js/libs/respond.min.js"></script>
+  <script type="text/javascript" th:src="@{assets/js/libs/respond.min.js}"></script>
 <![endif]-->
+        <script th:src="@{js/date.format.js}"></script>
         <!-- Bootstrap plugins -->
-        <script src="assets/js/bootstrap/bootstrap.js"></script>
+        <script th:src="@{assets/js/bootstrap/bootstrap.js}"></script>
         <!-- Core plugins ( not remove ever) -->
         <!-- Handle responsive view functions -->
-        <script src="assets/js/jRespond.min.js"></script>
+        <script th:src="@{assets/js/jRespond.min.js}"></script>
         <!-- Custom scroll for sidebars,tables and etc. -->
-        <script src="assets/plugins/core/slimscroll/jquery.slimscroll.min.js"></script>
-        <script src="assets/plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js"></script>
+        <script th:src="@{assets/plugins/core/slimscroll/jquery.slimscroll.min.js}"></script>
+        <script th:src="@{assets/plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js}"></script>
         <!-- Resize text area in most pages -->
-        <script src="assets/plugins/forms/autosize/jquery.autosize.js"></script>
+        <script th:src="@{assets/plugins/forms/autosize/jquery.autosize.js}"></script>
         <!-- Proivde quick search for many widgets -->
-        <script src="assets/plugins/core/quicksearch/jquery.quicksearch.js"></script>
+        <script th:src="@{assets/plugins/core/quicksearch/jquery.quicksearch.js}"></script>
         <!-- Bootbox confirm dialog for reset postion on panels -->
-        <script src="assets/plugins/ui/bootbox/bootbox.js"></script>
+        <script th:src="@{assets/plugins/ui/bootbox/bootbox.js}"></script>
         <!-- Other plugins ( load only nessesary plugins for every page) -->
-        <script src="assets/plugins/core/moment/moment.min.js"></script>
-        <script src="assets/plugins/charts/sparklines/jquery.sparkline.js"></script>
-        <script src="assets/plugins/charts/pie-chart/jquery.easy-pie-chart.js"></script>
-        <script src="assets/plugins/forms/icheck/jquery.icheck.js"></script>
-        <script src="assets/plugins/forms/tags/jquery.tagsinput.min.js"></script>
-        <script src="assets/plugins/forms/tinymce/tinymce.min.js"></script>
-        <script src="assets/plugins/misc/highlight/highlight.pack.js"></script>
-        <script src="assets/plugins/misc/countTo/jquery.countTo.js"></script>
-        <script src="assets/plugins/ui/calendar/fullcalendar.js"></script>
-        <script src="assets/js/jquery.sprFlat.js"></script>
-        <script src="assets/js/app.js"></script>
-        <script src="assets/js/pages/calendar.js"></script>
+        <script th:src="@{assets/plugins/core/moment/moment.min.js}"></script>
+        <script th:src="@{assets/plugins/charts/sparklines/jquery.sparkline.js}"></script>
+        <script th:src="@{assets/plugins/charts/pie-chart/jquery.easy-pie-chart.js}"></script>
+        <script th:src="@{assets/plugins/forms/icheck/jquery.icheck.js}"></script>
+        <script th:src="@{assets/plugins/forms/tags/jquery.tagsinput.min.js}"></script>
+        <script th:src="@{assets/plugins/forms/tinymce/tinymce.min.js}"></script>
+        <script th:src="@{assets/plugins/misc/highlight/highlight.pack.js}"></script>
+        <script th:src="@{assets/plugins/misc/countTo/jquery.countTo.js}"></script>
+        <script th:src="@{assets/plugins/ui/calendar/fullcalendar.js}"></script>
+        <script th:src="@{assets/js/jquery.sprFlat.js}"></script>
+        <script th:src="@{assets/js/app.js}"></script>
+        <script th:src="@{assets/js/pages/calendar.js}"></script>
+        <script th:src="@{layDate/laydate/laydate.js}"></script>
+
     </body>
 </html>
