@@ -17,4 +17,6 @@ public interface PatientDao {
     public Patient selectPatientById(String p_id);
     @Select("select * from patient")
     public List<Patient> getAll();
+    @Select("select p_id from patient")
+    public String[] getAllId();
 }

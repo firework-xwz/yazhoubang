@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>AMsgHospital</title>
@@ -507,11 +507,11 @@
             <li>
                 <a href="#"> 信息 <i class="im-paragraph-justify"></i></a>
                 <ul class="nav sub">
-                    <li><a href="AMsgDoctor.html"><i class="ec-pencil2"></i> 医生</a>
+                    <li><a href="AMsgDoctor"><i class="ec-pencil2"></i> 医生</a>
                     </li>
-                    <li><a href="AMsgPatient.html"><i class="im-checkbox-checked"></i> 患者</a>
+                    <li><a href="AMsgPatient"><i class="im-checkbox-checked"></i> 患者</a>
                     </li>
-                    <li><a href="AMsgHospital.html"><i class="im-wand"></i> 医院</a>
+                    <li><a href="AMsgHospital"><i class="im-wand"></i> 医院</a>
                     </li>
                 </ul>
             </li>
@@ -805,47 +805,29 @@
                             <table class="table" id="PatientsList">
                                 <thead>
                                     <tr>
-                                        <th width="5%">#</th>
                                         <th width="10%">Name</th>
                                         <th width="20%">Phone</th>
                                         <th width="20%">ID</th>
-                                        <th width="30%">Last Check</th>
+                                        <th width="30%">Position</th>
                                         <th width="5%">#Delete#</th>
                                         <th width="5%">#Edit#</th>
                                         <th width="5%">#View#</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)" id="line1">
-                                        <td>1</td>
-                                        <td>刘德华</td>
-                                        <td>18916271729</td>
-                                        <td>444444444444444444</td>
-                                        <td>2018-08-24</td>
+                                    <tr th:attr="h_id=${i.getH_id()}" th:each="i:${hospitalList}" onmouseenter="lineover(this)" onmouseleave="lineout(this)">
+                                        <td th:text="${i.getHospital_name()}"></td>
+                                        <td th:text="${i.getPhone_num()}"></td>
+                                        <td th:text="${i.getH_id()}"></td>
+                                        <td th:text="${i.getPosition()}"></td>
                                         <td>
-                                            <button id="line1delete" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients('444444444444444444')">Delete</button>
+                                            <button type="button" th:id="'line'+${i.getH_id()}+'delete'" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(p_id)">Delete</button>
                                         </td>
                                         <td>
-                                            <button type="button" id="line1edit" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
+                                            <button type="button" th:id="'line'+${i.getH_id()}+'edit'" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
                                         </td>
                                         <td>
-                                            <button type="button" id="line1view" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
-                                        </td>
-                                    </tr>
-                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)" id="line2">
-                                        <td>2</td>
-                                        <td>张伟健</td>
-                                        <td>1333333333</td>
-                                        <td>444444444444444443</td>
-                                        <td>2017-08-24</td>
-                                        <td>
-                                            <button id="line2delete" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients('444444444444444443')">Delete</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" id="line2edit" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" id="line2view" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
+                                            <button type="button" th:id="'line'+${i.getH_id()}+'view'" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -923,8 +905,7 @@
     <script>
         function lineover(line) {
             $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
-
-            seq = $(line).find("td:eq(0)").html();
+            seq=line.getAttribute("h_id");
             $("#line" + seq + "delete").css('display', 'block');
             $("#line" + seq + "view").css('display', 'block');
             $("#line" + seq + "edit").css('display', 'block');
@@ -934,15 +915,10 @@
         function lineout(line) {
             var count = 0;
             $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
-            var seq = $(line).children("td").html();
-            $("#PatientsList tr").each(
-                function () {
-                    var seq = parseInt($(this).children("td").html());
-                    $("#line" + seq + "delete").css('display', 'none');
-                    $("#line" + seq + "view").css('display', 'none');
-                    $("#line" + seq + "edit").css('display', 'none');
-                }
-            );
+            seq=line.getAttribute("h_id");
+            $("#line" + seq + "delete").css('display', 'none');
+            $("#line" + seq + "view").css('display', 'none');
+            $("#line" + seq + "edit").css('display', 'none');
         }
         //搜索病人
         function searchPatients() {

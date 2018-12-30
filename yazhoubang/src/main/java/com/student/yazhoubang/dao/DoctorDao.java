@@ -4,6 +4,8 @@ import com.student.yazhoubang.damain.Doctor;
 import com.student.yazhoubang.damain.Patient;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 @Mapper
 public interface DoctorDao {
 
@@ -13,4 +15,6 @@ public interface DoctorDao {
     public Integer deleteDoctorById(String d_id);
     @Select("select * from doctor where d_id=#{d_id}")
     public Doctor selectDoctorById(String d_id);
+    @Select("select * from doctor")
+    public List<Doctor> getAll();
 }
