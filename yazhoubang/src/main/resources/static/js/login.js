@@ -12,7 +12,12 @@ function login() {
         success:function (result) {
             alert(result.msg);
             if(result.status==0){
-                window.location.href="./main"
+                if(result.msg=="admin"){
+                    window.location.href="/AMsgPatient";
+                }
+                else {
+                    window.location.href="/main"
+                }
             }
         },
         error:function () {

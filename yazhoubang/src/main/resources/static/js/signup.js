@@ -4,20 +4,21 @@ function signup() {   //注册模块函数
         alert("确认密码与原密码不符！");
         return;
     }
-    var signupData=$("#signupForm").serializeArray();
-    console.log(signupData);
-    var s={};
-    $.each(signupData,function (i,field) {
-        s[field.name]=field.value;
-    });
-    console.log(s);
-    var data= JSON.stringify(s);
+    var data={
+        "id":$("#id").val(),
+        "name":$("#name").val(),
+        "birthday":$("#birthday").val(),
+        "sex":$("#sex").val(),
+        "phone_num":$("#phone_num").val(),
+        "password":$("#password").val(),
+        "role":$("#role").val()
+    };
     console.log(data);
     $.ajax({
         url:"/signup",
         type:"POST",
-        contentType: "application/json;charset=utf-8",
         data: data,
+        dataType:"json",
         success:function(result){
             alert(result.msg);
             $("#errorInfo").val(result.msg).show();
