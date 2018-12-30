@@ -20,6 +20,8 @@ public class Appointment implements Serializable {
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Timestamp s_time;
+    @Column(nullable = false)
+    private int status;
 
 
     public void setP_id(String p_id) {
@@ -46,4 +48,11 @@ public class Appointment implements Serializable {
         this.s_time = s_time;
     }
 
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 }
