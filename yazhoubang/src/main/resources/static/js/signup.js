@@ -11,7 +11,8 @@ function signup() {   //注册模块函数
         "sex":$("#sex").val(),
         "phone_num":$("#phone_num").val(),
         "password":$("#password").val(),
-        "role":$("#role").val()
+        "role":$("#role").val(),
+        "hostipal":$("#hospital").val()
     };
     console.log(data);
     $.ajax({
@@ -34,4 +35,12 @@ function signup() {   //注册模块函数
     })
 }
 
+function showHostipal() {
+    if($("#role").val()==0){
+        $("#hospitalSelect").hide()
+    }
+    else if($("#role").val()==1){
+        $("#hospitalSelect").show();
+    }
+}
 
