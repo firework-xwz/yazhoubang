@@ -44,6 +44,21 @@ $('#datatable').dataTable({
 	"sDom": "<'row'<'col-lg-6 col-md-6 col-sm-12 text-center'l><'col-lg-6 col-md-6 col-sm-12 text-center'f>r>t<'row-'<'col-lg-6 col-md-6 col-sm-12'i><'col-lg-6 col-md-6 col-sm-12'p>>",
 });
 
+
+function addButton() {
+	var list = document.getElementsByClassName("table-list");
+
+	for(var i=0; i<list.length; i++){
+		var button = document.createElement("button");
+		button.innerText = "详细内容";
+		button.className = "btn btn-sm btn-primary";
+		list[i].appendChild(button);
+	}
+
+}
+
+	addButton();
+
 $('#datatable1').dataTable({
 	"sPaginationType": "bs_full", //"bs_normal", "bs_two_button", "bs_four_button", "bs_full"
 	"fnPreDrawCallback": function( oSettings ) {

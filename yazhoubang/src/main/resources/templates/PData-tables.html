@@ -709,11 +709,12 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <tr th:each="i:${tableList}">
+                                        <tr class="table-list" th:each="i:${tableList}">
                                             <!--/*@thymesVar id="getDatatime" type=""*/-->
                                             <td th:text="${i.getTime()}"></td>
                                             <td th:text="${i.getName()}"/>
                                         </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
