@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
-	<title>Minimal and Clean Sign up / Login and Forgot Form by FreeHTML5.co</title>
+	<title>SignUp</title>
 	<link rel="stylesheet" th:href="@{css/bootstrap.css}">
 	<link rel="stylesheet" th:href="@{css/animate.css}">
 	<link rel="stylesheet" th:href="@{css/style.css}">
@@ -18,7 +18,7 @@
     <script th:src="@{js/bootstrap-datetimepicker.min.js}"></script>
 
 	</head>
-	<body class="style-2">
+	<body class="style-2" onload="load()">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
@@ -65,9 +65,16 @@
 					</div>
 					<div class="form-group">
 						<label for="role" class="sr-only">角色</label>
-						<select class="form-control" id="role" name="role" placeholder="角色" autocomplete="off">
+						<select onclick="showHostipal()" class="form-control" id="role" name="role" placeholder="角色" autocomplete="off">
 							<option value="0">患者</option>
 							<option value="1">医生</option>
+						</select>
+					</div>
+
+					<div id="hospitalSelect" class="form-group" style="display: none">
+						<label for="hospital" class="sr-only">医院</label>
+						<select class="form-control" id="hospital" name="hospital" placeholder="医院" autocomplete="off">
+							<option th:each="hospital:${hospitalList}" th:text="${hospital.getHospital_name()}" th:value="${hospital.getH_id()}"></option>
 						</select>
 					</div>
 					<!--<div class="form-group">-->
