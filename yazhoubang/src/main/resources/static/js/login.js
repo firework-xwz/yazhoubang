@@ -13,7 +13,7 @@ function login() {
             alert(result.msg);
             if(result.status==0){
                 if(result.msg=="admin"){
-                    window.location.href="/AMsgPatient";
+                    window.location.href="/AIndex";
                 }
                 else {
                     window.location.href="/main"

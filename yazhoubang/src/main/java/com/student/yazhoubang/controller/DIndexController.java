@@ -5,10 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class AIndex {
-
-    @RequestMapping("AIndex")
-    public String AIndex(Model model){
-        return "AIndex";
+public class DIndexController {
+    @RequestMapping("DIndex")
+    public String DIndex(Model model){
+        return "DIndex";
     }
 }
