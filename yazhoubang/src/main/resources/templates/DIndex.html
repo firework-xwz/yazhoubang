@@ -863,6 +863,7 @@
                             <h4 class="modal-title" id="editPatientsInfo">
                                 用户记录
                             </h4>
+                            <div class="modal-body">
                             <div class="bs-example" data-example-id="hoverable-table">
                                 <table class="table table-hover" id="btable">
                                     <thead>
@@ -904,7 +905,7 @@
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                             </button>
                             <button type="button" class="btn btn-primary" onclick="addPatientsCheckList()">
-                                新增
+                                新增新增
                             </button>
                         </div>
                     </div>
@@ -1158,7 +1159,8 @@
         //查看该病人的所有表格
         function moreInfo() {
             $('#infoModal').modal('hide')
-            $('#teethModal').modal('show')
+            //$('#teethModal').modal('show')
+            window.open("表格.html");//跳转到表格网页
         }
         //修改病人信息
         function editInfo() {
@@ -1173,7 +1175,7 @@
         //新增检查表
         function addPatientsCheckList() {
             $('#infoModal').modal('hide')
-            $('#addTeethModal').modal('show')
+            window.open("表格.html");//跳转到表格网页
         }
         //确认增加检查表
         function confirmAdd() {
