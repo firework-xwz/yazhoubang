@@ -813,19 +813,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorList}" th:attr="d_id=${i.getD_id()}">
-                                        <td th:text = "${i.getName()}"></td>
-                                        <td th:text = "${i.getPhone_num()}"></td>
-                                        <td th:text = "${i.getD_id()}"></td>
-                                        <td th:text = "${i.getName()}"></td>
+                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorList}" th:attr="d_id=${i.value.getD_id()}">
+                                        <td th:text = "${i.value.getName()}"></td>
+                                        <td th:text = "${i.value.getPhone_num()}"></td>
+                                        <td th:text = "${i.value.getD_id()}"></td>
+                                        <td th:text = "${i.key}"></td>
                                         <td>
-                                            <button th:id="'line'+${i.getD_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients('444444444444444443')">Delete</button>
+                                            <button th:id="'line'+${i.value.getD_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients('444444444444444443')">Delete</button>
                                         </td>
                                         <td>
-                                            <button th:id="'line'+${i.getD_id()}+'edit'" type="button" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
+                                            <button th:id="'line'+${i.value.getD_id()}+'edit'" type="button" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
                                         </td>
                                         <td>
-                                            <button th:id="'line'+${i.getD_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
+                                            <button th:id="'line'+${i.value.getD_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
                                         </td>
                                     </tr>
                                 </tbody>

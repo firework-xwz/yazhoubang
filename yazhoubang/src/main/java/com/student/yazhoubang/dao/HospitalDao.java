@@ -15,7 +15,7 @@ public interface HospitalDao {
     public Integer addHospital(Hospital hospital);
     @Delete("delete from hospital where h_id=#{h_id}")
     public Integer deleteHospital(String h_id);
-    @Select("select * from hospital where h_id=#{h_id")
+    @Select("select * from hospital where h_id=#{h_id}")
     public Hospital selectHospital(String h_id);
     @Select("select * from hospital")
     public List<Hospital> getAll();

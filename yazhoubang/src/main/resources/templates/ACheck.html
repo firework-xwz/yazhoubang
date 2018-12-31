@@ -489,19 +489,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorList}" th:attr="d_id=${i.getD_id()}">
-                                        <td th:text = "${i.getName()}"></td>
-                                        <td th:text = "${i.getPhone_num()}"></td>
-                                        <td th:text = "${i.getD_id()}"></td>
-                                        <td th:text = "${i.getName()}"></td>
+                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorCheckList}" th:attr="d_id=${i.value.getD_id()}">
+                                        <td th:text = "${i.value.getName()}"></td>
+                                        <td th:text = "${i.value.getPhone_num()}"></td>
+                                        <td th:text = "${i.value.getD_id()}"></td>
+                                        <td th:text = "${i.key}"></td>
                                         <td>
-                                            <button th:id="'line'+${i.getD_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients('444444444444444443')">Delete</button>
+                                            <button th:id="'line'+${i.value.getD_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(d_id)">Delete</button>
                                         </td>
                                         <td>
-                                            <button th:id="'line'+${i.getD_id()}+'edit'" type="button" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
+                                            <button th:id="'line'+${i.value.getD_id()}+'edit'" type="button" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
                                         </td>
                                         <td>
-                                            <button th:id="'line'+${i.getD_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
+                                            <button th:id="'line'+${i.value.getD_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -565,5 +565,24 @@
 <script src="assets/js/jquery.sprFlat.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/pages/data-tables.js"></script>
+    <script>
+        function lineover(line) {
+            $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
+            seq=line.getAttribute("d_id");
+            $("#line" + seq + "delete").css('display', 'block');
+            $("#line" + seq + "view").css('display', 'block');
+            $("#line" + seq + "edit").css('display', 'block');
+        }
+
+        //鼠标离开该行
+        function lineout(line) {
+            var count = 0;
+            $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
+            seq=line.getAttribute("d_id");
+            $("#line" + seq + "delete").css('display', 'none');
+            $("#line" + seq + "view").css('display', 'none');
+            $("#line" + seq + "edit").css('display', 'none');
+        }
+    </script>
 </body>
 </html>

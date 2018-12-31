@@ -17,4 +17,6 @@ public interface DoctorDao {
     public Doctor selectDoctorById(String d_id);
     @Select("select * from doctor")
     public List<Doctor> getAll();
+    @Select("select * from doctor where status = 0")
+    public List<Doctor> getAllForCheck();
 }
