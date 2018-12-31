@@ -44,7 +44,16 @@ public class LoginController {
         }
         else{
             loginCheck.setStatus(0);
-            loginCheck.setMsg("登录成功！");
+            int role=userListDao.selectUserById(user_id).getUser_role();
+            if(role==0){
+                loginCheck.setMsg("patient");
+            }
+            else if(role==1){
+                loginCheck.setMsg("doctor");
+            }
+            else if(role==2){
+                loginCheck.setMsg("admin");
+            }
             httpSession.setMaxInactiveInterval(3600);
             httpSession.setAttribute("id",user_id);
             httpSession.setAttribute("role",userListDao.selectUserById(user_id).getUser_role());

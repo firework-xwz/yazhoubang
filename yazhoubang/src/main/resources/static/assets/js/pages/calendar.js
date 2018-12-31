@@ -66,13 +66,25 @@ var haveEvents=0;
 					events=[];
 				}
 				else {
+					if (optionJson.appointmentStatus=="0")
 					var item={
-						title: "Appointment",
+						title: "等待回复",
 						start: optionJson.start,
 						//end: new Date(y, m, d, 14, 0),
 						allDay: false,
 						id:optionJson.start
 					}
+					else if(optionJson.appointmentStatus=="1")
+					{
+						var item={
+							title: "预约成功",
+							start: optionJson.start,
+							//end: new Date(y, m, d, 14, 0),
+							allDay: false,
+							id:optionJson.start
+						}
+					}
+
 					events.push(item);
 					haveEvents=1;
 				}
@@ -124,7 +136,31 @@ var haveEvents=0;
 				alert("请先完成已有预约");
 			}
 			else{
-			$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);}
+			haveEvents=1;
+			var data={
+				"id":1,
+				"s_time":$.fullCalendar.formatDate(date,"yyyy-MM-dd HH:mm:ss"),
+				"type":"insert"
+			}
+			data=JSON.stringify(data);
+				$.ajax({
+					type:"POST",
+					url:"/PCalendar",
+					contentType: "application/json;charset=utf-8",
+					data:data,
+					success:function (result) {
+						copiedEventObject.title="等待回复";
+						copiedEventObject.id=$.fullCalendar.formatDate(date,"yyyy-MM-dd HH:mm:ss");
+						haveEvents=1;
+						$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+						alert("提交成功");
+
+					},
+					error:function () {
+						console.log("fail");
+					}
+				})
+			}
 			
 			// is the "remove after drop" checkbox checked?
 			if ($('#drop-remove').is(':checked')) {
@@ -138,41 +174,43 @@ var haveEvents=0;
 			laydate.render({
 				elem: '#test2',
 				format: 'yyyy-MM-dd HH:mm:ss',
-				value:formate(event.start),
+				value:$.fullCalendar.formatDate(event.start,"yyyy-MM-dd HH:mm:ss"),
 				type: 'datetime',
-				min:(new Date()).Format('yyyy-MM-dd HH:mm:ss'),
+				min:$.fullCalendar.formatDate(new Date(),"yyyy-MM-dd HH:mm:ss"),
 				done: function(value, date, endDate){
 					time=value;
 				}
 			});
 			document.getElementById("btn_delete").style.display="inline-block";
-			document.getElementById("txt_departmentname").style.display="none";
-			var data={
-				id:1,
-				s_time:time,
-				type:"update"
-				};
-			data=JSON.stringify(data);
+
 			$('#myModal').modal();
 			$('#btn_submit').click(function () {
-				if(time!=event.start){
+				if(time!=$.fullCalendar.formatDate(event.start,"yyyy-MM-dd HH:mm:ss")){
+					var data={
+						id:1,
+						s_time:time,
+						type:"update"
+					};
+					data=JSON.stringify(data);
 					$.ajax({
 						type:"POST",
 						url:"/PCalendar",
 						contentType: "application/json;charset=utf-8",
 						data:data,
 						success:function (result) {
-							haveEvents=1;
-							alter("提交成功");
+							var title=event.title;
 							$("#calendar").fullCalendar("removeEvents",event.id);
 							calendar.fullCalendar('renderEvent',
 								{
-									title: 'Appointment',
+									title: title,
 									start: time,
 									allDay: false,
 									id:time
 								}
 							);
+							haveEvents=1;
+							alert("提交成功");
+
 						},
 						error:function () {
 							console.log("fail");
@@ -180,14 +218,14 @@ var haveEvents=0;
 					})
 				}
 			});
-			data={
-				id:"1",
-				s_time:"2018-12-29 00:00:00",
-				type:"delete",
-			};
-			data=JSON.stringify(data);
+
 			$('#btn_delete').click(function () {
-				$("#calendar").fullCalendar("removeEvents",event.id);
+				data={
+					id:"1",
+					s_time:"2018-12-29 00:00:00",
+					type:"delete",
+				};
+				data=JSON.stringify(data);
 				$.ajax({
 					type:"POST",
 					url:"/PCalendar",
@@ -195,7 +233,6 @@ var haveEvents=0;
 					data:data,
 					success:function (result) {
 						haveEvents=0;
-						alter("删除成功");
 						$("#calendar").fullCalendar("removeEvents",event.id);
 					},
 					error:function () {
@@ -209,17 +246,17 @@ var haveEvents=0;
 				revertFunc()
 			}
 			else{
-				event.id=formate(event.start)
+				event.id=$.fullCalendar.formatDate(event.start,"yyyy-MM-dd HH:mm:ss")
 				var data={
 					id:"1",
-					s_time:formate(event.start),
-					contentType: "application/json;charset=utf-8",
+					s_time:$.fullCalendar.formatDate(event.start,"yyyy-MM-dd HH:mm:ss"),
 					type:"update"
 					};
 				data=JSON.stringify(data);
 				$.ajax({
 					type:"POST",
 					url:"/PCalendar",
+					contentType: "application/json;charset=utf-8",
 					data:data,
 					success:function (result) {
 						alert("修改时间成功")

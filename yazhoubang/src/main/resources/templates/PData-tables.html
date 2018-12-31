@@ -704,38 +704,17 @@
                                     <table class="table display" id="datatable">
                                         <thead>
                                             <tr>
-                                                <th>time</th>
-                                                <th>mobility</th>
-                                                <th>implant</th>
-                                                <th>FI</th>
-                                                <th>GI</th>
-                                                <th>BI_B</th>
-                                                <th>BI_L</th>
-                                                <th>PD_B</th>
-                                                <th>PD_L</th>
-                                                <th>CEJ_B</th>
-                                                <th>CEJ_L</th>
-                                                <th>PI_B</th>
-                                                <th>PI_L</th>
+                                                <th>时间</th>
+                                                <th>医生</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <tr th:each="i:${tableList}">
+                                        <tr class="table-list" th:each="i:${tableList}">
                                             <!--/*@thymesVar id="getDatatime" type=""*/-->
                                             <td th:text="${i.getTime()}"></td>
-                                            <td th:text="${i.getMobility()}"/>
-                                            <td th:text="${i.getImplant()}"/>
-                                            <td th:text="${i.getFI()}"/>
-                                            <td th:text="${i.getGI()}"/>
-                                            <td th:text="${i.getBI_B()}"/>
-                                            <td th:text="${i.getBI_L()}"/>
-                                            <td th:text="${i.getPD_B()}"/>
-                                            <td th:text="${i.getPD_L()}"/>
-                                            <td th:text="${i.getCEJ_B()}"/>
-                                            <td th:text="${i.getCEJ_L()}"/>
-                                            <td th:text="${i.getPI_B()}"/>
-                                            <td th:text="${i.getPI_L()}"/>
+                                            <td th:text="${i.getName()}"/>
                                         </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
