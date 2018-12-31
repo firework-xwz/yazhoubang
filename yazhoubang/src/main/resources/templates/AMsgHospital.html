@@ -334,33 +334,32 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                   &times;
                 </button>
-                <h4 class="modal-title" id="editPatientsInfo">
-                  修改用户信息
+                <h4 class="modal-title" id="editHospitalsInfo">
+                  添加医院
                 </h4>
               </div>
+
               <div class="modal-body">
                 <div align="center">
-                    <br>身份证号
-                    <br>
-                    <input type="text" class="form-control1" 
-                      style="color:#000000" id="addid">
-                  <br>姓名
+                  <br>ID
                   <br>
-                  <input type="text" class="form-control1" 
-                    style="color:#000000" id="addname">
-                  
+                  <input type="text" class="form-control1" style="color:#000000" id="addid">
+                  <br>医院名
+                  <br>
+                  <input type="text" class="form-control1" style="color:#000000" id="addname">
                   <br>电话
                   <br>
-                  <input type="text" class="form-control1"  
-                    style="color:#000000" id="addphone">
+                  <input type="text" class="form-control1" style="color:#000000" id="addphone">
+                  <br>地址
                   <br>
-                  <br>
+                  <input type="text" class="form-control1" style="color:#000000" id="addposition">
                 </div>
               </div>
+
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                 </button>
-                <button type="button" class="btn btn-primary"  onclick="addPatients()">
+                <button type="button" class="btn btn-primary"  onclick="addHospitals()">
                   提交
                 </button>
               </div>
@@ -500,9 +499,9 @@
                     </button>
                 </form>
             </li>
-            <li><a href="AIndex.html">主页 <i class="im-screen"></i></a>
+            <li><a href="/AIndex">主页 <i class="im-screen"></i></a>
             </li>
-            <li><a href="ACheck.html">认证 <i class="st-chart"></i></a>
+            <li><a href="/ACheck">认证 <i class="st-chart"></i></a>
             </li>
             <li>
                 <a href="#"> 信息 <i class="im-paragraph-justify"></i></a>
@@ -798,8 +797,8 @@
 
                     <div class="xs">
                         <h3>Hospitals List</h3>
-                        <div class="addPatients" align="right">
-                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addModal">AddPatients</button>
+                        <div class="addHospitals" align="right">
+                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addModal">AddHospitals</button>
                         </div>
                         <div class="bs-example4" data-example-id="contextual-table">
                             <table class="table" id="PatientsList">
@@ -925,14 +924,28 @@
             var pname = document.getElementById("searchPatients");
             //TODO:根据名字获取病人信息，回调函数成功则显示表格，失败则弹框提示
         }
-        //添加病人
-        function addPatients() {
-            var pname = document.getElementById("addname");
-            var phone = document.getElementById("addphone");
-            var pid = document.getElementById("addid");
-            //TODO:发送新增信息，成功则刷新页面，失败则弹框提示
-            //success:window.location.reload(); 
-            //fail:alert("新增失败")
+        //添加医院
+        function addHospitals() {
+            var data = {
+                "h_id":$("#addid").val(),
+                "position":$("#addname").val(),
+                "phone_num":$("#addphone").val(),
+                "hospital_name":$("#addposition").val()
+            };
+            console.log(data);
+            $.ajax({
+                type:"POST",
+                url:"/AMsgHospital/addHospital",
+                dataType:"json",
+                data:data,
+                success:function (ans) {
+                    alert(ans.message);
+                    window.location.reload();
+                },
+                error:function () {
+                    console.log("fail");
+                }
+            })
         }
         //初始化病人列表
         function initPatientsList() {

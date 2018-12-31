@@ -11,7 +11,7 @@ import java.util.List;
 
 @Mapper
 public interface HospitalDao {
-    @Insert("Insert into hospital (h_id,position,phone_num,hospital_name)values(#{h_id},#{position},#{phone_num},#{hospital_name}")
+    @Insert("Insert into hospital (h_id,position,phone_num,hospital_name)values(#{h_id},#{position},#{phone_num},#{hospital_name})")
     public Integer addHospital(Hospital hospital);
     @Delete("delete from hospital where h_id=#{h_id}")
     public Integer deleteHospital(String h_id);
@@ -19,5 +19,4 @@ public interface HospitalDao {
     public Hospital selectHospital(String h_id);
     @Select("select * from hospital")
     public List<Hospital> getAll();
-
 }
