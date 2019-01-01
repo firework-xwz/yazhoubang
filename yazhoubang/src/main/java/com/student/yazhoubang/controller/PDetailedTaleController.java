@@ -20,7 +20,7 @@ import java.util.Map;
 
 @Controller
 public class PDetailedTaleController {
-    private String c_id="1";
+    private String c_id;
     @Autowired
     PatientDao patientDao;
     @Autowired
