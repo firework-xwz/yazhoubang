@@ -207,17 +207,7 @@
                             </li>
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown">
-                                    <img class="user-avatar" src="assets/img/avatars/48.jpg" alt="SuggeElson">SuggeElson</a>
-                                <ul class="dropdown-menu right" role="menu">
-                                    <li><a href="profile.html"><i class="st-user"></i> Profile</a>
-                                    </li>
-                                    <li><a href="file.html"><i class="st-cloud"></i> Files</a>
-                                    </li>
-                                    <li><a href="#"><i class="st-settings"></i> Settings</a>
-                                    </li>
-                                    <li><a href="login.html"><i class="im-exit"></i> Logout</a>
-                                    </li>
-                                </ul>
+                                    <img class="user-avatar" id="self_information" src="assets/img/avatars/48.jpg" alt="SuggeElson">SuggeElson</a>
                             </li>
                             <li id="toggle-right-sidebar-li"><a href="#" id="toggle-right-sidebar"><i class="ec-users"></i> <span class="notification">3</span></a>
                             </li>
@@ -299,7 +289,7 @@
                     </li>-->
                     <!--<li><a href="index.html">Dashboard <i class="im-screen"></i></a>
                     </li>-->
-                    <li><a href="PCharts">Charts <i class="st-chart"></i></a>
+                    <li><a href="PCharts">数据图表对比 <i class="st-chart"></i></a>
                     </li>
                     <!-- <li>
                          <a href="#"> Forms <i class="im-paragraph-justify"></i></a>
@@ -314,7 +304,7 @@
                              </li>
                          </ul>
                      </li>-->
-                    <li><a href="PData-tables"><i class="im-table2"></i> Data tables</a>
+                    <li><a href="PData-tables"><i class="im-table2"></i> 详细数据信息</a>
                         <!--<ul class="nav sub">
                             <li><a href="tables.html"><i class="en-arrow-right7"></i> Static tables</a>
                             </li>
@@ -322,7 +312,7 @@
                             </li>
                         </ul>-->
                     </li>
-                    <li><a href="PCalendar"><i class="im-calendar2"></i> Calendar</a>
+                    <li><a href="PCalendar"><i class="im-calendar2"></i> 预约日历</a>
                         <!-- <ul class="nav sub">
                              <li><a href="notifications.html"><i class="fa-bell"></i> Notifications</a>
                              </li>
@@ -706,6 +696,7 @@
                                             <tr>
                                                 <th>时间</th>
                                                 <th>医生</th>
+                                                <th style="display: none;">c_id</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -713,6 +704,7 @@
                                             <!--/*@thymesVar id="getDatatime" type=""*/-->
                                             <td th:text="${i.getTime()}"></td>
                                             <td th:text="${i.getName()}"/>
+                                            <td style="display: none" th:text="${i.getC_id()}"></td>
                                         </tr>
 
                                         </tbody>
@@ -1169,6 +1161,29 @@
             <div class="clearfix"></div>
         </div>
         <!-- End #content -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label >time</label>
+                            <input type="text" id="test2" name="txt_departmentname" class="form-control" placeholder="time">
+                            <script src="layDate/laydate/laydate.js"></script> <!-- 改成你的路径 -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><span  aria-hidden="true"></span>close</button>
+                        <button type="button" id="btn_submit" class="btn btn-primary" data-dismiss="modal"><span  aria-hidden="true"></span>save</button>
+                        <button type="button" id="btn_delete" class="btn btn-primary" data-dismiss="modal"><span  aria-hidden="true"></span>delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Javascripts -->
         <!-- Load pace first -->
         <script src="assets/plugins/core/pace/pace.min.js"></script>
@@ -1207,7 +1222,7 @@
         <script src="assets/plugins/forms/icheck/jquery.icheck.js"></script>
         <script src="assets/plugins/forms/tags/jquery.tagsinput.min.js"></script>
         <script src="assets/plugins/forms/tinymce/tinymce.min.js"></script>
-        <script src="assets/plugins/tables/datatables/jquery.dataTables.min.js"></script>
+        <script th:src="@{js/jquery.dataTables.min.js}"></script>
         <script src="assets/plugins/tables/datatables/jquery.dataTablesBS3.js"></script>
         <script src="assets/plugins/tables/datatables/tabletools/ZeroClipboard.js"></script>
         <script src="assets/plugins/tables/datatables/tabletools/TableTools.js"></script>
@@ -1215,6 +1230,6 @@
         <script src="assets/plugins/misc/countTo/jquery.countTo.js"></script>
         <script src="assets/js/jquery.sprFlat.js"></script>
         <script src="assets/js/app.js"></script>
-        <script src="assets/js/pages/data-tables.js"></script>
+        <script th:src="@{js/data-tables.js}"></script>
     </body>
 </html>

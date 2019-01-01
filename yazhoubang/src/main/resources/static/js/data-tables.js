@@ -29,7 +29,7 @@ $.extend( true, $.fn.DataTable.TableTools.DEFAULTS.oTags, {
 });
 
 //------------- Datatables -------------//
-$('#datatable').dataTable({
+var table=$('#datatable').DataTable({
 	"sPaginationType": "bs_full", //"bs_normal", "bs_two_button", "bs_four_button", "bs_full"
 	"fnPreDrawCallback": function( oSettings ) {
     	$('.dataTables_filter input').addClass('form-control input-large').attr('placeholder', 'Search');
@@ -39,11 +39,17 @@ $('#datatable').dataTable({
 	    "sSearch": "",
 	    "sLengthMenu": "<span>_MENU_ entries</span>"
 	},
+
 	"bJQueryUI": false,
 	"bAutoWidth": false,
 	"sDom": "<'row'<'col-lg-6 col-md-6 col-sm-12 text-center'l><'col-lg-6 col-md-6 col-sm-12 text-center'f>r>t<'row-'<'col-lg-6 col-md-6 col-sm-12'i><'col-lg-6 col-md-6 col-sm-12'p>>",
 });
 
+	$('#datatable tbody').on('click', 'tr', function () {
+
+		var data = table.row( this ).data();
+		alert( 'You clicked on '+data[2]+'\'s row' );
+	} );
 
 function addButton() {
 	var list = document.getElementsByClassName("table-list");
@@ -53,56 +59,13 @@ function addButton() {
 		button.innerText = "详细内容";
 		button.className = "btn btn-sm btn-primary";
 		list[i].appendChild(button);
+		button.click=function () { alert("hello,button"+i) }
 	}
 
 }
 
 	addButton();
 
-$('#datatable1').dataTable({
-	"sPaginationType": "bs_full", //"bs_normal", "bs_two_button", "bs_four_button", "bs_full"
-	"fnPreDrawCallback": function( oSettings ) {
-    	$('.dataTables_filter input').addClass('form-control input-large').attr('placeholder', 'Search');
-		$('.dataTables_length select').addClass('form-control input-small');
-    },
-    "oLanguage": {
-	    "sSearch": "",
-	    "sLengthMenu": "<span>_MENU_ entries</span>"
-	},
-	"bJQueryUI": false,
-	"bAutoWidth": false,
-	"sDom": "<'row'<'col-lg-3 col-md-3 col-sm-12 text-center'l><'col-lg-6 col-md-6 col-sm-12 text-center'T><'col-lg-3 col-md-3 col-sm-12 text-center'f>r>t<'row-'<'col-lg-6 col-md-6 col-sm-12'i><'col-lg-6 col-md-6 col-sm-12'p>>",
-	"oTableTools": {
-		"sSwfPath": "assets/plugins/tables/datatables/tabletools/swf/copy_csv_xls_pdf.swf",
-		"aButtons": [
-			{
-				"sExtends":    "print",
-				"sButtonText": '<i class="st-printer s16 vat"></i> Print',
-				"aButtons":    [ "print" ]
-			},
-			{
-				"sExtends":    "xls",
-				"sButtonText": '<i class="im-file-excel s16 vat"></i> XLS',
-				"aButtons":    [ "xls" ]
-			},
-			{
-				"sExtends":    "pdf",
-				"sButtonText": '<i class="im-file-pdf s16 vat"></i> PDF',
-				"aButtons":    [ "pdf" ]
-			},
-			{
-				"sExtends":    "csv",
-				"sButtonText": '<i class="im-file-xml s16 vat"></i> CSV',
-				"aButtons":    [ "csv" ]
-			},
-			{
-				"sExtends":    "copy",
-				"sButtonText": '<i class="im-copy s16 vat"></i> Copy',
-				"aButtons":    [ "copy" ]
-			}
-		]
-	}
-});
 
  	
 //------------- Sparklines -------------//
