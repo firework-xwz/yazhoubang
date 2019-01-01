@@ -770,7 +770,55 @@
             </div>
             <!-- End .row -->
 
+            <!-- 用户信息Modal -->
+            <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="editPatientsInfo">
+                                确认用户信息
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div align="center">
+                                <br>身份证号
+                                <br>
+                                <input type="text" class="form-control1"
+                                       style="color:#000000" id="infoid"  disabled="disabled">
+                                <br>姓名
+                                <br>
+                                <input type="text" class="form-control1"
+                                       style="color:#000000" id="infoname"  disabled="disabled">
 
+                                <br>电话
+                                <br>
+                                <input type="text" class="form-control1"
+                                       style="color:#000000" id="infophone"  disabled="disabled">
+                                <br>性别
+                                <br>
+                                <input type="text" class="form-control1"
+                                       style="color:#000000" id="infosex"  disabled="disabled">
+                                <br>生日
+                                <br>
+                                <input type="text" class="form-control1"
+                                       style="color:#000000" id="infobirth"  disabled="disabled">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">关闭
+                            </button>
+                            <button type="button" class="btn btn-primary"  onclick="confirmAddPatients()">
+                                确认添加病人
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal -->
+            </div>
 
 
 
@@ -786,9 +834,7 @@
                                 用户记录
                             </h4>
                         </div>
-
-
-                            <div class="modal-body">
+                        <div class="modal-body">
                             <div class="bs-example" data-example-id="hoverable-table">
                                 <table class="table table-hover" id="btable">
                                     <thead>
@@ -820,12 +866,8 @@
                                 </table>
                             </div>
                         </div>
-
-
-
-
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">关闭
                             </button>
                             <button type="button" class="btn btn-info" onclick="addPatientsCheckList()">
                                 新增
@@ -835,55 +877,51 @@
                     <!-- /.modal-content -->
                 </div>
                 <!-- /.modal -->
-                </div></div>
+                </div>
 
 
-            <!-- 牙周表Modal -->
-            <div class="modal fade" id="teethModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                 &times;
                             </button>
-                            <h4 class="modal-title" id="editPatientsInfo">
-                                牙周表
+                            <h4 class="modal-title">
+                                是否确认删除该病人？
                             </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div align="center">
+                                <br>身份证号
+                                <br>
+                                <input type="text" class="form-control1"
+                                       style="color:#000000" id="infoid"  disabled="disabled">
+                                <br>姓名
+                                <br>
+                                <input type="text" class="form-control1"
+                                       style="color:#000000" id="infoname"  disabled="disabled">
 
+                                <br>电话
+                                <br>
+                                <input type="text" class="form-control1"
+                                       style="color:#000000" id="infophone"  disabled="disabled">
+                                <br>性别
+                                <br>
+                                <input type="text" class="form-control1"
+                                       style="color:#000000" id="infosex"  disabled="disabled">
+                                <br>生日
+                                <br>
+                                <input type="text" class="form-control1"
+                                       style="color:#000000" id="infobirth"  disabled="disabled">
+                            </div>
                         </div>
 
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">否
                             </button>
-                            <!-- <button type="button" class="btn btn-primary"  onclick="addPatients()">
-                  提交
-                </button> -->
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal -->
-            </div>
-
-            <!-- 新增牙周表Modal -->
-            <div class="modal fade" id="addTeethModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                &times;
-                            </button>
-                            <h4 class="modal-title" id="editPatientsInfo">
-                                牙周表
-                            </h4>
-
-                        </div>
-
-                    <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                            </button>
-                            <button type="button" class="btn btn-primary" onclick="confirmAdd()">
-                                提交
+                            <button type="button" class="btn btn-primary"  onclick="confirmDelete(delPatientID)">
+                                是
                             </button>
                         </div>
                     </div>
@@ -891,6 +929,13 @@
                 </div>
                 <!-- /.modal -->
             </div>
+
+        </div>
+
+
+
+
+
 
 
             <div id="page-wrapper">
@@ -898,6 +943,11 @@
 
                     <div class="xs">
                         <h3>Patients List</h3>
+                        <div class="addPatients" align="right">
+                            <input type="text"  value="请输入身份证号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入身份证号';}"
+                                   style="color:#000000;width:120px" id="addPatients">
+                            <button type="button" class="btn btn-sm btn-info" onclick="addPatients()">AddPatients</button>
+                        </div>
                         <div class="bs-example4" data-example-id="contextual-table">
                             <table class="table" id="PatientsList">
                                 <thead>
@@ -917,10 +967,10 @@
                                         <td th:text = "${i.value.getP_id()}"></td>
                                         <td th:text = "${i.key}"></td>
                                         <td>
-                                            <button th:id="'line'+${i.value.getP_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(p_id)">Delete</button>
+                                            <button  th:attr="p_id=${i.value.getP_id()}" th:id="'line'+${i.value.getP_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(this)">Delete</button>
                                         </td>
                                         <td>
-                                            <button th:id="'line'+${i.value.getP_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#infoModal">View</button>
+                                            <button th:attr="p_id=${i.value.getP_id()}" th:id="'line'+${i.value.getP_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-info" onclick="patientCheckRecord(this)" >View</button>
                                         </td>
                                     </tr>
 
@@ -931,7 +981,7 @@
                 </div>
             </div>
         <div>
-            <input type="text" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}"
+            <input type="text" value="Search..."   onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}"
                    style="color:#000000;width:120px" id="searchPatients" >
             <button type="button" class="btn btn-sm btn-info" onclick="searchPatients()">Search</button>
         </div>
@@ -989,6 +1039,7 @@
     <script src="assets/js/app.js"></script>
     <script src="assets/js/pages/data-tables.js"></script>
     <script>
+        var delPatientID=0;
         function lineover(line) {
             $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
             seq=line.getAttribute("p_id");
@@ -996,7 +1047,6 @@
             $("#line" + seq + "view").css('display', 'block');
             $("#line" + seq + "edit").css('display', 'block');
         }
-
         //鼠标离开该行
         function lineout(line) {
             var count = 0;
@@ -1013,52 +1063,59 @@
         }
         //添加病人
         function addPatients() {
-            var pname = document.getElementById("addname");
-            var phone = document.getElementById("addphone");
-            var pid = document.getElementById("addid");
-            //TODO:发送新增信息，成功则刷新页面，失败则弹框提示
-            //success:window.location.reload(); 
-            //fail:alert("新增失败")
-        }
-        //初始化病人列表
-        function initPatientsList() {
-            //TODO:获取所有病人信息，回调函数成功则显示表格，失败则弹框提示
-            //fail:alert("初始化失败")
-            //success：
-            //传入数据格式未知，先不写
+            var pid = document.getElementById("addPatients");
+            delPatientID=pid;
+            $('#addModal').modal('show')
+            //TODO:根据id搜索病人信息并返回，显示到addModal模态框中
 
+        }
+        //确认添加病人
+        function confirmAddPatients(){
+            pid=delPatientID;
+            //TODO:发送请求，根据id添加病人到医生的表格中
         }
         //删除病人
-        function deletePatients(id) {
-            var pid = id;
-            //TODO:根据id发送删除信息，回调函数成功则刷新页面，失败则弹框提示
-            //success:window.location.reload(); 
-            //fail:alert("删除失败")
+        function deletePatients(tar) {
+            var id=tar.getAttribute("p_id");
+            console.log(id);
+            delPatientID = id;
+            $('#deleteModal').modal('show');
 
         }
-        //查看该病人的所有表格
+        //确认删除
+        function confirmDelete(id){
+            var h_id = id;
+            //TODO:根据id发送删除信息，回调函数成功则刷新页面，失败则弹框提示
+            //success:window.location.reload();
+            //fail:alert("删除失败")
+
+            delPatientID=0;
+            $('#deleteModal').modal('hide')
+        }
+
+
+        //查看病人检查记录
+        function patientCheckRecord(tar){
+            var id=tar.getAttribute("p_id");
+        //TODO:根据id获取某一病人的所有检查记录，并以表格形式显示到模态框中
+        }
+
+
+        //打开新窗口查看该病人的某一表格
         function moreInfo() {
             $('#infoModal').modal('hide')
             //$('#teethModal').modal('show')
             window.open("./表格.html");//跳转到表格网页
         }
-        //修改病人信息
-        function editInfo() {
-            var pname = document.getElementById("editname");
-            var phone = document.getElementById("editphone");
-            var pid = document.getElementById("editid");
-            //TODO:发送修改信息，成功则刷新页面，失败则弹框提示
-            //success:window.location.reload(); 
-            //fail:alert("更新失败")
-            window.location.reload();
-        }
+
         //新增检查表
         function addPatientsCheckList() {
             $('#infoModal').modal('hide')
             window.open("表格.html");//跳转到表格网页
         }
-        //确认增加检查表
-        function confirmAdd() {
+        //重置全局变量
+        function resetID(){
+            delPatientID=0;
 
         }
     </script>
