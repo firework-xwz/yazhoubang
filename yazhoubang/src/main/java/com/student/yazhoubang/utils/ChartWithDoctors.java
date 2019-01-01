@@ -13,6 +13,8 @@ public class ChartWithDoctors {
 
     private String name;
 
+    private String c_id;
+
     public Date getTime() {
         return time;
     }
@@ -27,5 +29,13 @@ public class ChartWithDoctors {
 
     public void setTime(Date time) {
         this.time = time;
+    }
+
+    public String getC_id() {
+        return c_id;
+    }
+
+    public void setC_id(String c_id) {
+        this.c_id = c_id;
     }
 }
