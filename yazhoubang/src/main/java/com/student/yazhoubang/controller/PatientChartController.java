@@ -1,7 +1,7 @@
 package com.student.yazhoubang.controller;
 
-import com.student.yazhoubang.dao.PatientChartDao;
-import com.student.yazhoubang.damain.PatientChart;
+import com.student.yazhoubang.dao.ChartDao;
+import com.student.yazhoubang.damain.Chart;
 import com.student.yazhoubang.utils.ChartUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +16,7 @@ import java.util.Map;
 public class PatientChartController {
 
     @Autowired
-    private PatientChartDao patientChartDao;
+    private ChartDao ChartDao;
     @RequestMapping(value = "/PCharts")
     public String PCharts(){return "PCharts";}
     @PostMapping(value = "/PCharts")
@@ -27,7 +27,7 @@ public class PatientChartController {
         String type=chartUtils.getName();
         String toothNumber=chartUtils.getTooth_number();
         int tooth_number=Integer.parseInt(toothNumber);
-        List<PatientChart>chart=patientChartDao.selectChartById("111111111111111111");
+        List<Chart>chart=ChartDao.selectChartById("111111111111111111");
         List<Map>result=new ArrayList<>();
         result.clear();
         if(type.equals("mobility and FI")){
