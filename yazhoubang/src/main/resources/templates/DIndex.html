@@ -432,7 +432,7 @@
             <ul id="sideNav" class="nav nav-pills nav-stacked">
                 <li>
                     <a href="DChart">
-                        <i class="en-upload"></i> 数据对比</a>
+                        <i class="en-upload"></i> 主页</a>
                     <li>
                         <a href="DIndex">
                             <i class="en-upload"></i> 患者列表</a>
@@ -934,17 +934,15 @@
 
                                 </tbody>
                             </table>
-                            <div>
-                                <button type="button" class="btn btn-sm btn-info" onclick="searchPatients()">Search</button>
-                                <form class="navbar-form navbar-brand">
-                                    <input type="text" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}"
-                                        style="color:#000000;width:100%" id="searchPatients">
-                                </form>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        <div>
+            <input type="text" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}"
+                   style="color:#000000;width:120px" id="searchPatients" >
+            <button type="button" class="btn btn-sm btn-info" onclick="searchPatients()">Search</button>
+        </div>
             <!-- col-lg-12 end here -->
 
     <!-- End .content-wrapper -->

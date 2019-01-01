@@ -851,11 +851,9 @@
                                 </tbody>
                             </table>
                             <div>
+                                <input type="text" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}"
+                                       style="color:#000000;width:120px" id="searchPatients" >
                                 <button type="button" class="btn btn-sm btn-info" onclick="searchPatients()">Search</button>
-                                <form class="navbar-form navbar-brand">
-                                    <input type="text" class="form-control1" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}"
-                                        style="color:#000000;width:100%" id="searchPatients">
-                                </form>
                             </div>
                         </div>
                     </div>

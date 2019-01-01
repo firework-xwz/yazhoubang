@@ -292,7 +292,7 @@
                 <ul id="sideNav" class="nav nav-pills nav-stacked">
                         <li>
                                 <a href="DChart">
-                                    <i class="en-upload"></i> 数据对比</a>
+                                    <i class="en-upload"></i> 主页</a>
             
             
                                 <li>
@@ -455,15 +455,14 @@
             <!-- End .sidebar-inner -->
         </div>
         <!-- End #right-sidebar -->
-        <!-- Start #content -->
         <div id="content">
             <!-- Start .content-wrapper -->
             <div class="content-wrapper">
-                <!-- Start .page-header -->
                 <div class="row">
                     <!-- Start .row -->
+                    <!-- Start .page-header -->
                     <div class="col-lg-12 heading">
-                        <h1 class="page-header"><i class="st-chart"></i> Charts</h1>
+                        <h1 class="page-header"><i class="im-screen"></i> 主页</h1>
                         <!-- Start .bredcrumb -->
                         <ul id="crumb" class="breadcrumb">
                         </ul>
@@ -520,7 +519,7 @@
                                     </div>
                                 </div>
                                 <div class="btn-group dropdown">
-                                    <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu2"><i class="ec-pencil s24"></i></a> 
+                                    <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu2"><i class="ec-pencil s24"></i></a>
                                     <div class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu2">
                                         <div class="option-dropdown">
                                             <div class="row">
@@ -560,7 +559,7 @@
                                     <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3"><i class="ec-help s24"></i></a>
                                     <div class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu3">
                                         <div class="option-dropdown">
-                                            <p>First time visitor ? <a href="#" id="app-tour" class="btn btn-success ml15">Take app tour</a> 
+                                            <p>First time visitor ? <a href="#" id="app-tour" class="btn btn-success ml15">Take app tour</a>
                                             </p>
                                             <hr>
                                             <p>Or check the <a href="#" class="btn btn-danger ml15">FAQ</a>
@@ -579,259 +578,114 @@
                     <!-- Start .outlet -->
                     <!-- Page start here ( usual with .row ) -->
                     <div class="row">
-                        <div class="col-lg-6 col-md-12">
+                        <!-- Start .row -->
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="carousel-tile carousel vertical slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="tile red">
+                                            <div class="tile-icon">
+                                                <i class="br-cart s64"></i>
+                                            </div>
+                                            <div class="tile-content">
+                                                <div class="number">107</div>
+                                                <h3>已诊断病例数</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Carousel -->
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="carousel-tile carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="tile blue">
+                                            <div class="tile-icon">
+                                                <i class="st-chat s64"></i>
+                                            </div>
+                                            <div class="tile-content">
+                                                <div class="number">24</div>
+                                                <h3>已诊断病人数</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Carousel -->
+                        </div>
+
+                    </div>
+                    <!-- End .row -->
+                    <div class="row">
+                        <!-- Start .row -->
+                        <div class="col-lg-6 col-md-6 sortable-layout">
                             <!-- Start col-lg-6 -->
-                            <div class="panel panel-primary plain toggle">
+                            <div class="panel panel-teal toggle panelMove panelClose panelRefresh">
                                 <!-- Start .panel -->
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><i class="im-bars"></i> Line chart with dots</h4>
+                                    <h4 class="panel-title"><i class="im-bars"></i> Page views</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="stats-pageviews" style="width: 100%; height:250px;"></div>
+                                </div>
+                                <div class="panel-footer teal-bg">
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="tile teal m0">
+                                            <div class="tile-content text-center pl0 pr0">
+                                                <div id="countToday" class="number">75</div>
+                                                <h3>Today</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="tile teal m0">
+                                            <div class="tile-content text-center pl0 pr0">
+                                                <div id="countYesterday" class="number">69</div>
+                                                <h3>Yesterday</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="tile teal m0">
+                                            <div class="tile-content text-center pl0 pr0">
+                                                <div id="countWeek" class="number">380</div>
+                                                <h3>This Week</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <div class="tile teal m0">
+                                            <div class="tile-content text-center pl0 pr0">
+                                                <div id="countTotal" class="number">1254</div>
+                                                <h3>Total</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End col-lg-6 -->
+                        <div class="col-lg-6 col-md-6 sortable-layout">
+                            <!-- Start col-lg-6 -->
+                            <div class="panel panel-primary plain toggle panelMove panelClose panelRefresh">
+                                <!-- Start .panel -->
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><i class="im-bars"></i> Week Earnings</h4>
                                 </div>
                                 <div class="panel-body blue-bg">
-                                    <div id="line-chart-dots" style="width: 100%; height:250px;"></div>
+                                    <div id="stats-earnings" style="width: 100%; height:250px;"></div>
                                 </div>
-                            </div>
-                            <!-- End .panel -->
-                        </div>
-                        <!-- End col-lg-6 -->
-                        <div class="col-lg-6 col-md-12">
-                            <!-- Start col-lg-6 -->
-                            <div class="panel panel-default plain toggle">
-                                <!-- Start .panel -->
-                                <div class="panel-heading white-bg">
-                                    <h4 class="panel-title"><i class="im-bars"></i> Line chart only</h4>
-                                </div>
-                                <div class="panel-body white-bg">
-                                    <div id="line-chart" style="width: 100%; height:250px;"></div>
-                                </div>
-                            </div>
-                            <!-- End .panel -->
-                        </div>
-                        <!-- End col-lg-6 -->
-                        <div class="col-lg-6 col-md-12">
-                            <!-- Start col-lg-6 -->
-                            <div class="panel panel-primary plain toggle">
-                                <!-- Start .panel -->
-                                <div class="panel-heading white-bg">
-                                    <h4 class="panel-title"><i class="im-bars"></i> Line chart filled</h4>
-                                </div>
-                                <div class="panel-body white-bg">
-                                    <div id="line-chart-filled" style="width: 100%; height:250px;"></div>
-                                </div>
-                            </div>
-                            <!-- End .panel -->
-                        </div>
-                        <!-- End col-lg-6 -->
-                        <div class="col-lg-6 col-md-12">
-                            <!-- Start col-lg-6 -->
-                            <div class="panel panel-default toggle">
-                                <!-- Start .panel -->
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><i class="im-bars"></i> Line charts style 2</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="line-chart-dots2" style="width: 100%; height:250px;"></div>
-                                </div>
-                            </div>
-                            <!-- End .panel -->
-                        </div>
-                        <!-- End col-lg-6 -->
-                        <div class="col-lg-6 col-md-12">
-                            <!-- Start col-lg-6 -->
-                            <div class="panel panel-success toggle">
-                                <!-- Start .panel -->
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><i class="im-bars"></i> Stacked Bars chart</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="bars-chart" style="width: 100%; height:250px;"></div>
-                                </div>
-                            </div>
-                            <!-- End .panel -->
-                        </div>
-                        <!-- End col-lg-6 -->
-                        <div class="col-lg-6 col-md-12">
-                            <!-- Start col-lg-6 -->
-                            <div class="panel panel-default toggle">
-                                <!-- Start .panel -->
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><i class="im-bars"></i> Ordered Bars chart</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="ordered-bars-chart" style="width: 100%; height:250px;"></div>
-                                </div>
-                            </div>
-                            <!-- End .panel -->
-                        </div>
-                        <!-- End col-lg-6 -->
-                        <div class="col-lg-6 col-md-6">
-                            <!-- Start col-lg-6 -->
-                            <div class="panel panel-default toggle">
-                                <!-- Start .panel -->
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><i class="im-pie"></i> Pie chart</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="pie-chart" style="width: 100%; height:250px;"></div>
-                                </div>
-                            </div>
-                            <!-- End .panel -->
-                        </div>
-                        <!-- End col-lg-6 -->
-                        <div class="col-lg-6 col-md-6">
-                            <!-- Start col-lg-6 -->
-                            <div class="panel panel-default toggle">
-                                <!-- Start .panel -->
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><i class="im-pie"></i> Donut chart</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="donut-chart" style="width: 100%; height:250px;"></div>
-                                </div>
-                            </div>
-                            <!-- End .panel -->
-                        </div>
-                        <!-- End col-lg-6 -->
-                    </div>
-                    <!-- End .row -->
-                    <div class="row">
-                        <!-- Start .row -->
-                        <div class="col-lg-12 col-md-12">
-                            <!-- Start col-lg-12 -->
-                            <div class="panel panel-default toggle">
-                                <!-- Start .panel -->
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><i class="im-bars"></i> Auto updating chart</h4>
-                                </div>
-                                <div class="panel-body">
-                                    <div id="autoupdate-chart" style="width: 100%; height:250px;"></div>
-                                </div>
-                            </div>
-                            <!-- End .panel -->
-                        </div>
-                        <!-- End col-lg-12 -->
-                    </div>
-                    <!-- End .row -->
-                    <div class="row">
-                        <!-- Start .row -->
-                        <div class="col-lg-12">
-                            <!-- col-lg-12 start here -->
-                            <div class="page-header">
-                                <h4><i class="im-bars s20"></i> Other chart elements</h4>
-                            </div>
-                            <div class="row">
-                                <!-- Start .row -->
-                                <div class="col-lg-6 col-md-12">
-                                    <!-- col-lg- start here -->
-                                    <div class="panel panel-default toggle">
-                                        <!-- Start .panel -->
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title"><i class="im-pie"></i> Easy pie chart</h4>
-                                        </div>
-                                        <div class="panel-body">
-                                            <div class="pie-charts">
-                                                <div class="easy-pie-chart" data-percent="45">45%</div>
-                                                <div class="label">New Visitors</div>
-                                            </div>
-                                            <div class="pie-charts red-pie">
-                                                <div class="easy-pie-chart-red" data-percent="7">7%</div>
-                                                <div class="label">Drop rate</div>
-                                            </div>
-                                            <div class="pie-charts green-pie">
-                                                <div class="easy-pie-chart-green" data-percent="28">28%</div>
-                                                <div class="label">Returning</div>
-                                            </div>
-                                            <div class="pie-charts blue-pie">
-                                                <div class="easy-pie-chart-blue" data-percent="65">65%</div>
-                                                <div class="label">From Google</div>
-                                            </div>
-                                            <div class="pie-charts teal-pie">
-                                                <div class="easy-pie-chart-teal" data-percent="23">23%</div>
-                                                <div class="label">Direct Hits</div>
-                                            </div>
-                                            <div class="pie-charts purple-pie">
-                                                <div class="easy-pie-chart-purple" data-percent="88">88%</div>
-                                                <div class="label">Ads source</div>
-                                            </div>
-                                        </div>
+                                <div class="panel-footer white-bg">
+                                    <div id="stats-category-earnings" class="col-lg-6 col-md-12" style="height:150px;">
                                     </div>
-                                    <!-- End .panel -->
-                                </div>
-                                <!-- col-lg-6 end here -->
-                                <div class="col-lg-6 col-md-12">
-                                    <!-- col-lg- start here -->
-                                    <div class="panel panel-default toggle">
-                                        <!-- Start .panel -->
-                                        <div class="panel-heading">
-                                            <h4 class="panel-title"><i class="im-bars"></i> Sparklines</h4>
-                                        </div>
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                    <!-- col-lg-3 start here -->
-                                                    <div class="tile gray-spr m0 mb20">
-                                                        <div class="tile-content text-center clearfix">
-                                                            <div class="label">Visitors last week</div>
-                                                            <div class="spark-number"><i class="ec-users"></i> 12,678</div>
-                                                            <div class="spark clearfix">
-                                                                <div class="percent"><i class="im-arrow-up-right3 color-green"></i> 3.08%</div>
-                                                                <div class="sparkline sparkline-positive"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- col-lg-3 end here -->
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                    <!-- col-lg-3 start here -->
-                                                    <div class="tile gray-spr m0 mb20">
-                                                        <div class="tile-content text-center clearfix">
-                                                            <div class="label">Time on site</div>
-                                                            <div class="spark-number"><i class="ec-clock"></i> 5m 26s</div>
-                                                            <div class="spark clearfix">
-                                                                <div class="percent"><i class="im-arrow-down-right2 color-red"></i> 10.24%</div>
-                                                                <div class="sparkline sparkline-negative"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- col-lg-3 end here -->
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                    <!-- col-lg-3 start here -->
-                                                    <div class="tile gray-spr m0 mb20">
-                                                        <div class="tile-content text-center clearfix">
-                                                            <div class="label">New visitors</div>
-                                                            <div class="spark-number"><i class="ec-users"></i> 2367</div>
-                                                            <div class="spark clearfix">
-                                                                <div class="percent"><i class="im-arrow-up-right3 color-green"></i> 84.29%</div>
-                                                                <div class="sparkline sparkline-bar-positive"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- col-lg-3 end here -->
-                                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                                    <!-- col-lg-3 start here -->
-                                                    <div class="tile gray-spr m0 mb20">
-                                                        <div class="tile-content text-center clearfix">
-                                                            <div class="label">Pages view</div>
-                                                            <div class="spark-number"><i class="fa-eye-open"></i> 2300</div>
-                                                            <div class="spark clearfix">
-                                                                <div class="percent"><i class="im-arrow-down-right2 color-red"></i> 17.65%</div>
-                                                                <div class="sparkline sparkline-bar-negative"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- col-lg-3 end here -->
-                                            </div>
-                                        </div>
+                                    <div id="stats-earnings-bars" class="col-lg-6 col-md-12" style="height:150px;">
                                     </div>
-                                    <!-- End .panel -->
                                 </div>
-                                <!-- col-lg-6 end here -->
                             </div>
-                            <!-- End .row -->
                         </div>
-                        <!-- col-lg-12 end here -->
+                        <!-- End col-lg-6 -->
                     </div>
                     <!-- End .row -->
                     <!-- Page End here -->
@@ -841,7 +695,6 @@
             <!-- End .content-wrapper -->
             <div class="clearfix"></div>
         </div>
-        <!-- End #content -->
         <!-- Javascripts -->
         <!-- Load pace first -->
         <script src="assets/plugins/core/pace/pace.min.js"></script>
