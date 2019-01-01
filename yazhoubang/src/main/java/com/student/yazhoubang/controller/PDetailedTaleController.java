@@ -1,8 +1,8 @@
 package com.student.yazhoubang.controller;
 
 import com.student.yazhoubang.damain.Patient;
-import com.student.yazhoubang.damain.PatientChart;
-import com.student.yazhoubang.dao.PatientChartDao;
+import com.student.yazhoubang.damain.Chart;
+import com.student.yazhoubang.dao.ChartDao;
 import com.student.yazhoubang.dao.PatientDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,11 +24,11 @@ public class PDetailedTaleController {
     @Autowired
     PatientDao patientDao;
     @Autowired
-    PatientChartDao patientChartDao;
+    ChartDao patientChartDao;
 
     @RequestMapping("/PDetailTable")
     public String PDetailTable(Model model,HttpSession httpSession){
-        PatientChart patientChart=patientChartDao.selectChartByCId(c_id);
+        Chart patientChart=patientChartDao.selectChartByCId(c_id);
         Patient patient=patientDao.selectPatientById((String)httpSession.getAttribute("p_id"));
         if(patientChart!=null&&patient!=null){
         //此处填入病人个人信息
@@ -86,7 +86,7 @@ public class PDetailedTaleController {
             this.c_id = c_id;
         }
         else {
-            PatientChart patientChart=patientChartDao.selectChartByCId(this.c_id);
+            Chart patientChart=patientChartDao.selectChartByCId(this.c_id);
             if (patientChart!=null){
             String[] PI_L=patientChart.getPI_L().split("\\|");
             map.put("PI_L",PI_L);

@@ -17,8 +17,9 @@ public class PatientTableController {
     @Autowired
     private ChartDao ChartDao;
     @RequestMapping("/PData-tables")
-    public String PDataTables(Model model){
-        List<String> CIdList=ChartDao.selectCIdById("111111111111111111");
+    public String PDataTables(Model model,HttpSession httpSession){
+        String p_id=(String)httpSession.getAttribute("p_id");
+        List<String> CIdList=ChartDao.selectCIdById(p_id);
         List<ChartWithDoctors>list=new ArrayList<>();
         for (int i=0;i<CIdList.size();i++){
             ChartWithDoctors chartWithDoctors=ChartDao.selectInformationByCId(CIdList.get(i));
