@@ -456,8 +456,34 @@
           </div>
           <!-- /.modal -->
         </div>
-  
-        新增牙周表Modal
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                    是否确认删除该医院？
+                </h4>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">否
+                </button>
+                <button type="button" class="btn btn-primary"  onclick="confirmDelete(delHospitalID)">
+                  是
+                </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>
+
+        <!--新增牙周表Modal-->
         <div class="modal fade" id="addTeethModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -492,13 +518,7 @@
     <div class="sidebar-inner">
         <!-- Start #sideNav -->
         <ul id="sideNav" class="nav nav-pills nav-stacked">
-            <li class="top-search">
-                <form>
-                    <input type="text" name="search" placeholder="Search ...">
-                    <button type="submit"><i class="ec-search s20"></i>
-                    </button>
-                </form>
-            </li>
+
             <li><a href="/AIndex">主页 <i class="im-screen"></i></a>
             </li>
             <li><a href="/ACheck">认证 <i class="st-chart"></i></a>
@@ -902,6 +922,9 @@
 <script src="assets/js/app.js"></script>
 <script src="assets/js/pages/data-tables.js"></script>
     <script>
+
+        var delHospitalID=0;//待删除医院id
+
         function lineover(line) {
             $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
             seq=line.getAttribute("h_id");
@@ -955,13 +978,22 @@
             //传入数据格式未知，先不写
 
         }
-        //删除病人
+        //弹出删除窗口询问是否删除
         function deletePatients(id) {
-            var pid = id;
+            delHospitalID = id;
+            $('#deleteModal').modal('show')
+            alert("aaa")
+
+        }
+        //确认删除
+        function confirmDelete(id){
+            var h_id = id;
             //TODO:根据id发送删除信息，回调函数成功则刷新页面，失败则弹框提示
-            //success:window.location.reload(); 
+            //success:window.location.reload();
             //fail:alert("删除失败")
 
+            delHospitalID=0;
+            $('#deleteModal').modal('hide')
         }
         //查看该病人的所有表格
         function moreInfo() {

@@ -431,10 +431,10 @@
             <!-- Start #sideNav -->
             <ul id="sideNav" class="nav nav-pills nav-stacked">
                 <li>
-                    <a href="DChart.html">
+                    <a href="DChart">
                         <i class="en-upload"></i> 数据对比</a>
                     <li>
-                        <a href="DIndex.html">
+                        <a href="DIndex">
                             <i class="en-upload"></i> 患者列表</a>
                     </li>
             </ul>
@@ -770,87 +770,9 @@
             </div>
             <!-- End .row -->
 
-            <!-- 修改信息modal -->
-            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                &times;
-                            </button>
-                            <h4 class="modal-title" id="editPatientsInfo">
-                                修改用户信息
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            <div align="center">
-                                <br>身份证号
-                                <br>
-                                <input type="text" class="form-control1" style="color:#000000" id="editid" disabled="disabled">
-                                <br>姓名
-                                <br>
-                                <input type="text" class="form-control1" style="color:#000000" id="editname">
 
-                                <br>电话
-                                <br>
-                                <input type="text" class="form-control1" style="color:#000000" id="editphone">
-                                <br>
-                                <br>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                            </button>
-                            <button type="button" class="btn btn-primary" onclick="editInfo()">
-                                提交更改
-                            </button>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal -->
-            </div>
 
-            <!-- 新增用户Modal -->
-            <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                &times;
-                            </button>
-                            <h4 class="modal-title" id="editPatientsInfo">
-                                修改用户信息
-                            </h4>
-                        </div>
-                        <div class="modal-body">
-                            <div align="center">
-                                <br>身份证号
-                                <br>
-                                <input type="text" class="form-control1" style="color:#000000" id="addid">
-                                <br>姓名
-                                <br>
-                                <input type="text" class="form-control1" style="color:#000000" id="addname">
 
-                                <br>电话
-                                <br>
-                                <input type="text" class="form-control1" style="color:#000000" id="addphone">
-                                <br>
-                                <br>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                            </button>
-                            <button type="button" class="btn btn-primary" onclick="addPatients()">
-                                提交
-                            </button>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal -->
-            </div>
 
             <!-- 用户表格Modal -->
             <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -863,6 +785,9 @@
                             <h4 class="modal-title" id="editPatientsInfo">
                                 用户记录
                             </h4>
+                        </div>
+
+
                             <div class="modal-body">
                             <div class="bs-example" data-example-id="hoverable-table">
                                 <table class="table table-hover" id="btable">
@@ -892,9 +817,7 @@
                                                 <button id="list2btn" type="button" class="btn btn-sm btn-info" onclick="moreInfo()">View</button>
                                             </td>
                                         </tr>
-
                                 </table>
-
                             </div>
                         </div>
 
@@ -904,15 +827,15 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                             </button>
-                            <button type="button" class="btn btn-primary" onclick="addPatientsCheckList()">
-                                新增新增
+                            <button type="button" class="btn btn-info" onclick="addPatientsCheckList()">
+                                新增
                             </button>
                         </div>
                     </div>
                     <!-- /.modal-content -->
                 </div>
                 <!-- /.modal -->
-            </div>
+                </div></div>
 
 
             <!-- 牙周表Modal -->
@@ -981,9 +904,6 @@
 
                     <div class="xs">
                         <h3>Patients List</h3>
-                        <div class="addPatients" align="right">
-                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#addModal">AddPatients</button>
-                        </div>
                         <div class="bs-example4" data-example-id="contextual-table">
                             <table class="table" id="PatientsList">
                                 <thead>
@@ -993,9 +913,8 @@
                                         <th width="20%">Phone</th>
                                         <th width="20%">ID</th>
                                         <th width="30%">Last Check</th>
-                                        <th width="5%">#Delete#</th>
-                                        <th width="5%">#Edit#</th>
-                                        <th width="5%">#View#</th>
+                                        <th width="7%">#Delete#</th>
+                                        <th width="8%">#View#</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -1009,34 +928,16 @@
                                             <button id="line1delete" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients('444444444444444444')">Delete</button>
                                         </td>
                                         <td>
-                                            <button type="button" id="line1edit" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" id="line1view" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
+                                            <button type="button" id="line1view" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#infoModal">View</button>
                                         </td>
                                     </tr>
-                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)" id="line2">
-                                        <td>2</td>
-                                        <td>张伟健</td>
-                                        <td>1333333333</td>
-                                        <td>444444444444444443</td>
-                                        <td>2017-08-24</td>
-                                        <td>
-                                            <button id="line2delete" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients('444444444444444443')">Delete</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" id="line2edit" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
-                                        </td>
-                                        <td>
-                                            <button type="button" id="line2view" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
-                                        </td>
-                                    </tr>
+
                                 </tbody>
                             </table>
                             <div>
                                 <button type="button" class="btn btn-sm btn-info" onclick="searchPatients()">Search</button>
                                 <form class="navbar-form navbar-brand">
-                                    <input type="text" class="form-control1" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}"
+                                    <input type="text" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}"
                                         style="color:#000000;width:100%" id="searchPatients">
                                 </form>
                             </div>
@@ -1045,12 +946,7 @@
                 </div>
             </div>
             <!-- col-lg-12 end here -->
-        </div>
 
-        <!-- Page End here -->
-    </div>
-    <!-- End .outlet -->
-    </div>
     <!-- End .content-wrapper -->
     <div class="clearfix"></div>
     </div>
@@ -1160,7 +1056,7 @@
         function moreInfo() {
             $('#infoModal').modal('hide')
             //$('#teethModal').modal('show')
-            window.open("表格.html");//跳转到表格网页
+            window.open("./表格.html");//跳转到表格网页
         }
         //修改病人信息
         function editInfo() {
