@@ -6,6 +6,7 @@ $(document).ready(function () {
     document.getElementById("order").style.display="none";
     var index=document.getElementById("type").selectedIndex;
     var name=document.getElementById("type").options[index].text;
+    document.getElementById("tooth_position").style.display="none";
     linechart(name,tooth_number);
     $("#type").change(function() {
         var tooth_number=$("#tooth_number").val();
@@ -178,6 +179,13 @@ function fetchLinedata(myChart,name,tooth_number){
             }
         }
     )
+    if(optionJson.length==0||optionJson==null)
+    {
+       setTimeout(function () {
+           myChart.hideLoading(),5000
+       })
+    }
+    else {
     var series=[];
         for(var j=0;j<optionJson[0].name.length;j++) {
             var data=[];
@@ -233,7 +241,7 @@ function fetchLinedata(myChart,name,tooth_number){
     $('#panel').resize(function() {
         //重置容器高宽
         myChart.resize();
-    });
+    });}
 }
 /*此处定义柱状图*/
 function orderedchart(name,tooth_number){
@@ -289,6 +297,12 @@ function fetchorderedchart(myChart,name,tooth_number){
             }
         }
     )
+    if(optionJson.length==0||optionJson==null){
+        setTimeout(function () {
+            myChart.hideLoading(),5000
+        })
+    }
+    else{
     var series=[];
     var source=[];
     var name=['name'];
@@ -327,7 +341,7 @@ function fetchorderedchart(myChart,name,tooth_number){
     $('#panel').resize(function() {
         //重置容器高宽
         myChart.resize();
-    });
+    });}
 }
 /*此处定义雷达图*/
 function  radarchart(name,tooth_number) {
@@ -394,6 +408,12 @@ function fetchradardata(myChart,name,tooth_umber) {
             }
         }
     )
+    if (optionJson.length==0||optionJson==null){
+        setTimeout(function () {
+            myChart.hideLoading(),5000
+        })
+    }
+    else{
     var indicator;
     if(name=="GI,BI and PI"){
         indicator=[
@@ -449,5 +469,5 @@ myChart.setOption({
     $('#panel').resize(function() {
         //重置容器高宽
         myChart.resize();
-    });
+    });}
 }

@@ -15,4 +15,6 @@ public interface PatientChartDao {
     public List<String>selectCIdById(String p_id);
     @Select("select time,name,c_id from yazhoubang.chart natural join yazhoubang.write natural join yazhoubang.doctor where c_id=#{c_id}")
     public ChartWithDoctors selectInformationByCId(String c_id);
+    @Select("select * from yazhoubang.chart where c_id=#{c_id}")
+    public PatientChart selectChartByCId(String c_id);
 }

@@ -48,7 +48,25 @@ var table=$('#datatable').DataTable({
 	$('#datatable tbody').on('click', 'tr', function () {
 
 		var data = table.row( this ).data();
-		alert( 'You clicked on '+data[2]+'\'s row' );
+		var postData={"where":1,
+			"c_id":data[2],};
+
+		$.ajax(
+			{
+				type:"POST",
+				url:"/PDetailTable",
+				data:postData,
+				dataType: "json",
+				async:false,
+				success:function (result) {
+					//这句要写成一行
+				},
+				error:function () {
+					console.log("fail");
+				}
+			}
+		)
+		window.open ('PDetailTable');
 	} );
 
 function addButton() {

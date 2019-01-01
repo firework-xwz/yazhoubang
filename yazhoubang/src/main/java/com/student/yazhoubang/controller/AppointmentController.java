@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,14 +27,15 @@ public class AppointmentController {
     }
     @PostMapping("/PCalendar")
     @ResponseBody
-    public Map appointmentData(@RequestBody AppointmentUtils appointmentUtils){
+    public Map appointmentData(@RequestBody AppointmentUtils appointmentUtils, HttpSession httpSession){
+        String p_id=(String)httpSession.getAttribute("p_id");
         List list=new ArrayList();
         Map map=new HashMap();
         if (appointmentUtils.getType().equals("select")){
-            Appointment appointment=appointmentDao.selectAppointemntById("111111111111111111");
+            Appointment appointment=appointmentDao.selectAppointemntById(p_id);
             if(appointment!=null){
                 if(appointment.getS_time().before(new Timestamp(System.currentTimeMillis()))){
-                    System.out.println(appointmentDao.delectAppointment("111111111111111111"));
+                    System.out.println(appointmentDao.delectAppointment(p_id));
                     map.put("status","empty");
                     map.put("type",appointmentUtils.getType());
                 }
@@ -51,19 +53,19 @@ public class AppointmentController {
             }
         }
         else if (appointmentUtils.getType().equals("delete")){
-            System.out.println(appointmentDao.delectAppointment("111111111111111111"));
+            System.out.println(appointmentDao.delectAppointment(p_id));
             map.put("status", "success");
             map.put("type",appointmentUtils.getType());
         }
         else if(appointmentUtils.getType().equals("update")){
-            System.out.println(appointmentDao.updateAppointment(appointmentUtils.getS_time(),"111111111111111111"));
+            System.out.println(appointmentDao.updateAppointment(appointmentUtils.getS_time(),p_id));
             map.put("status", "success");
             map.put("type",appointmentUtils.getType());
         }
         else if(appointmentUtils.getType().equals("insert")){
-            String d_id=appointmentDao.selectD_id("111111111111111111");
+            String d_id=appointmentDao.selectD_id(p_id);
             Appointment appointment=new Appointment();
-            appointment.setP_id("111111111111111111");
+            appointment.setP_id(p_id);
             appointment.setD_id(d_id);
             appointment.setS_time(appointmentUtils.getS_time());
             appointment.setStatus(0);

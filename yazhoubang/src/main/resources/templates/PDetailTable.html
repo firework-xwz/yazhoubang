@@ -1,0 +1,1357 @@
+﻿<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title></title>
+</head>
+<link href="assets/css/bootstrap.css" rel="stylesheet" />
+
+
+<script src="assets/js/jquery-1.8.3.min.js"></script>
+<script src="js/detailTable.js"></script>
+
+<style>
+	*{padding: 0;margin: 0;}
+	table{border-color: #ccc;text-align: center;width: 95%;float: left;height:500px}
+	td{padding: 5px 0;}
+	
+	input{width:90%;text-align: center;border: none;outline: none;}
+	.back{background: #C4E1FF;font-weight: bold;font-size: 18px;}
+	.mak{background:#C4E1FF;font-weight: bold;font-size:18px;}
+	
+	.right{float: right;width:2%;height:500px;vertical-align: middle;display: block;padding-top: 350px;}
+</style>
+<body >
+	
+	<br />
+	<br />
+	<br />
+	
+<div style="overflow: hidden;">
+			<table border="1" cellspacing="0" cellpadding="0">
+		
+		<thead>
+			<tr >
+				<td class="back" colspan="4">姓名</td>
+				<td th:text="${name}" class="back" colspan="8"></td>
+				<td class="back" colspan="4">性别</td>
+				<td th:text="${sex}" class="back" colspan="7"></td>
+				<td class="back" colspan="5">年龄</td>
+				<td th:text="${years}" class="back" colspan="8">岁</td>
+				<td class="back" colspan="5">检查日期</td>
+				<td th:text="${time}" class="back" colspan="8"></td>
+			</tr>
+		</thead>
+		<tr>
+				<td colspan="50">左侧牙  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  右侧牙</td>
+			</tr>
+		<tbody>
+			<tr>
+				<td class="back">FI</td>
+				<td th:text="${u_fi_0}"><input type="text" id="u_fi_1" value="" /></td>
+				<td th:text="${u_fi_1}"><input type="text" id="u_fi_2" value="" /></td>
+				<td th:text="${u_fi_2}"><input type="text" id="u_fi_3" value="" /></td>
+				
+				<td th:text="${u_fi_3}"><input type="text" id="u_fi_4" value="" /></td>
+				<td th:text="${u_fi_4}"><input type="text" id="u_fi_5" value="" /></td>
+				<td th:text="${u_fi_5}"><input type="text" id="u_fi_6" value="" /></td>
+				
+				<td th:text="${u_fi_6}"><input type="text" id="u_fi_7" value="" /></td>
+				<td th:text="${u_fi_7}"><input type="text" id="u_fi_8" value="" /></td>
+				<td th:text="${u_fi_8}"><input type="text" id="u_fi_9" value="" /></td>
+				
+				<td colspan="30"><input type="text" id="u_fi_10" value="" /></td>
+
+				<td th:text="${u_fi_9}"><input type="text" id="u_fi_11" value="" /></td>
+				<td th:text="${u_fi_10}"><input type="text" id="u_fi_12" value="" /></td>
+				<td th:text="${u_fi_11}"><input type="text" id="u_fi_13" value="" /></td>
+				
+				<td th:text="${u_fi_12}"><input type="text" id="u_fi_14" value="" /></td>
+				<td th:text="${u_fi_13}"><input type="text" id="u_fi_15" value="" /></td>
+				<td th:text="${u_fi_14}"><input type="text" id="u_fi_16" value="" /></td>
+				
+				<td th:text="${u_fi_15}"><input type="text" id="u_fi_17" value="" /></td>
+				<td th:text="${u_fi_16}"><input type="text" id="u_fi_18" value="" /></td>
+				<td th:text="${u_fi_17}"><input type="text" id="u_fi_19" value="" /></td>
+				
+			</tr>
+			
+			<tr>
+				<td class="back">IB</td>
+				
+				<td th:text="${ib0}" colspan="3"><input type="text" id="u_ib_1" value="" /></td>
+				<td th:text="${ib1}" colspan="3"><input type="text" id="u_ib_2" value="" /></td>
+				<td th:text="${ib2}" colspan="3"><input type="text" id="u_ib_3" value="" /></td>
+				<td th:text="${ib3}" colspan="3"><input type="text" id="u_ib_4" value="" /></td>
+				<td th:text="${ib4}" colspan="3"><input type="text" id="u_ib_5" value="" /></td>
+				<td th:text="${ib5}" colspan="3"><input type="text" id="u_ib_6" value="" /></td>
+				<td th:text="${ib6}" colspan="3"><input type="text" id="u_ib_7" value="" /></td>
+				<td th:text="${ib7}" colspan="3"><input type="text" id="u_ib_8" value="" /></td>
+				<td th:text="${ib8}" colspan="3"><input type="text" id="u_ib_9" value="" /></td>
+				<td th:text="${ib9}" colspan="3"><input type="text" id="u_ib_10" value="" /></td>
+				<td th:text="${ib10}" colspan="3"><input type="text" id="u_ib_11" value="" /></td>
+				<td th:text="${ib11}" colspan="3"><input type="text" id="u_ib_12" value="" /></td>
+				<td th:text="${ib12}" colspan="3"><input type="text" id="u_ib_13" value="" /></td>
+				<td th:text="${ib13}" colspan="3"><input type="text" id="u_ib_14" value="" /></td>
+				<td th:text="${ib14}" colspan="3"><input type="text" id="u_ib_15" value="" /></td>
+				<td th:text="${ib15}" colspan="3"><input type="text" id="u_ib_16" value="" /></td>
+				
+			</tr>
+			
+			<tr >
+				<td class="back">M</td>
+				<td th:text="${m0}" colspan="3"><input type="text" id="u_m_1" value="" /></td>
+				<td th:text="${m1}" colspan="3"><input type="text" id="u_m_2" value="" /></td>
+				<td th:text="${m2}" colspan="3"><input type="text" id="u_m_3" value="" /></td>
+				<td th:text="${m3}" colspan="3"><input type="text" id="u_m_4" value="" /></td>
+				<td th:text="${m4}" colspan="3"><input type="text" id="u_m_5" value="" /></td>
+				<td th:text="${m5}" colspan="3"><input type="text" id="u_m_6" value="" /></td>
+				<td th:text="${m6}" colspan="3"><input type="text" id="u_m_7" value="" /></td>
+				<td th:text="${m7}" colspan="3"><input type="text" id="u_m_8" value="" /></td>
+				<td th:text="${m8}" colspan="3"><input type="text" id="u_m_9" value="" /></td>
+				<td th:text="${m9}" colspan="3"><input type="text" id="u_m_10" value="" /></td>
+				<td th:text="${m10}" colspan="3"><input type="text" id="u_m_11" value="" /></td>
+				<td th:text="${m11}" colspan="3"><input type="text" id="u_m_12" value="" /></td>
+				<td th:text="${m12}" colspan="3"><input type="text" id="u_m_13" value="" /></td>
+				<td th:text="${m13}" colspan="3"><input type="text" id="u_m_14" value="" /></td>
+				<td th:text="${m14}" colspan="3"><input type="text" id="u_m_15" value="" /></td>
+				<td th:text="${m15}" colspan="3"><input type="text" id="u_m_16" value="" /></td>
+			</tr>
+			<tr>
+				<td class="back">GI</td>
+				<td th:text="${gi0}" colspan="3"><input type="text" id="u_gi_1" value="" /></td>
+				<td th:text="${gi1}" colspan="3"><input type="text" id="u_gi_2" value="" /></td>
+				<td th:text="${gi2}" colspan="3"><input type="text" id="u_gi_3" value="" /></td>
+				<td th:text="${gi3}" colspan="3"><input type="text" id="u_gi_4" value="" /></td>
+				<td th:text="${gi4}" colspan="3"><input type="text" id="u_gi_5" value="" /></td>
+				<td th:text="${gi5}" colspan="3"><input type="text" id="u_gi_6" value="" /></td>
+				<td th:text="${gi6}" colspan="3"><input type="text" id="u_gi_7" value="" /></td>
+				<td th:text="${gi7}" colspan="3"><input type="text" id="u_gi_8" value="" /></td>
+				<td th:text="${gi8}" colspan="3"><input type="text" id="u_gi_9" value="" /></td>
+				<td th:text="${gi9}" colspan="3"><input type="text" id="u_gi_10" value="" /></td>
+				<td th:text="${gi10}" colspan="3"><input type="text" id="u_gi_11" value="" /></td>
+				<td th:text="${gi11}" colspan="3"><input type="text" id="u_gi_12" value="" /></td>
+				<td th:text="${gi12}" colspan="3"><input type="text" id="u_gi_13" value="" /></td>
+				<td th:text="${gi13}" colspan="3"><input type="text" id="u_gi_14" value="" /></td>
+				<td th:text="${gi14}" colspan="3"><input type="text" id="u_gi_15" value="" /></td>
+				<td th:text="${gi15}" colspan="3"><input type="text" id="u_gi_16" value="" /></td>
+			</tr>
+			
+			
+			
+			<tr >
+				<td class="back">bPI</td>
+				<td th:text="${bPI0}" colspan="1"><input type="text" id="u_bpi1_a" value="" /></td>
+				<td th:text="${bPI1}" colspan="1"><input type="text" id="u_bpi1_b" value="" /></td>
+				<td th:text="${bPI2}" colspan="1"><input type="text" id="u_bpi1_c" value="" /></td>
+
+				<td th:text="${bPI3}" colspan="1"><input type="text" id="u_bpi2_a" value="" /></td>
+				<td th:text="${bPI4}" colspan="1"><input type="text" id="u_bpi2_b" value="" /></td>
+				<td th:text="${bPI5}" colspan="1"><input type="text" id="u_bpi2_c" value="" /></td>
+
+				<td th:text="${bPI6}" colspan="1"><input type="text" id="u_bpi3_a" value="" /></td>
+				<td th:text="${bPI7}" colspan="1"><input type="text" id="u_bpi3_b" value="" /></td>
+				<td th:text="${bPI8}" colspan="1"><input type="text" id="u_bpi3_c" value="" /></td>
+
+				<td th:text="${bPI9}" colspan="1"><input type="text" id="u_bpi4_a" value="" /></td>
+				<td th:text="${bPI10}" colspan="1"><input type="text" id="u_bpi4_b" value="" /></td>
+				<td th:text="${bPI11}" colspan="1"><input type="text" id="u_bpi4_c" value="" /></td>
+
+				<td th:text="${bPI12}" colspan="1"><input type="text" id="u_bpi5_a" value="" /></td>
+				<td th:text="${bPI13}" colspan="1"><input type="text" id="u_bpi5_b" value="" /></td>
+				<td th:text="${bPI14}" colspan="1"><input type="text" id="u_bpi5_c" value="" /></td>
+
+				<td th:text="${bPI15}" colspan="1"><input type="text" id="u_bpi6_a" value="" /></td>
+				<td th:text="${bPI16}" colspan="1"><input type="text" id="u_bpi6_b" value="" /></td>
+				<td th:text="${bPI17}" colspan="1"><input type="text" id="u_bpi6_c" value="" /></td>
+
+				<td th:text="${bPI18}" colspan="1"><input type="text" id="u_bpi7_a" value="" /></td>
+				<td th:text="${bPI19}" colspan="1"><input type="text" id="u_bpi7_b" value="" /></td>
+				<td th:text="${bPI20}" colspan="1"><input type="text" id="u_bpi7_c" value="" /></td>
+
+				<td th:text="${bPI21}" colspan="1"><input type="text" id="u_bpi8_a" value="" /></td>
+				<td th:text="${bPI22}" colspan="1"><input type="text" id="u_bpi8_b" value="" /></td>
+				<td th:text="${bPI23}" colspan="1"><input type="text" id="u_bpi8_c" value="" /></td>
+
+				<td th:text="${bPI24}" colspan="1"><input type="text" id="u_bpi9_a" value="" /></td>
+				<td th:text="${bPI25}" colspan="1"><input type="text" id="u_bpi9_b" value="" /></td>
+				<td th:text="${bPI26}" colspan="1"><input type="text" id="u_bpi9_c" value="" /></td>
+
+				<td th:text="${bPI27}" colspan="1"><input type="text" id="u_bpi10_a" value="" /></td>
+				<td th:text="${bPI28}" colspan="1"><input type="text" id="u_bpi10_b" value="" /></td>
+				<td th:text="${bPI29}" colspan="1"><input type="text" id="u_bpi10_c" value="" /></td>
+
+				<td th:text="${bPI30}" colspan="1"><input type="text" id="u_bpi11_a" value="" /></td>
+				<td th:text="${bPI31}" colspan="1"><input type="text" id="u_bpi11_b" value="" /></td>
+				<td th:text="${bPI32}" colspan="1"><input type="text" id="u_bpi11_c" value="" /></td>
+
+				<td th:text="${bPI33}" colspan="1"><input type="text" id="u_bpi12_a" value="" /></td>
+				<td th:text="${bPI34}" colspan="1"><input type="text" id="u_bpi12_b" value="" /></td>
+				<td th:text="${bPI35}" colspan="1"><input type="text" id="u_bpi12_c" value="" /></td>
+
+				<td th:text="${bPI36}" colspan="1"><input type="text" id="u_bpi13_a" value="" /></td>
+				<td th:text="${bPI37}" colspan="1"><input type="text" id="u_bpi13_b" value="" /></td>
+				<td th:text="${bPI38}" colspan="1"><input type="text" id="u_bpi13_c" value="" /></td>
+
+				<td th:text="${bPI39}" colspan="1"><input type="text" id="u_bpi14_a" value="" /></td>
+				<td th:text="${bPI40}" colspan="1"><input type="text" id="u_bpi14_b" value="" /></td>
+				<td th:text="${bPI41}" colspan="1"><input type="text" id="u_bpi14_c" value="" /></td>
+
+				<td th:text="${bPI42}" colspan="1"><input type="text" id="u_bpi15_a" value="" /></td>
+				<td th:text="${bPI43}" colspan="1"><input type="text" id="u_bpi15_b" value="" /></td>
+				<td th:text="${bPI44}" colspan="1"><input type="text" id="u_bpi15_c" value="" /></td>
+
+				<td th:text="${bPI45}" colspan="1"><input type="text" id="u_bpi16_a" value="" /></td>
+				<td th:text="${bPI46}" colspan="1"><input type="text" id="u_bpi16_b" value="" /></td>
+				<td th:text="${bPI47}" colspan="1"><input type="text" id="u_bpi16_c" value="" /></td>
+			</tr>
+
+			<tr>
+					<td class="back">lPI</td>
+					<td colspan="1"><input type="text" id="u_lpi1_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi1_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi1_c" value="" /></td>
+					
+					<td colspan="1"><input type="text" id="u_lpi2_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi2_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi2_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi3_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi3_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi3_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi4_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi4_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi4_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi5_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi5_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi5_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi6_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi6_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi6_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi7_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi7_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi7_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi8_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi8_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi8_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi9_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi9_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi9_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi10_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi10_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi10_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi11_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi11_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi11_c" value="" /></td>
+					
+					<td colspan="1"><input type="text" id="u_lpi12_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi12_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi12_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi13_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi13_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi13_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi14_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi14_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi14_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi15_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi15_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi15_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lpi16_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi16_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi16_c" value="" /></td>
+				</tr>
+				<tr><td class="back" rowspan="1"></td></tr>
+			<tr>
+				<td class="back" rowspan="1">bCEJ</td>
+				<td colspan="1"><input type="text" id="u_bcej1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej1_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="u_bcej2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej2_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej3_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej4_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej5_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej6_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej7_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej8_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej9_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej10_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej11_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="u_bcej12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej12_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej13_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej14_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej15_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bcej16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej16_c" value="" /></td>
+
+			</tr>
+			<tr>
+				<td class="back" rowspan="1">lCEJ</td>
+				<td colspan="1"><input type="text" id="u_lcej1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej1_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="u_lcej2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej2_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej3_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej4_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej5_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej6_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej7_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej8_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej9_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej10_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej11_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="u_lcej12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej12_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej13_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej14_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej15_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lcej16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej16_c" value="" /></td>
+			</tr>
+			<tr><td class="back" rowspan="1"></td></tr>
+			<tr>
+				<td class="back" rowspan="1">bBI</td>
+				<td colspan="1"><input type="text" id="u_bbi1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi1_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="u_bbi2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi2_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi3_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi4_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi5_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi6_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi7_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi8_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi9_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi10_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi11_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="u_bbi12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi12_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi13_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi14_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi15_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bbi16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi16_c" value="" /></td>
+			</tr>
+			<tr>
+					<td class="back" rowspan="1">lBI</td>
+					<td colspan="1"><input type="text" id="u_lbi1_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi1_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi1_c" value="" /></td>
+					
+					<td colspan="1"><input type="text" id="u_lbi2_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi2_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi2_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi3_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi3_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi3_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi4_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi4_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi4_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi5_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi5_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi5_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi6_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi6_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi6_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi7_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi7_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi7_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi8_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi8_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi8_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi9_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi9_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi9_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi10_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi10_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi10_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi11_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi11_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi11_c" value="" /></td>
+					
+					<td colspan="1"><input type="text" id="u_lbi12_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi12_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi12_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi13_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi13_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi13_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi14_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi14_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi14_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi15_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi15_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi15_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi16_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi16_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi16_c" value="" /></td>
+				</tr>
+				<tr><td class="back" rowspan="1"></td></tr>
+			<tr>
+				<td class="back">bPD</td>
+				
+				<td colspan="1"><input type="text" id="u_bpd1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd1_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="u_bpd2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd2_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd3_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd4_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd5_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd6_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd7_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd8_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd9_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd10_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd11_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="u_bpd12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd12_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd13_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd14_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd15_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_bpd16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd16_c" value="" /></td>
+			</tr>
+			
+			<tr>
+				<td class="back">lPD</td>
+				<td colspan="1"><input type="text" id="u_lpd1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd1_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="u_lpd2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd2_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd3_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd4_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd5_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd6_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd7_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd8_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd9_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd10_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd11_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="u_lpd12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd12_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd13_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd14_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd15_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="u_lpd16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd16_c" value="" /></td>
+				
+			</tr>
+			
+			<tr class="mak">
+				<td></td>
+				<td colspan="3">8</td>
+				<td colspan="3">7</td>
+				<td colspan="3">6</td>
+				<td colspan="3">5</td>
+				<td colspan="3">4</td>
+				<td colspan="3">3</td>
+				<td colspan="3">2</td>
+				<td colspan="3">1</td>
+				<td colspan="3">1</td>
+				<td colspan="3">2</td>
+				<td colspan="3">3</td>
+				<td colspan="3">4</td>
+				<td colspan="3">5</td>
+				<td colspan="3">6</td>
+				<td colspan="3">7</td>
+				<td colspan="3">8</td>
+			</tr>
+			
+			<tr>
+					<td class="back">lPD</td>
+					<td colspan="1"><input type="text" id="d_lpd1_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd1_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd1_c" value="" /></td>
+					
+					<td colspan="1"><input type="text" id="d_lpd2_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd2_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd2_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd3_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd3_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd3_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd4_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd4_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd4_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd5_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd5_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd5_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd6_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd6_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd6_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd7_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd7_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd7_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd8_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd8_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd8_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd9_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd9_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd9_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd10_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd10_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd10_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd11_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd11_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd11_c" value="" /></td>
+					
+					<td colspan="1"><input type="text" id="d_lpd12_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd12_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd12_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd13_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd13_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd13_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd14_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd14_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd14_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd15_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd15_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd15_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd16_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd16_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd16_c" value="" /></td>
+					
+				</tr>
+				<tr>
+						<td class="back">bPD</td>
+						
+						<td colspan="1"><input type="text" id="d_bpd1_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd1_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd1_c" value="" /></td>
+						
+						<td colspan="1"><input type="text" id="d_bpd2_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd2_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd2_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd3_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd3_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd3_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd4_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd4_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd4_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd5_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd5_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd5_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd6_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd6_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd6_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd7_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd7_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd7_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd8_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd8_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd8_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd9_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd9_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd9_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd10_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd10_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd10_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd11_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd11_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd11_c" value="" /></td>
+						
+						<td colspan="1"><input type="text" id="d_bpd12_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd12_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd12_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd13_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd13_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd13_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd14_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd14_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd14_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd15_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd15_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd15_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_bpd16_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd16_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd16_c" value="" /></td>
+					</tr>
+					<tr><td class="back" rowspan="1"></td></tr><tr></tr>
+					<tr>
+							<td class="back" rowspan="1">lBI</td>
+							<td colspan="1"><input type="text" id="d_lbi1_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi1_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi1_c" value="" /></td>
+							
+							<td colspan="1"><input type="text" id="d_lbi2_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi2_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi2_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi3_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi3_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi3_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi4_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi4_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi4_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi5_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi5_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi5_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi6_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi6_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi6_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi7_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi7_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi7_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi8_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi8_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi8_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi9_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi9_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi9_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi10_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi10_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi10_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi11_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi11_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi11_c" value="" /></td>
+							
+							<td colspan="1"><input type="text" id="d_lbi12_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi12_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi12_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi13_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi13_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi13_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi14_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi14_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi14_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi15_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi15_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi15_c" value="" /></td>
+			
+							<td colspan="1"><input type="text" id="d_lbi16_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi16_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi16_c" value="" /></td>
+						</tr>
+						
+						<tr>
+								<td class="back" rowspan="1">bBI</td>
+								<td colspan="1"><input type="text" id="d_bbi1_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi1_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi1_c" value="" /></td>
+								
+								<td colspan="1"><input type="text" id="d_bbi2_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi2_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi2_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi3_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi3_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi3_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi4_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi4_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi4_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi5_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi5_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi5_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi6_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi6_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi6_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi7_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi7_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi7_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi8_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi8_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi8_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi9_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi9_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi9_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi10_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi10_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi10_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi11_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi11_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi11_c" value="" /></td>
+								
+								<td colspan="1"><input type="text" id="d_bbi12_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi12_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi12_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi13_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi13_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi13_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi14_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi14_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi14_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi15_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi15_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi15_c" value="" /></td>
+				
+								<td colspan="1"><input type="text" id="d_bbi16_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi16_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi16_c" value="" /></td>
+							</tr>
+							<tr><td class="back" rowspan="1"></td></tr>
+							<tr>
+									<td class="back" rowspan="1">lCEJ</td>
+									<td colspan="1"><input type="text" id="d_lcej1_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej1_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej1_c" value="" /></td>
+									
+									<td colspan="1"><input type="text" id="d_lcej2_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej2_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej2_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej3_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej3_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej3_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej4_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej4_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej4_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej5_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej5_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej5_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej6_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej6_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej6_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej7_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej7_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej7_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej8_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej8_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej8_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej9_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej9_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej9_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej10_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej10_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej10_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej11_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej11_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej11_c" value="" /></td>
+									
+									<td colspan="1"><input type="text" id="d_lcej12_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej12_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej12_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej13_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej13_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej13_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej14_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej14_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej14_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej15_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej15_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej15_c" value="" /></td>
+					
+									<td colspan="1"><input type="text" id="d_lcej16_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej16_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej16_c" value="" /></td>
+								</tr>
+			<tr>
+				<td class="back" rowspan="1">bCEJ</td>
+				<td colspan="1"><input type="text" id="d_bcej1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej1_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="d_bcej2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej2_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej3_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej4_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej5_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej6_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej7_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej8_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej9_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej10_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej11_c" value="" /></td>
+				
+				<td colspan="1"><input type="text" id="d_bcej12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej12_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej13_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej14_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej15_c" value="" /></td>
+
+				<td colspan="1"><input type="text" id="d_bcej16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej16_c" value="" /></td>
+
+			</tr>
+			<tr><td class="back" rowspan="1"></td></tr>
+			
+				<tr>
+						<td class="back">lPI</td>
+						<td colspan="1"><input type="text" id="d_lpi1_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi1_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi1_c" value="" /></td>
+						
+						<td colspan="1"><input type="text" id="d_lpi2_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi2_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi2_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi3_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi3_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi3_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi4_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi4_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi4_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi5_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi5_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi5_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi6_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi6_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi6_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi7_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi7_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi7_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi8_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi8_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi8_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi9_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi9_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi9_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi10_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi10_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi10_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi11_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi11_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi11_c" value="" /></td>
+						
+						<td colspan="1"><input type="text" id="d_lpi12_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi12_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi12_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi13_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi13_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi13_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi14_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi14_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi14_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi15_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi15_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi15_c" value="" /></td>
+		
+						<td colspan="1"><input type="text" id="d_lpi16_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi16_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi16_c" value="" /></td>
+					</tr>
+					<tr>
+							<td class="back">bPI</td>
+							<td th:text="${bPI48}" colspan="1"><input type="text" id="d_bpi1_a" value="" /></td>
+							<td th:text="${bPI49}" colspan="1"><input type="text" id="d_bpi1_b" value="" /></td>
+							<td th:text="${bPI50}" colspan="1"><input type="text" id="d_bpi1_c" value="" /></td>
+							
+							<td th:text="${bPI51}" colspan="1"><input type="text" id="d_bpi2_a" value="" /></td>
+							<td th:text="${bPI52}" colspan="1"><input type="text" id="d_bpi2_b" value="" /></td>
+							<td th:text="${bPI53}" colspan="1"><input type="text" id="d_bpi2_c" value="" /></td>
+			
+							<td th:text="${bPI54}" colspan="1"><input type="text" id="d_bpi3_a" value="" /></td>
+							<td th:text="${bPI55}" colspan="1"><input type="text" id="d_bpi3_b" value="" /></td>
+							<td th:text="${bPI56}" colspan="1"><input type="text" id="d_bpi3_c" value="" /></td>
+			
+							<td th:text="${bPI57}" colspan="1"><input type="text" id="d_bpi4_a" value="" /></td>
+							<td th:text="${bPI58}" colspan="1"><input type="text" id="d_bpi4_b" value="" /></td>
+							<td th:text="${bPI59}" colspan="1"><input type="text" id="d_bpi4_c" value="" /></td>
+			
+							<td th:text="${bPI60}" colspan="1"><input type="text" id="d_bpi5_a" value="" /></td>
+							<td th:text="${bPI61}" colspan="1"><input type="text" id="d_bpi5_b" value="" /></td>
+							<td th:text="${bPI62}" colspan="1"><input type="text" id="d_bpi5_c" value="" /></td>
+			
+							<td th:text="${bPI63}" colspan="1"><input type="text" id="d_bpi6_a" value="" /></td>
+							<td th:text="${bPI64}" colspan="1"><input type="text" id="d_bpi6_b" value="" /></td>
+							<td th:text="${bPI65}" colspan="1"><input type="text" id="d_bpi6_c" value="" /></td>
+			
+							<td th:text="${bPI66}"colspan="1"><input type="text" id="d_bpi7_a" value="" /></td>
+							<td th:text="${bPI67}" colspan="1"><input type="text" id="d_bpi7_b" value="" /></td>
+							<td th:text="${bPI68}" colspan="1"><input type="text" id="d_bpi7_c" value="" /></td>
+			
+							<td th:text="${bPI69}" colspan="1"><input type="text" id="d_bpi8_a" value="" /></td>
+							<td th:text="${bPI70}" colspan="1"><input type="text" id="d_bpi8_b" value="" /></td>
+							<td th:text="${bPI71}" colspan="1"><input type="text" id="d_bpi8_c" value="" /></td>
+			
+							<td th:text="${bPI72}" colspan="1"><input type="text" id="d_bpi9_a" value="" /></td>
+							<td th:text="${bPI73}" colspan="1"><input type="text" id="d_bpi9_b" value="" /></td>
+							<td th:text="${bPI74}" colspan="1"><input type="text" id="d_bpi9_c" value="" /></td>
+			
+							<td th:text="${bPI75}" colspan="1"><input type="text" id="d_bpi10_a" value="" /></td>
+							<td th:text="${bPI76}" colspan="1"><input type="text" id="d_bpi10_b" value="" /></td>
+							<td th:text="${bPI77}" colspan="1"><input type="text" id="d_bpi10_c" value="" /></td>
+			
+							<td th:text="${bPI78}" colspan="1"><input type="text" id="d_bpi11_a" value="" /></td>
+							<td th:text="${bPI79}" colspan="1"><input type="text" id="d_bpi11_b" value="" /></td>
+							<td th:text="${bPI80}" colspan="1"><input type="text" id="d_bpi11_c" value="" /></td>
+							
+							<td th:text="${bPI81}" colspan="1"><input type="text" id="d_bpi12_a" value="" /></td>
+							<td th:text="${bPI82}" colspan="1"><input type="text" id="d_bpi12_b" value="" /></td>
+							<td th:text="${bPI83}" colspan="1"><input type="text" id="d_bpi12_c" value="" /></td>
+			
+							<td th:text="${bPI84}" colspan="1"><input type="text" id="d_bpi13_a" value="" /></td>
+							<td th:text="${bPI85}" colspan="1"><input type="text" id="d_bpi13_b" value="" /></td>
+							<td th:text="${bPI86}" colspan="1"><input type="text" id="d_bpi13_c" value="" /></td>
+			
+							<td th:text="${bPI87}" colspan="1"><input type="text" id="d_bpi14_a" value="" /></td>
+							<td th:text="${bPI88}" colspan="1"><input type="text" id="d_bpi14_b" value="" /></td>
+							<td th:text="${bPI89}"colspan="1"><input type="text" id="d_bpi14_c" value="" /></td>
+			
+							<td th:text="${bPI90}" colspan="1"><input type="text" id="d_bpi15_a" value="" /></td>
+							<td th:text="${bPI91}" colspan="1"><input type="text" id="d_bpi15_b" value="" /></td>
+							<td th:text="${bPI92}" colspan="1"><input type="text" id="d_bpi15_c" value="" /></td>
+			
+							<td th:text="${bPI93}" colspan="1"><input type="text" id="d_bpi16_a" value="" /></td>
+							<td th:text="${bPI94}" colspan="1"><input type="text" id="d_bpi16_b" value="" /></td>
+							<td th:text="${bPI95}" colspan="1"><input type="text" id="d_bpi16_c" value="" /></td>
+						</tr>
+						<tr>
+								<td class="back">GI</td>
+								<td th:text="${gi16}" colspan="3"><input type="text" id="d_gi_1" value="" /></td>
+								<td th:text="${gi17}" colspan="3"><input type="text" id="d_gi_2" value="" /></td>
+								<td th:text="${gi18}" colspan="3"><input type="text" id="d_gi_3" value="" /></td>
+								<td th:text="${gi19}" colspan="3"><input type="text" id="d_gi_4" value="" /></td>
+								<td th:text="${gi20}" colspan="3"><input type="text" id="d_gi_5" value="" /></td>
+								<td th:text="${gi21}" colspan="3"><input type="text" id="d_gi_6" value="" /></td>
+								<td th:text="${gi22}" colspan="3"><input type="text" id="d_gi_7" value="" /></td>
+								<td th:text="${gi23}" colspan="3"><input type="text" id="d_gi_8" value="" /></td>
+								<td th:text="${gi24}" colspan="3"><input type="text" id="d_gi_9" value="" /></td>
+								<td th:text="${gi25}" colspan="3"><input type="text" id="d_gi_10" value="" /></td>
+								<td th:text="${gi26}" colspan="3"><input type="text" id="d_gi_11" value="" /></td>
+								<td th:text="${gi27}" colspan="3"><input type="text" id="d_gi_12" value="" /></td>
+								<td th:text="${gi28}" colspan="3"><input type="text" id="d_gi_13" value="" /></td>
+								<td th:text="${gi29}" colspan="3"><input type="text" id="d_gi_14" value="" /></td>
+								<td th:text="${gi30}" colspan="3"><input type="text" id="d_gi_15" value="" /></td>
+								<td th:text="${gi31}" colspan="3"><input type="text" id="d_gi_16" value="" /></td>
+							</tr>
+							<tr>
+									<td class="back">M</td>
+									<td th:text="${m16}" colspan="3"><input type="text" id="d_m_1" value="" /></td>
+									<td th:text="${m17}" colspan="3"><input type="text" id="d_m_2" value="" /></td>
+									<td th:text="${m18}" colspan="3"><input type="text" id="d_m_3" value="" /></td>
+									<td th:text="${m19}" colspan="3"><input type="text" id="d_m_4" value="" /></td>
+									<td th:text="${m20}" colspan="3"><input type="text" id="d_m_5" value="" /></td>
+									<td th:text="${m21}" colspan="3"><input type="text" id="d_m_6" value="" /></td>
+									<td th:text="${m22}" colspan="3"><input type="text" id="d_m_7" value="" /></td>
+									<td th:text="${m23}" colspan="3"><input type="text" id="d_m_8" value="" /></td>
+									<td th:text="${m24}" colspan="3"><input type="text" id="d_m_9" value="" /></td>
+									<td th:text="${m25}" colspan="3"><input type="text" id="d_m_10" value="" /></td>
+									<td th:text="${m26}" colspan="3"><input type="text" id="d_m_11" value="" /></td>
+									<td th:text="${m27}" colspan="3"><input type="text" id="d_m_12" value="" /></td>
+									<td th:text="${m28}" colspan="3"><input type="text" id="d_m_13" value="" /></td>
+									<td th:text="${m29}" colspan="3"><input type="text" id="d_m_14" value="" /></td>
+									<td th:text="${m30}" colspan="3"><input type="text" id="d_m_15" value="" /></td>
+									<td th:text="${m31}" colspan="3"><input type="text" id="d_m_16" value="" /></td>
+								</tr>
+
+								<tr>
+										<td class="back">IB</td>
+										
+										<td th:text="${ib16}" colspan="3"><input type="text" id="d_ib_1" value="" /></td>
+										<td th:text="${ib17}" colspan="3"><input type="text" id="d_ib_2" value="" /></td>
+										<td th:text="${ib18}" colspan="3"><input type="text" id="d_ib_3" value="" /></td>
+										<td th:text="${ib19}" colspan="3"><input type="text" id="d_ib_4" value="" /></td>
+										<td th:text="${ib20}" colspan="3"><input type="text" id="d_ib_5" value="" /></td>
+										<td th:text="${ib21}" colspan="3"><input type="text" id="d_ib_6" value="" /></td>
+										<td th:text="${ib22}" colspan="3"><input type="text" id="d_ib_7" value="" /></td>
+										<td th:text="${ib23}" colspan="3"><input type="text" id="d_ib_8" value="" /></td>
+										<td th:text="${ib24}" colspan="3"><input type="text" id="d_ib_9" value="" /></td>
+										<td th:text="${ib25}" colspan="3"><input type="text" id="d_ib_10" value="" /></td>
+										<td th:text="${ib26}" colspan="3"><input type="text" id="d_ib_11" value="" /></td>
+										<td th:text="${ib27}" colspan="3"><input type="text" id="d_ib_12" value="" /></td>
+										<td th:text="${ib28}" colspan="3"><input type="text" id="d_ib_13" value="" /></td>
+										<td th:text="${ib29}" colspan="3"><input type="text" id="d_ib_14" value="" /></td>
+										<td th:text="${ib30}" colspan="3"><input type="text" id="d_ib_15" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_16" value="" /></td>
+										
+									</tr>
+						<tr>
+							
+								<td class="back">FI</td>
+								<td th:text="${d_fi_0}"><input type="text" id="d_fi_1" value="" /></td>
+								<td th:text="${d_fi_1}"><input type="text" id="d_fi_2" value="" /></td>
+								<td th:text="${d_fi_2}"><input type="text" id="d_fi_3" value="" /></td>
+								
+								<td th:text="${d_fi_3}"><input type="text" id="d_fi_4" value="" /></td>
+								<td th:text="${d_fi_4}"><input type="text" id="d_fi_5" value="" /></td>
+								<td th:text="${d_fi_5}"><input type="text" id="d_fi_6" value="" /></td>
+								
+								<td th:text="${d_fi_6}"><input type="text" id="d_fi_7" value="" /></td>
+								<td th:text="${d_fi_7}"><input type="text" id="d_fi_8" value="" /></td>
+								<td th:text="${d_fi_8}"><input type="text" id="d_fi_9" value="" /></td>
+								
+								<td colspan="30"><input type="text" id="d_fi_10" value="" /></td>
+				
+								<td th:text="${d_fi_9}"><input type="text" id="d_fi_11" value="" /></td>
+								<td th:text="${d_fi_10}"><input type="text" id="d_fi_12" value="" /></td>
+								<td th:text="${d_fi_11}"><input type="text" id="d_fi_13" value="" /></td>
+								
+								<td th:text="${d_fi_12}"><input type="text" id="d_fi_14" value="" /></td>
+								<td th:text="${d_fi_13}"><input type="text" id="d_fi_15" value="" /></td>
+								<td th:text="${d_fi_14}"><input type="text" id="d_fi_16" value="" /></td>
+								
+								<td th:text="${d_fi_15}"><input type="text" id="d_fi_17" value="" /></td>
+								<td th:text="${d_fi_16}"><input type="text" id="d_fi_18" value="" /></td>
+								<td th:text="${d_fi_17}"><input type="text" id="d_fi_19" value="" /></td>
+								
+							</tr>
+							
+							
+							
+						
+							
+					
+		</tbody>
+		
+		
+		<tfoot>
+
+		</tfoot>	
+	
+	</table>
+	<div class="right">
+		上颌牙   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<br><br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>    下颌牙
+	</div>
+
+	<br><br><br><br><br>
+</div>	
+
+</body>
+
+<script>
+	$(function(){
+		$('input[type="text"]').attr('disabled','disabled');
+		
+	});
+</script>
+</html>
