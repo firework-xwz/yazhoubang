@@ -852,9 +852,6 @@
 
                         </div>
 
-
-
-
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                             </button>
@@ -882,10 +879,7 @@
 
                         </div>
 
-
-
-
-                        <div class="modal-footer">
+                    <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                             </button>
                             <button type="button" class="btn btn-primary" onclick="confirmAdd()">
@@ -908,7 +902,6 @@
                             <table class="table" id="PatientsList">
                                 <thead>
                                     <tr>
-                                        <th width="5%">#</th>
                                         <th width="10%">Name</th>
                                         <th width="20%">Phone</th>
                                         <th width="20%">ID</th>
@@ -918,17 +911,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)" id="line1">
-                                        <td>1</td>
-                                        <td>刘德华</td>
-                                        <td>18916271729</td>
-                                        <td>444444444444444444</td>
-                                        <td>2018-08-24</td>
+                                    <tr th:attr="p_id=${i.value.getP_id()}" th:each="i:${patientList}" onmouseenter="lineover(this)" onmouseleave="lineout(this)">
+                                        <td th:text = "${i.value.getName()}"></td>
+                                        <td th:text = "${i.value.getPhone_num()}"></td>
+                                        <td th:text = "${i.value.getP_id()}"></td>
+                                        <td th:text = "${i.key}"></td>
                                         <td>
-                                            <button id="line1delete" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients('444444444444444444')">Delete</button>
+                                            <button th:id="'line'+${i.value.getP_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(p_id)">Delete</button>
                                         </td>
                                         <td>
-                                            <button type="button" id="line1view" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#infoModal">View</button>
+                                            <button th:id="'line'+${i.value.getP_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#infoModal">View</button>
                                         </td>
                                     </tr>
 
@@ -999,8 +991,7 @@
     <script>
         function lineover(line) {
             $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
-
-            seq = $(line).find("td:eq(0)").html();
+            seq=line.getAttribute("p_id");
             $("#line" + seq + "delete").css('display', 'block');
             $("#line" + seq + "view").css('display', 'block');
             $("#line" + seq + "edit").css('display', 'block');
@@ -1010,15 +1001,10 @@
         function lineout(line) {
             var count = 0;
             $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
-            var seq = $(line).children("td").html();
-            $("#PatientsList tr").each(
-                function () {
-                    var seq = parseInt($(this).children("td").html());
-                    $("#line" + seq + "delete").css('display', 'none');
-                    $("#line" + seq + "view").css('display', 'none');
-                    $("#line" + seq + "edit").css('display', 'none');
-                }
-            );
+            seq=line.getAttribute("p_id");
+            $("#line" + seq + "delete").css('display', 'none');
+            $("#line" + seq + "view").css('display', 'none');
+            $("#line" + seq + "edit").css('display', 'none');
         }
         //搜索病人
         function searchPatients() {

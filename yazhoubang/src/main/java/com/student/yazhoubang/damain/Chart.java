@@ -11,7 +11,7 @@ import java.sql.Date;
 
 @Table(name = "chart")
 @Entity
-public class PatientChart {
+public class Chart {
     @Id
     private int c_id;
     @Column(nullable = false)

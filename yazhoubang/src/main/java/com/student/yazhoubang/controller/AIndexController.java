@@ -17,6 +17,7 @@ public class AIndexController {
     @Autowired
     private HospitalDao hospitalDao;
 
+
     @RequestMapping("AIndex")
     public String AIndex(Model model){
         return "AIndex";
