@@ -10,7 +10,7 @@ $(document).ready(function () {
             async:false,
             success:function (result) {
                 //这句要写成一行
-                if (result!=null&&result.length>0) {
+                if (result!=null) {
                     var PI_L = result.PI_L;
                     for (var i = 0; i < PI_L.length; i++) {
                         if (i < 48) {
