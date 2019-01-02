@@ -143,7 +143,6 @@ var haveEvents=0;
 				alert("请先完成已有预约");
 			}
 			else{
-			haveEvents=1;
 			var data={
 				"id":1,
 				"s_time":$.fullCalendar.formatDate(date,"yyyy-MM-dd HH:mm:ss"),
@@ -156,11 +155,18 @@ var haveEvents=0;
 					contentType: "application/json;charset=utf-8",
 					data:data,
 					success:function (result) {
-						copiedEventObject.title="等待回复";
-						copiedEventObject.id=$.fullCalendar.formatDate(date,"yyyy-MM-dd HH:mm:ss");
-						haveEvents=1;
-						$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
-						alert("提交成功");
+						if(result.status=="noD_id")
+						{
+							alert("您还没有医师");
+						}
+						else {
+							haveEvents=1;
+							copiedEventObject.title = "等待回复";
+							copiedEventObject.id = $.fullCalendar.formatDate(date, "yyyy-MM-dd HH:mm:ss");
+							haveEvents = 1;
+							$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+							alert("提交成功");
+						}
 
 					},
 					error:function () {

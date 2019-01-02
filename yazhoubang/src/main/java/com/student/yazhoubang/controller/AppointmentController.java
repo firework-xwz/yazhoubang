@@ -83,14 +83,18 @@ public class AppointmentController {
         }
         else if(appointmentUtils.getType().equals("insert")){
             String d_id=appointmentDao.selectD_id(p_id);
-            Appointment appointment=new Appointment();
-            appointment.setP_id(p_id);
-            appointment.setD_id(d_id);
-            appointment.setS_time(appointmentUtils.getS_time());
-            appointment.setStatus(0);
-            System.out.println(appointmentDao.insertAppointment(appointment));
-            map.put("status", "success");
-            map.put("type",appointmentUtils.getType());
+            if(d_id!=null) {
+                Appointment appointment = new Appointment();
+                appointment.setP_id(p_id);
+                appointment.setD_id(d_id);
+                appointment.setS_time(appointmentUtils.getS_time());
+                appointment.setStatus(0);
+                System.out.println(appointmentDao.insertAppointment(appointment));
+                map.put("status", "success");
+                map.put("type", appointmentUtils.getType());
+            }
+            else
+                map.put("status","noD_id");
         }
        return map;
     }
