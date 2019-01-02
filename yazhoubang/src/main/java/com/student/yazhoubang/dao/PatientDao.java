@@ -23,7 +23,9 @@ public interface PatientDao {
     @Select("select p_id from patient")
     public String[] getAllId();
     @Select("select name,phone_num from yazhoubang.doctor natural join yazhoubang.cure where p_id=#{p_id}")
-    public String[]selectDoctorBypId(String p_id);
+    public List<String>selectDoctorBypId(String p_id);
+    @Select("select phone_num from yazhoubang.doctor natural join yazhoubang.cure where p_id=#{p_id}")
+    public String selectDphone(String p_id);
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern="yyyy-MM-dd")
     @Select("select birthday from patient where p_id=#{p_id}")

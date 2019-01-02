@@ -13,12 +13,22 @@ $(document).ready(function () {
     document.getElementById("order").style.display="none";
     var index=document.getElementById("type").selectedIndex;
     var name=document.getElementById("type").options[index].text;
-    document.getElementById("tooth_position").style.display="none";
     linechart(name,tooth_number);
     $("#type").change(function() {
-        var tooth_number=$("#tooth_number").val();
+        var index=document.getElementById("tooth_number").selectedIndex;
+        var tooth_number=document.getElementById("tooth_number").options[index].text;
+        if( parseInt(tooth_number)>12){
+            document.getElementById("maf").style.display="none";
+            if(name=="mobility and FI")
+                $("#type ").get(0).selectedIndex=1;
+        }
+        else {
+            document.getElementById("maf").style.display="inline-block";
+        }
         var type=$("#type").val();
         if(type=="maf"){
+            document.getElementById("position").style.display="none";
+            document.getElementById("tooth_position").style.display="none";
             var index=document.getElementById("tooth_number").selectedIndex;
             var tooth_number=document.getElementById("tooth_number").options[index].text;
             var index=document.getElementById("type").selectedIndex;
@@ -26,11 +36,15 @@ $(document).ready(function () {
             var index=document.getElementById("chart-type").selectedIndex;
             var chart=document.getElementById("chart-type").options[index].text;
             document.getElementById("zx").style.display="inline-block";
+            if(chart!="折线图")
+                $("#chart-type ").get(0).selectedIndex=1;
             document.getElementById("ld").style.display="none";
             document.getElementById("order").style.display="none";
                 linechart(name,tooth_number);
         }
         else if(type=="im"){
+            document.getElementById("position").style.display="none";
+            document.getElementById("tooth_position").style.display="none";
             var index=document.getElementById("tooth_number").selectedIndex;
             var tooth_number=document.getElementById("tooth_number").options[index].text;
             var index=document.getElementById("type").selectedIndex;
@@ -38,11 +52,15 @@ $(document).ready(function () {
             var index=document.getElementById("chart-type").selectedIndex;
             var chart=document.getElementById("chart-type").options[index].text;
             document.getElementById("zx").style.display="inline-block";
+            if(chart!="折线图")
+                $("#chart-type ").get(0).selectedIndex=1;
             document.getElementById("ld").style.display="none";
             document.getElementById("order").style.display="none";
                 linechart(name,tooth_number);
         }
         else if(type=="GBP"){
+            document.getElementById("position").style.display="inline-block";
+            document.getElementById("tooth_position").style.display="inline-block";
             var index=document.getElementById("tooth_number").selectedIndex;
             var tooth_number=document.getElementById("tooth_number").options[index].text;
             var index=document.getElementById("type").selectedIndex;
@@ -87,6 +105,14 @@ $(document).ready(function () {
         var index=document.getElementById("tooth_number").selectedIndex;
         var tooth_number=document.getElementById("tooth_number").options[index].text;
         var chart=$("#chart-type").val();
+        if( parseInt(tooth_number)>12){
+            document.getElementById("maf").style.display="none";
+            if(name=="mobility and FI")
+                $("#type ").get(0).selectedIndex=1;
+        }
+        else {
+            document.getElementById("maf").style.display="inline-block";
+        }
     if(chart=="zx"){
             var index=document.getElementById("type").selectedIndex;
             var name=document.getElementById("type").options[index].text;
@@ -110,6 +136,39 @@ $(document).ready(function () {
         var name=document.getElementById("type").options[index].text;
         var index=document.getElementById("chart-type").selectedIndex;
         var chart=document.getElementById("chart-type").options[index].text;
+        if( parseInt(tooth_number)>12){
+            document.getElementById("maf").style.display="none";
+            if(name=="mobility and FI")
+                $("#type ").get(0).selectedIndex=1;
+        }
+        else {
+            document.getElementById("maf").style.display="inline-block";
+        }
+        if(chart=="折线图"){
+            linechart(name,tooth_number);
+        }
+        else if(chart=="雷达图"){
+            radarchart(name,tooth_number);
+        }
+        else if(chart=="柱状图"){
+            orderedchart(name,tooth_number);
+        }
+    })
+    $("#tooth_position").change(function () {
+        var index=document.getElementById("tooth_number").selectedIndex;
+        var tooth_number=document.getElementById("tooth_number").options[index].text;
+        var index=document.getElementById("type").selectedIndex;
+        var name=document.getElementById("type").options[index].text;
+        var index=document.getElementById("chart-type").selectedIndex;
+        var chart=document.getElementById("chart-type").options[index].text;
+        if( parseInt(tooth_number)>12){
+            document.getElementById("maf").style.display="none";
+            if(name=="mobility and FI")
+                $("#type ").get(0).selectedIndex=1;
+        }
+        else {
+            document.getElementById("maf").style.display="inline-block";
+        }
         if(chart=="折线图"){
             linechart(name,tooth_number);
         }
@@ -165,10 +224,22 @@ function linechart(name,tooth_number) {
     });
 }
 function fetchLinedata(myChart,name,tooth_number){
-    var postdata={
-        "name":name,
-        "tooth_number":tooth_number
-    };
+    if(name=="GI,BI and PI"||name=="PD and CEJ") {
+        var index = document.getElementById("tooth_position").selectedIndex;
+        var position = document.getElementById("tooth_position").options[index].text;
+        var postdata = {
+            "name": name,
+            "tooth_number": tooth_number,
+            "tooth_position":position
+        };
+    }
+    else {
+        var postdata = {
+            "name": name,
+            "tooth_number": tooth_number,
+            "tooth_position":-1
+        };
+    }
     postdata=JSON.stringify(postdata);
     var optionJson=[];
     $.ajax(
@@ -284,9 +355,22 @@ function orderedchart(name,tooth_number){
     });
 }
 function fetchorderedchart(myChart,name,tooth_number){
-    var postdata={
-        "name":name,
-    "tooth_number":tooth_number};
+    if(name=="GI,BI and PI"||name=="PD and CEJ") {
+        var index = document.getElementById("tooth_position").selectedIndex;
+        var position = document.getElementById("tooth_position").options[index].text;
+        var postdata = {
+            "name": name,
+            "tooth_number": tooth_number,
+            "tooth_position":position
+        };
+    }
+    else {
+        var postdata = {
+            "name": name,
+            "tooth_number": tooth_number,
+            "tooth_position":-1
+        };
+    }
     postdata=JSON.stringify(postdata);
     var optionJson=[];
     $.ajax(
@@ -394,10 +478,24 @@ function  radarchart(name,tooth_number) {
         myChart.resize();
     });
 }
-function fetchradardata(myChart,name,tooth_umber) {
-    var postdata={
-        "name":name,
-    "tooth_number":tooth_umber};
+function fetchradardata(myChart,name,tooth_number) {
+    var postdata;
+    if(name=="GI,BI and PI"||name=="PD and CEJ") {
+        var index = document.getElementById("tooth_position").selectedIndex;
+        var position = document.getElementById("tooth_position").options[index].text;
+        postdata = {
+            "name": name,
+            "tooth_number": tooth_number,
+            "tooth_position":position
+        };
+    }
+    else {
+        postdata = {
+            "name": name,
+            "tooth_number": tooth_number,
+            "tooth_position":-1
+        };
+    }
     postdata=JSON.stringify(postdata);
     var optionJson=[];
     $.ajax(

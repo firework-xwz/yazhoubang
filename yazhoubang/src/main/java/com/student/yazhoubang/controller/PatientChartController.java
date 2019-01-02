@@ -28,7 +28,8 @@ public class PatientChartController {
     public String PCharts(Model model, HttpSession httpSession){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String p_id=(String)httpSession.getAttribute("id");
-        String[] doctorinformation=patientDao.selectDoctorBypId(p_id);
+        List<String> doctorinformation=patientDao.selectDoctorBypId(p_id);
+        String Dphone=patientDao.selectDphone(p_id);
         Patient patient =patientDao.selectPatientById(p_id);
         model.addAttribute("patientName",patient.getName());
         if(patient.getSex()==0){
@@ -37,9 +38,9 @@ public class PatientChartController {
         else
             model.addAttribute("patientSex","女");
         model.addAttribute("birthday", patientDao.selectBirthdaybyId(p_id));
-        if(doctorinformation!=null&&doctorinformation.length>0) {
-            model.addAttribute("doctorName", doctorinformation[0]);
-            model.addAttribute("doctorPhone", doctorinformation[1]);
+        if(doctorinformation!=null&&doctorinformation.size()>0) {
+            model.addAttribute("doctorName", doctorinformation.get(0));
+            model.addAttribute("doctorPhone", Dphone);
         }
         return "PCharts";}
     @PostMapping(value = "/PCharts")
@@ -115,16 +116,16 @@ public class PatientChartController {
                     data.add(GI[tooth_number]);
                     name.add("BI_B");
                     String[] BI_B = chart.get(i).getBI_B().split("\\|");
-                    data.add(BI_B[(tooth_number - 1) * 3 + 1]);
+                    data.add(BI_B[(tooth_number - 1) * 3 + Integer.parseInt(chartUtils.getTooth_position())]);
                     name.add("BI_L");
                     String[] BI_L = chart.get(i).getBI_L().split("\\|");
-                    data.add(BI_L[(tooth_number - 1) * 3 + 1]);
+                    data.add(BI_L[(tooth_number - 1) * 3 + Integer.parseInt(chartUtils.getTooth_position())]);
                     name.add("PI_B");
                     String[] PI_B = chart.get(i).getPI_B().split("\\|");
-                    data.add(PI_B[(tooth_number - 1) * 3 + 1]);
+                    data.add(PI_B[(tooth_number - 1) * 3 + Integer.parseInt(chartUtils.getTooth_position())]);
                     name.add("PI_L");
                     String[] PI_L = chart.get(i).getPI_L().split("\\|");
-                    data.add(PI_L[(tooth_number - 1) * 3 + 1]);
+                    data.add(PI_L[(tooth_number - 1) * 3 + Integer.parseInt(chartUtils.getTooth_position())]);
                     map.put("name", name);
                     map.put("data", data);
                     map.put("status", "success");
@@ -138,16 +139,16 @@ public class PatientChartController {
                     ArrayList data = new ArrayList();
                     name.add("PD_B");
                     String[] PD_B = chart.get(i).getPD_B().split("\\|");
-                    data.add(PD_B[(tooth_number - 1) * 3 + 1]);
+                    data.add(PD_B[(tooth_number - 1) * 3 + Integer.parseInt(chartUtils.getTooth_position())]);
                     name.add("PD_L");
                     String[] PD_L = chart.get(i).getPD_L().split("\\|");
-                    data.add(PD_L[(tooth_number - 1) * 3 + 1]);
+                    data.add(PD_L[(tooth_number - 1) * 3 + Integer.parseInt(chartUtils.getTooth_position())]);
                     name.add("CEJ_B");
                     String[] CEJ_B = chart.get(i).getCEJ_B().split("\\|");
-                    data.add(CEJ_B[(tooth_number - 1) * 3 + 1]);
+                    data.add(CEJ_B[(tooth_number - 1) * 3 + Integer.parseInt(chartUtils.getTooth_position())]);
                     name.add("CEJ_L");
                     String[] CEJ_L = chart.get(i).getCEJ_L().split("\\|");
-                    data.add(CEJ_L[(tooth_number - 1) * 3 + 1]);
+                    data.add(CEJ_L[(tooth_number - 1) * 3 + Integer.parseInt(chartUtils.getTooth_position())]);
                     map.put("name", name);
                     map.put("data", data);
                     map.put("status", "success");

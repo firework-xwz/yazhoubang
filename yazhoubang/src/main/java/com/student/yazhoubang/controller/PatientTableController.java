@@ -23,7 +23,8 @@ public class PatientTableController {
     @RequestMapping("/PData-tables")
     public String PDataTables(Model model,HttpSession httpSession){
         String p_id=(String)httpSession.getAttribute("id");
-        String[] doctorinformation=patientDao.selectDoctorBypId(p_id);
+        List<String> doctorinformation=patientDao.selectDoctorBypId(p_id);
+        String Dphone=patientDao.selectDphone(p_id);
         Patient patient =patientDao.selectPatientById(p_id);
         model.addAttribute("patientName",patient.getName());
         if(patient.getSex()==0){
@@ -32,9 +33,9 @@ public class PatientTableController {
         else
             model.addAttribute("patientSex","女");
         model.addAttribute("birthday", patientDao.selectBirthdaybyId(p_id));
-        if(doctorinformation!=null&&doctorinformation.length>0) {
-            model.addAttribute("doctorName", doctorinformation[0]);
-            model.addAttribute("doctorPhone", doctorinformation[1]);
+        if(doctorinformation!=null&&doctorinformation.size()>0) {
+            model.addAttribute("doctorName", doctorinformation.get(0));
+            model.addAttribute("doctorPhone", Dphone);
         }
         List<String> CIdList=ChartDao.selectCIdById(p_id);
         List<ChartWithDoctors>list=new ArrayList<>();
