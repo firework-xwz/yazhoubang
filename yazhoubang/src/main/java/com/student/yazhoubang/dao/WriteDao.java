@@ -10,6 +10,6 @@ public interface WriteDao {
     public Integer addWrite(@Param("d_id") String d_id, @Param("c_id") String c_id, @Param("w_time") String w_time);
     @Delete("delete from write where d_id=#{d_id}")
     public Integer deleteWrite(String d_id);
-    @Select("select c_id from write where d_id=#{d_id}")
+    @Select("select c_id from yazhoubang.`write` where d_id=#{d_id}")
     public List<Integer> selectCByD(String d_id);
 }
