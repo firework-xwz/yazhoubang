@@ -786,24 +786,24 @@
                             <div align="center">
                                 <br>身份证号
                                 <br>
-                                <input type="text" class="form-control1"
+                                <input th:text="ans.getP_id()" class="form-control1"
                                        style="color:#000000" id="infoid"  disabled="disabled">
                                 <br>姓名
                                 <br>
-                                <input type="text" class="form-control1"
+                                <input th:text="ans.getName()" class="form-control1"
                                        style="color:#000000" id="infoname"  disabled="disabled">
 
                                 <br>电话
                                 <br>
-                                <input type="text" class="form-control1"
+                                <input th:text="ans.getPhone_num()" class="form-control1"
                                        style="color:#000000" id="infophone"  disabled="disabled">
                                 <br>性别
                                 <br>
-                                <input type="text" class="form-control1"
+                                <input th:text="ans.getSex()" class="form-control1"
                                        style="color:#000000" id="infosex"  disabled="disabled">
                                 <br>生日
                                 <br>
-                                <input type="text" class="form-control1"
+                                <input th:text="ans.getBirthday()" class="form-control1"
                                        style="color:#000000" id="infobirth"  disabled="disabled">
                             </div>
                         </div>
@@ -1063,11 +1063,24 @@
         }
         //添加病人
         function addPatients() {
-            var pid = document.getElementById("addPatients");
+            var pid = $("#addPatients").val();
             delPatientID=pid;
             $('#addModal').modal('show')
             //TODO:根据id搜索病人信息并返回，显示到addModal模态框中
-
+            console.log(pid);
+            var data = {"p_id":pid};
+            $.ajax({
+                type:"POST",
+                url:"/DIndex/addPatient",
+                dataType:"json",
+                data:data,
+                success:function (ans) {
+                    console.log("success");
+                },
+                error:function () {
+                    console.log("fail");
+                }
+            })
         }
         //确认添加病人
         function confirmAddPatients(){

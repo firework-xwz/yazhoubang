@@ -2,6 +2,8 @@ package com.student.yazhoubang.dao;
 
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 @Mapper
 public interface WriteDao {
     @Insert("insert into write (d_id,c_id,w_time)values(#{d_id},#{c_id}),#{w_time}")
@@ -9,5 +11,5 @@ public interface WriteDao {
     @Delete("delete from write where d_id=#{d_id}")
     public Integer deleteWrite(String d_id);
     @Select("select c_id from write where d_id=#{d_id}")
-    public String selectCByD(String d_id);
+    public List<Integer> selectCByD(String d_id);
 }
