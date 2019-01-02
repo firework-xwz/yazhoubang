@@ -50,6 +50,7 @@ public class DIndexController {
             last_checkList.add(cureDao.selectLByP(tp_id));
             map.put(((LinkedList<String>) last_checkList).getLast(),((LinkedList<Patient>) patientList).getLast());
         }
+        System.out.println("---------------123---------------------");
         model.addAttribute("patientList",map);
         return "DIndex";
     }
