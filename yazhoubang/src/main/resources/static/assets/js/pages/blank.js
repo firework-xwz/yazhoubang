@@ -20,6 +20,12 @@ $(document).ready(function() {
 		textcolor: '#5a5e63',
 		gray: objColors.gray
 	}
+	$('#patient').click(function(){
+		$('#example-modal').modal('show');
+	})
+	$('#close').click(function () {
+		$('#example-modal').modal('hide')
+	})
 
 	//------------- Sparklines -------------//
 	$('#usage-sparkline').sparkline([35,46,24,56,68, 35,46,24,56,68], {

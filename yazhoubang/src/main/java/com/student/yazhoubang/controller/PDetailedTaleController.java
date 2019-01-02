@@ -20,7 +20,7 @@ import java.util.Map;
 
 @Controller
 public class PDetailedTaleController {
-    private String c_id;
+    private String c_id="1";
     @Autowired
     PatientDao patientDao;
     @Autowired
@@ -29,7 +29,7 @@ public class PDetailedTaleController {
     @RequestMapping("/PDetailTable")
     public String PDetailTable(Model model,HttpSession httpSession){
         Chart patientChart=patientChartDao.selectChartByCId(c_id);
-        Patient patient=patientDao.selectPatientById((String)httpSession.getAttribute("p_id"));
+        Patient patient=patientDao.selectPatientById((String)httpSession.getAttribute("id"));
         if(patientChart!=null&&patient!=null){
         //此处填入病人个人信息
        model.addAttribute("name",patient.getName());

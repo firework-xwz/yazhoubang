@@ -14,11 +14,11 @@ function login() {
             if(result.status==0){
                 if(result.msg=="admin"){
                     window.location.href="/AIndex";
-                }else if(result.msg=="doctor"){
-                    window.location.href="/DChart";
+                }else if(result.msg=="doctor") {
+                    window.location.href = "/DChart";
                 }
-                else {
-                    window.location.href="/main"
+                else if(result.msg=="patient"){
+                    window.location.href="/PatientHome"
                 }
             }
         },

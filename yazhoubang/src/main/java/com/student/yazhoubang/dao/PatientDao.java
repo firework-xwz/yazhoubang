@@ -1,9 +1,12 @@
 package com.student.yazhoubang.dao;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.student.yazhoubang.damain.Patient;
 import org.apache.ibatis.annotations.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.criteria.CriteriaBuilder;
+import java.sql.Date;
 import java.util.List;
 
 @Mapper
@@ -19,4 +22,10 @@ public interface PatientDao {
     public List<Patient> getAll();
     @Select("select p_id from patient")
     public String[] getAllId();
+    @Select("select name,phone_num from yazhoubang.doctor natural join yazhoubang.cure where p_id=#{p_id}")
+    public String[]selectDoctorBypId(String p_id);
+    @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @Select("select birthday from patient where p_id=#{p_id}")
+    public Date selectBirthdaybyId(String p_id);
 }

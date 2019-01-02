@@ -19,7 +19,14 @@ $(document).ready(function() {
 		textcolor: '#5a5e63',
 		gray: '#f3f5f6'
 	}
-	
+	$('#patient').click(function(){
+		$('#example-modal').modal('show');
+	})
+	$('#close').click(function () {
+		$('#example-modal').modal('hide')
+	})
+
+
 	/* initialize the external events
 		-----------------------------------------------------------------*/
 	

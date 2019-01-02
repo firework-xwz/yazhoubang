@@ -1,10 +1,13 @@
 package com.student.yazhoubang.controller;
 
+import com.student.yazhoubang.damain.Patient;
 import com.student.yazhoubang.dao.AppointmentDao;
 import com.student.yazhoubang.damain.Appointment;
+import com.student.yazhoubang.dao.PatientDao;
 import com.student.yazhoubang.utils.AppointmentUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,15 +23,31 @@ import java.util.Map;
 @Controller
 public class AppointmentController {
     @Autowired
+    PatientDao patientDao;
+    @Autowired
     private AppointmentDao appointmentDao;
     @RequestMapping("/PCalendar")
-    public String appointment(){
+    public String appointment(Model model, HttpSession httpSession){
+        String p_id=(String)httpSession.getAttribute("id");
+        String[] doctorinformation=patientDao.selectDoctorBypId(p_id);
+        Patient patient =patientDao.selectPatientById(p_id);
+        model.addAttribute("patientName",patient.getName());
+        if(patient.getSex()==0){
+            model.addAttribute("patientSex","男");
+        }
+        else
+            model.addAttribute("patientSex","女");
+        model.addAttribute("birthday", patientDao.selectBirthdaybyId(p_id));
+        if(doctorinformation!=null&&doctorinformation.length>0) {
+            model.addAttribute("doctorName", doctorinformation[0]);
+            model.addAttribute("doctorPhone", doctorinformation[1]);
+        }
         return "PCalendar";
     }
     @PostMapping("/PCalendar")
     @ResponseBody
     public Map appointmentData(@RequestBody AppointmentUtils appointmentUtils, HttpSession httpSession){
-        String p_id=(String)httpSession.getAttribute("p_id");
+        String p_id=(String)httpSession.getAttribute("id");
         List list=new ArrayList();
         Map map=new HashMap();
         if (appointmentUtils.getType().equals("select")){

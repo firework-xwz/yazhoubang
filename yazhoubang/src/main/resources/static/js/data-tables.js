@@ -18,6 +18,12 @@ $.extend( true, $.fn.DataTable.TableTools.classes, {
 		"info": "DTTT_print_info modal"
 	}
 } );
+	$('#patient').click(function(){
+		$('#example-modal').modal('show');
+	})
+	$('#close').click(function () {
+		$('#example-modal').modal('hide')
+	})
 
 // Have the collection use a bootstrap compatible dropdown
 $.extend( true, $.fn.DataTable.TableTools.DEFAULTS.oTags, {

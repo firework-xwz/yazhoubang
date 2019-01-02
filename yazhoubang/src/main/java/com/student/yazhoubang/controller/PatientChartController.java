@@ -1,13 +1,17 @@
 package com.student.yazhoubang.controller;
 
+import com.student.yazhoubang.damain.Patient;
 import com.student.yazhoubang.dao.ChartDao;
 import com.student.yazhoubang.damain.Chart;
+import com.student.yazhoubang.dao.PatientDao;
 import com.student.yazhoubang.utils.ChartUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -17,13 +21,31 @@ import java.util.Map;
 public class PatientChartController {
 
     @Autowired
+    PatientDao patientDao;
+    @Autowired
     private ChartDao ChartDao;
     @RequestMapping(value = "/PCharts")
-    public String PCharts(){return "PCharts";}
+    public String PCharts(Model model, HttpSession httpSession){
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String p_id=(String)httpSession.getAttribute("id");
+        String[] doctorinformation=patientDao.selectDoctorBypId(p_id);
+        Patient patient =patientDao.selectPatientById(p_id);
+        model.addAttribute("patientName",patient.getName());
+        if(patient.getSex()==0){
+            model.addAttribute("patientSex","男");
+        }
+        else
+            model.addAttribute("patientSex","女");
+        model.addAttribute("birthday", patientDao.selectBirthdaybyId(p_id));
+        if(doctorinformation!=null&&doctorinformation.length>0) {
+            model.addAttribute("doctorName", doctorinformation[0]);
+            model.addAttribute("doctorPhone", doctorinformation[1]);
+        }
+        return "PCharts";}
     @PostMapping(value = "/PCharts")
     @ResponseBody
     public List<Map> chartData(@RequestBody ChartUtils chartUtils, HttpSession httpSession){
-        String p_id=(String)httpSession.getAttribute("p_id");
+        String p_id=(String)httpSession.getAttribute("id");
         //PatientChart data=patientChartDao.selectChartById(2);
         //return data;//待定
         String type=chartUtils.getName();
