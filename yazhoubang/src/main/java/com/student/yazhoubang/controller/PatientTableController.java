@@ -1,7 +1,9 @@
 package com.student.yazhoubang.controller;
 
+import com.student.yazhoubang.damain.Patient;
 import com.student.yazhoubang.dao.ChartDao;
 import com.student.yazhoubang.damain.Chart;
+import com.student.yazhoubang.dao.PatientDao;
 import com.student.yazhoubang.utils.ChartWithDoctors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,10 +17,25 @@ import java.util.List;
 @Controller
 public class PatientTableController {
     @Autowired
+    PatientDao patientDao;
+    @Autowired
     private ChartDao ChartDao;
     @RequestMapping("/PData-tables")
     public String PDataTables(Model model,HttpSession httpSession){
-        String p_id=(String)httpSession.getAttribute("p_id");
+        String p_id=(String)httpSession.getAttribute("id");
+        String[] doctorinformation=patientDao.selectDoctorBypId(p_id);
+        Patient patient =patientDao.selectPatientById(p_id);
+        model.addAttribute("patientName",patient.getName());
+        if(patient.getSex()==0){
+            model.addAttribute("patientSex","男");
+        }
+        else
+            model.addAttribute("patientSex","女");
+        model.addAttribute("birthday", patientDao.selectBirthdaybyId(p_id));
+        if(doctorinformation!=null&&doctorinformation.length>0) {
+            model.addAttribute("doctorName", doctorinformation[0]);
+            model.addAttribute("doctorPhone", doctorinformation[1]);
+        }
         List<String> CIdList=ChartDao.selectCIdById(p_id);
         List<ChartWithDoctors>list=new ArrayList<>();
         for (int i=0;i<CIdList.size();i++){

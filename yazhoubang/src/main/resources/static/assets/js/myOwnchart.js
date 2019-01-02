@@ -1,4 +1,11 @@
 $(document).ready(function () {
+    $('#patient').click(function () {
+        $('#example-modal').modal('show');
+    })
+    $('#close').click(function () {
+        $('#example-modal').modal('hide')
+    })
+
     var index=document.getElementById("tooth_number").selectedIndex;
     var tooth_number=document.getElementById("tooth_number").options[index].text;
     document.getElementById("zx").style.display="inline-block";

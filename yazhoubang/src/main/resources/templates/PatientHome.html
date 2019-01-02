@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
         <title>Blank page</title>
@@ -206,17 +206,9 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown">
-                                    <img class="user-avatar" src="assets/img/avatars/48.jpg" alt="SuggeElson">SuggeElson</a>
-                                <ul class="dropdown-menu right" role="menu">
-                                    <li><a href="profile.html"><i class="st-user"></i> Profile</a>
-                                    </li>
-                                    <li><a href="file.html"><i class="st-cloud"></i> Files</a>
-                                    </li>
-                                    <li><a href="#"><i class="st-settings"></i> Settings</a>
-                                    </li>
-                                    <li><a href="login.html"><i class="im-exit"></i> Logout</a>
-                                    </li>
+                                <a id="patient"  href="#" data-toggle="dropdown">
+                                    <img th:text="${patientName}"  class="user-avatar" src="assets/img/avatars/48.jpg" alt="SuggeElson"></a>
+                                <ul  class="dropdown-menu right" role="menu">
                                 </ul>
                             </li>
                             <li id="toggle-right-sidebar-li"><a href="#" id="toggle-right-sidebar"><i class="ec-users"></i> <span class="notification">3</span></a>
@@ -632,7 +624,48 @@
                 
                 <!-- End .outlet -->
             </div>
-            <!-- End .content-wrapper -->
+                <div class="modal fade" id="example-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title" id="editPatientsInfo">
+                                    用户信息
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <div align="center">
+                                    <br>患者姓名
+                                    <br>
+                                    <input th:value="${patientName}" type="text" class="form-control1" style="color:#000000;text-align:center" id="pname" disabled="disabled">
+                                    <br>患者性别
+                                    <br>
+                                    <input th:value="${patientSex}"  type="text" class="form-control1" style="color:#000000;text-align:center" id="psex" disabled="disabled">
+                                    <br>患者生日
+                                    <br>
+                                    <input th:value="${birthday}" type="text" class="form-control1" style="color:#000000;text-align:center" id="pbirth" disabled="disabled">
+                                    <br>主治医生
+                                    <br>
+                                    <input th:value="${doctorName}" type="text" class="form-control1" style="color:#000000;text-align:center" id="dname" disabled="disabled">
+                                    <br>医生电话
+                                    <br>
+                                    <input th:value="${doctorPhone}" type="text" class="form-control1" style="color:#000000;text-align:center" id="dphone" disabled="disabled">
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button id="close" type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                </button>
+                            </div>
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal -->
+                </div>
+
+                <!-- End .content-wrapper -->
             <div class="clearfix"></div>
         </div>
         <!-- End #content -->
