@@ -17,8 +17,9 @@ function login() {
                 }else if(result.msg=="doctor") {
                     window.location.href = "/DChart";
                 }
-                else if(result.msg=="patient"){
-                    window.location.href="/PatientHome"
+                else if(result.msg=="patient") {
+                    window.location.href = "/main"
+                    window.location.href = "/PatientHome"
                 }
             }
         },

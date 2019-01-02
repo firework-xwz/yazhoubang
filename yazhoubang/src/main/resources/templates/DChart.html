@@ -291,12 +291,12 @@
                 <!-- Start #sideNav -->
                 <ul id="sideNav" class="nav nav-pills nav-stacked">
                         <li>
-                                <a href="DChart">
+                                <a href="/DChart">
                                     <i class="en-upload"></i> 主页</a>
             
             
                                 <li>
-                                    <a href="DIndex">
+                                    <a href="/DIndex">
                                         <i class="en-upload"></i> 患者列表</a>
                                 </li>
             
@@ -588,7 +588,7 @@
                                                 <i class="br-cart s64"></i>
                                             </div>
                                             <div class="tile-content">
-                                                <div class="number">107</div>
+                                                <div class="number" th:text="${num_chart}">107</div>
                                                 <h3>已诊断病例数</h3>
                                             </div>
                                         </div>
@@ -606,7 +606,7 @@
                                                 <i class="st-chat s64"></i>
                                             </div>
                                             <div class="tile-content">
-                                                <div class="number">24</div>
+                                                <div class="number" th:text="${num_patient}">24</div>
                                                 <h3>已诊断病人数</h3>
                                             </div>
                                         </div>
