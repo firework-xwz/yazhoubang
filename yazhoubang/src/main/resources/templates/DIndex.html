@@ -782,30 +782,30 @@
                                 确认用户信息
                             </h4>
                         </div>
-                        <div class="modal-body">
-                            <div align="center">
-                                <br>身份证号
-                                <br>
-                                <input th:text="patientInfo.getP_id()" class="form-control1"
-                                       style="color:#000000" id="infoid"  disabled="disabled">
-                                <br>姓名
-                                <br>
-                                <input th:text="patientInfo.getName()" class="form-control1"
-                                       style="color:#000000" id="infoname"  disabled="disabled">
-                                <br>电话
-                                <br>
-                                <input th:text="patientInfo.getPhone_num()" class="form-control1"
-                                       style="color:#000000" id="infophone"  disabled="disabled">
-                                <br>性别
-                                <br>
-                                <input th:text="patientInfo.getSex()" class="form-control1"
-                                       style="color:#000000" id="infosex"  disabled="disabled">
-                                <br>生日
-                                <br>
-                                <input th:text="patientInfo.getBirthday()" class="form-control1"
-                                       style="color:#000000" id="infobirth"  disabled="disabled">
-                            </div>
-                        </div>
+                        <!--<div class="modal-body">-->
+                            <!--<div align="center">-->
+                                <!--<br>身份证号-->
+                                <!--<br>-->
+                                <!--<input th:text="patientInfo.getP_id()" class="form-control1"-->
+                                       <!--style="color:#000000" id="infoid"  disabled="disabled">-->
+                                <!--<br>姓名-->
+                                <!--<br>-->
+                                <!--<input th:text="patientInfo.getName()" class="form-control1"-->
+                                       <!--style="color:#000000" id="infoname"  disabled="disabled">-->
+                                <!--<br>电话-->
+                                <!--<br>-->
+                                <!--<input th:text="patientInfo.getPhone_num()" class="form-control1"-->
+                                       <!--style="color:#000000" id="infophone"  disabled="disabled">-->
+                                <!--<br>性别-->
+                                <!--<br>-->
+                                <!--<input th:text="patientInfo.getSex()" class="form-control1"-->
+                                       <!--style="color:#000000" id="infosex"  disabled="disabled">-->
+                                <!--<br>生日-->
+                                <!--<br>-->
+                                <!--<input th:text="patientInfo.getBirthday()" class="form-control1"-->
+                                       <!--style="color:#000000" id="infobirth"  disabled="disabled">-->
+                            <!--</div>-->
+                        <!--</div>-->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">关闭
                             </button>
@@ -1104,7 +1104,8 @@
         //查看病人检查记录
         function patientCheckRecord(tar){
             var id=tar.getAttribute("p_id");
-        //TODO:根据id获取某一病人的所有检查记录，并以表格形式显示到模态框中
+            console.log(id);
+            //TODO:根据id获取某一病人的所有检查记录，并以表格形式显示到模态框中
         }
 
 
