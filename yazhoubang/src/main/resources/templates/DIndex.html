@@ -961,19 +961,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:attr="p_id=${i.value.getP_id()}" th:each="i:${patientList}" onmouseenter="lineover(this)" onmouseleave="lineout(this)">
-                            <td th:text = "${i.value.getName()}"></td>
-                            <td th:text = "${i.value.getPhone_num()}"></td>
-                            <td th:text = "${i.value.getP_id()}"></td>
-                            <td th:text = "${i.key}"></td>
-                            <td>
-                                <button  th:attr="p_id=${i.value.getP_id()}" th:id="'line'+${i.value.getP_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(this)">Delete</button>
-                            </td>
-                            <td>
-                                <button th:attr="p_id=${i.value.getP_id()}" th:id="'line'+${i.value.getP_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-info" onclick="patientCheckRecord(this)" >View</button>
-                            </td>
-                        </tr>
-
+                            <tr th:attr="p_id=${i.value.getP_id()}" th:each="i:${patientList}" onmouseenter="lineover(this)" onmouseleave="lineout(this)">
+                                <td th:text = "${i.value.getName()}"></td>
+                                <td th:text = "${i.value.getPhone_num()}"></td>
+                                <td th:text = "${i.value.getP_id()}"></td>
+                                <td th:text = "${i.key}"></td>
+                                <td>
+                                    <button  th:attr="p_id=${i.value.getP_id()}" th:id="'line'+${i.value.getP_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(this)">Delete</button>
+                                </td>
+                                <td>
+                                    <button th:attr="p_id=${i.value.getP_id()}" th:id="'line'+${i.value.getP_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-info" onclick="patientCheckRecord(this)" >View</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -1087,10 +1086,30 @@
         //     }
         // })
     }
-    //确认添加病人
+    //确认添加页面
     function confirmAddPatients(){
         pid=delPatientID;
         //TODO:发送请求，根据id添加病人到医生的表格中
+        var p_id = $("#infoid").val();
+        console.log("the p_id to add");
+        console.log(p_id);
+
+        alert(p_id);
+
+        var data = {"p_id":p_id};
+        $.ajax({
+            type:"POST",
+            url:"DIndex/addPatient/confirm",
+            dataType:"json",
+            data:data,
+            success:function(ans){
+                alert("添加成功！");
+                window.location.reload();
+            },
+            error:function(){
+                console.log("fail");
+            }
+        })
     }
     //删除病人
     function deletePatients(tar) {

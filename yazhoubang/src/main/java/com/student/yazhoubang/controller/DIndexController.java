@@ -2,8 +2,11 @@ package com.student.yazhoubang.controller;
 
 import com.student.yazhoubang.damain.Chart;
 import com.student.yazhoubang.damain.Doctor;
+import com.student.yazhoubang.damain.Msg;
 import com.student.yazhoubang.damain.Patient;
 import com.student.yazhoubang.dao.*;
+import org.apache.ibatis.annotations.Param;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+import static java.sql.Types.NULL;
 
 @Controller
 public class DIndexController {
@@ -47,10 +50,21 @@ public class DIndexController {
 
         for(int i=0;i<p_idList.size();i++){
             String tp_id = p_idList.get(i);
-            patientList.add(patientDao.selectPatientById(tp_id));
-            last_checkList.add(cureDao.selectLByP(tp_id));
-            map.put(((LinkedList<String>) last_checkList).getLast(),((LinkedList<Patient>) patientList).getLast());
+            String t1=cureDao.selectLByP(tp_id);
+            if(t1==null){
+                System.out.println("ok");
+                t1 = "NULL";
+            }
+            Patient patient=patientDao.selectPatientById(tp_id);
+            System.out.println(t1);
+            System.out.println(patient.getName());
+//            patientList.add(patientDao.selectPatientById(tp_id));
+//            last_checkList.add(cureDao.selectLByP(tp_id));
+
+            map.put(t1,patient);
+//            map.put(((LinkedList<String>) last_checkList).getLast(),((LinkedList<Patient>) patientList).getLast());
         }
+        System.out.println(map.size());
         model.addAttribute("patientList",map);
         return "DIndex";
     }
@@ -68,5 +82,27 @@ public class DIndexController {
             e.printStackTrace();
         }
         return "AddPatientFirst";
+    }
+
+
+    @RequestMapping("DIndex/addPatient/confirm")
+    @ResponseBody
+    public Msg addPatientConfirm(@RequestParam(value="p_id")String p_id, HttpSession httpSession){
+        System.out.println("---addPatientConfirm---");
+        System.out.println(p_id);
+        String d_id = (String)httpSession.getAttribute("id");
+        System.out.println(d_id);
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String s_time = df.format(new Date());
+        Msg msg = new Msg();
+        try{
+            cureDao.addCure(d_id,p_id,s_time);
+            msg.setMessage("SUCCESS!");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            msg.setMessage("FAIL!");
+        }
+        return msg;
     }
 }
