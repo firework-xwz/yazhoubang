@@ -65,7 +65,9 @@ public class DIndexController {
 //            map.put(((LinkedList<String>) last_checkList).getLast(),((LinkedList<Patient>) patientList).getLast());
         }
         System.out.println(map.size());
+        String dname = doctorDao.selectDoctorById(d_id).getName();
         model.addAttribute("patientList",map);
+        model.addAttribute("dname",dname);
         return "DIndex";
     }
 
