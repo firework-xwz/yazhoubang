@@ -1,0 +1,23 @@
+<div align="center" xmlns:th="http://www.thymeleaf.org">
+    <br>身份证号
+    <br>
+    <input th:value="${p.getP_id()}" class="form-control1"
+           style="color:#000000" id="infoid"  disabled="disabled">
+    <br>姓名
+    <br>
+    <input th:value="${p.getName()}" class="form-control1"
+           style="color:#000000" id="infoname"  disabled="disabled">
+
+    <br>电话
+    <br>
+    <input th:value="${p.getPhone_num()}" class="form-control1"
+           style="color:#000000" id="infophone"  disabled="disabled">
+    <br>性别
+    <br>
+    <input th:value="${p.getSex()}" class="form-control1"
+           style="color:#000000" id="infosex"  disabled="disabled">
+    <br>生日
+    <br>
+    <input th:value="${p.getBirthday()}" class="form-control1"
+           style="color:#000000" id="infobirth"  disabled="disabled">
+</div>
