@@ -14,8 +14,12 @@
            style="color:#000000" id="infophone"  disabled="disabled">
     <br>性别
     <br>
-    <input th:value="${p.getSex()}" class="form-control1"
-           style="color:#000000" id="infosex"  disabled="disabled">
+    <!--<input th:value="${p.getSex()}" class="form-control1"-->
+           <!--style="color:#000000" id="infosex"  disabled="disabled">-->
+    <input th:if="${p.getSex()}" th:value="女" class="form-control1"
+           style="color:#000000" th:id="infosex"  disabled="disabled">
+    <input th:unless="${p.getSex()}" th:value="男" class="form-control1"
+           style="color:#000000" th:id="infosex"  disabled="disabled">
     <br>生日
     <br>
     <input th:value="${p.getBirthday()}" class="form-control1"
