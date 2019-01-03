@@ -196,8 +196,11 @@ var haveEvents=0;
 			});
 			document.getElementById("btn_delete").style.display="inline-block";
 
-			$('#myModal').modal();
+			$('#myModal').modal('show');
+
 			$('#btn_submit').click(function () {
+				if(time==null)
+					time=$.fullCalendar.formatDate(event.start,"yyyy-MM-dd HH:mm:ss")
 				if(time!=$.fullCalendar.formatDate(event.start,"yyyy-MM-dd HH:mm:ss")){
 					var data={
 						id:1,
@@ -223,7 +226,7 @@ var haveEvents=0;
 							);
 							haveEvents=1;
 							alert("提交成功");
-
+							$('#myModal').modal('hide');
 						},
 						error:function () {
 							console.log("fail");
@@ -247,6 +250,7 @@ var haveEvents=0;
 					success:function (result) {
 						haveEvents=0;
 						$("#calendar").fullCalendar("removeEvents",event.id);
+						$('#myModal').modal('hide');
 					},
 					error:function () {
 						console.log("fail");
@@ -331,7 +335,7 @@ var haveEvents=0;
     //first is line width, size for pie, animated time , and colours object for theming.
 	initPieChart(10,40, 1500, colours);
 
- 	
+
 });
 
 //Setup easy pie charts in sidebar
