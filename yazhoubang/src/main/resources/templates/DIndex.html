@@ -431,10 +431,10 @@
             <!-- Start #sideNav -->
             <ul id="sideNav" class="nav nav-pills nav-stacked">
                 <li>
-                    <a href="/DChart">
+                    <a href="DChart">
                         <i class="en-upload"></i> 主页</a>
                     <li>
-                        <a href="/DIndex">
+                        <a href="DIndex">
                             <i class="en-upload"></i> 患者列表</a>
                     </li>
             </ul>
@@ -1104,6 +1104,7 @@
         //查看病人检查记录
         function patientCheckRecord(tar){
             var id=tar.getAttribute("p_id");
+            $('#infoModal').modal('show')
             console.log(id);
             //TODO:根据id获取某一病人的所有检查记录，并以表格形式显示到模态框中
         }
