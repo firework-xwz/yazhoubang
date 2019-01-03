@@ -1135,16 +1135,39 @@
     function patientCheckRecord(tar){
         var id=tar.getAttribute("p_id");
         //TODO:根据id获取某一病人的所有检查记录，并以表格形式显示到模态框中
-
-        $('#infoModal').modal('show')
+        var link="/DIndex/ViewChartByP_id/"+id;
+        console.log(link);
+        $("#infoModal .modal-body").load(link,function () {
+            $("#infoModal").modal("show");
+        });
     }
 
 
     //打开新窗口查看该病人的某一表格
-    function moreInfo() {
-        $('#infoModal').modal('hide')
+    function moreInfo(tar) {
+        $('#infoModal').modal('hide');
+        var c_id=tar.getAttribute("c_id");
+        var postData={
+            "where":1,
+            "c_id":c_id
+        };
         //$('#teethModal').modal('show')
-        window.open("./表格.html");//跳转到表格网页
+        $.ajax(
+            {
+                type:"POST",
+                url:"/PDetailTable",
+                data:postData,
+                dataType: "json",
+                async:false,
+                success:function (result) {
+                    //这句要写成一行
+                },
+                error:function () {
+                    console.log("fail");
+                }
+            }
+        )
+        window.open ('PDetailTable');
     }
 
     //新增检查表

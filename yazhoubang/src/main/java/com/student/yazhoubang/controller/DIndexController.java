@@ -85,6 +85,7 @@ public class DIndexController {
     }
 
 
+
     @RequestMapping("DIndex/addPatient/confirm")
     @ResponseBody
     public Msg addPatientConfirm(@RequestParam(value="p_id")String p_id, HttpSession httpSession){
@@ -104,5 +105,15 @@ public class DIndexController {
             msg.setMessage("FAIL!");
         }
         return msg;
+    }
+
+    @RequestMapping("/DIndex/ViewChartByP_id/{id}")
+    public String viewChartByP_id(@PathVariable("id") String p_id, Model model){
+        System.out.println("---viewChartByP_id---");
+        System.out.println(p_id);
+        List<Chart>ChartList=chartDao.selectChartById(p_id);
+        model.addAttribute("ChartList",ChartList);
+        return "ViewChartByP_id";
+
     }
 }
