@@ -482,25 +482,21 @@
                                         <th width="20%">Phone</th>
                                         <th width="20%">ID</th>
                                         <th width="30%">Hospital</th>
-                                        <th width="5%">#Delete#</th>
-                                        <th width="5%">#Edit#</th>
-                                        <th width="5%">#View#</th>
+                                        <th width="7%">#通过#</th>
+                                        <th width="8%">#不通过#</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorCheckList}" th:attr="d_id=${i.value.getD_id()}">
+                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorCheckList}" >
                                         <td th:text = "${i.value.getName()}"></td>
                                         <td th:text = "${i.value.getPhone_num()}"></td>
                                         <td th:text = "${i.value.getD_id()}"></td>
                                         <td th:text = "${i.key}"></td>
                                         <td>
-                                            <button th:id="'line'+${i.value.getD_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(d_id)">Delete</button>
+                                            <button th:attr="d_id=${i.value.getD_id()}" th:id="'line'+${i.value.getD_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="accept(this)">通过</button>
                                         </td>
                                         <td>
-                                            <button th:id="'line'+${i.value.getD_id()}+'edit'" type="button" style='display:none' class="btn btn-sm btn-info" data-toggle="modal" data-target="#editModal">Edit</button>
-                                        </td>
-                                        <td>
-                                            <button th:id="'line'+${i.value.getD_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-primary" data-toggle="modal" data-target="#infoModal">View</button>
+                                            <button th:attr="d_id=${i.value.getD_id()}" th:id="'line'+${i.value.getD_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-primary" onclick="refuse(this)">不通过</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -510,6 +506,57 @@
                 </div>
             </div>
         <!-- End .row -->
+
+
+            <div class="modal fade" id="refuseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title">
+                                是否拒绝该医生的验证？
+                            </h4>
+                       </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">否
+                            </button>
+                            <button type="button" class="btn btn-primary"  onclick="confirmRefuse(DoctorID)">
+                                是
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal -->
+            </div>
+
+
+            <div class="modal fade" id="acceptModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title">
+                                是否通过该医生的验证？
+                            </h4>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">否
+                            </button>
+                            <button type="button" class="btn btn-primary"  onclick="confirmAccept(DoctorID)">
+                                是
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal -->
+            </div>
+
 
         <!-- End .outlet -->
     </div>
@@ -565,6 +612,7 @@
 <script src="assets/js/app.js"></script>
 <script src="assets/js/pages/data-tables.js"></script>
     <script>
+        var DoctorID=0;
         function lineover(line) {
             $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
             seq=line.getAttribute("d_id");
@@ -581,7 +629,46 @@
             $("#line" + seq + "delete").css('display', 'none');
             $("#line" + seq + "view").css('display', 'none');
             $("#line" + seq + "edit").css('display', 'none');
+
         }
+
+        function accept(tar){
+            var id=tar.getAttribute("d_id");
+            console.log(id);
+            DoctorID = id;
+            $('#acceptModal').modal('show');
+        }
+        //确认通过
+        function confirmAccept(id){
+            d_id=id;
+            //TODO:根据id发送通过认证信息
+
+
+            DoctorID=0;
+            $('#acceptModal').modal('hide')
+        }
+
+        function refuse(tar){
+            var id=tar.getAttribute("d_id");
+            console.log(id);
+            DoctorID = id;
+            $('#refuseModal').modal('show');
+        }
+        //确认通过
+        function confirmRefuse(id){
+            d_id=id;
+            //TODO:根据id发送不通过的认证信息
+
+
+            DoctorID=0;
+            $('#refuseModal').modal('hide')
+        }
+        //重置全局变量
+        function resetID(){
+            DoctorID=0;
+
+        }
+
     </script>
 </body>
 </html>
