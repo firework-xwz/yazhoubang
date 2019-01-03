@@ -317,6 +317,56 @@
     <!-- End .sidebar-inner -->
 </div>
 <!-- End #sidebar -->
+
+<div class="modal fade" id="refuseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                    是否拒绝该医生的验证？
+                </h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">否
+                </button>
+                <button type="button" class="btn btn-primary"  onclick="confirmRefuse(DoctorID)">
+                    是
+                </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>
+
+
+<div class="modal fade" id="acceptModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                    是否通过该医生的验证？
+                </h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">否
+                </button>
+                <button type="button" class="btn btn-primary"  onclick="confirmAccept(DoctorID)">
+                    是
+                </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>
+
 <!-- Start #right-sidebar -->
 <div id="right-sidebar" class="hide-sidebar">
     <!-- Start .sidebar-inner -->
@@ -487,7 +537,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorCheckList}" >
+                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorCheckList}"  th:attr="d_id=${i.value.getD_id()}">
                                         <td th:text = "${i.value.getName()}"></td>
                                         <td th:text = "${i.value.getPhone_num()}"></td>
                                         <td th:text = "${i.value.getD_id()}"></td>
@@ -508,54 +558,7 @@
         <!-- End .row -->
 
 
-            <div class="modal fade" id="refuseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                &times;
-                            </button>
-                            <h4 class="modal-title">
-                                是否拒绝该医生的验证？
-                            </h4>
-                       </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">否
-                            </button>
-                            <button type="button" class="btn btn-primary"  onclick="confirmRefuse(DoctorID)">
-                                是
-                            </button>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal -->
-            </div>
 
-
-            <div class="modal fade" id="acceptModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                &times;
-                            </button>
-                            <h4 class="modal-title">
-                                是否通过该医生的验证？
-                            </h4>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">否
-                            </button>
-                            <button type="button" class="btn btn-primary"  onclick="confirmAccept(DoctorID)">
-                                是
-                            </button>
-                        </div>
-                    </div>
-                    <!-- /.modal-content -->
-                </div>
-                <!-- /.modal -->
-            </div>
 
 
         <!-- End .outlet -->
@@ -615,7 +618,7 @@
         var DoctorID=0;
         function lineover(line) {
             $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
-            seq=line.getAttribute("d_id");
+            var seq=line.getAttribute("d_id");
             $("#line" + seq + "delete").css('display', 'block');
             $("#line" + seq + "view").css('display', 'block');
             $("#line" + seq + "edit").css('display', 'block');
@@ -625,7 +628,7 @@
         function lineout(line) {
             var count = 0;
             $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
-            seq=line.getAttribute("d_id");
+            var seq=line.getAttribute("d_id");
             $("#line" + seq + "delete").css('display', 'none');
             $("#line" + seq + "view").css('display', 'none');
             $("#line" + seq + "edit").css('display', 'none');
