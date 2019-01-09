@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title></title>
 </head>
-<link href="assets/css/bootstrap.css" rel="stylesheet" />
+<link th:href="@{assets/css/bootstrap.css}" rel="stylesheet" type="text/css" />
 <style>
 	*{padding: 0;margin: 0;}
 	table{border-color: #ccc;text-align: center;width: 95%;float: left;height:500px}
@@ -30,15 +30,15 @@
 		<thead>
 			<tr>
 				<td class="back" colspan="3">姓名</td>
-				<td class="back" colspan="6"><input type="text" class="back" id="name" value="" /></td>
+				<td class="back" colspan="6"><input th:value="${p_name}" type="text" class="back" id="name" value="" /></td>
 				<td class="back" colspan="3">性别</td>
 				<td class="back" colspan="6"><input type="text" class="back" id="nav" value=""  /></td>
 				<td class="back" colspan="4">年龄</td>
 				<td class="back" colspan="6"><input type="text" class="back" id="age" value=""  style="width:50%;"/>岁</td>
 				<td class="back" colspan="4">检查日期</td>
-				<td class="back" colspan="7"><input type="text" class="back" id="time" value=""  /></td>
+				<td class="back" colspan="7"><input th:value="${time}" type="text" class="back" id="time" value=""  /></td>
 				<td class="back" colspan="4">检查医生</td>
-				<td class="back" colspan="6"><input type="text" class="back" id="d_name" value=""  /></td>
+				<td class="back" colspan="6"><input th:value="${d_name}" type="text" class="back" id="d_name" value=""  /></td>
 			</tr>
 		</thead>
 		<tr>

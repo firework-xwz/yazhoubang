@@ -27,6 +27,14 @@ public class WChartController {
     public String WChart(@PathVariable(value = "p_id")String p_id, Model model, HttpSession httpSession){
         String d_id = (String)httpSession.getAttribute("id");
         String d_name = doctorDao.selectDoctorById(d_id).getName();
+        int tsex = doctorDao.selectDoctorById(d_id).getSex();
+        String sex = null;
+        if(tsex==0){
+            sex = "男";
+        }
+        else{
+            sex = "女";
+        }
         String p_name = patientDao.selectPatientById(p_id).getName();
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -34,6 +42,7 @@ public class WChartController {
         String time = df.format(dt);
 
         model.addAttribute("d_name",d_name);
+        model.addAttribute("sex",sex);
         model.addAttribute("p_name",p_name);
         model.addAttribute("time",time);
 
