@@ -39,7 +39,7 @@ public class AMsgHospitalController {
             h.setPhone_num(phone_num);
             h.setPosition(position);
             hospitalDao.addHospital(h);
-            msg.setMessage("SUCCESS!!!!!");
+            msg.setMessage("SUCCESS!!!");
         }
         catch (Exception e){
             e.printStackTrace();

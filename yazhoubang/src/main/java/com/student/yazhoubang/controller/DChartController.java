@@ -30,6 +30,8 @@ public class DChartController {
             int num_patient = cureDao.selectPByD(d_id).size();
             System.out.println(num_patient);
             model.addAttribute("num_patient",num_patient);
+            String dname = doctorDao.selectDoctorById(d_id).getName();
+            model.addAttribute("dname",dname);
         }
         catch(Exception e){
             e.printStackTrace();

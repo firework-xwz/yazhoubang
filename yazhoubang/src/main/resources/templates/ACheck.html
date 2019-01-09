@@ -645,7 +645,22 @@
         function confirmAccept(id){
             d_id=id;
             //TODO:根据id发送通过认证信息
-
+            console.log(d_id);
+            var data = {"d_id":d_id.toString()};
+            console.log(data);
+            $.ajax({
+                type:"POST",
+                url:"/ACheck/Accept",
+                dataType:"json",
+                data:data,
+                success:function (ans) {
+                    alert(ans.message);
+                    window.location.reload();
+                },
+                error:function () {
+                    console.log("fail");
+                }
+            })
 
             DoctorID=0;
             $('#acceptModal').modal('hide')
@@ -661,7 +676,22 @@
         function confirmRefuse(id){
             d_id=id;
             //TODO:根据id发送不通过的认证信息
-
+            console.log(d_id);
+            var data = {"d_id":d_id.toString()};
+            console.log(data);
+            $.ajax({
+                type:"POST",
+                url:"/ACheck/Refuse",
+                dataType:"json",
+                data:data,
+                success:function (ans) {
+                    alert(ans.message);
+                    window.location.reload();
+                },
+                error:function () {
+                    console.log("fail");
+                }
+            })
 
             DoctorID=0;
             $('#refuseModal').modal('hide')
