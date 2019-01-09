@@ -361,7 +361,7 @@
     <!-- /.modal -->
 </div>
 
-<!-- 用户表格Modal -->
+<!-- 用户记录Modal -->
 <div class="modal fade" id="checkRecordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -732,9 +732,9 @@
                                         <th width="20%">Phone</th>
                                         <th width="20%">ID</th>
                                         <!--<th width="30%">Last Check</th>-->
-                                        <th width="5%">#Delete#</th>
-                                        <th width="5%">#View#</th>
-                                        <th width="5%">#Record#</th>
+                                        <th width="7%">#Delete#</th>
+                                        <!-- <th width="5%">#View#</th> -->
+                                        <th width="8%">#Record#</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -746,9 +746,9 @@
                                         <td>
                                             <button type="button" th:attr="p_id=${i.getP_id()}" th:id="'line'+${i.getP_id()}+'delete'" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(this)">Delete</button>
                                         </td>
-                                        <td>
+                                        <!-- <td>
                                             <button type="button"  th:attr="p_id=${i.getP_id()}" th:id="'line'+${i.getP_id()}+'view'" style='display:none' class="btn btn-sm btn-primary" onclick="patientInfo(this)">View</button>
-                                        </td>
+                                        </td> -->
                                         <td>
                                             <button type="button"  th:attr="p_id=${i.getP_id()}" th:id="'line'+${i.getP_id()}+'edit'" style='display:none' class="btn btn-sm btn-success" onclick="patientCheckRecord(this)">Record</button>
                                         </td>

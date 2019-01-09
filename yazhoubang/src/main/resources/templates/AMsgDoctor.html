@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="utf-8">
     <title>AMsgDoctor</title>
@@ -8,12 +9,11 @@
     <!-- Force IE9 to render in normal mode -->
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="author" content="SuggeElson" />
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
     <meta name="application-name" content="sprFlat admin template" />
     <!-- Import google fonts - Heading first/ text second -->
-    <link rel='stylesheet' type='text/css'
-    <!--[if lt IE 9]>
+    <link rel='stylesheet' type='text/css' <!--[if lt IE 9]>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
@@ -335,6 +335,59 @@
   
   
 
+<!-- 用户记录Modal -->
+<div class="modal fade" id="checkRecordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="PatientsCureInfo">
+                    用户记录
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="bs-example" data-example-id="hoverable-table">
+                    <table class="table table-hover" id="btable">
+                        <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>data</th>
+                            <th>time</th>
+                            <th>option</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tableble">
+
+                        <tr id="list1">
+                            <td>ywh</td>
+                            <td>2018-12-28</td>
+                            <td>12:20</td>
+                            <td>
+                                <button id="list1btn" type="button" class="btn btn-sm btn-info" onclick="moreInfo()">View</button>
+                            </td>
+                        </tr>
+                        <tr id="list2">
+                            <td>ywh</td>
+                            <td>2018-12-27</td>
+                            <td>12:20</td>
+                            <td>
+                                <button id="list2btn" type="button" class="btn btn-sm btn-info" onclick="moreInfo()">View</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">关闭
+                </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>
 
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -677,8 +730,9 @@
                                         <th width="20%">Phone</th>
                                         <th width="20%">ID</th>
                                         <th width="30%">Hospital</th>
-                                        <th width="7%">#Delete#</th>
-                                        <th width="8%">#View#</th>
+                                        <th width="5%">#Delete#</th>
+                                        <th width="5%">#View#</th>
+                                        <th width="5%">#Record#</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -692,6 +746,9 @@
                                         </td>
                                         <td>
                                             <button th:attr="d_id=${i.value.getD_id()}" th:id="'line'+${i.value.getD_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-primary" onclick="doctorInfo(this)">View</button>
+                                        </td>
+                                        <td>
+                                            <button th:attr="d_id=${i.value.getD_id()}" th:id="'line'+${i.value.getD_id()}+'edit'" type="button" style='display:none' class="btn btn-sm btn-success" onclick="doctorCheckRecord(this)">Record</button>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -730,10 +787,10 @@
     window.jQuery || document.write('<script src="assets/js/libs/jquery-ui-1.10.4.min.js">\x3C/script>')
 </script>
 <!--[if lt IE 9]>
-<script type="text/javascript" src="assets/js/libs/excanvas.min.js"></script>
-<script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<script type="text/javascript" src="assets/js/libs/respond.min.js"></script>
-<![endif]-->
+    <script type="text/javascript" src="assets/js/libs/excanvas.min.js"></script>
+    <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script type="text/javascript" src="assets/js/libs/respond.min.js"></script>
+    <![endif]-->
 <!-- Bootstrap plugins -->
 <script src="assets/js/bootstrap/bootstrap.js"></script>
 <!-- Core plugins ( not remove ever) -->
@@ -765,10 +822,10 @@
 <script src="assets/js/app.js"></script>
 <script src="assets/js/pages/data-tables.js"></script>
     <script>
-        var DoctorID=0;
+        var DoctorID = 0;
         function lineover(line) {
             $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
-            seq=line.getAttribute("d_id");
+            seq = line.getAttribute("d_id");
             $("#line" + seq + "delete").css('display', 'block');
             $("#line" + seq + "view").css('display', 'block');
             $("#line" + seq + "edit").css('display', 'block');
@@ -778,7 +835,7 @@
         function lineout(line) {
             var count = 0;
             $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
-            seq=line.getAttribute("d_id");
+            seq = line.getAttribute("d_id");
             $("#line" + seq + "delete").css('display', 'none');
             $("#line" + seq + "view").css('display', 'none');
             $("#line" + seq + "edit").css('display', 'none');
@@ -793,52 +850,66 @@
 
         //弹出删除窗口询问是否删除
         function deletePatients(tar) {
-            var id=tar.getAttribute("d_id");
+            var id = tar.getAttribute("d_id");
             console.log(id);
             DoctorID = id;
             $('#deleteModal').modal('show');
         }
         //确认删除
-        function confirmDelete(id){
+        function confirmDelete(id) {
             var d_id = id;
             console.log(id);
             //TODO:根据id发送删除信息，回调函数成功则刷新页面，失败则弹框提示
             //success:window.location.reload();
             //fail:alert("删除失败")
 
-            DoctorID=0;
+            DoctorID = 0;
             $('#deleteModal').modal('hide');
 
-            var data = {"d_id":d_id.toString()};
+            var data = { "d_id": d_id.toString() };
             console.log(data);
             $.ajax({
-                type:"POST",
-                url:"/AMsgDoctor/deleteDoctor",
-                dataType:"json",
-                data:data,
-                success:function (ans) {
+                type: "POST",
+                url: "/AMsgDoctor/deleteDoctor",
+                dataType: "json",
+                data: data,
+                success: function (ans) {
                     alert(ans.message);
                     console.log(ans.message);
                     window.location.reload();
                 },
-                error:function () {
+                error: function () {
                     alert("fail")
                     console.log("fail");
                 }
             })
         }
         //展示医生信息
-        function doctorInfo(tar){
-            var id=tar.getAttribute("d_id");
+        function doctorInfo(tar) {
+            var id = tar.getAttribute("d_id");
             $('#infoModal').modal('show');
             //TODO:根据id获取医生信息，并显示到模态框中
             // 例如：document.getElementById("infoid").value=data.id;
             // document.getElementById("infoname").value=data.name;
         }
 
+        //查看医生的检查记录
+        function doctorCheckRecord(tar) {
+            var id = tar.getAttribute("d_id");
+            $('#checkRecordModal').modal('show')
+            console.log(id);
+            //TODO:根据id获取某一病人的所有检查记录，并以表格形式显示到模态框中
+        }
+        //打开新窗口查看该病人的某一表格
+        function moreInfo() {
+            $('#checkRecordModal').modal('hide')
+
+            window.open("./表格.html");//跳转到表格网页
+        }
+
         //重置全局变量
-        function resetID(){
-            DoctorID=0;
+        function resetID() {
+            DoctorID = 0;
 
         }
     </script>
