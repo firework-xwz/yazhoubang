@@ -198,16 +198,20 @@ var haveEvents=0;
 
 			$('#myModal').modal('show');
 
+			if(time==null)
+				time=$.fullCalendar.formatDate(event.start,"yyyy-MM-dd HH:mm:ss")
+			var data={
+				id:1,
+				s_time:time,
+				type:"update"
+			};
+			data=JSON.stringify(data);
+
 			$('#btn_submit').click(function () {
-				if(time==null)
-					time=$.fullCalendar.formatDate(event.start,"yyyy-MM-dd HH:mm:ss")
+
 				if(time!=$.fullCalendar.formatDate(event.start,"yyyy-MM-dd HH:mm:ss")){
-					var data={
-						id:1,
-						s_time:time,
-						type:"update"
-					};
-					data=JSON.stringify(data);
+
+
 					$.ajax({
 						type:"POST",
 						url:"/PCalendar",
