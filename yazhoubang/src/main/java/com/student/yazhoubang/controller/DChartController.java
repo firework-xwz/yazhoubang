@@ -32,6 +32,8 @@ public class DChartController {
             model.addAttribute("num_patient",num_patient);
             String dname = doctorDao.selectDoctorById(d_id).getName();
             model.addAttribute("dname",dname);
+            int status = doctorDao.selectDoctorById(d_id).getStatus();
+            model.addAttribute("status",status);
         }
         catch(Exception e){
             e.printStackTrace();

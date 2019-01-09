@@ -44,6 +44,12 @@
         <meta name="msapplication-TileColor" content="#3399cc" />
     </head>
     <body>
+        <div id="hidebg" class="container" th:attr ="status = ${status}">
+            <br><br><br><br><br><br><br><br><br>
+            <h1 style="text-align: center">管理员审核中</h1>
+            <br><br><br><br><br>
+            <h1 style="text-align: center">请耐心等待</h1>
+        </div>
         <!-- Start #header -->
         <div id="header">
             <div class="container-fluid">
@@ -750,5 +756,33 @@
         <script src="assets/js/jquery.sprFlat.js"></script>
         <script src="assets/js/app.js"></script>
         <script src="assets/js/pages/charts.js"></script>
+        <script>
+            //无权限
+            $(document).ready(
+                function hide() {
+                    var status = $('#hidebg').attr("status");
+                    console.log("123");
+                    console.log(status);
+                    var hideobj = $('#hidebg');
+                    if(status!=1){
+                        hidebg.style.display="block";  //显示隐藏层
+                    }
+            })
+        </script>
+        <style>
+            #hidebg{
+                position:absolute;left:0px;top:0px;
+                background-color:#93b5cf;
+                width: 100%;
+                height: 110%;
+                filter:alpha(Opacity=70);-moz-opacity:0.7;opacity: 0.7;
+                display:none;
+                z-index:9999;
+            }
+            html,body{
+                height:97%;
+                margin:0px;
+            }
+        </style>
     </body>
 </html>
