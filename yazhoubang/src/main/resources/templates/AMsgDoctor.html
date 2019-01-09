@@ -736,19 +736,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorList}" th:attr="d_id=${i.get(1).value.getD_id()}">
-                                        <td th:text = "${i.value.getName()}"></td>
-                                        <td th:text = "${i.value.getPhone_num()}"></td>
-                                        <td th:text = "${i.value.getD_id()}"></td>
-                                        <td th:text = "${i.key}"></td>
+                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorList}" th:attr="d_id=${i.get('doc').getD_id()}">
+                                        <td th:text = "${i.get('doc').getName()}"></td>
+                                        <td th:text = "${i.get('doc').getPhone_num()}"></td>
+                                        <td th:text = "${i.get('doc').getD_id()}"></td>
+                                        <td th:text = "${i.get('hos_name')}"></td>
                                         <td>
-                                            <button th:attr="d_id=${i.value.getD_id()}" th:id="'line'+${i.value.getD_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(this)">Delete</button>
+                                            <button th:attr="d_id=${i.get('doc').getD_id()}" th:id="'line'+${i.get('doc').getD_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(this)">Delete</button>
                                         </td>
                                         <td>
-                                            <button th:attr="d_id=${i.value.getD_id()}" th:id="'line'+${i.value.getD_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-primary" onclick="doctorInfo(this)">View</button>
+                                            <button th:attr="d_id=${i.get('doc').getD_id()}" th:id="'line'+${i.get('doc').getD_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-primary" onclick="doctorInfo(this)">View</button>
                                         </td>
                                         <td>
-                                            <button th:attr="d_id=${i.value.getD_id()}" th:id="'line'+${i.value.getD_id()}+'edit'" type="button" style='display:none' class="btn btn-sm btn-success" onclick="doctorCheckRecord(this)">Record</button>
+                                            <button th:attr="d_id=${i.get('doc').getD_id()}" th:id="'line'+${i.get('doc').getD_id()}+'edit'" type="button" style='display:none' class="btn btn-sm btn-success" onclick="doctorCheckRecord(this)">Record</button>
                                         </td>
                                     </tr>
                                 </tbody>

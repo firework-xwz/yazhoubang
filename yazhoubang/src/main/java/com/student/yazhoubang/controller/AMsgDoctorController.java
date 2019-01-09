@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,21 +31,21 @@ public class AMsgDoctorController {
     public String showDoctorList(Model model){
         System.out.println("---doctorlist---");
 
-        List<Map> ans = null;
-        Map map = null;
+        List<Map> ans = new ArrayList<>();
         List<Doctor> doctorList = doctorDao.getAllTrue();
 
         for(int i=0;i<doctorList.size();i++){
-            map = new HashMap();
+            Map map = new HashMap();
             String d_id = doctorList.get(i).getD_id();
-            Hospital hos = hospitalDao.selectHospital(workDao.selectHByD(d_id))
+            Hospital hos = hospitalDao.selectHospital(workDao.selectHByD(d_id));
             String hos_name = hos.getHospital_name();
 
             map.put("hos_name",hos_name);
-            map.put("doctor",doctorList.get(i));
+            map.put("doc",doctorList.get(i));
+            ans.add(map);
         }
 
-        model.addAttribute("doctorList",map);
+        model.addAttribute("doctorList",ans);
         return "AMsgDoctor";
     }
 
