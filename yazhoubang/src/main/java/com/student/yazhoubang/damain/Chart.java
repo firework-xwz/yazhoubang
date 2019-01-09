@@ -13,7 +13,7 @@ import java.sql.Date;
 @Entity
 public class Chart {
     @Id
-    private int c_id;
+    private String c_id;
     @Column(nullable = false)
     @JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -47,7 +47,7 @@ public class Chart {
         return time;
     }
 
-    public int getC_id() {
+    public String getC_id() {
         return c_id;
     }
 
@@ -71,7 +71,7 @@ public class Chart {
         return GI;
     }
 
-    public void setC_id(int c_id) {
+    public void setC_id(String c_id) {
         this.c_id = c_id;
     }
 

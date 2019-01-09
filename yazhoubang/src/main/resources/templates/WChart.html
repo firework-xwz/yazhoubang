@@ -1,12 +1,15 @@
 ﻿<!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title></title>
+	<link href="/css/bootstrap.css" rel="stylesheet" />
+	<script src="/js/jquery-3.3.1.min.js"></script>
 </head>
-<link th:href="@{assets/css/bootstrap.css}" rel="stylesheet" type="text/css" />
+
+
 <style>
 	*{padding: 0;margin: 0;}
 	table{border-color: #ccc;text-align: center;width: 95%;float: left;height:500px}
@@ -18,7 +21,7 @@
 
 	.right{float: right;width:2%;height:500px;vertical-align: middle;display: block;padding-top: 350px;}
 </style>
-<body>
+<div>
 
 	<br />
 	<br />
@@ -32,7 +35,7 @@
 				<td class="back" colspan="3">姓名</td>
 				<td class="back" colspan="6"><input th:value="${p_name}" type="text" class="back" id="name" value="" /></td>
 				<td class="back" colspan="3">性别</td>
-				<td class="back" colspan="6"><input type="text" class="back" id="nav" value=""  /></td>
+				<td class="back" colspan="6"><input th:value="${sex}" type="text" class="back" id="nav" value=""  /></td>
 				<td class="back" colspan="4">年龄</td>
 				<td class="back" colspan="6"><input type="text" class="back" id="age" value=""  style="width:50%;"/>岁</td>
 				<td class="back" colspan="4">检查日期</td>
@@ -47,74 +50,73 @@
 		<tbody>
 			<tr>
 				<td class="back">FI</td>
-				<td><input type="text" id="u_fi_1" value="" /></td>
-				<td><input type="text" id="u_fi_2" value="" /></td>
-				<td><input type="text" id="u_fi_3" value="" /></td>
+				<td><input type="text" id="u_fi_1" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_2" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_3" class="u_fi" value="" /></td>
 
-				<td><input type="text" id="u_fi_4" value="" /></td>
-				<td><input type="text" id="u_fi_5" value="" /></td>
-				<td><input type="text" id="u_fi_6" value="" /></td>
+				<td><input type="text" id="u_fi_4" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_5" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_6" class="u_fi" value="" /></td>
 
-				<td><input type="text" id="u_fi_7" value="" /></td>
-				<td><input type="text" id="u_fi_8" value="" /></td>
-				<td><input type="text" id="u_fi_9" value="" /></td>
+				<td><input type="text" id="u_fi_7" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_8" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_9" class="u_fi" value="" /></td>
 
-				<td colspan="30"><input type="text" id="u_fi_10" value="" /></td>
+				<td colspan="30"></td>
 
-				<td><input type="text" id="u_fi_11" value="" /></td>
-				<td><input type="text" id="u_fi_12" value="" /></td>
-				<td><input type="text" id="u_fi_13" value="" /></td>
+				<td><input type="text" id="u_fi_11" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_12" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_13" class="u_fi" value="" /></td>
 
-				<td><input type="text" id="u_fi_14" value="" /></td>
-				<td><input type="text" id="u_fi_15" value="" /></td>
-				<td><input type="text" id="u_fi_16" value="" /></td>
+				<td><input type="text" id="u_fi_14" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_15" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_16" class="u_fi" value="" /></td>
 
-				<td><input type="text" id="u_fi_17" value="" /></td>
-				<td><input type="text" id="u_fi_18" value="" /></td>
-				<td><input type="text" id="u_fi_19" value="" /></td>
-
+				<td><input type="text" id="u_fi_17" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_18" class="u_fi" value="" /></td>
+				<td><input type="text" id="u_fi_19" class="u_fi" value="" /></td>
 			</tr>
 
 			<tr>
 				<td class="back">IB</td>
 
-				<td colspan="3"><input type="text" id="u_ib_1" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_2" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_3" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_4" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_5" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_6" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_7" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_8" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_9" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_10" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_11" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_12" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_13" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_14" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_15" value="" /></td>
-				<td colspan="3"><input type="text" id="u_ib_16" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_1" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_2" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_3" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_4" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_5" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_6" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_7" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_8" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_9" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_10" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_11" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_12" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_13" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_14" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_15" class="u_ib" value="" /></td>
+				<td colspan="3"><input type="text" id="u_ib_16" class="u_ib" value="" /></td>
 
 			</tr>
 
 			<tr>
 				<td class="back">M</td>
-				<td colspan="3"><input type="text" id="u_m_1" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_2" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_3" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_4" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_5" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_6" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_7" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_8" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_9" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_10" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_11" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_12" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_13" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_14" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_15" value="" /></td>
-				<td colspan="3"><input type="text" id="u_m_16" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_1" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_2" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_3" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_4" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_5" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_6" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_7" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_8" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_9" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_10" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_11" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_12" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_13" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_14" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_15" class="u_m" value="" /></td>
+				<td colspan="3"><input type="text" id="u_m_16" class="u_m" value="" /></td>
 			</tr>
 			<tr>
 				<td class="back">GI</td>
@@ -1252,73 +1254,73 @@
 							</tr>
 							<tr>
 									<td class="back">M</td>
-									<td colspan="3"><input type="text" id="d_m_1" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_2" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_3" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_4" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_5" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_6" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_7" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_8" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_9" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_10" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_11" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_12" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_13" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_14" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_15" value="" /></td>
-									<td colspan="3"><input type="text" id="d_m_16" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_1" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_2" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_3" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_4" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_5" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_6" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_7" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_8" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_9" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_10" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_11" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_12" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_13" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_14" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_15" class="d_m" value="" /></td>
+									<td colspan="3"><input type="text" id="d_m_16" class="d_m" value="" /></td>
 								</tr>
 
 								<tr>
 										<td class="back">IB</td>
 
-										<td colspan="3"><input type="text" id="d_ib_1" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_2" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_3" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_4" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_5" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_6" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_7" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_8" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_9" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_10" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_11" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_12" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_13" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_14" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_15" value="" /></td>
-										<td colspan="3"><input type="text" id="d_ib_16" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_1" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_2" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_3" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_4" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_5" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_6" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_7" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_8" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_9" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_10" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_11" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_12" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_13" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_14" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_15" class="d_ib" value="" /></td>
+										<td colspan="3"><input type="text" id="d_ib_16" class="d_ib" value="" /></td>
 
 									</tr>
 						<tr>
 
 								<td class="back">FI</td>
-								<td><input type="text" id="d_fi_1" value="" /></td>
-								<td><input type="text" id="d_fi_2" value="" /></td>
-								<td><input type="text" id="d_fi_3" value="" /></td>
+								<td><input type="text" id="d_fi_1" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_2" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_3" class="d_fi" value="" /></td>
 
-								<td><input type="text" id="d_fi_4" value="" /></td>
-								<td><input type="text" id="d_fi_5" value="" /></td>
-								<td><input type="text" id="d_fi_6" value="" /></td>
+								<td><input type="text" id="d_fi_4" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_5" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_6" class="d_fi" value="" /></td>
 
-								<td><input type="text" id="d_fi_7" value="" /></td>
-								<td><input type="text" id="d_fi_8" value="" /></td>
-								<td><input type="text" id="d_fi_9" value="" /></td>
+								<td><input type="text" id="d_fi_7" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_8" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_9" class="d_fi" value="" /></td>
 
-								<td colspan="30"><input type="text" id="d_fi_10" value="" /></td>
+								<td colspan="30"></td>
 
-								<td><input type="text" id="d_fi_11" value="" /></td>
-								<td><input type="text" id="d_fi_12" value="" /></td>
-								<td><input type="text" id="d_fi_13" value="" /></td>
+								<td><input type="text" id="d_fi_11" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_12" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_13" class="d_fi" value="" /></td>
 
-								<td><input type="text" id="d_fi_14" value="" /></td>
-								<td><input type="text" id="d_fi_15" value="" /></td>
-								<td><input type="text" id="d_fi_16" value="" /></td>
+								<td><input type="text" id="d_fi_14" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_15" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_16" class="d_fi" value="" /></td>
 
-								<td><input type="text" id="d_fi_17" value="" /></td>
-								<td><input type="text" id="d_fi_18" value="" /></td>
-								<td><input type="text" id="d_fi_19" value="" /></td>
+								<td><input type="text" id="d_fi_17" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_18" class="d_fi" value="" /></td>
+								<td><input type="text" id="d_fi_19" class="d_fi" value="" /></td>
 
 							</tr>
 
@@ -1342,13 +1344,104 @@
 
 	<br><br><br><br><br>
 </div>
-<div class="btn">
 		<button class="">
 				<div>
-					<button  type="button" class="btn btn-lg btn-danger" onclick="Close()"  align="center">Close</button>
+					<button  type="button" class="btn btn-lg btn-danger" onclick="closeChart()"  align="center">Close</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<button  type="button" class="btn btn-lg btn-info" onclick="newForm()"  align="center">Confirm</button>
+					<button  type="button" class="btn btn-lg btn-info" onclick="confirmChart()"  align="center">Confirm</button>
 				</div>
-		</div>
+		</button>
+</div>
+
+<script>
+	function closeChart() {
+		
+    }
+    function confirmChart() {
+        var u_fi = new Array();
+        console.log("u_fi");
+        $("input[class='u_fi']").each(function() {
+            u_fi.push($(this).val());
+        });
+        console.log(u_fi);
+        var s_u_fi = u_fi.join("|");
+        console.log(s_u_fi);
+
+        var d_fi = new Array();
+        console.log("d_fi");
+        $("input[class='d_fi']").each(function() {
+            d_fi.push($(this).val());
+        });
+        console.log(d_fi);
+        var s_d_fi = d_fi.join("|");
+        console.log(s_d_fi);
+
+        var u_ib = new Array();
+        console.log("u_ib");
+        $("input[class='u_ib']").each(function() {
+            u_ib.push($(this).val());
+        });
+        console.log(u_ib);
+        var s_u_ib = u_ib.join("|");
+        console.log(s_u_ib);
+
+        var d_ib = new Array();
+        console.log("d_ib");
+        $("input[class='d_ib']").each(function() {
+            d_ib.push($(this).val());
+        });
+        console.log(d_ib);
+        var s_d_ib = d_ib.join("|");
+        console.log(s_d_ib)
+
+        var u_m = new Array();
+        console.log("u_m");
+        $("input[class='u_m']").each(function() {
+            u_m.push($(this).val());
+        });
+        console.log(u_m);
+        var s_u_m = u_m.join("|");
+        console.log(s_u_m);
+
+        var d_m = new Array();
+        console.log("d_m");
+        $("input[class='d_m']").each(function() {
+            d_m.push($(this).val());
+        });
+        console.log(d_m);
+        var s_d_m = d_m.join("|");
+        console.log(s_d_m);
+
+        var data = {
+            "c_id":$('#d_name').val().toString()+$('#time').val().toString(),
+			"time":$('#time').val().toString(),
+			"mobility":s_u_m+s_d_m,
+			"implant":null,
+
+			"FI":s_u_fi+s_d_fi,
+            "s_u_fi":s_u_fi,
+            "s_d_fi":s_d_fi,
+			"s_u_ib":s_u_ib,
+			"s_d_ib":s_d_ib,
+		};
+        $.ajax({
+			type:"POST",
+			url:"/WChart/Confirm",
+			dataType:"json",
+			data:data,
+			success:function (ans) {
+				alert(ans.message);
+				console.log(ans.message);
+				window.close();
+            },
+			error:function () {
+                alert("fail")
+                console.log("fail");
+            }
+		});
+    }
+</script>
+
+
 </body>
 </html>
