@@ -12,6 +12,4 @@ public interface WriteDao {
     public Integer deleteWrite(String d_id);
     @Select("select c_id from yazhoubang.`write` where d_id=#{d_id}")
     public List<Integer> selectCByD(String d_id);
-    @Select("select d_id from yazhoubang.write where c_id=#{c_id}")
-    public String selectP_idByC_id(String c_id);
 }

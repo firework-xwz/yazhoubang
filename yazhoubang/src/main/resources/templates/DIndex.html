@@ -1156,27 +1156,28 @@
     function addPatientsCheckList(tar) {
         var p_id=tar.getAttribute("p_id");
         $('#infoModal').modal('hide');
-        console.log(p_id);
-        var data = {"p_id":p_id.toString()};
-        $.ajax({
-            type:"POST",
-            url:"/WChart",
-            data:data,
-            dataType:"json",
-            success:function (ans) {
-                console.log("success");
-            },
-            error:function () {
-                console.log("fail");
-            }
-        })
-        window.open ('WChart');
+        // console.log(p_id);
+        // var data = {"p_id":p_id.toString()};
+        // $.ajax({
+        //     type:"POST",
+        //     url:"/WChart",
+        //     data:data,
+        //     dataType:"json",
+        //     success:function (ans) {
+        //         console.log("success");
+        //     },
+        //     error:function () {
+        //         console.log("fail");
+        //     }
+        // })
+        var link = "/WChart/" + p_id;
+        window.open (link);
 
     }
+
     //重置全局变量
     function resetID(){
         delPatientID=0;
-
     }
 </script>
 </body>
