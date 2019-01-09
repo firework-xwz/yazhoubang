@@ -736,7 +736,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorList}" th:attr="d_id=${i.value.getD_id()}">
+                                    <tr onmouseenter="lineover(this)" onmouseleave="lineout(this)"  th:each="i:${doctorList}" th:attr="d_id=${i.get(1).value.getD_id()}">
                                         <td th:text = "${i.value.getName()}"></td>
                                         <td th:text = "${i.value.getPhone_num()}"></td>
                                         <td th:text = "${i.value.getD_id()}"></td>

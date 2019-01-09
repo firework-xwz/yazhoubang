@@ -29,12 +29,19 @@ public class AMsgDoctorController {
     @RequestMapping("AMsgDoctor")
     public String showDoctorList(Model model){
         System.out.println("---doctorlist---");
-        Map<String, Doctor> map = new HashMap<>();
+
+        List<Map> ans = null;
+        Map map = null;
         List<Doctor> doctorList = doctorDao.getAllTrue();
 
         for(int i=0;i<doctorList.size();i++){
-            String hos_name = hospitalDao.selectHospital(workDao.selectHByD(doctorList.get(i).getD_id())).getHospital_name();
-            map.put(hos_name,doctorList.get(i));
+            map = new HashMap();
+            String d_id = doctorList.get(i).getD_id();
+            Hospital hos = hospitalDao.selectHospital(workDao.selectHByD(d_id))
+            String hos_name = hos.getHospital_name();
+
+            map.put("hos_name",hos_name);
+            map.put("doctor",doctorList.get(i));
         }
 
         model.addAttribute("doctorList",map);
