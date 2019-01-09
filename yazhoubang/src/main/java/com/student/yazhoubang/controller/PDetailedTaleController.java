@@ -1,10 +1,10 @@
 package com.student.yazhoubang.controller;
 
+import com.student.yazhoubang.damain.Doctor;
 import com.student.yazhoubang.damain.Patient;
 import com.student.yazhoubang.damain.Chart;
-import com.student.yazhoubang.dao.ChartDao;
-import com.student.yazhoubang.dao.PatientDao;
-import com.student.yazhoubang.dao.ReadDao;
+import com.student.yazhoubang.dao.*;
+import com.student.yazhoubang.utils.GetYearAge;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import javax.websocket.server.PathParam;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,13 +26,25 @@ public class PDetailedTaleController {
     ChartDao patientChartDao;
     @Autowired
     ReadDao readDao;
+    @Autowired
+    WriteDao writeDao;
+    @Autowired
+    DoctorDao doctorDao;
 
     @RequestMapping(value = "/PDetailTable/{c_id}")
     public String PDetailTable(@PathVariable String c_id, Model model){
         System.out.println("---Chart---");
         Chart patientChart=patientChartDao.selectChartByCId(c_id);
-        String p_name=readDao.selectP_idByC_id(c_id);
-        Patient patient=patientDao.selectPatientById(p_name);
+        String p_id=readDao.selectP_idByC_id(c_id);
+        Patient patient=patientDao.selectPatientById(p_id);
+        String d_id=writeDao.selectP_idByC_id(c_id);
+        Doctor doctor=doctorDao.selectDoctorById(d_id);
+        String d_name=doctor.getName();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(sdf.format(patient.getBirthday()));
+        int age=GetYearAge.getYearAge(sdf.format(patient.getBirthday()));
+        model.addAttribute("years",age);
+        model.addAttribute("d_name",d_name);
         if(patientChart!=null&&patient!=null){
         //此处填入病人个人信息
            model.addAttribute("name",patient.getName());
@@ -39,7 +52,7 @@ public class PDetailedTaleController {
             model.addAttribute("sex","男");
           else
             model.addAttribute("sex","女");
-          model.addAttribute("years",18);
+
           model.addAttribute("time",patientChart.getTime());
         //此处填入FI所有数据
         String[] FI=patientChart.getFI().split("\\|");
