@@ -50,7 +50,7 @@
                 <div class="navbar">
                     <div class="navbar-header">
                         <a class="navbar-brand" >
-                            <i class="im-windows8 text-logo-element animated bounceIn"></i><span class="text-logo">spr</span><span class="text-slogan">flat</span> 
+                            <i class="im-windows8 text-logo-element animated bounceIn"></i><span class="text-logo">spr</span><span class="text-slogan">flat</span>
                         </a>
                     </div>
                     <nav class="top-nav" role="navigation">
@@ -95,7 +95,7 @@
                                             <div class="pull-left">
                                                 <a href="email-inbox.html"><i class="ec-archive"></i></a>
                                             </div>
-                                            <span>Inbox</span> 
+                                            <span>Inbox</span>
                                             <div class="pull-right">
                                                 <a href="email-inbox.html"><i class="st-pencil"></i></a>
                                             </div>
@@ -174,33 +174,33 @@
                                 <a href="#" data-toggle="dropdown"><i class="br-alarm"></i> <span class="notification">5</span></a>
                                 <ul class="dropdown-menu notification-menu right" role="menu">
                                     <li class="clearfix">
-                                        <i class="ec-chat"></i> 
-                                        <a href="#" class="notification-user"> Ric Jones </a> 
-                                        <span class="notification-action"> replied to your </span> 
+                                        <i class="ec-chat"></i>
+                                        <a href="#" class="notification-user"> Ric Jones </a>
+                                        <span class="notification-action"> replied to your </span>
                                         <a href="#" class="notification-link"> comment</a>
                                     </li>
                                     <li class="clearfix">
-                                        <i class="st-pencil"></i> 
-                                        <a href="#" class="notification-user"> SuggeElson </a> 
-                                        <span class="notification-action"> just write a </span> 
+                                        <i class="st-pencil"></i>
+                                        <a href="#" class="notification-user"> SuggeElson </a>
+                                        <span class="notification-action"> just write a </span>
                                         <a href="#" class="notification-link"> post</a>
                                     </li>
                                     <li class="clearfix">
-                                        <i class="ec-trashcan"></i> 
-                                        <a href="#" class="notification-user"> SuperAdmin </a> 
-                                        <span class="notification-action"> just remove </span> 
+                                        <i class="ec-trashcan"></i>
+                                        <a href="#" class="notification-user"> SuperAdmin </a>
+                                        <span class="notification-action"> just remove </span>
                                         <a href="#" class="notification-link"> 12 files</a>
                                     </li>
                                     <li class="clearfix">
-                                        <i class="st-paperclip"></i> 
-                                        <a href="#" class="notification-user"> C. Wiilde </a> 
-                                        <span class="notification-action"> attach </span> 
+                                        <i class="st-paperclip"></i>
+                                        <a href="#" class="notification-user"> C. Wiilde </a>
+                                        <span class="notification-action"> attach </span>
                                         <a href="#" class="notification-link"> 3 files</a>
                                     </li>
                                     <li class="clearfix">
-                                        <i class="st-support"></i> 
-                                        <a href="#" class="notification-user"> John Simpson </a> 
-                                        <span class="notification-action"> add support </span> 
+                                        <i class="st-support"></i>
+                                        <a href="#" class="notification-user"> John Simpson </a>
+                                        <span class="notification-action"> add support </span>
                                         <a href="#" class="notification-link"> ticket</a>
                                     </li>
                                 </ul>
@@ -282,37 +282,18 @@
             <div class="sidebar-inner">
                 <!-- Start #sideNav -->
                 <!-- End #sideNav -->
-                <!-- Start .sidebar-panel -->
-                <div class="sidebar-panel">
-                    <h4 class="sidebar-panel-title"><i class="im-fire"></i> Server usage</h4>
-                    <div class="sidebar-panel-content">
-                        <ul class="server-stats">
-                            <li>
-                                <span class="txt">Disk space</span>
-                                <span class="percent">78</span>
-                                <div id="usage-sparkline" class="sparkline">Loading...</div>
-                                <div class="pie-chart" data-percent="78"></div>
-                            </li>
-                        </ul>
-                        <ul class="server-stats">
-                            <li>
-                                <span class="txt">CPU</span>
-                                <span class="percent">56</span>
-                                <div id="cpu-sparkline" class="sparkline">Loading...</div>
-                                <div class="pie-chart" data-percent="56"></div>
-                            </li>
-                        </ul>
-                        <ul class="server-stats">
-                            <li>
-                                <span class="txt">Memory</span>
-                                <span class="percent">14</span>
-                                <div id="ram-sparkline" class="sparkline">Loading...</div>
-                                <div class="pie-chart" data-percent="14"></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End .sidebar-panel -->
+                <!-- Start #sideNav -->
+                <ul id="sideNav" class="nav nav-pills nav-stacked">
+                    <li><a href="PatientHome">主页<i class="st-chart"></i></a>
+                    </li>
+                    <li><a href="PCharts">数据图表对比<i class="st-chart"></i></a>
+                    </li>
+                    <li><a href="PData-tables"><i class="im-table2"></i> 详细数据信息</a>
+                    </li>
+                    <li><a href="PCalendar"><i class="im-calendar2"></i>预约日历</a>
+                    </li>
+                </ul>
+                <!-- End #sideNav -->
             </div>
             <!-- End .sidebar-inner -->
         </div>
@@ -449,7 +430,7 @@
                                     <div class="form-group">
                                         <textarea name="sendmsg" id="sendMsg" class="form-control elastic" rows="1"></textarea>
                                         <a role="button" class="btn" id="attach_photo_btn">
-                                            <i class="fa-picture s20"></i> 
+                                            <i class="fa-picture s20"></i>
                                         </a>
                                         <input type="file" name="attach_photo" id="attach_photo">
                                     </div>
@@ -475,7 +456,7 @@
                         <!-- Start .bredcrumb -->
                         <ul class="breadcrumb">
                                 <li>主页</li>
-                            
+
                             </ul>
                         <!-- End .breadcrumb -->
                         <!-- Start .option-buttons -->
@@ -530,7 +511,7 @@
                                     </div>
                                 </div>
                                 <div class="btn-group dropdown">
-                                    <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu2"><i class="ec-pencil s24"></i></a> 
+                                    <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu2"><i class="ec-pencil s24"></i></a>
                                     <div class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu2">
                                         <div class="option-dropdown">
                                             <div class="row">
@@ -570,7 +551,7 @@
                                     <a class="btn dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3"><i class="ec-help s24"></i></a>
                                     <div class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu3">
                                         <div class="option-dropdown">
-                                            <p>First time visitor ? <a href="#" id="app-tour" class="btn btn-success ml15">Take app tour</a> 
+                                            <p>First time visitor ? <a href="#" id="app-tour" class="btn btn-success ml15">Take app tour</a>
                                             </p>
                                             <hr>
                                             <p>Or check the <a href="#" class="btn btn-danger ml15">FAQ</a>
@@ -586,42 +567,186 @@
                 </div>
                 <!-- End .row -->
                 <div class="outlet">
+
+
+
                         <!-- Start .outlet -->
                         <!-- Page start here ( usual with .row ) -->
-                        <div class="col-md-4">
-                        <div id="chart" href="PCharts" class="coloum">
-                                        <div style="height: 750px" class="tile blue">
+                        <!--<div class="col-md-4">-->
+                        <!--<div id="chart" href="PCharts" class="coloum">-->
+                                        <!--<div style="height: 750px" class="tile blue">-->
+                                            <!--<div class="tile-content">-->
+                                                <!--<div class="number">10</div>-->
+                                                <!--<a href="PCharts" style="height: 375px;line-height: 600px;font-size: 50px;color: white ">数据图表对比</a>-->
+                                            <!--</div>-->
+                                    <!---->
+                                    <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-4">-->
+                            <!--<div id="table" href="PData-tables" class="coloum">-->
+                                            <!--<div style="height: 750px" class="tile brown">-->
+                                                <!--<div class="tile-content">-->
+                                                    <!--<div class="number">20</div>-->
+                                                    <!--<a href="PData-tables" style="height: 375px;line-height: 600px;font-size: 50px;color: white">数据表格查看</a>>-->
+                                                <!--</div>-->
+                                        <!---->
+                                        <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-4">-->
+                                <!--<div id="calendar" href="PCalendar" class="coloum">-->
+                                                <!--<div style="height: 750px" class="tile orange">-->
+                                                    <!--<div class="tile-content">-->
+                                                        <!--<div class="number">30</div>-->
+                                                        <!--<a href="PCalendar" style="height: 375px;line-height: 600px;font-size: 50px;color: white">预约日历</a>-->
+                                                    <!--</div>-->
+                                            <!---->
+                                            <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                    <!-- Start .outlet -->
+                    <!-- Page start here ( usual with .row ) -->
+                    <div class="row">
+                        <!-- Start .row -->
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="carousel-tile carousel vertical slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="tile red">
+                                            <div class="tile-icon">
+                                                <i class="br-cart s64"></i>
+                                            </div>
                                             <div class="tile-content">
-                                                <div class="number">10</div>
-                                                <a href="PCharts" style="height: 375px;line-height: 600px;font-size: 50px;color: white ">数据图表对比</a>
+                                                <div class="number" th:text="${num_chart}">107</div>
+                                                <h3>已接受检查数</h3>
                                             </div>
-                                    
-                                    </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                            <div id="table" href="PData-tables" class="coloum">
-                                            <div style="height: 750px" class="tile brown">
-                                                <div class="tile-content">
-                                                    <div class="number">20</div>
-                                                    <a href="PData-tables" style="height: 375px;line-height: 600px;font-size: 50px;color: white">数据表格查看</a>>
-                                                </div>
-                                        
                                         </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                                <div id="calendar" href="PCalendar" class="coloum">
-                                                <div style="height: 750px" class="tile orange">
-                                                    <div class="tile-content">
-                                                        <div class="number">30</div>
-                                                        <a href="PCalendar" style="height: 375px;line-height: 600px;font-size: 50px;color: white">预约日历</a>
-                                                    </div>
-                                            
-                                            </div>
+                                    </div>
                                 </div>
                             </div>
-                
+                            <!-- End Carousel -->
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="carousel-tile carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <div class="tile blue">
+                                            <div class="tile-icon">
+                                                <i class="st-chat s64"></i>
+                                            </div>
+                                            <div class="tile-content">
+                                                <div class="number" th:text="${num_patient}">24</div>
+                                                <h3>不知道什么数</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Carousel -->
+                        </div>
+
+                    </div>
+                    <!-- End .row -->
+                    <div class="row">
+                        <!-- Start .row -->
+                        <div class="col-lg-6 col-md-6 sortable-layout">
+                            <!-- Start col-lg-6 -->
+                            <div class="panel panel-teal toggle panelMove panelClose panelRefresh">
+                                <!-- Start .panel -->
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><i class="im-bars"></i> 可选转院医院</h4>
+                                </div>
+                                <div class="panel-body">
+                                    <div id="stats-pageviews" style="width: 100%; height:250px;">
+                                        <!--表格开始-->
+                                        <div class="bs-example4" data-example-id="contextual-table">
+                                            <table class="table" id="PatientsList">
+                                                <thead>
+                                                <tr>
+                                                    <th width="10%">Name</th>
+                                                    <th width="20%">Phone</th>
+                                                    <th width="20%">ID</th>
+                                                    <th width="30%">Position</th>
+                                                    <th width="15%">#All Doctors#</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:attr="h_id=${i.getH_id()}" th:each="i:${hospitalList}" onmouseenter="lineover(this)" onmouseleave="lineout(this)">
+                                                    <td th:text="${i.getHospital_name()}"></td>
+                                                    <td th:text="${i.getPhone_num()}"></td>
+                                                    <td th:text="${i.getH_id()}"></td>
+                                                    <td th:text="${i.getPosition()}"></td>
+                                                    <td>
+                                                        <button type="button" th:attr="h_id=${i.getH_id()}" th:id="'line'+${i.getH_id()}+'view'" style='display:none' class="btn btn-sm btn-primary" onclick="viewDoctor(this)">View</button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!--表格结束-->
+                                    </div>
+                                </div>
+                                <div class="panel-footer teal-bg">
+                                    <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                                    <!--<div class="tile teal m0">-->
+                                    <!--<div class="tile-content text-center pl0 pr0">-->
+                                    <!--<div id="countToday" class="number">75</div>-->
+                                    <!--<h3>Today</h3>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                                    <!--<div class="tile teal m0">-->
+                                    <!--<div class="tile-content text-center pl0 pr0">-->
+                                    <!--<div id="countYesterday" class="number">69</div>-->
+                                    <!--<h3>Yesterday</h3>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                                    <!--<div class="tile teal m0">-->
+                                    <!--<div class="tile-content text-center pl0 pr0">-->
+                                    <!--<div id="countWeek" class="number">380</div>-->
+                                    <!--<h3>This Week</h3>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                                    <!--<div class="tile teal m0">-->
+                                    <!--<div class="tile-content text-center pl0 pr0">-->
+                                    <!--<div id="countTotal" class="number">1254</div>-->
+                                    <!--<h3>Total</h3>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End col-lg-6 -->
+                        <div class="col-lg-6 col-md-6 sortable-layout">
+                            <!-- Start col-lg-6 -->
+                            <div class="panel panel-primary plain toggle panelMove panelClose panelRefresh">
+                                <!-- Start .panel -->
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"><i class="im-bars"></i> Week Earnings</h4>
+                                </div>
+                                <div class="panel-body blue-bg">
+                                    <div id="stats-earnings" style="width: 100%; height:250px;"></div>
+                                </div>
+                                <div class="panel-footer white-bg">
+                                    <div id="stats-category-earnings" class="col-lg-6 col-md-12" style="height:150px;">
+                                    </div>
+                                    <div id="stats-earnings-bars" class="col-lg-6 col-md-12" style="height:150px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End col-lg-6 -->
+                    </div>
+                    <!-- End .row -->
+                    <!-- Page End here -->
+                </div>
                 <!-- End .outlet -->
             </div>
                 <div class="modal fade" id="example-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -664,6 +789,79 @@
                     </div>
                     <!-- /.modal -->
                 </div>
+            <!-- 医院医生Modal -->
+            <div class="modal fade" id="viewDoctorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="PatientsCureInfo">
+                                医生列表
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="bs-example" data-example-id="hoverable-table">
+                                <table class="table table-hover" id="btable">
+                                    <thead>
+                                    <tr>
+                                        <th>name</th>
+                                        <th>phone</th>
+                                        <th>title</th>
+                                        <th>option</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="tableble">
+
+                                    <tr id="list1">
+                                        <td>ywh</td>
+                                        <td>18916271729</td>
+                                        <td>主治医师</td>
+                                        <td>
+                                            <!--未获取d_id-->
+                                            <button id="list1btn" type="button" class="btn btn-sm btn-info" onclick="applyDoctor(this)">申请</button>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">关闭
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal -->
+            </div>
+
+            <div class="modal fade" id="confirmApplyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title">
+                                是否申请该医生？
+                            </h4>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">否
+                            </button>
+                            <button type="button" class="btn btn-primary"  onclick="confirmApplyDoctor(currentDoctor)">
+                                是
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal -->
+            </div>
 
                 <!-- End .content-wrapper -->
             <div class="clearfix"></div>
@@ -712,5 +910,49 @@
         <script src="assets/js/jquery.sprFlat.js"></script>
         <script src="assets/js/app.js"></script>
         <script src="assets/js/pages/blank.js"></script>
+        <script>
+            var currentDoctor=0;
+            function lineover(line) {
+                $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
+                seq=line.getAttribute("p_id");
+                $("#line" + seq + "delete").css('display', 'block');
+                $("#line" + seq + "view").css('display', 'block');
+                $("#line" + seq + "edit").css('display', 'block');
+            }
+
+            //鼠标离开该行
+            function lineout(line) {
+                var count = 0;
+                $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
+                seq=line.getAttribute("p_id");
+                $("#line" + seq + "delete").css('display', 'none');
+                $("#line" + seq + "view").css('display', 'none');
+                $("#line" + seq + "edit").css('display', 'none');
+            }
+            //modal查看医院对应的所有医生
+            function viewDoctor(tar) {
+                var id = tar.getAttribute("h_id");
+                $('#viewDoctorModal').modal('show')
+                //TODO:根据医院id获取所有医生信息并显示到viewDoctorModal模态框中
+            }
+            //modal申请医生
+            function applyDoctor(tar){
+                var id= tar.getAttribute("d_id");
+                currentDoctor=id;
+                $('#viewDoctorModal').modal('hide')
+                $('#confirmApplyModal').modal('show')
+            }
+            //确认申请
+            function confirmApplyDoctor(id){
+                var d_id=id;
+                //TODO:根据id申请转院医生
+                $('#confirmApplyModal').modal('hide')
+                currentDoctor=0;
+            }
+
+            function resetID(){
+                currentDoctor=0;
+            }
+        </script>
     </body>
 </html>
