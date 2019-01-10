@@ -1104,27 +1104,7 @@
     function moreInfo(tar) {
         $('#infoModal').modal('hide');
         var c_id=tar.getAttribute("c_id");
-        var postData={
-            "where":1,
-            "c_id":c_id
-        };
-        //$('#teethModal').modal('show')3
 
-        $.ajax(
-            {
-                type:"POST",
-                url:"/PDetailTable",
-                data:postData,
-                dataType: "json",
-                async:false,
-                success:function (result) {
-                    //这句要写成一行
-                },
-                error:function () {
-                    console.log("fail");
-                }
-            }
-        )
         window.open ('PDetailTable');
     }
 
