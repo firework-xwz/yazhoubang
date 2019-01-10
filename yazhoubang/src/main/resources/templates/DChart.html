@@ -44,6 +44,59 @@
         <meta name="msapplication-TileColor" content="#3399cc" />
     </head>
     <body>
+    <div class="modal fade" id="acceptTransferModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">
+                        是否同意该病人的转院请求？
+                    </h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">否
+                    </button>
+                    <button type="button" class="btn btn-primary"  onclick="confirmAcceptTransfer(currentTransferPatient)">
+                        是
+                    </button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+    <div class="modal fade" id="refuseTransferModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title">
+                        是否拒绝该病人的转院请求？
+                    </h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">否
+                    </button>
+                    <button type="button" class="btn btn-primary"  onclick="confirmRefuseTransfer(currentTransferPatient)">
+                        是
+                    </button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal -->
+    </div>
+
+        <div id="hidebg" class="container" th:attr ="status = ${status}">
+            <br><br><br><br><br><br><br><br><br>
+            <h1 style="text-align: center">管理员审核中</h1>
+            <br><br><br><br><br>
+            <h1 style="text-align: center">请耐心等待</h1>
+        </div>
         <!-- Start #header -->
         <div id="header">
             <div class="container-fluid">
@@ -291,12 +344,12 @@
                 <!-- Start #sideNav -->
                 <ul id="sideNav" class="nav nav-pills nav-stacked">
                         <li>
-                                <a href="/DChart">
+                                <a href="DChart">
                                     <i class="en-upload"></i> 主页</a>
             
             
                                 <li>
-                                    <a href="/DIndex">
+                                    <a href="DIndex">
                                         <i class="en-upload"></i> 患者列表</a>
                                 </li>
             
@@ -625,44 +678,75 @@
                             <div class="panel panel-teal toggle panelMove panelClose panelRefresh">
                                 <!-- Start .panel -->
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><i class="im-bars"></i> Page views</h4>
+                                    <h4 class="panel-title"><i class="im-bars"></i> 待转院病人</h4>
                                 </div>
                                 <div class="panel-body">
-                                    <div id="stats-pageviews" style="width: 100%; height:250px;"></div>
+                                    <div id="stats-pageviews" style="width: 100%; height:250px;">
+                                        <!--准备放入待同意转院病人表格-->
+                                            <!--表格开始-->
+                                        <div class="bs-example4" data-example-id="contextual-table">
+                                            <table class="table" id="PatientsList">
+                                                <thead>
+                                                <tr>
+                                                    <th width="15%">Name</th>
+                                                    <th width="20%">Phone</th>
+                                                    <th width="20%">ID</th>
+                                                    <th width="30%">Position</th>
+                                                    <th width="15%">#Select#</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr th:attr="p_id=${i.get('patient').getP_id()}" th:each="i:${ans}" onmouseenter="lineover(this)" onmouseleave="lineout(this)">
+                                                    <td th:text = "${i.get('patient').getName()}"></td>
+                                                    <td th:text = "${i.get('patient').getPhone_num()}"></td>
+                                                    <td th:text = "${i.get('patient').getP_id()}"></td>
+                                                    <td th:text = "${i.get('last_check')}"></td>
+                                                    <td>
+                                                        <button  th:attr="p_id=${i.get('patient').getP_id()}" th:id="'line'+${i.get('patient').getP_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="refuseTransfer(this)">Refuse</button>
+                                                    </td>
+                                                    <td>
+                                                        <button th:attr="p_id=${i.get('patient').getP_id()}" th:id="'line'+${i.get('patient').getP_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-info" onclick="acceptTransfer(this)" >Accept</button>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!--表格结束-->
+                                    </div>
                                 </div>
                                 <div class="panel-footer teal-bg">
-                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile teal m0">
-                                            <div class="tile-content text-center pl0 pr0">
-                                                <div id="countToday" class="number">75</div>
-                                                <h3>Today</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile teal m0">
-                                            <div class="tile-content text-center pl0 pr0">
-                                                <div id="countYesterday" class="number">69</div>
-                                                <h3>Yesterday</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile teal m0">
-                                            <div class="tile-content text-center pl0 pr0">
-                                                <div id="countWeek" class="number">380</div>
-                                                <h3>This Week</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                        <div class="tile teal m0">
-                                            <div class="tile-content text-center pl0 pr0">
-                                                <div id="countTotal" class="number">1254</div>
-                                                <h3>Total</h3>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                                        <!--<div class="tile teal m0">-->
+                                            <!--<div class="tile-content text-center pl0 pr0">-->
+                                                <!--<div id="countToday" class="number">75</div>-->
+                                                <!--<h3>Today</h3>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                                        <!--<div class="tile teal m0">-->
+                                            <!--<div class="tile-content text-center pl0 pr0">-->
+                                                <!--<div id="countYesterday" class="number">69</div>-->
+                                                <!--<h3>Yesterday</h3>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                                        <!--<div class="tile teal m0">-->
+                                            <!--<div class="tile-content text-center pl0 pr0">-->
+                                                <!--<div id="countWeek" class="number">380</div>-->
+                                                <!--<h3>This Week</h3>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                                        <!--<div class="tile teal m0">-->
+                                            <!--<div class="tile-content text-center pl0 pr0">-->
+                                                <!--<div id="countTotal" class="number">1254</div>-->
+                                                <!--<h3>Total</h3>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
                                 </div>
                             </div>
                         </div>
@@ -750,5 +834,91 @@
         <script src="assets/js/jquery.sprFlat.js"></script>
         <script src="assets/js/app.js"></script>
         <script src="assets/js/pages/charts.js"></script>
+        <script>
+            var currentTransferPatient=0;//当前选中待转院病人
+
+            //无权限
+            $(document).ready(
+                function hide() {
+                    var status = $('#hidebg').attr("status");
+                    console.log("123");
+                    console.log(status);
+                    var hideobj = $('#hidebg');
+                    if(status!=1){
+                        hidebg.style.display="block";  //显示隐藏层
+                    }
+            })
+
+            function lineover(line) {
+                $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
+                seq=line.getAttribute("p_id");
+                $("#line" + seq + "delete").css('display', 'block');
+                $("#line" + seq + "view").css('display', 'block');
+                $("#line" + seq + "edit").css('display', 'block');
+            }
+
+            //鼠标离开该行
+            function lineout(line) {
+                var count = 0;
+                $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
+                seq=line.getAttribute("p_id");
+                $("#line" + seq + "delete").css('display', 'none');
+                $("#line" + seq + "view").css('display', 'none');
+                $("#line" + seq + "edit").css('display', 'none');
+            }
+
+            //显示拒绝病人转院请求的modal
+            function refuseTransfer(tar){
+                var id=tar.getAttribute("p_id");
+                currentTransferPatient=id;
+                $('#refuseTransferModal').modal('show')
+            }
+            //确认拒绝
+            function confirmRefuseTransfer(id){
+                var d_id = id;
+                //TODO:根据id发送删除信息，回调函数成功则刷新页面，失败则弹框提示
+                //success:window.location.reload();
+                //fail:alert("删除失败")
+
+                currentTransferPatient=0;
+                $('#refuseTransferModal').modal('hide')
+            }
+            //显示接受病人转院请求的modal
+            function acceptTransfer(tar){
+                var id=tar.getAttribute("p_id");
+                currentTransferPatient=id;
+                $('#acceptTransferModal').modal('show')
+            }
+            //确认接受
+            function confirmAcceptTransfer(id){
+                var d_id = id;
+                //TODO:根据id发送同意转院信息，回调函数成功则刷新页面，失败则弹框提示
+                //success:window.location.reload();
+                //fail:alert("转院失败")
+
+                currentTransferPatient=0;
+                $('#acceptTransferModal').modal('hide')
+            }
+            //重置全局变量
+            function resetID(){
+                currentTransferPatient=0;
+
+            }
+        </script>
+        <style>
+            #hidebg{
+                position:absolute;left:0px;top:0px;
+                background-color:#93b5cf;
+                width: 100%;
+                height: 110%;
+                filter:alpha(Opacity=70);-moz-opacity:0.7;opacity: 0.7;
+                display:none;
+                z-index:9999;
+            }
+            html,body{
+                height:97%;
+                margin:0px;
+            }
+        </style>
     </body>
 </html>

@@ -6,9 +6,9 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title></title>
 </head>
+
+
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
-
-
 <script src="assets/js/jquery-1.8.3.min.js"></script>
 <script src="js/detailTable.js"></script>
 
@@ -43,7 +43,7 @@
 				<td class="back" colspan="4">检查日期</td>
 				<td th:text="${time}" class="back" colspan="7"></td>
 				<td class="back" colspan="4">检查医生</td>
-				<td th:text="${d_name}" class="back" colspan="6"></td>
+				<td th:text="${time}" class="back" colspan="6"></td>
 			</tr>
 		</thead>
 		<tr>
@@ -52,93 +52,93 @@
 		<tbody>
 			<tr>
 				<td class="back">FI</td>
-				<td th:text="${FI0}"><input type="text" id="u_fi_1" value="" /></td>
-				<td th:text="${FI1}"><input type="text" id="u_fi_2" value="" /></td>
-				<td th:text="${FI2}"><input type="text" id="u_fi_3" value="" /></td>
+				<td th:text="${u_fi_0}"><input type="text" id="u_fi_1" value="" /></td>
+				<td th:text="${u_fi_1}"><input type="text" id="u_fi_2" value="" /></td>
+				<td th:text="${u_fi_2}"><input type="text" id="u_fi_3" value="" /></td>
 				
-				<td th:text="${FI3}"><input type="text" id="u_fi_4" value="" /></td>
-				<td th:text="${FI4}"><input type="text" id="u_fi_5" value="" /></td>
-				<td th:text="${FI5}"><input type="text" id="u_fi_6" value="" /></td>
+				<td th:text="${u_fi_3}"><input type="text" id="u_fi_4" value="" /></td>
+				<td th:text="${u_fi_4}"><input type="text" id="u_fi_5" value="" /></td>
+				<td th:text="${u_fi_5}"><input type="text" id="u_fi_6" value="" /></td>
 				
-				<td th:text="${FI6}"><input type="text" id="u_fi_7" value="" /></td>
-				<td th:text="${FI7}"><input type="text" id="u_fi_8" value="" /></td>
-				<td th:text="${FI8}"><input type="text" id="u_fi_9" value="" /></td>
+				<td th:text="${u_fi_6}"><input type="text" id="u_fi_7" value="" /></td>
+				<td th:text="${u_fi_7}"><input type="text" id="u_fi_8" value="" /></td>
+				<td th:text="${u_fi_8}"><input type="text" id="u_fi_9" value="" /></td>
 				
 				<td colspan="30"><input type="text" id="u_fi_10" value="" /></td>
 
-				<td th:text="${FI9}"><input type="text" id="u_fi_11" value="" /></td>
-				<td th:text="${FI10}"><input type="text" id="u_fi_12" value="" /></td>
-				<td th:text="${FI11}"><input type="text" id="u_fi_13" value="" /></td>
+				<td th:text="${u_fi_9}"><input type="text" id="u_fi_11" value="" /></td>
+				<td th:text="${u_fi_10}"><input type="text" id="u_fi_12" value="" /></td>
+				<td th:text="${u_fi_11}"><input type="text" id="u_fi_13" value="" /></td>
 				
-				<td th:text="${FI12}"><input type="text" id="u_fi_14" value="" /></td>
-				<td th:text="${FI13}"><input type="text" id="u_fi_15" value="" /></td>
-				<td th:text="${FI14}"><input type="text" id="u_fi_16" value="" /></td>
+				<td th:text="${u_fi_12}"><input type="text" id="u_fi_14" value="" /></td>
+				<td th:text="${u_fi_13}"><input type="text" id="u_fi_15" value="" /></td>
+				<td th:text="${u_fi_14}"><input type="text" id="u_fi_16" value="" /></td>
 				
-				<td th:text="${FI15}"><input type="text" id="u_fi_17" value="" /></td>
-				<td th:text="${FI16}"><input type="text" id="u_fi_18" value="" /></td>
-				<td th:text="${FI17}"><input type="text" id="u_fi_19" value="" /></td>
+				<td th:text="${u_fi_15}"><input type="text" id="u_fi_17" value="" /></td>
+				<td th:text="${u_fi_16}"><input type="text" id="u_fi_18" value="" /></td>
+				<td th:text="${u_fi_17}"><input type="text" id="u_fi_19" value="" /></td>
 				
 			</tr>
 			
 			<tr>
 				<td class="back">IB</td>
 				
-				<td th:text="${IB0}" colspan="3"><input type="text" id="u_ib_1" value="" /></td>
-				<td th:text="${IB1}" colspan="3"><input type="text" id="u_ib_2" value="" /></td>
-				<td th:text="${IB2}" colspan="3"><input type="text" id="u_ib_3" value="" /></td>
-				<td th:text="${IB3}" colspan="3"><input type="text" id="u_ib_4" value="" /></td>
-				<td th:text="${IB4}" colspan="3"><input type="text" id="u_ib_5" value="" /></td>
-				<td th:text="${IB5}" colspan="3"><input type="text" id="u_ib_6" value="" /></td>
-				<td th:text="${IB6}" colspan="3"><input type="text" id="u_ib_7" value="" /></td>
-				<td th:text="${IB7}" colspan="3"><input type="text" id="u_ib_8" value="" /></td>
-				<td th:text="${IB8}" colspan="3"><input type="text" id="u_ib_9" value="" /></td>
-				<td th:text="${IB9}" colspan="3"><input type="text" id="u_ib_10" value="" /></td>
-				<td th:text="${IB10}" colspan="3"><input type="text" id="u_ib_11" value="" /></td>
-				<td th:text="${IB11}" colspan="3"><input type="text" id="u_ib_12" value="" /></td>
-				<td th:text="${IB12}" colspan="3"><input type="text" id="u_ib_13" value="" /></td>
-				<td th:text="${IB13}" colspan="3"><input type="text" id="u_ib_14" value="" /></td>
-				<td th:text="${IB14}" colspan="3"><input type="text" id="u_ib_15" value="" /></td>
-				<td th:text="${IB15}" colspan="3"><input type="text" id="u_ib_16" value="" /></td>
+				<td th:text="${ib0}" colspan="3"><input type="text" id="u_ib_1" value="" /></td>
+				<td th:text="${ib1}" colspan="3"><input type="text" id="u_ib_2" value="" /></td>
+				<td th:text="${ib2}" colspan="3"><input type="text" id="u_ib_3" value="" /></td>
+				<td th:text="${ib3}" colspan="3"><input type="text" id="u_ib_4" value="" /></td>
+				<td th:text="${ib4}" colspan="3"><input type="text" id="u_ib_5" value="" /></td>
+				<td th:text="${ib5}" colspan="3"><input type="text" id="u_ib_6" value="" /></td>
+				<td th:text="${ib6}" colspan="3"><input type="text" id="u_ib_7" value="" /></td>
+				<td th:text="${ib7}" colspan="3"><input type="text" id="u_ib_8" value="" /></td>
+				<td th:text="${ib8}" colspan="3"><input type="text" id="u_ib_9" value="" /></td>
+				<td th:text="${ib9}" colspan="3"><input type="text" id="u_ib_10" value="" /></td>
+				<td th:text="${ib10}" colspan="3"><input type="text" id="u_ib_11" value="" /></td>
+				<td th:text="${ib11}" colspan="3"><input type="text" id="u_ib_12" value="" /></td>
+				<td th:text="${ib12}" colspan="3"><input type="text" id="u_ib_13" value="" /></td>
+				<td th:text="${ib13}" colspan="3"><input type="text" id="u_ib_14" value="" /></td>
+				<td th:text="${ib14}" colspan="3"><input type="text" id="u_ib_15" value="" /></td>
+				<td th:text="${ib15}" colspan="3"><input type="text" id="u_ib_16" value="" /></td>
 				
 			</tr>
 			
 			<tr >
 				<td class="back">M</td>
-				<td th:text="${M0}" colspan="3"><input type="text" id="u_m_1" value="" /></td>
-				<td th:text="${M1}" colspan="3"><input type="text" id="u_m_2" value="" /></td>
-				<td th:text="${M2}" colspan="3"><input type="text" id="u_m_3" value="" /></td>
-				<td th:text="${M3}" colspan="3"><input type="text" id="u_m_4" value="" /></td>
-				<td th:text="${M4}" colspan="3"><input type="text" id="u_m_5" value="" /></td>
-				<td th:text="${M5}" colspan="3"><input type="text" id="u_m_6" value="" /></td>
-				<td th:text="${M6}" colspan="3"><input type="text" id="u_m_7" value="" /></td>
-				<td th:text="${M7}" colspan="3"><input type="text" id="u_m_8" value="" /></td>
-				<td th:text="${M8}" colspan="3"><input type="text" id="u_m_9" value="" /></td>
-				<td th:text="${M9}" colspan="3"><input type="text" id="u_m_10" value="" /></td>
-				<td th:text="${M10}" colspan="3"><input type="text" id="u_m_11" value="" /></td>
-				<td th:text="${M11}" colspan="3"><input type="text" id="u_m_12" value="" /></td>
-				<td th:text="${M12}" colspan="3"><input type="text" id="u_m_13" value="" /></td>
-				<td th:text="${M13}" colspan="3"><input type="text" id="u_m_14" value="" /></td>
-				<td th:text="${M14}" colspan="3"><input type="text" id="u_m_15" value="" /></td>
-				<td th:text="${M15}" colspan="3"><input type="text" id="u_m_16" value="" /></td>
+				<td th:text="${m0}" colspan="3"><input type="text" id="u_m_1" value="" /></td>
+				<td th:text="${m1}" colspan="3"><input type="text" id="u_m_2" value="" /></td>
+				<td th:text="${m2}" colspan="3"><input type="text" id="u_m_3" value="" /></td>
+				<td th:text="${m3}" colspan="3"><input type="text" id="u_m_4" value="" /></td>
+				<td th:text="${m4}" colspan="3"><input type="text" id="u_m_5" value="" /></td>
+				<td th:text="${m5}" colspan="3"><input type="text" id="u_m_6" value="" /></td>
+				<td th:text="${m6}" colspan="3"><input type="text" id="u_m_7" value="" /></td>
+				<td th:text="${m7}" colspan="3"><input type="text" id="u_m_8" value="" /></td>
+				<td th:text="${m8}" colspan="3"><input type="text" id="u_m_9" value="" /></td>
+				<td th:text="${m9}" colspan="3"><input type="text" id="u_m_10" value="" /></td>
+				<td th:text="${m10}" colspan="3"><input type="text" id="u_m_11" value="" /></td>
+				<td th:text="${m11}" colspan="3"><input type="text" id="u_m_12" value="" /></td>
+				<td th:text="${m12}" colspan="3"><input type="text" id="u_m_13" value="" /></td>
+				<td th:text="${m13}" colspan="3"><input type="text" id="u_m_14" value="" /></td>
+				<td th:text="${m14}" colspan="3"><input type="text" id="u_m_15" value="" /></td>
+				<td th:text="${m15}" colspan="3"><input type="text" id="u_m_16" value="" /></td>
 			</tr>
 			<tr>
 				<td class="back">GI</td>
-				<td th:text="${GI0}" colspan="3"><input type="text" id="u_gi_1" value="" /></td>
-				<td th:text="${GI1}" colspan="3"><input type="text" id="u_gi_2" value="" /></td>
-				<td th:text="${GI2}" colspan="3"><input type="text" id="u_gi_3" value="" /></td>
-				<td th:text="${GI3}" colspan="3"><input type="text" id="u_gi_4" value="" /></td>
-				<td th:text="${GI4}" colspan="3"><input type="text" id="u_gi_5" value="" /></td>
-				<td th:text="${GI5}" colspan="3"><input type="text" id="u_gi_6" value="" /></td>
-				<td th:text="${GI6}" colspan="3"><input type="text" id="u_gi_7" value="" /></td>
-				<td th:text="${GI7}" colspan="3"><input type="text" id="u_gi_8" value="" /></td>
-				<td th:text="${GI8}" colspan="3"><input type="text" id="u_gi_9" value="" /></td>
-				<td th:text="${GI9}" colspan="3"><input type="text" id="u_gi_10" value="" /></td>
-				<td th:text="${GI10}" colspan="3"><input type="text" id="u_gi_11" value="" /></td>
-				<td th:text="${GI11}" colspan="3"><input type="text" id="u_gi_12" value="" /></td>
-				<td th:text="${GI12}" colspan="3"><input type="text" id="u_gi_13" value="" /></td>
-				<td th:text="${GI13}" colspan="3"><input type="text" id="u_gi_14" value="" /></td>
-				<td th:text="${GI14}" colspan="3"><input type="text" id="u_gi_15" value="" /></td>
-				<td th:text="${GI15}" colspan="3"><input type="text" id="u_gi_16" value="" /></td>
+				<td th:text="${gi0}" colspan="3"><input type="text" id="u_gi_1" value="" /></td>
+				<td th:text="${gi1}" colspan="3"><input type="text" id="u_gi_2" value="" /></td>
+				<td th:text="${gi2}" colspan="3"><input type="text" id="u_gi_3" value="" /></td>
+				<td th:text="${gi3}" colspan="3"><input type="text" id="u_gi_4" value="" /></td>
+				<td th:text="${gi4}" colspan="3"><input type="text" id="u_gi_5" value="" /></td>
+				<td th:text="${gi5}" colspan="3"><input type="text" id="u_gi_6" value="" /></td>
+				<td th:text="${gi6}" colspan="3"><input type="text" id="u_gi_7" value="" /></td>
+				<td th:text="${gi7}" colspan="3"><input type="text" id="u_gi_8" value="" /></td>
+				<td th:text="${gi8}" colspan="3"><input type="text" id="u_gi_9" value="" /></td>
+				<td th:text="${gi9}" colspan="3"><input type="text" id="u_gi_10" value="" /></td>
+				<td th:text="${gi10}" colspan="3"><input type="text" id="u_gi_11" value="" /></td>
+				<td th:text="${gi11}" colspan="3"><input type="text" id="u_gi_12" value="" /></td>
+				<td th:text="${gi12}" colspan="3"><input type="text" id="u_gi_13" value="" /></td>
+				<td th:text="${gi13}" colspan="3"><input type="text" id="u_gi_14" value="" /></td>
+				<td th:text="${gi14}" colspan="3"><input type="text" id="u_gi_15" value="" /></td>
+				<td th:text="${gi15}" colspan="3"><input type="text" id="u_gi_16" value="" /></td>
 			</tr>
 			
 			
@@ -212,471 +212,471 @@
 
 			<tr>
 					<td class="back">lPI</td>
-					<td th:text="${lPI0}" colspan="1"><input type="text" id="u_lpi1_a" value="" /></td>
-					<td th:text="${lPI1}" colspan="1"><input type="text" id="u_lpi1_b" value="" /></td>
-					<td th:text="${lPI2}" colspan="1"><input type="text" id="u_lpi1_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi1_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi1_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi1_c" value="" /></td>
 					
-					<td th:text="${lPI3}" colspan="1"><input type="text" id="u_lpi2_a" value="" /></td>
-					<td th:text="${lPI4}" colspan="1"><input type="text" id="u_lpi2_b" value="" /></td>
-					<td th:text="${lPI5}" colspan="1"><input type="text" id="u_lpi2_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi2_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi2_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi2_c" value="" /></td>
 	
-					<td th:text="${lPI6}" colspan="1"><input type="text" id="u_lpi3_a" value="" /></td>
-					<td th:text="${lPI7}" colspan="1"><input type="text" id="u_lpi3_b" value="" /></td>
-					<td th:text="${lPI8}" colspan="1"><input type="text" id="u_lpi3_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi3_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi3_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi3_c" value="" /></td>
 	
-					<td th:text="${lPI9}" colspan="1"><input type="text" id="u_lpi4_a" value="" /></td>
-					<td th:text="${lPI10}" colspan="1"><input type="text" id="u_lpi4_b" value="" /></td>
-					<td th:text="${lPI11}" colspan="1"><input type="text" id="u_lpi4_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi4_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi4_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi4_c" value="" /></td>
 	
-					<td th:text="${lPI12}" colspan="1"><input type="text" id="u_lpi5_a" value="" /></td>
-					<td th:text="${lPI13}" colspan="1"><input type="text" id="u_lpi5_b" value="" /></td>
-					<td th:text="${lPI14}" colspan="1"><input type="text" id="u_lpi5_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi5_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi5_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi5_c" value="" /></td>
 	
-					<td th:text="${lPI15}" colspan="1"><input type="text" id="u_lpi6_a" value="" /></td>
-					<td th:text="${lPI16}" colspan="1"><input type="text" id="u_lpi6_b" value="" /></td>
-					<td th:text="${lPI17}" colspan="1"><input type="text" id="u_lpi6_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi6_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi6_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi6_c" value="" /></td>
 	
-					<td th:text="${lPI18}" colspan="1"><input type="text" id="u_lpi7_a" value="" /></td>
-					<td th:text="${lPI19}" colspan="1"><input type="text" id="u_lpi7_b" value="" /></td>
-					<td th:text="${lPI20}" colspan="1"><input type="text" id="u_lpi7_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi7_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi7_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi7_c" value="" /></td>
 	
-					<td th:text="${lPI21}" colspan="1"><input type="text" id="u_lpi8_a" value="" /></td>
-					<td th:text="${lPI22}" colspan="1"><input type="text" id="u_lpi8_b" value="" /></td>
-					<td th:text="${lPI23}" colspan="1"><input type="text" id="u_lpi8_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi8_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi8_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi8_c" value="" /></td>
 	
-					<td th:text="${lPI24}" colspan="1"><input type="text" id="u_lpi9_a" value="" /></td>
-					<td th:text="${lPI25}" colspan="1"><input type="text" id="u_lpi9_b" value="" /></td>
-					<td th:text="${lPI26}" colspan="1"><input type="text" id="u_lpi9_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi9_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi9_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi9_c" value="" /></td>
 	
-					<td th:text="${lPI27}" colspan="1"><input type="text" id="u_lpi10_a" value="" /></td>
-					<td th:text="${lPI28}" colspan="1"><input type="text" id="u_lpi10_b" value="" /></td>
-					<td th:text="${lPI29}" colspan="1"><input type="text" id="u_lpi10_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi10_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi10_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi10_c" value="" /></td>
 	
-					<td th:text="${lPI30}" colspan="1"><input type="text" id="u_lpi11_a" value="" /></td>
-					<td th:text="${lPI31}" colspan="1"><input type="text" id="u_lpi11_b" value="" /></td>
-					<td th:text="${lPI32}" colspan="1"><input type="text" id="u_lpi11_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi11_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi11_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi11_c" value="" /></td>
 					
-					<td th:text="${lPI33}" colspan="1"><input type="text" id="u_lpi12_a" value="" /></td>
-					<td th:text="${lPI34}" colspan="1"><input type="text" id="u_lpi12_b" value="" /></td>
-					<td th:text="${lPI35}" colspan="1"><input type="text" id="u_lpi12_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi12_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi12_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi12_c" value="" /></td>
 	
-					<td th:text="${lPI36}" colspan="1"><input type="text" id="u_lpi13_a" value="" /></td>
-					<td th:text="${lPI37}" colspan="1"><input type="text" id="u_lpi13_b" value="" /></td>
-					<td th:text="${lPI38}" colspan="1"><input type="text" id="u_lpi13_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi13_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi13_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi13_c" value="" /></td>
 	
-					<td th:text="${lPI39}" colspan="1"><input type="text" id="u_lpi14_a" value="" /></td>
-					<td th:text="${lPI40}" colspan="1"><input type="text" id="u_lpi14_b" value="" /></td>
-					<td th:text="${lPI41}" colspan="1"><input type="text" id="u_lpi14_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi14_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi14_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi14_c" value="" /></td>
 	
-					<td th:text="${lPI42}" colspan="1"><input type="text" id="u_lpi15_a" value="" /></td>
-					<td th:text="${lPI43}" colspan="1"><input type="text" id="u_lpi15_b" value="" /></td>
-					<td th:text="${lPI44}" colspan="1"><input type="text" id="u_lpi15_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi15_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi15_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi15_c" value="" /></td>
 	
-					<td th:text="${lPI45}" colspan="1"><input type="text" id="u_lpi16_a" value="" /></td>
-					<td th:text="${lPI46}" colspan="1"><input type="text" id="u_lpi16_b" value="" /></td>
-					<td th:text="${lPI47}" colspan="1"><input type="text" id="u_lpi16_c" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi16_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi16_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lpi16_c" value="" /></td>
 				</tr>
 				<tr><td class="back" rowspan="1"></td></tr>
 			<tr>
 				<td class="back" rowspan="1">bCEJ</td>
-				<td th:text="${bCEJ0}" colspan="1"><input type="text" id="u_bcej1_a" value="" /></td>
-				<td th:text="${bCEJ1}" colspan="1"><input type="text" id="u_bcej1_b" value="" /></td>
-				<td th:text="${bCEJ2}" colspan="1"><input type="text" id="u_bcej1_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej1_c" value="" /></td>
 				
-				<td th:text="${bCEJ3}" colspan="1"><input type="text" id="u_bcej2_a" value="" /></td>
-				<td th:text="${bCEJ4}" colspan="1"><input type="text" id="u_bcej2_b" value="" /></td>
-				<td th:text="${bCEJ5}" colspan="1"><input type="text" id="u_bcej2_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej2_c" value="" /></td>
 
-				<td th:text="${bCEJ6}" colspan="1"><input type="text" id="u_bcej3_a" value="" /></td>
-				<td th:text="${bCEJ7}" colspan="1"><input type="text" id="u_bcej3_b" value="" /></td>
-				<td th:text="${bCEJ8}" colspan="1"><input type="text" id="u_bcej3_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej3_c" value="" /></td>
 
-				<td th:text="${bCEJ9}" colspan="1"><input type="text" id="u_bcej4_a" value="" /></td>
-				<td th:text="${bCEJ10}" colspan="1"><input type="text" id="u_bcej4_b" value="" /></td>
-				<td th:text="${bCEJ11}" colspan="1"><input type="text" id="u_bcej4_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej4_c" value="" /></td>
 
-				<td th:text="${bCEJ12}" colspan="1"><input type="text" id="u_bcej5_a" value="" /></td>
-				<td th:text="${bCEJ13}" colspan="1"><input type="text" id="u_bcej5_b" value="" /></td>
-				<td th:text="${bCEJ14}" colspan="1"><input type="text" id="u_bcej5_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej5_c" value="" /></td>
 
-				<td th:text="${bCEJ15}" colspan="1"><input type="text" id="u_bcej6_a" value="" /></td>
-				<td th:text="${bCEJ16}" colspan="1"><input type="text" id="u_bcej6_b" value="" /></td>
-				<td th:text="${bCEJ17}" colspan="1"><input type="text" id="u_bcej6_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej6_c" value="" /></td>
 
-				<td th:text="${bCEJ18}" colspan="1"><input type="text" id="u_bcej7_a" value="" /></td>
-				<td th:text="${bCEJ19}" colspan="1"><input type="text" id="u_bcej7_b" value="" /></td>
-				<td th:text="${bCEJ20}" colspan="1"><input type="text" id="u_bcej7_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej7_c" value="" /></td>
 
-				<td th:text="${bCEJ21}" colspan="1"><input type="text" id="u_bcej8_a" value="" /></td>
-				<td th:text="${bCEJ22}" colspan="1"><input type="text" id="u_bcej8_b" value="" /></td>
-				<td th:text="${bCEJ23}" colspan="1"><input type="text" id="u_bcej8_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej8_c" value="" /></td>
 
-				<td th:text="${bCEJ24}" colspan="1"><input type="text" id="u_bcej9_a" value="" /></td>
-				<td th:text="${bCEJ25}" colspan="1"><input type="text" id="u_bcej9_b" value="" /></td>
-				<td th:text="${bCEJ26}" colspan="1"><input type="text" id="u_bcej9_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej9_c" value="" /></td>
 
-				<td th:text="${bCEJ27}" colspan="1"><input type="text" id="u_bcej10_a" value="" /></td>
-				<td th:text="${bCEJ28}" colspan="1"><input type="text" id="u_bcej10_b" value="" /></td>
-				<td th:text="${bCEJ29}" colspan="1"><input type="text" id="u_bcej10_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej10_c" value="" /></td>
 
-				<td th:text="${bCEJ30}" colspan="1"><input type="text" id="u_bcej11_a" value="" /></td>
-				<td th:text="${bCEJ31}" colspan="1"><input type="text" id="u_bcej11_b" value="" /></td>
-				<td th:text="${bCEJ32}" colspan="1"><input type="text" id="u_bcej11_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej11_c" value="" /></td>
 				
-				<td th:text="${bCEJ33}" colspan="1"><input type="text" id="u_bcej12_a" value="" /></td>
-				<td th:text="${bCEJ34}" colspan="1"><input type="text" id="u_bcej12_b" value="" /></td>
-				<td th:text="${bCEJ35}" colspan="1"><input type="text" id="u_bcej12_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej12_c" value="" /></td>
 
-				<td th:text="${bCEJ36}" colspan="1"><input type="text" id="u_bcej13_a" value="" /></td>
-				<td th:text="${bCEJ37}" colspan="1"><input type="text" id="u_bcej13_b" value="" /></td>
-				<td th:text="${bCEJ38}" colspan="1"><input type="text" id="u_bcej13_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej13_c" value="" /></td>
 
-				<td th:text="${bCEJ39}" colspan="1"><input type="text" id="u_bcej14_a" value="" /></td>
-				<td th:text="${bCEJ40}" colspan="1"><input type="text" id="u_bcej14_b" value="" /></td>
-				<td th:text="${bCEJ41}" colspan="1"><input type="text" id="u_bcej14_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej14_c" value="" /></td>
 
-				<td th:text="${bCEJ12}" colspan="1"><input type="text" id="u_bcej15_a" value="" /></td>
-				<td th:text="${bCEJ43}" colspan="1"><input type="text" id="u_bcej15_b" value="" /></td>
-				<td th:text="${bCEJ44}" colspan="1"><input type="text" id="u_bcej15_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej15_c" value="" /></td>
 
-				<td th:text="${bCEJ45}" colspan="1"><input type="text" id="u_bcej16_a" value="" /></td>
-				<td th:text="${bCEJ46}" colspan="1"><input type="text" id="u_bcej16_b" value="" /></td>
-				<td th:text="${bCEJ47}" colspan="1"><input type="text" id="u_bcej16_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bcej16_c" value="" /></td>
 
 			</tr>
 			<tr>
 				<td class="back" rowspan="1">lCEJ</td>
-				<td th:text="${lCEJ0}" colspan="1"><input type="text" id="u_lcej1_a" value="" /></td>
-				<td th:text="${lCEJ1}" colspan="1"><input type="text" id="u_lcej1_b" value="" /></td>
-				<td th:text="${lCEJ2}" colspan="1"><input type="text" id="u_lcej1_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej1_c" value="" /></td>
 				
-				<td th:text="${lCEJ3}" colspan="1"><input type="text" id="u_lcej2_a" value="" /></td>
-				<td th:text="${lCEJ4}" colspan="1"><input type="text" id="u_lcej2_b" value="" /></td>
-				<td th:text="${lCEJ5}" colspan="1"><input type="text" id="u_lcej2_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej2_c" value="" /></td>
 
-				<td th:text="${lCEJ6}" colspan="1"><input type="text" id="u_lcej3_a" value="" /></td>
-				<td th:text="${lCEJ7}" colspan="1"><input type="text" id="u_lcej3_b" value="" /></td>
-				<td th:text="${lCEJ8}" colspan="1"><input type="text" id="u_lcej3_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej3_c" value="" /></td>
 
-				<td th:text="${lCEJ9}" colspan="1"><input type="text" id="u_lcej4_a" value="" /></td>
-				<td th:text="${lCEJ10}" colspan="1"><input type="text" id="u_lcej4_b" value="" /></td>
-				<td th:text="${lCEJ11}" colspan="1"><input type="text" id="u_lcej4_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej4_c" value="" /></td>
 
-				<td th:text="${lCEJ12}" colspan="1"><input type="text" id="u_lcej5_a" value="" /></td>
-				<td th:text="${lCEJ13}" colspan="1"><input type="text" id="u_lcej5_b" value="" /></td>
-				<td th:text="${lCEJ14}" colspan="1"><input type="text" id="u_lcej5_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej5_c" value="" /></td>
 
-				<td th:text="${lCEJ15}" colspan="1"><input type="text" id="u_lcej6_a" value="" /></td>
-				<td th:text="${lCEJ16}" colspan="1"><input type="text" id="u_lcej6_b" value="" /></td>
-				<td th:text="${lCEJ17}" colspan="1"><input type="text" id="u_lcej6_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej6_c" value="" /></td>
 
-				<td th:text="${lCEJ18}" colspan="1"><input type="text" id="u_lcej7_a" value="" /></td>
-				<td th:text="${lCEJ19}" colspan="1"><input type="text" id="u_lcej7_b" value="" /></td>
-				<td th:text="${lCEJ20}" colspan="1"><input type="text" id="u_lcej7_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej7_c" value="" /></td>
 
-				<td th:text="${lCEJ21}" colspan="1"><input type="text" id="u_lcej8_a" value="" /></td>
-				<td th:text="${lCEJ22}" colspan="1"><input type="text" id="u_lcej8_b" value="" /></td>
-				<td th:text="${lCEJ23}" colspan="1"><input type="text" id="u_lcej8_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej8_c" value="" /></td>
 
-				<td th:text="${lCEJ24}" colspan="1"><input type="text" id="u_lcej9_a" value="" /></td>
-				<td th:text="${lCEJ25}" colspan="1"><input type="text" id="u_lcej9_b" value="" /></td>
-				<td th:text="${lCEJ26}" colspan="1"><input type="text" id="u_lcej9_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej9_c" value="" /></td>
 
-				<td th:text="${lCEJ27}" colspan="1"><input type="text" id="u_lcej10_a" value="" /></td>
-				<td th:text="${lCEJ28}" colspan="1"><input type="text" id="u_lcej10_b" value="" /></td>
-				<td th:text="${lCEJ29}" colspan="1"><input type="text" id="u_lcej10_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej10_c" value="" /></td>
 
-				<td th:text="${lCEJ30}" colspan="1"><input type="text" id="u_lcej11_a" value="" /></td>
-				<td th:text="${lCEJ31}" colspan="1"><input type="text" id="u_lcej11_b" value="" /></td>
-				<td th:text="${lCEJ32}" colspan="1"><input type="text" id="u_lcej11_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej11_c" value="" /></td>
 				
-				<td th:text="${lCEJ33}" colspan="1"><input type="text" id="u_lcej12_a" value="" /></td>
-				<td th:text="${lCEJ34}" colspan="1"><input type="text" id="u_lcej12_b" value="" /></td>
-				<td th:text="${lCEJ35}" colspan="1"><input type="text" id="u_lcej12_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej12_c" value="" /></td>
 
-				<td th:text="${lCEJ36}" colspan="1"><input type="text" id="u_lcej13_a" value="" /></td>
-				<td th:text="${lCEJ37}" colspan="1"><input type="text" id="u_lcej13_b" value="" /></td>
-				<td th:text="${lCEJ38}" colspan="1"><input type="text" id="u_lcej13_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej13_c" value="" /></td>
 
-				<td th:text="${lCEJ39}" colspan="1"><input type="text" id="u_lcej14_a" value="" /></td>
-				<td th:text="${lCEJ40}" colspan="1"><input type="text" id="u_lcej14_b" value="" /></td>
-				<td th:text="${lCEJ41}" colspan="1"><input type="text" id="u_lcej14_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej14_c" value="" /></td>
 
-				<td th:text="${lCEJ42}" colspan="1"><input type="text" id="u_lcej15_a" value="" /></td>
-				<td th:text="${lCEJ43}" colspan="1"><input type="text" id="u_lcej15_b" value="" /></td>
-				<td th:text="${lCEJ44}" colspan="1"><input type="text" id="u_lcej15_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej15_c" value="" /></td>
 
-				<td th:text="${lCEJ45}" colspan="1"><input type="text" id="u_lcej16_a" value="" /></td>
-				<td th:text="${lCEJ46}" colspan="1"><input type="text" id="u_lcej16_b" value="" /></td>
-				<td th:text="${lCEJ47}" colspan="1"><input type="text" id="u_lcej16_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lcej16_c" value="" /></td>
 			</tr>
 			<tr><td class="back" rowspan="1"></td></tr>
 			<tr>
 				<td class="back" rowspan="1">bBI</td>
-				<td th:text="${bBI0}" colspan="1"><input type="text" id="u_bbi1_a" value="" /></td>
-				<td th:text="${bBI1}" colspan="1"><input type="text" id="u_bbi1_b" value="" /></td>
-				<td th:text="${bBI2}" colspan="1"><input type="text" id="u_bbi1_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi1_c" value="" /></td>
 				
-				<td th:text="${bBI3}" colspan="1"><input type="text" id="u_bbi2_a" value="" /></td>
-				<td th:text="${bBI4}" colspan="1"><input type="text" id="u_bbi2_b" value="" /></td>
-				<td th:text="${bBI5}" colspan="1"><input type="text" id="u_bbi2_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi2_c" value="" /></td>
 
-				<td th:text="${bBI6}" colspan="1"><input type="text" id="u_bbi3_a" value="" /></td>
-				<td th:text="${bBI7}" colspan="1"><input type="text" id="u_bbi3_b" value="" /></td>
-				<td th:text="${bBI8}" colspan="1"><input type="text" id="u_bbi3_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi3_c" value="" /></td>
 
-				<td th:text="${bBI9}" colspan="1"><input type="text" id="u_bbi4_a" value="" /></td>
-				<td th:text="${bBI10}" colspan="1"><input type="text" id="u_bbi4_b" value="" /></td>
-				<td th:text="${bBI11}" colspan="1"><input type="text" id="u_bbi4_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi4_c" value="" /></td>
 
-				<td th:text="${bBI12}" colspan="1"><input type="text" id="u_bbi5_a" value="" /></td>
-				<td th:text="${bBI13}" colspan="1"><input type="text" id="u_bbi5_b" value="" /></td>
-				<td th:text="${bBI14}" colspan="1"><input type="text" id="u_bbi5_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi5_c" value="" /></td>
 
-				<td th:text="${bBI15}" colspan="1"><input type="text" id="u_bbi6_a" value="" /></td>
-				<td th:text="${bBI16}" colspan="1"><input type="text" id="u_bbi6_b" value="" /></td>
-				<td th:text="${bBI17}" colspan="1"><input type="text" id="u_bbi6_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi6_c" value="" /></td>
 
-				<td th:text="${bBI18}" colspan="1"><input type="text" id="u_bbi7_a" value="" /></td>
-				<td th:text="${bBI19}" colspan="1"><input type="text" id="u_bbi7_b" value="" /></td>
-				<td th:text="${bBI20}" colspan="1"><input type="text" id="u_bbi7_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi7_c" value="" /></td>
 
-				<td th:text="${bBI21}" colspan="1"><input type="text" id="u_bbi8_a" value="" /></td>
-				<td th:text="${bBI22}" colspan="1"><input type="text" id="u_bbi8_b" value="" /></td>
-				<td th:text="${bBI23}" colspan="1"><input type="text" id="u_bbi8_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi8_c" value="" /></td>
 
-				<td th:text="${bBI24}" colspan="1"><input type="text" id="u_bbi9_a" value="" /></td>
-				<td th:text="${bBI25}" colspan="1"><input type="text" id="u_bbi9_b" value="" /></td>
-				<td th:text="${bBI26}" colspan="1"><input type="text" id="u_bbi9_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi9_c" value="" /></td>
 
-				<td th:text="${bBI27}" colspan="1"><input type="text" id="u_bbi10_a" value="" /></td>
-				<td th:text="${bBI28}" colspan="1"><input type="text" id="u_bbi10_b" value="" /></td>
-				<td th:text="${bBI29}" colspan="1"><input type="text" id="u_bbi10_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi10_c" value="" /></td>
 
-				<td th:text="${bBI30}" colspan="1"><input type="text" id="u_bbi11_a" value="" /></td>
-				<td th:text="${bBI31}" colspan="1"><input type="text" id="u_bbi11_b" value="" /></td>
-				<td th:text="${bBI32}" colspan="1"><input type="text" id="u_bbi11_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi11_c" value="" /></td>
 				
-				<td th:text="${bBI33}" colspan="1"><input type="text" id="u_bbi12_a" value="" /></td>
-				<td th:text="${bBI34}" colspan="1"><input type="text" id="u_bbi12_b" value="" /></td>
-				<td th:text="${bBI35}" colspan="1"><input type="text" id="u_bbi12_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi12_c" value="" /></td>
 
-				<td th:text="${bBI36}" colspan="1"><input type="text" id="u_bbi13_a" value="" /></td>
-				<td th:text="${bBI37}" colspan="1"><input type="text" id="u_bbi13_b" value="" /></td>
-				<td th:text="${bBI38}" colspan="1"><input type="text" id="u_bbi13_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi13_c" value="" /></td>
 
-				<td th:text="${bBI39}" colspan="1"><input type="text" id="u_bbi14_a" value="" /></td>
-				<td th:text="${bBI40}" colspan="1"><input type="text" id="u_bbi14_b" value="" /></td>
-				<td th:text="${bBI41}" colspan="1"><input type="text" id="u_bbi14_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi14_c" value="" /></td>
 
-				<td th:text="${bBI42}" colspan="1"><input type="text" id="u_bbi15_a" value="" /></td>
-				<td th:text="${bBI43}" colspan="1"><input type="text" id="u_bbi15_b" value="" /></td>
-				<td th:text="${bBI44}" colspan="1"><input type="text" id="u_bbi15_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi15_c" value="" /></td>
 
-				<td th:text="${bBI45}" colspan="1"><input type="text" id="u_bbi16_a" value="" /></td>
-				<td th:text="${bBI46}" colspan="1"><input type="text" id="u_bbi16_b" value="" /></td>
-				<td th:text="${bBI47}" colspan="1"><input type="text" id="u_bbi16_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bbi16_c" value="" /></td>
 			</tr>
 			<tr>
-				<td class="back" rowspan="1">lBI</td>
-				<td th:text="${lBI0}" colspan="1"><input type="text" id="u_lBI1_a" value="" /></td>
-				<td th:text="${lBI1}" colspan="1"><input type="text" id="u_lBI1_b" value="" /></td>
-				<td th:text="${lBI2}" colspan="1"><input type="text" id="u_lBI1_c" value="" /></td>
-				
-				<td th:text="${lBI3}" colspan="1"><input type="text" id="u_lBI2_a" value="" /></td>
-				<td th:text="${lBI4}" colspan="1"><input type="text" id="u_lBI2_b" value="" /></td>
-				<td th:text="${lBI5}" colspan="1"><input type="text" id="u_lBI2_c" value="" /></td>
-
-				<td th:text="${lBI6}" colspan="1"><input type="text" id="u_lBI3_a" value="" /></td>
-				<td th:text="${lBI7}" colspan="1"><input type="text" id="u_lBI3_b" value="" /></td>
-				<td th:text="${lBI8}" colspan="1"><input type="text" id="u_lBI3_c" value="" /></td>
-
-				<td th:text="${lBI9}" colspan="1"><input type="text" id="u_lBI4_a" value="" /></td>
-				<td th:text="${lBI10}" colspan="1"><input type="text" id="u_lBI4_b" value="" /></td>
-				<td th:text="${lBI11}" colspan="1"><input type="text" id="u_lBI4_c" value="" /></td>
-
-				<td th:text="${lBI12}" colspan="1"><input type="text" id="u_lBI5_a" value="" /></td>
-				<td th:text="${lBI13}" colspan="1"><input type="text" id="u_lBI5_b" value="" /></td>
-				<td th:text="${lBI14}" colspan="1"><input type="text" id="u_lBI5_c" value="" /></td>
-
-				<td th:text="${lBI15}" colspan="1"><input type="text" id="u_lBI6_a" value="" /></td>
-				<td th:text="${lBI16}" colspan="1"><input type="text" id="u_lBI6_b" value="" /></td>
-				<td th:text="${lBI17}" colspan="1"><input type="text" id="u_lBI6_c" value="" /></td>
-
-				<td th:text="${lBI18}" colspan="1"><input type="text" id="u_lBI7_a" value="" /></td>
-				<td th:text="${lBI19}" colspan="1"><input type="text" id="u_lBI7_b" value="" /></td>
-				<td th:text="${lBI20}" colspan="1"><input type="text" id="u_lBI7_c" value="" /></td>
-
-				<td th:text="${lBI21}" colspan="1"><input type="text" id="u_lBI8_a" value="" /></td>
-				<td th:text="${lBI22}" colspan="1"><input type="text" id="u_lBI8_b" value="" /></td>
-				<td th:text="${lBI23}" colspan="1"><input type="text" id="u_lBI8_c" value="" /></td>
-
-				<td th:text="${lBI24}" colspan="1"><input type="text" id="u_lBI9_a" value="" /></td>
-				<td th:text="${lBI25}" colspan="1"><input type="text" id="u_lBI9_b" value="" /></td>
-				<td th:text="${lBI26}" colspan="1"><input type="text" id="u_lBI9_c" value="" /></td>
-
-				<td th:text="${lBI27}" colspan="1"><input type="text" id="u_lBI10_a" value="" /></td>
-				<td th:text="${lBI28}" colspan="1"><input type="text" id="u_lBI10_b" value="" /></td>
-				<td th:text="${lBI29}" colspan="1"><input type="text" id="u_lBI10_c" value="" /></td>
-
-				<td th:text="${lBI30}" colspan="1"><input type="text" id="u_lBI11_a" value="" /></td>
-				<td th:text="${lBI31}" colspan="1"><input type="text" id="u_lBI11_b" value="" /></td>
-				<td th:text="${lBI32}" colspan="1"><input type="text" id="u_lBI11_c" value="" /></td>
-				
-				<td th:text="${lBI33}" colspan="1"><input type="text" id="u_lBI12_a" value="" /></td>
-				<td th:text="${lBI34}" colspan="1"><input type="text" id="u_lBI12_b" value="" /></td>
-				<td th:text="${lBI35}" colspan="1"><input type="text" id="u_lBI12_c" value="" /></td>
-
-				<td th:text="${lBI36}" colspan="1"><input type="text" id="u_lBI13_a" value="" /></td>
-				<td th:text="${lBI37}" colspan="1"><input type="text" id="u_lBI13_b" value="" /></td>
-				<td th:text="${lBI38}" colspan="1"><input type="text" id="u_lBI13_c" value="" /></td>
-
-				<td th:text="${lBI39}" colspan="1"><input type="text" id="u_lBI14_a" value="" /></td>
-				<td th:text="${lBI40}" colspan="1"><input type="text" id="u_lBI14_b" value="" /></td>
-				<td th:text="${lBI41}" colspan="1"><input type="text" id="u_lBI14_c" value="" /></td>
-
-				<td th:text="${lBI42}" colspan="1"><input type="text" id="u_lBI15_a" value="" /></td>
-				<td th:text="${lBI43}" colspan="1"><input type="text" id="u_lBI15_b" value="" /></td>
-				<td th:text="${lBI44}" colspan="1"><input type="text" id="u_lBI15_c" value="" /></td>
-
-				<td th:text="${lBI45}" colspan="1"><input type="text" id="u_lBI16_a" value="" /></td>
-				<td th:text="${lBI46}" colspan="1"><input type="text" id="u_lBI16_b" value="" /></td>
-				<td th:text="${lBI47}" colspan="1"><input type="text" id="u_lBI16_c" value="" /></td>
+					<td class="back" rowspan="1">lBI</td>
+					<td colspan="1"><input type="text" id="u_lbi1_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi1_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi1_c" value="" /></td>
+					
+					<td colspan="1"><input type="text" id="u_lbi2_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi2_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi2_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi3_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi3_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi3_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi4_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi4_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi4_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi5_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi5_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi5_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi6_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi6_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi6_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi7_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi7_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi7_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi8_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi8_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi8_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi9_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi9_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi9_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi10_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi10_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi10_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi11_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi11_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi11_c" value="" /></td>
+					
+					<td colspan="1"><input type="text" id="u_lbi12_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi12_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi12_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi13_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi13_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi13_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi14_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi14_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi14_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi15_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi15_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi15_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="u_lbi16_a" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi16_b" value="" /></td>
+					<td colspan="1"><input type="text" id="u_lbi16_c" value="" /></td>
 				</tr>
 				<tr><td class="back" rowspan="1"></td></tr>
 			<tr>
 				<td class="back">bPD</td>
 				
-				<td th:text="${bPD0}" colspan="1"><input type="text" id="u_bPD1_a" value="" /></td>
-				<td th:text="${bPD1}" colspan="1"><input type="text" id="u_bPD1_b" value="" /></td>
-				<td th:text="${bPD2}" colspan="1"><input type="text" id="u_bPD1_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd1_c" value="" /></td>
 				
-				<td th:text="${bPD3}" colspan="1"><input type="text" id="u_bPD2_a" value="" /></td>
-				<td th:text="${bPD4}" colspan="1"><input type="text" id="u_bPD2_b" value="" /></td>
-				<td th:text="${bPD5}" colspan="1"><input type="text" id="u_bPD2_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd2_c" value="" /></td>
 
-				<td th:text="${bPD6}" colspan="1"><input type="text" id="u_bPD3_a" value="" /></td>
-				<td th:text="${bPD7}" colspan="1"><input type="text" id="u_bPD3_b" value="" /></td>
-				<td th:text="${bPD8}" colspan="1"><input type="text" id="u_bPD3_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd3_c" value="" /></td>
 
-				<td th:text="${bPD9}" colspan="1"><input type="text" id="u_bPD4_a" value="" /></td>
-				<td th:text="${bPD10}" colspan="1"><input type="text" id="u_bPD4_b" value="" /></td>
-				<td th:text="${bPD11}" colspan="1"><input type="text" id="u_bPD4_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd4_c" value="" /></td>
 
-				<td th:text="${bPD12}" colspan="1"><input type="text" id="u_bPD5_a" value="" /></td>
-				<td th:text="${bPD13}" colspan="1"><input type="text" id="u_bPD5_b" value="" /></td>
-				<td th:text="${bPD14}" colspan="1"><input type="text" id="u_bPD5_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd5_c" value="" /></td>
 
-				<td th:text="${bPD15}" colspan="1"><input type="text" id="u_bPD6_a" value="" /></td>
-				<td th:text="${bPD16}" colspan="1"><input type="text" id="u_bPD6_b" value="" /></td>
-				<td th:text="${bPD17}" colspan="1"><input type="text" id="u_bPD6_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd6_c" value="" /></td>
 
-				<td th:text="${bPD18}" colspan="1"><input type="text" id="u_bPD7_a" value="" /></td>
-				<td th:text="${bPD19}" colspan="1"><input type="text" id="u_bPD7_b" value="" /></td>
-				<td th:text="${bPD20}" colspan="1"><input type="text" id="u_bPD7_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd7_c" value="" /></td>
 
-				<td th:text="${bPD21}" colspan="1"><input type="text" id="u_bPD8_a" value="" /></td>
-				<td th:text="${bPD22}" colspan="1"><input type="text" id="u_bPD8_b" value="" /></td>
-				<td th:text="${bPD23}" colspan="1"><input type="text" id="u_bPD8_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd8_c" value="" /></td>
 
-				<td th:text="${bPD24}" colspan="1"><input type="text" id="u_bPD9_a" value="" /></td>
-				<td th:text="${bPD25}" colspan="1"><input type="text" id="u_bPD9_b" value="" /></td>
-				<td th:text="${bPD26}" colspan="1"><input type="text" id="u_bPD9_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd9_c" value="" /></td>
 
-				<td th:text="${bPD27}" colspan="1"><input type="text" id="u_bPD10_a" value="" /></td>
-				<td th:text="${bPD28}" colspan="1"><input type="text" id="u_bPD10_b" value="" /></td>
-				<td th:text="${bPD29}" colspan="1"><input type="text" id="u_bPD10_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd10_c" value="" /></td>
 
-				<td th:text="${bPD30}" colspan="1"><input type="text" id="u_bPD11_a" value="" /></td>
-				<td th:text="${bPD31}" colspan="1"><input type="text" id="u_bPD11_b" value="" /></td>
-				<td th:text="${bPD32}" colspan="1"><input type="text" id="u_bPD11_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd11_c" value="" /></td>
 				
-				<td th:text="${bPD33}" colspan="1"><input type="text" id="u_bPD12_a" value="" /></td>
-				<td th:text="${bPD34}" colspan="1"><input type="text" id="u_bPD12_b" value="" /></td>
-				<td th:text="${bPD35}" colspan="1"><input type="text" id="u_bPD12_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd12_c" value="" /></td>
 
-				<td th:text="${bPD36}" colspan="1"><input type="text" id="u_bPD13_a" value="" /></td>
-				<td th:text="${bPD37}" colspan="1"><input type="text" id="u_bPD13_b" value="" /></td>
-				<td th:text="${bPD38}" colspan="1"><input type="text" id="u_bPD13_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd13_c" value="" /></td>
 
-				<td th:text="${bPD39}" colspan="1"><input type="text" id="u_bPD14_a" value="" /></td>
-				<td th:text="${bPD40}" colspan="1"><input type="text" id="u_bPD14_b" value="" /></td>
-				<td th:text="${bPD41}" colspan="1"><input type="text" id="u_bPD14_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd14_c" value="" /></td>
 
-				<td th:text="${bPD42}" colspan="1"><input type="text" id="u_bPD15_a" value="" /></td>
-				<td th:text="${bPD43}" colspan="1"><input type="text" id="u_bPD15_b" value="" /></td>
-				<td th:text="${bPD44}" colspan="1"><input type="text" id="u_bPD15_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd15_c" value="" /></td>
 
-				<td th:text="${bPD45}" colspan="1"><input type="text" id="u_bPD16_a" value="" /></td>
-				<td th:text="${bPD46}" colspan="1"><input type="text" id="u_bPD16_b" value="" /></td>
-				<td th:text="${bPD47}" colspan="1"><input type="text" id="u_bPD16_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_bpd16_c" value="" /></td>
 			</tr>
 			
 			<tr>
 				<td class="back">lPD</td>
-				<td th:text="${lBI0}" colspan="1"><input type="text" id="u_lBI1_a" value="" /></td>
-				<td th:text="${lBI1}" colspan="1"><input type="text" id="u_lBI1_b" value="" /></td>
-				<td th:text="${lBI2}" colspan="1"><input type="text" id="u_lBI1_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd1_c" value="" /></td>
 				
-				<td th:text="${lBI3}" colspan="1"><input type="text" id="u_lBI2_a" value="" /></td>
-				<td th:text="${lBI4}" colspan="1"><input type="text" id="u_lBI2_b" value="" /></td>
-				<td th:text="${lBI5}" colspan="1"><input type="text" id="u_lBI2_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd2_c" value="" /></td>
 
-				<td th:text="${lBI6}" colspan="1"><input type="text" id="u_lBI3_a" value="" /></td>
-				<td th:text="${lBI7}" colspan="1"><input type="text" id="u_lBI3_b" value="" /></td>
-				<td th:text="${lBI8}" colspan="1"><input type="text" id="u_lBI3_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd3_c" value="" /></td>
 
-				<td th:text="${lBI9}" colspan="1"><input type="text" id="u_lBI4_a" value="" /></td>
-				<td th:text="${lBI10}" colspan="1"><input type="text" id="u_lBI4_b" value="" /></td>
-				<td th:text="${lBI11}" colspan="1"><input type="text" id="u_lBI4_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd4_c" value="" /></td>
 
-				<td th:text="${lBI12}" colspan="1"><input type="text" id="u_lBI5_a" value="" /></td>
-				<td th:text="${lBI13}" colspan="1"><input type="text" id="u_lBI5_b" value="" /></td>
-				<td th:text="${lBI14}" colspan="1"><input type="text" id="u_lBI5_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd5_c" value="" /></td>
 
-				<td th:text="${lBI15}" colspan="1"><input type="text" id="u_lBI6_a" value="" /></td>
-				<td th:text="${lBI16}" colspan="1"><input type="text" id="u_lBI6_b" value="" /></td>
-				<td th:text="${lBI17}" colspan="1"><input type="text" id="u_lBI6_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd6_c" value="" /></td>
 
-				<td th:text="${lBI18}" colspan="1"><input type="text" id="u_lBI7_a" value="" /></td>
-				<td th:text="${lBI19}" colspan="1"><input type="text" id="u_lBI7_b" value="" /></td>
-				<td th:text="${lBI20}" colspan="1"><input type="text" id="u_lBI7_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd7_c" value="" /></td>
 
-				<td th:text="${lBI21}" colspan="1"><input type="text" id="u_lBI8_a" value="" /></td>
-				<td th:text="${lBI22}" colspan="1"><input type="text" id="u_lBI8_b" value="" /></td>
-				<td th:text="${lBI23}" colspan="1"><input type="text" id="u_lBI8_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd8_c" value="" /></td>
 
-				<td th:text="${lBI24}" colspan="1"><input type="text" id="u_lBI9_a" value="" /></td>
-				<td th:text="${lBI25}" colspan="1"><input type="text" id="u_lBI9_b" value="" /></td>
-				<td th:text="${lBI26}" colspan="1"><input type="text" id="u_lBI9_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd9_c" value="" /></td>
 
-				<td th:text="${lBI27}" colspan="1"><input type="text" id="u_lBI10_a" value="" /></td>
-				<td th:text="${lBI28}" colspan="1"><input type="text" id="u_lBI10_b" value="" /></td>
-				<td th:text="${lBI29}" colspan="1"><input type="text" id="u_lBI10_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd10_c" value="" /></td>
 
-				<td th:text="${lBI30}" colspan="1"><input type="text" id="u_lBI11_a" value="" /></td>
-				<td th:text="${lBI31}" colspan="1"><input type="text" id="u_lBI11_b" value="" /></td>
-				<td th:text="${lBI32}" colspan="1"><input type="text" id="u_lBI11_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd11_c" value="" /></td>
 				
-				<td th:text="${lBI33}" colspan="1"><input type="text" id="u_lBI12_a" value="" /></td>
-				<td th:text="${lBI34}" colspan="1"><input type="text" id="u_lBI12_b" value="" /></td>
-				<td th:text="${lBI35}" colspan="1"><input type="text" id="u_lBI12_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd12_c" value="" /></td>
 
-				<td th:text="${lBI36}" colspan="1"><input type="text" id="u_lBI13_a" value="" /></td>
-				<td th:text="${lBI37}" colspan="1"><input type="text" id="u_lBI13_b" value="" /></td>
-				<td th:text="${lBI38}" colspan="1"><input type="text" id="u_lBI13_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd13_c" value="" /></td>
 
-				<td th:text="${lBI39}" colspan="1"><input type="text" id="u_lBI14_a" value="" /></td>
-				<td th:text="${lBI40}" colspan="1"><input type="text" id="u_lBI14_b" value="" /></td>
-				<td th:text="${lBI41}" colspan="1"><input type="text" id="u_lBI14_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd14_c" value="" /></td>
 
-				<td th:text="${lBI42}" colspan="1"><input type="text" id="u_lBI15_a" value="" /></td>
-				<td th:text="${lBI43}" colspan="1"><input type="text" id="u_lBI15_b" value="" /></td>
-				<td th:text="${lBI44}" colspan="1"><input type="text" id="u_lBI15_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd15_c" value="" /></td>
 
-				<td th:text="${lBI45}" colspan="1"><input type="text" id="u_lBI16_a" value="" /></td>
-				<td th:text="${lBI46}" colspan="1"><input type="text" id="u_lBI16_b" value="" /></td>
-				<td th:text="${lBI47}" colspan="1"><input type="text" id="u_lBI16_c" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="u_lpd16_c" value="" /></td>
 				
 			</tr>
 			
@@ -701,628 +701,629 @@
 			</tr>
 			
 			<tr>
-				<td class="back">lPD</td>
-				<td th:text="${lPD48}" colspan="1"><input type="text" id="d_lPD1_a" value="" /></td>
-				<td th:text="${lPD49}" colspan="1"><input type="text" id="d_lPD1_b" value="" /></td>
-				<td th:text="${lPD50}" colspan="1"><input type="text" id="d_lPD1_c" value="" /></td>
-				
-				<td th:text="${lPD51}" colspan="1"><input type="text" id="d_lPD2_a" value="" /></td>
-				<td th:text="${lPD52}" colspan="1"><input type="text" id="d_lPD2_b" value="" /></td>
-				<td th:text="${lPD53}" colspan="1"><input type="text" id="d_lPD2_c" value="" /></td>
-
-				<td th:text="${lPD54}" colspan="1"><input type="text" id="d_lPD3_a" value="" /></td>
-				<td th:text="${lPD55}" colspan="1"><input type="text" id="d_lPD3_b" value="" /></td>
-				<td th:text="${lPD56}" colspan="1"><input type="text" id="d_lPD3_c" value="" /></td>
-
-				<td th:text="${lPD57}" colspan="1"><input type="text" id="d_lPD4_a" value="" /></td>
-				<td th:text="${lPD58}" colspan="1"><input type="text" id="d_lPD4_b" value="" /></td>
-				<td th:text="${lPD59}" colspan="1"><input type="text" id="d_lPD4_c" value="" /></td>
-
-				<td th:text="${lPD60}" colspan="1"><input type="text" id="d_lPD5_a" value="" /></td>
-				<td th:text="${lPD61}" colspan="1"><input type="text" id="d_lPD5_b" value="" /></td>
-				<td th:text="${lPD62}" colspan="1"><input type="text" id="d_lPD5_c" value="" /></td>
-
-				<td th:text="${lPD63}" colspan="1"><input type="text" id="d_lPD6_a" value="" /></td>
-				<td th:text="${lPD64}" colspan="1"><input type="text" id="d_lPD6_b" value="" /></td>
-				<td th:text="${lPD65}" colspan="1"><input type="text" id="d_lPD6_c" value="" /></td>
-
-				<td th:text="${lPD66}" colspan="1"><input type="text" id="d_lPD7_a" value="" /></td>
-				<td th:text="${lPD67}" colspan="1"><input type="text" id="d_lPD7_b" value="" /></td>
-				<td th:text="${lPD68}" colspan="1"><input type="text" id="d_lPD7_c" value="" /></td>
-
-				<td th:text="${lPD69}" colspan="1"><input type="text" id="d_lPD8_a" value="" /></td>
-				<td th:text="${lPD70}" colspan="1"><input type="text" id="d_lPD8_b" value="" /></td>
-				<td th:text="${lPD71}" colspan="1"><input type="text" id="d_lPD8_c" value="" /></td>
-
-				<td th:text="${lPD72}" colspan="1"><input type="text" id="d_lPD9_a" value="" /></td>
-				<td th:text="${lPD73}" colspan="1"><input type="text" id="d_lPD9_b" value="" /></td>
-				<td th:text="${lPD74}" colspan="1"><input type="text" id="d_lPD9_c" value="" /></td>
-
-				<td th:text="${lPD75}" colspan="1"><input type="text" id="d_lPD10_a" value="" /></td>
-				<td th:text="${lPD76}" colspan="1"><input type="text" id="d_lPD10_b" value="" /></td>
-				<td th:text="${lPD77}" colspan="1"><input type="text" id="d_lPD10_c" value="" /></td>
-
-				<td th:text="${lPD78}" colspan="1"><input type="text" id="d_lPD11_a" value="" /></td>
-				<td th:text="${lPD79}" colspan="1"><input type="text" id="d_lPD11_b" value="" /></td>
-				<td th:text="${lPD80}" colspan="1"><input type="text" id="d_lPD11_c" value="" /></td>
-				
-				<td th:text="${lPD81}" colspan="1"><input type="text" id="d_lPD12_a" value="" /></td>
-				<td th:text="${lPD82}" colspan="1"><input type="text" id="d_lPD12_b" value="" /></td>
-				<td th:text="${lPD83}" colspan="1"><input type="text" id="d_lPD12_c" value="" /></td>
-
-				<td th:text="${lPD84}" colspan="1"><input type="text" id="d_lPD13_a" value="" /></td>
-				<td th:text="${lPD85}" colspan="1"><input type="text" id="d_lPD13_b" value="" /></td>
-				<td th:text="${lPD86}" colspan="1"><input type="text" id="d_lPD13_c" value="" /></td>
-
-				<td th:text="${lPD87}" colspan="1"><input type="text" id="d_lPD14_a" value="" /></td>
-				<td th:text="${lPD88}" colspan="1"><input type="text" id="d_lPD14_b" value="" /></td>
-				<td th:text="${lPD89}" colspan="1"><input type="text" id="d_lPD14_c" value="" /></td>
-
-				<td th:text="${lPD90}" colspan="1"><input type="text" id="d_lPD15_a" value="" /></td>
-				<td th:text="${lPD91}" colspan="1"><input type="text" id="d_lPD15_b" value="" /></td>
-				<td th:text="${lPD92}" colspan="1"><input type="text" id="d_lPD15_c" value="" /></td>
-
-				<td th:text="${lPD93}" colspan="1"><input type="text" id="d_lPD16_a" value="" /></td>
-				<td th:text="${lPD94}" colspan="1"><input type="text" id="d_lPD16_b" value="" /></td>
-				<td th:text="${lPD95}" colspan="1"><input type="text" id="d_lPD16_c" value="" /></td>
+					<td class="back">lPD</td>
+					<td colspan="1"><input type="text" id="d_lpd1_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd1_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd1_c" value="" /></td>
+					
+					<td colspan="1"><input type="text" id="d_lpd2_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd2_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd2_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd3_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd3_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd3_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd4_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd4_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd4_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd5_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd5_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd5_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd6_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd6_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd6_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd7_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd7_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd7_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd8_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd8_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd8_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd9_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd9_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd9_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd10_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd10_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd10_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd11_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd11_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd11_c" value="" /></td>
+					
+					<td colspan="1"><input type="text" id="d_lpd12_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd12_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd12_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd13_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd13_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd13_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd14_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd14_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd14_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd15_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd15_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd15_c" value="" /></td>
+	
+					<td colspan="1"><input type="text" id="d_lpd16_a" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd16_b" value="" /></td>
+					<td colspan="1"><input type="text" id="d_lpd16_c" value="" /></td>
 					
 				</tr>
 				<tr>
 						<td class="back">bPD</td>
 						
-						<td th:text="${bPD48}" colspan="1"><input type="text" id="d_bPD1_a" value="" /></td>
-						<td th:text="${bPD49}" colspan="1"><input type="text" id="d_bPD1_b" value="" /></td>
-						<td th:text="${bPD50}" colspan="1"><input type="text" id="d_bPD1_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd1_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd1_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd1_c" value="" /></td>
 						
-						<td th:text="${bPD51}" colspan="1"><input type="text" id="d_bPD2_a" value="" /></td>
-						<td th:text="${bPD52}" colspan="1"><input type="text" id="d_bPD2_b" value="" /></td>
-						<td th:text="${bPD53}" colspan="1"><input type="text" id="d_bPD2_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd2_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd2_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd2_c" value="" /></td>
 		
-						<td th:text="${bPD54}" colspan="1"><input type="text" id="d_bPD3_a" value="" /></td>
-						<td th:text="${bPD55}" colspan="1"><input type="text" id="d_bPD3_b" value="" /></td>
-						<td th:text="${bPD56}" colspan="1"><input type="text" id="d_bPD3_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd3_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd3_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd3_c" value="" /></td>
 		
-						<td th:text="${bPD57}" colspan="1"><input type="text" id="d_bPD4_a" value="" /></td>
-						<td th:text="${bPD58}" colspan="1"><input type="text" id="d_bPD4_b" value="" /></td>
-						<td th:text="${bPD59}" colspan="1"><input type="text" id="d_bPD4_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd4_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd4_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd4_c" value="" /></td>
 		
-						<td th:text="${bPD60}" colspan="1"><input type="text" id="d_bPD5_a" value="" /></td>
-						<td th:text="${bPD61}" colspan="1"><input type="text" id="d_bPD5_b" value="" /></td>
-						<td th:text="${bPD62}" colspan="1"><input type="text" id="d_bPD5_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd5_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd5_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd5_c" value="" /></td>
 		
-						<td th:text="${bPD63}" colspan="1"><input type="text" id="d_bPD6_a" value="" /></td>
-						<td th:text="${bPD64}" colspan="1"><input type="text" id="d_bPD6_b" value="" /></td>
-						<td th:text="${bPD65}" colspan="1"><input type="text" id="d_bPD6_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd6_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd6_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd6_c" value="" /></td>
 		
-						<td th:text="${bPD66}" colspan="1"><input type="text" id="d_bPD7_a" value="" /></td>
-						<td th:text="${bPD67}" colspan="1"><input type="text" id="d_bPD7_b" value="" /></td>
-						<td th:text="${bPD68}" colspan="1"><input type="text" id="d_bPD7_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd7_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd7_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd7_c" value="" /></td>
 		
-						<td th:text="${bPD69}" colspan="1"><input type="text" id="d_bPD8_a" value="" /></td>
-						<td th:text="${bPD70}" colspan="1"><input type="text" id="d_bPD8_b" value="" /></td>
-						<td th:text="${bPD71}" colspan="1"><input type="text" id="d_bPD8_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd8_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd8_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd8_c" value="" /></td>
 		
-						<td th:text="${bPD72}" colspan="1"><input type="text" id="d_bPD9_a" value="" /></td>
-						<td th:text="${bPD73}" colspan="1"><input type="text" id="d_bPD9_b" value="" /></td>
-						<td th:text="${bPD74}" colspan="1"><input type="text" id="d_bPD9_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd9_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd9_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd9_c" value="" /></td>
 		
-						<td th:text="${bPD75}" colspan="1"><input type="text" id="d_bPD10_a" value="" /></td>
-						<td th:text="${bPD76}" colspan="1"><input type="text" id="d_bPD10_b" value="" /></td>
-						<td th:text="${bPD77}" colspan="1"><input type="text" id="d_bPD10_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd10_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd10_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd10_c" value="" /></td>
 		
-						<td th:text="${bPD78}" colspan="1"><input type="text" id="d_bPD11_a" value="" /></td>
-						<td th:text="${bPD79}" colspan="1"><input type="text" id="d_bPD11_b" value="" /></td>
-						<td th:text="${bPD80}" colspan="1"><input type="text" id="d_bPD11_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd11_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd11_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd11_c" value="" /></td>
 						
-						<td th:text="${bPD81}" colspan="1"><input type="text" id="d_bPD12_a" value="" /></td>
-						<td th:text="${bPD82}" colspan="1"><input type="text" id="d_bPD12_b" value="" /></td>
-						<td th:text="${bPD83}" colspan="1"><input type="text" id="d_bPD12_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd12_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd12_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd12_c" value="" /></td>
 		
-						<td th:text="${bPD84}" colspan="1"><input type="text" id="d_bPD13_a" value="" /></td>
-						<td th:text="${bPD85}" colspan="1"><input type="text" id="d_bPD13_b" value="" /></td>
-						<td th:text="${bPD86}" colspan="1"><input type="text" id="d_bPD13_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd13_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd13_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd13_c" value="" /></td>
 		
-						<td th:text="${bPD87}" colspan="1"><input type="text" id="d_bPD14_a" value="" /></td>
-						<td th:text="${bPD88}" colspan="1"><input type="text" id="d_bPD14_b" value="" /></td>
-						<td th:text="${bPD89}" colspan="1"><input type="text" id="d_bPD14_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd14_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd14_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd14_c" value="" /></td>
 		
-						<td th:text="${bPD90}" colspan="1"><input type="text" id="d_bPD15_a" value="" /></td>
-						<td th:text="${bPD91}" colspan="1"><input type="text" id="d_bPD15_b" value="" /></td>
-						<td th:text="${bPD92}" colspan="1"><input type="text" id="d_bPD15_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd15_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd15_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd15_c" value="" /></td>
 		
-						<td th:text="${bPD93}" colspan="1"><input type="text" id="d_bPD16_a" value="" /></td>
-						<td th:text="${bPD94}" colspan="1"><input type="text" id="d_bPD16_b" value="" /></td>
-						<td th:text="${bPD95}" colspan="1"><input type="text" id="d_bPD16_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd16_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd16_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_bpd16_c" value="" /></td>
 					</tr>
 					<tr><td class="back" rowspan="1"></td></tr><tr></tr>
 					<tr>
 							<td class="back" rowspan="1">lBI</td>
-							<td th:text="${lBI48}" colspan="1"><input type="text" id="d_lBI1_a" value="" /></td>
-							<td th:text="${lBI49}" colspan="1"><input type="text" id="d_lBI1_b" value="" /></td>
-							<td th:text="${lBI50}" colspan="1"><input type="text" id="d_lBI1_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi1_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi1_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi1_c" value="" /></td>
 							
-							<td th:text="${lBI51}" colspan="1"><input type="text" id="d_lBI2_a" value="" /></td>
-							<td th:text="${lBI52}" colspan="1"><input type="text" id="d_lBI2_b" value="" /></td>
-							<td th:text="${lBI53}" colspan="1"><input type="text" id="d_lBI2_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi2_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi2_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi2_c" value="" /></td>
 			
-							<td th:text="${lBI54}" colspan="1"><input type="text" id="d_lBI3_a" value="" /></td>
-							<td th:text="${lBI55}" colspan="1"><input type="text" id="d_lBI3_b" value="" /></td>
-							<td th:text="${lBI56}" colspan="1"><input type="text" id="d_lBI3_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi3_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi3_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi3_c" value="" /></td>
 			
-							<td th:text="${lBI57}" colspan="1"><input type="text" id="d_lBI4_a" value="" /></td>
-							<td th:text="${lBI58}" colspan="1"><input type="text" id="d_lBI4_b" value="" /></td>
-							<td th:text="${lBI59}" colspan="1"><input type="text" id="d_lBI4_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi4_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi4_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi4_c" value="" /></td>
 			
-							<td th:text="${lBI60}" colspan="1"><input type="text" id="d_lBI5_a" value="" /></td>
-							<td th:text="${lBI61}" colspan="1"><input type="text" id="d_lBI5_b" value="" /></td>
-							<td th:text="${lBI62}" colspan="1"><input type="text" id="d_lBI5_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi5_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi5_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi5_c" value="" /></td>
 			
-							<td th:text="${lBI63}" colspan="1"><input type="text" id="d_lBI6_a" value="" /></td>
-							<td th:text="${lBI64}" colspan="1"><input type="text" id="d_lBI6_b" value="" /></td>
-							<td th:text="${lBI65}" colspan="1"><input type="text" id="d_lBI6_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi6_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi6_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi6_c" value="" /></td>
 			
-							<td th:text="${lBI66}" colspan="1"><input type="text" id="d_lBI7_a" value="" /></td>
-							<td th:text="${lBI67}" colspan="1"><input type="text" id="d_lBI7_b" value="" /></td>
-							<td th:text="${lBI68}" colspan="1"><input type="text" id="d_lBI7_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi7_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi7_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi7_c" value="" /></td>
 			
-							<td th:text="${lBI69}" colspan="1"><input type="text" id="d_lBI8_a" value="" /></td>
-							<td th:text="${lBI70}" colspan="1"><input type="text" id="d_lBI8_b" value="" /></td>
-							<td th:text="${lBI71}" colspan="1"><input type="text" id="d_lBI8_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi8_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi8_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi8_c" value="" /></td>
 			
-							<td th:text="${lBI72}" colspan="1"><input type="text" id="d_lBI9_a" value="" /></td>
-							<td th:text="${lBI73}" colspan="1"><input type="text" id="d_lBI9_b" value="" /></td>
-							<td th:text="${lBI74}" colspan="1"><input type="text" id="d_lBI9_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi9_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi9_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi9_c" value="" /></td>
 			
-							<td th:text="${lBI75}" colspan="1"><input type="text" id="d_lBI10_a" value="" /></td>
-							<td th:text="${lBI76}" colspan="1"><input type="text" id="d_lBI10_b" value="" /></td>
-							<td th:text="${lBI77}" colspan="1"><input type="text" id="d_lBI10_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi10_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi10_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi10_c" value="" /></td>
 			
-							<td th:text="${lBI78}" colspan="1"><input type="text" id="d_lBI11_a" value="" /></td>
-							<td th:text="${lBI79}" colspan="1"><input type="text" id="d_lBI11_b" value="" /></td>
-							<td th:text="${lBI80}" colspan="1"><input type="text" id="d_lBI11_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi11_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi11_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi11_c" value="" /></td>
 							
-							<td th:text="${lBI81}" colspan="1"><input type="text" id="d_lBI12_a" value="" /></td>
-							<td th:text="${lBI82}" colspan="1"><input type="text" id="d_lBI12_b" value="" /></td>
-							<td th:text="${lBI83}" colspan="1"><input type="text" id="d_lBI12_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi12_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi12_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi12_c" value="" /></td>
 			
-							<td th:text="${lBI84}" colspan="1"><input type="text" id="d_lBI13_a" value="" /></td>
-							<td th:text="${lBI85}" colspan="1"><input type="text" id="d_lBI13_b" value="" /></td>
-							<td th:text="${lBI86}" colspan="1"><input type="text" id="d_lBI13_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi13_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi13_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi13_c" value="" /></td>
 			
-							<td th:text="${lBI87}" colspan="1"><input type="text" id="d_lBI14_a" value="" /></td>
-							<td th:text="${lBI88}" colspan="1"><input type="text" id="d_lBI14_b" value="" /></td>
-							<td th:text="${lBI89}" colspan="1"><input type="text" id="d_lBI14_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi14_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi14_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi14_c" value="" /></td>
 			
-							<td th:text="${lBI90}" colspan="1"><input type="text" id="d_lBI15_a" value="" /></td>
-							<td th:text="${lBI91}" colspan="1"><input type="text" id="d_lBI15_b" value="" /></td>
-							<td th:text="${lBI92}" colspan="1"><input type="text" id="d_lBI15_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi15_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi15_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi15_c" value="" /></td>
 			
-							<td th:text="${lBI93}" colspan="1"><input type="text" id="d_lBI16_a" value="" /></td>
-							<td th:text="${lBI94}" colspan="1"><input type="text" id="d_lBI16_b" value="" /></td>
-							<td th:text="${lBI95}" colspan="1"><input type="text" id="d_lBI16_c" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi16_a" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi16_b" value="" /></td>
+							<td colspan="1"><input type="text" id="d_lbi16_c" value="" /></td>
 						</tr>
 						
 						<tr>
 								<td class="back" rowspan="1">bBI</td>
-								<td th:text="${bBI48}" colspan="1"><input type="text" id="d_bBI1_a" value="" /></td>
-								<td th:text="${bBI49}" colspan="1"><input type="text" id="d_bBI1_b" value="" /></td>
-								<td th:text="${bBI50}" colspan="1"><input type="text" id="d_bBI1_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi1_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi1_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi1_c" value="" /></td>
 								
-								<td th:text="${bBI51}" colspan="1"><input type="text" id="d_bBI2_a" value="" /></td>
-								<td th:text="${bBI52}" colspan="1"><input type="text" id="d_bBI2_b" value="" /></td>
-								<td th:text="${bBI53}" colspan="1"><input type="text" id="d_bBI2_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi2_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi2_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi2_c" value="" /></td>
 				
-								<td th:text="${bBI54}" colspan="1"><input type="text" id="d_bBI3_a" value="" /></td>
-								<td th:text="${bBI55}" colspan="1"><input type="text" id="d_bBI3_b" value="" /></td>
-								<td th:text="${bBI56}" colspan="1"><input type="text" id="d_bBI3_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi3_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi3_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi3_c" value="" /></td>
 				
-								<td th:text="${bBI57}" colspan="1"><input type="text" id="d_bBI4_a" value="" /></td>
-								<td th:text="${bBI58}" colspan="1"><input type="text" id="d_bBI4_b" value="" /></td>
-								<td th:text="${bBI59}" colspan="1"><input type="text" id="d_bBI4_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi4_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi4_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi4_c" value="" /></td>
 				
-								<td th:text="${bBI60}" colspan="1"><input type="text" id="d_bBI5_a" value="" /></td>
-								<td th:text="${bBI61}" colspan="1"><input type="text" id="d_bBI5_b" value="" /></td>
-								<td th:text="${bBI62}" colspan="1"><input type="text" id="d_bBI5_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi5_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi5_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi5_c" value="" /></td>
 				
-								<td th:text="${bBI63}" colspan="1"><input type="text" id="d_bBI6_a" value="" /></td>
-								<td th:text="${bBI64}" colspan="1"><input type="text" id="d_bBI6_b" value="" /></td>
-								<td th:text="${bBI65}" colspan="1"><input type="text" id="d_bBI6_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi6_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi6_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi6_c" value="" /></td>
 				
-								<td th:text="${bBI66}" colspan="1"><input type="text" id="d_bBI7_a" value="" /></td>
-								<td th:text="${bBI67}" colspan="1"><input type="text" id="d_bBI7_b" value="" /></td>
-								<td th:text="${bBI68}" colspan="1"><input type="text" id="d_bBI7_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi7_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi7_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi7_c" value="" /></td>
 				
-								<td th:text="${bBI69}" colspan="1"><input type="text" id="d_bBI8_a" value="" /></td>
-								<td th:text="${bBI70}" colspan="1"><input type="text" id="d_bBI8_b" value="" /></td>
-								<td th:text="${bBI71}" colspan="1"><input type="text" id="d_bBI8_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi8_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi8_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi8_c" value="" /></td>
 				
-								<td th:text="${bBI72}" colspan="1"><input type="text" id="d_bBI9_a" value="" /></td>
-								<td th:text="${bBI73}" colspan="1"><input type="text" id="d_bBI9_b" value="" /></td>
-								<td th:text="${bBI74}" colspan="1"><input type="text" id="d_bBI9_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi9_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi9_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi9_c" value="" /></td>
 				
-								<td th:text="${bBI75}" colspan="1"><input type="text" id="d_bBI10_a" value="" /></td>
-								<td th:text="${bBI76}" colspan="1"><input type="text" id="d_bBI10_b" value="" /></td>
-								<td th:text="${bBI77}" colspan="1"><input type="text" id="d_bBI10_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi10_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi10_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi10_c" value="" /></td>
 				
-								<td th:text="${bBI78}" colspan="1"><input type="text" id="d_bBI11_a" value="" /></td>
-								<td th:text="${bBI79}" colspan="1"><input type="text" id="d_bBI11_b" value="" /></td>
-								<td th:text="${bBI80}" colspan="1"><input type="text" id="d_bBI11_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi11_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi11_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi11_c" value="" /></td>
 								
-								<td th:text="${bBI81}" colspan="1"><input type="text" id="d_bBI12_a" value="" /></td>
-								<td th:text="${bBI82}" colspan="1"><input type="text" id="d_bBI12_b" value="" /></td>
-								<td th:text="${bBI83}" colspan="1"><input type="text" id="d_bBI12_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi12_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi12_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi12_c" value="" /></td>
 				
-								<td th:text="${bBI84}" colspan="1"><input type="text" id="d_bBI13_a" value="" /></td>
-								<td th:text="${bBI85}" colspan="1"><input type="text" id="d_bBI13_b" value="" /></td>
-								<td th:text="${bBI86}" colspan="1"><input type="text" id="d_bBI13_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi13_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi13_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi13_c" value="" /></td>
 				
-								<td th:text="${bBI87}" colspan="1"><input type="text" id="d_bBI14_a" value="" /></td>
-								<td th:text="${bBI88}" colspan="1"><input type="text" id="d_bBI14_b" value="" /></td>
-								<td th:text="${bBI89}" colspan="1"><input type="text" id="d_bBI14_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi14_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi14_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi14_c" value="" /></td>
 				
-								<td th:text="${bBI90}" colspan="1"><input type="text" id="d_bBI15_a" value="" /></td>
-								<td th:text="${bBI91}" colspan="1"><input type="text" id="d_bBI15_b" value="" /></td>
-								<td th:text="${bBI92}" colspan="1"><input type="text" id="d_bBI15_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi15_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi15_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi15_c" value="" /></td>
 				
-								<td th:text="${bBI93}" colspan="1"><input type="text" id="d_bBI16_a" value="" /></td>
-								<td th:text="${bBI94}" colspan="1"><input type="text" id="d_bBI16_b" value="" /></td>
-								<td th:text="${bBI95}" colspan="1"><input type="text" id="d_bBI16_c" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi16_a" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi16_b" value="" /></td>
+								<td colspan="1"><input type="text" id="d_bbi16_c" value="" /></td>
 							</tr>
 							<tr><td class="back" rowspan="1"></td></tr>
 							<tr>
 									<td class="back" rowspan="1">lCEJ</td>
-									<td th:text="${lCEJ48}" colspan="1"><input type="text" id="d_lCEJ1_a" value="" /></td>
-									<td th:text="${lCEJ49}" colspan="1"><input type="text" id="d_lCEJ1_b" value="" /></td>
-									<td th:text="${lCEJ50}" colspan="1"><input type="text" id="d_lCEJ1_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej1_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej1_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej1_c" value="" /></td>
 									
-									<td th:text="${lCEJ51}" colspan="1"><input type="text" id="d_lCEJ2_a" value="" /></td>
-									<td th:text="${lCEJ52}" colspan="1"><input type="text" id="d_lCEJ2_b" value="" /></td>
-									<td th:text="${lCEJ53}" colspan="1"><input type="text" id="d_lCEJ2_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej2_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej2_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej2_c" value="" /></td>
 					
-									<td th:text="${lCEJ54}" colspan="1"><input type="text" id="d_lCEJ3_a" value="" /></td>
-									<td th:text="${lCEJ55}" colspan="1"><input type="text" id="d_lCEJ3_b" value="" /></td>
-									<td th:text="${lCEJ56}" colspan="1"><input type="text" id="d_lCEJ3_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej3_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej3_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej3_c" value="" /></td>
 					
-									<td th:text="${lCEJ57}" colspan="1"><input type="text" id="d_lCEJ4_a" value="" /></td>
-									<td th:text="${lCEJ58}" colspan="1"><input type="text" id="d_lCEJ4_b" value="" /></td>
-									<td th:text="${lCEJ59}" colspan="1"><input type="text" id="d_lCEJ4_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej4_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej4_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej4_c" value="" /></td>
 					
-									<td th:text="${lCEJ60}" colspan="1"><input type="text" id="d_lCEJ5_a" value="" /></td>
-									<td th:text="${lCEJ61}" colspan="1"><input type="text" id="d_lCEJ5_b" value="" /></td>
-									<td th:text="${lCEJ62}" colspan="1"><input type="text" id="d_lCEJ5_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej5_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej5_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej5_c" value="" /></td>
 					
-									<td th:text="${lCEJ63}" colspan="1"><input type="text" id="d_lCEJ6_a" value="" /></td>
-									<td th:text="${lCEJ64}" colspan="1"><input type="text" id="d_lCEJ6_b" value="" /></td>
-									<td th:text="${lCEJ65}" colspan="1"><input type="text" id="d_lCEJ6_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej6_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej6_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej6_c" value="" /></td>
 					
-									<td th:text="${lCEJ66}" colspan="1"><input type="text" id="d_lCEJ7_a" value="" /></td>
-									<td th:text="${lCEJ67}" colspan="1"><input type="text" id="d_lCEJ7_b" value="" /></td>
-									<td th:text="${lCEJ68}" colspan="1"><input type="text" id="d_lCEJ7_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej7_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej7_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej7_c" value="" /></td>
 					
-									<td th:text="${lCEJ69}" colspan="1"><input type="text" id="d_lCEJ8_a" value="" /></td>
-									<td th:text="${lCEJ70}" colspan="1"><input type="text" id="d_lCEJ8_b" value="" /></td>
-									<td th:text="${lCEJ71}" colspan="1"><input type="text" id="d_lCEJ8_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej8_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej8_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej8_c" value="" /></td>
 					
-									<td th:text="${lCEJ72}" colspan="1"><input type="text" id="d_lCEJ9_a" value="" /></td>
-									<td th:text="${lCEJ73}" colspan="1"><input type="text" id="d_lCEJ9_b" value="" /></td>
-									<td th:text="${lCEJ74}" colspan="1"><input type="text" id="d_lCEJ9_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej9_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej9_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej9_c" value="" /></td>
 					
-									<td th:text="${lCEJ75}" colspan="1"><input type="text" id="d_lCEJ10_a" value="" /></td>
-									<td th:text="${lCEJ76}" colspan="1"><input type="text" id="d_lCEJ10_b" value="" /></td>
-									<td th:text="${lCEJ77}" colspan="1"><input type="text" id="d_lCEJ10_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej10_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej10_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej10_c" value="" /></td>
 					
-									<td th:text="${lCEJ78}" colspan="1"><input type="text" id="d_lCEJ11_a" value="" /></td>
-									<td th:text="${lCEJ79}" colspan="1"><input type="text" id="d_lCEJ11_b" value="" /></td>
-									<td th:text="${lCEJ80}" colspan="1"><input type="text" id="d_lCEJ11_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej11_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej11_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej11_c" value="" /></td>
 									
-									<td th:text="${lCEJ81}" colspan="1"><input type="text" id="d_lCEJ12_a" value="" /></td>
-									<td th:text="${lCEJ82}" colspan="1"><input type="text" id="d_lCEJ12_b" value="" /></td>
-									<td th:text="${lCEJ83}" colspan="1"><input type="text" id="d_lCEJ12_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej12_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej12_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej12_c" value="" /></td>
 					
-									<td th:text="${lCEJ84}" colspan="1"><input type="text" id="d_lCEJ13_a" value="" /></td>
-									<td th:text="${lCEJ85}" colspan="1"><input type="text" id="d_lCEJ13_b" value="" /></td>
-									<td th:text="${lCEJ86}" colspan="1"><input type="text" id="d_lCEJ13_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej13_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej13_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej13_c" value="" /></td>
 					
-									<td th:text="${lCEJ87}" colspan="1"><input type="text" id="d_lCEJ14_a" value="" /></td>
-									<td th:text="${lCEJ88}" colspan="1"><input type="text" id="d_lCEJ14_b" value="" /></td>
-									<td th:text="${lCEJ89}" colspan="1"><input type="text" id="d_lCEJ14_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej14_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej14_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej14_c" value="" /></td>
 					
-									<td th:text="${lCEJ90}" colspan="1"><input type="text" id="d_lCEJ15_a" value="" /></td>
-									<td th:text="${lCEJ91}" colspan="1"><input type="text" id="d_lCEJ15_b" value="" /></td>
-									<td th:text="${lCEJ92}" colspan="1"><input type="text" id="d_lCEJ15_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej15_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej15_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej15_c" value="" /></td>
 					
-									<td th:text="${lCEJ93}" colspan="1"><input type="text" id="d_lCEJ16_a" value="" /></td>
-									<td th:text="${lCEJ94}" colspan="1"><input type="text" id="d_lCEJ16_b" value="" /></td>
-									<td th:text="${lCEJ95}" colspan="1"><input type="text" id="d_lCEJ16_c" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej16_a" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej16_b" value="" /></td>
+									<td colspan="1"><input type="text" id="d_lcej16_c" value="" /></td>
 								</tr>
 			<tr>
 				<td class="back" rowspan="1">bCEJ</td>
-				<td th:text="${bCEJ48}" colspan="1"><input type="text" id="d_bCEJ1_a" value="" /></td>
-				<td th:text="${bCEJ49}" colspan="1"><input type="text" id="d_bCEJ1_b" value="" /></td>
-				<td th:text="${bCEJ50}" colspan="1"><input type="text" id="d_bCEJ1_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej1_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej1_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej1_c" value="" /></td>
 				
-				<td th:text="${bCEJ51}" colspan="1"><input type="text" id="d_bCEJ2_a" value="" /></td>
-				<td th:text="${bCEJ52}" colspan="1"><input type="text" id="d_bCEJ2_b" value="" /></td>
-				<td th:text="${bCEJ53}" colspan="1"><input type="text" id="d_bCEJ2_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej2_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej2_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej2_c" value="" /></td>
 
-				<td th:text="${bCEJ54}" colspan="1"><input type="text" id="d_bCEJ3_a" value="" /></td>
-				<td th:text="${bCEJ55}" colspan="1"><input type="text" id="d_bCEJ3_b" value="" /></td>
-				<td th:text="${bCEJ56}" colspan="1"><input type="text" id="d_bCEJ3_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej3_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej3_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej3_c" value="" /></td>
 
-				<td th:text="${bCEJ57}" colspan="1"><input type="text" id="d_bCEJ4_a" value="" /></td>
-				<td th:text="${bCEJ58}" colspan="1"><input type="text" id="d_bCEJ4_b" value="" /></td>
-				<td th:text="${bCEJ59}" colspan="1"><input type="text" id="d_bCEJ4_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej4_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej4_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej4_c" value="" /></td>
 
-				<td th:text="${bCEJ60}" colspan="1"><input type="text" id="d_bCEJ5_a" value="" /></td>
-				<td th:text="${bCEJ61}" colspan="1"><input type="text" id="d_bCEJ5_b" value="" /></td>
-				<td th:text="${bCEJ62}" colspan="1"><input type="text" id="d_bCEJ5_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej5_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej5_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej5_c" value="" /></td>
 
-				<td th:text="${bCEJ63}" colspan="1"><input type="text" id="d_bCEJ6_a" value="" /></td>
-				<td th:text="${bCEJ64}" colspan="1"><input type="text" id="d_bCEJ6_b" value="" /></td>
-				<td th:text="${bCEJ65}" colspan="1"><input type="text" id="d_bCEJ6_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej6_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej6_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej6_c" value="" /></td>
 
-				<td th:text="${bCEJ66}" colspan="1"><input type="text" id="d_bCEJ7_a" value="" /></td>
-				<td th:text="${bCEJ67}" colspan="1"><input type="text" id="d_bCEJ7_b" value="" /></td>
-				<td th:text="${bCEJ68}" colspan="1"><input type="text" id="d_bCEJ7_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej7_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej7_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej7_c" value="" /></td>
 
-				<td th:text="${bCEJ69}" colspan="1"><input type="text" id="d_bCEJ8_a" value="" /></td>
-				<td th:text="${bCEJ70}" colspan="1"><input type="text" id="d_bCEJ8_b" value="" /></td>
-				<td th:text="${bCEJ71}" colspan="1"><input type="text" id="d_bCEJ8_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej8_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej8_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej8_c" value="" /></td>
 
-				<td th:text="${bCEJ72}" colspan="1"><input type="text" id="d_bCEJ9_a" value="" /></td>
-				<td th:text="${bCEJ73}" colspan="1"><input type="text" id="d_bCEJ9_b" value="" /></td>
-				<td th:text="${bCEJ74}" colspan="1"><input type="text" id="d_bCEJ9_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej9_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej9_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej9_c" value="" /></td>
 
-				<td th:text="${bCEJ75}" colspan="1"><input type="text" id="d_bCEJ10_a" value="" /></td>
-				<td th:text="${bCEJ76}" colspan="1"><input type="text" id="d_bCEJ10_b" value="" /></td>
-				<td th:text="${bCEJ77}" colspan="1"><input type="text" id="d_bCEJ10_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej10_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej10_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej10_c" value="" /></td>
 
-				<td th:text="${bCEJ78}" colspan="1"><input type="text" id="d_bCEJ11_a" value="" /></td>
-				<td th:text="${bCEJ79}" colspan="1"><input type="text" id="d_bCEJ11_b" value="" /></td>
-				<td th:text="${bCEJ80}" colspan="1"><input type="text" id="d_bCEJ11_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej11_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej11_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej11_c" value="" /></td>
 				
-				<td th:text="${bCEJ81}" colspan="1"><input type="text" id="d_bCEJ12_a" value="" /></td>
-				<td th:text="${bCEJ82}" colspan="1"><input type="text" id="d_bCEJ12_b" value="" /></td>
-				<td th:text="${bCEJ83}" colspan="1"><input type="text" id="d_bCEJ12_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej12_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej12_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej12_c" value="" /></td>
 
-				<td th:text="${bCEJ84}" colspan="1"><input type="text" id="d_bCEJ13_a" value="" /></td>
-				<td th:text="${bCEJ85}" colspan="1"><input type="text" id="d_bCEJ13_b" value="" /></td>
-				<td th:text="${bCEJ86}" colspan="1"><input type="text" id="d_bCEJ13_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej13_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej13_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej13_c" value="" /></td>
 
-				<td th:text="${bCEJ87}" colspan="1"><input type="text" id="d_bCEJ14_a" value="" /></td>
-				<td th:text="${bCEJ88}" colspan="1"><input type="text" id="d_bCEJ14_b" value="" /></td>
-				<td th:text="${bCEJ89}" colspan="1"><input type="text" id="d_bCEJ14_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej14_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej14_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej14_c" value="" /></td>
 
-				<td th:text="${bCEJ90}" colspan="1"><input type="text" id="d_bCEJ15_a" value="" /></td>
-				<td th:text="${bCEJ91}" colspan="1"><input type="text" id="d_bCEJ15_b" value="" /></td>
-				<td th:text="${bCEJ92}" colspan="1"><input type="text" id="d_bCEJ15_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej15_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej15_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej15_c" value="" /></td>
 
-				<td th:text="${bCEJ93}" colspan="1"><input type="text" id="d_bCEJ16_a" value="" /></td>
-				<td th:text="${bCEJ94}" colspan="1"><input type="text" id="d_bCEJ16_b" value="" /></td>
-				<td th:text="${bCEJ95}" colspan="1"><input type="text" id="d_bCEJ16_c" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej16_a" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej16_b" value="" /></td>
+				<td colspan="1"><input type="text" id="d_bcej16_c" value="" /></td>
+
 			</tr>
 			<tr><td class="back" rowspan="1"></td></tr>
 			
 				<tr>
 						<td class="back">lPI</td>
-						<td th:text="${lPI48}" colspan="1"><input type="text" id="d_lPI1_a" value="" /></td>
-						<td th:text="${lPI49}" colspan="1"><input type="text" id="d_lPI1_b" value="" /></td>
-						<td th:text="${lPI50}" colspan="1"><input type="text" id="d_lPI1_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi1_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi1_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi1_c" value="" /></td>
 						
-						<td th:text="${lPI51}" colspan="1"><input type="text" id="d_lPI2_a" value="" /></td>
-						<td th:text="${lPI52}" colspan="1"><input type="text" id="d_lPI2_b" value="" /></td>
-						<td th:text="${lPI53}" colspan="1"><input type="text" id="d_lPI2_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi2_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi2_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi2_c" value="" /></td>
 		
-						<td th:text="${lPI54}" colspan="1"><input type="text" id="d_lPI3_a" value="" /></td>
-						<td th:text="${lPI55}" colspan="1"><input type="text" id="d_lPI3_b" value="" /></td>
-						<td th:text="${lPI56}" colspan="1"><input type="text" id="d_lPI3_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi3_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi3_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi3_c" value="" /></td>
 		
-						<td th:text="${lPI57}" colspan="1"><input type="text" id="d_lPI4_a" value="" /></td>
-						<td th:text="${lPI58}" colspan="1"><input type="text" id="d_lPI4_b" value="" /></td>
-						<td th:text="${lPI59}" colspan="1"><input type="text" id="d_lPI4_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi4_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi4_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi4_c" value="" /></td>
 		
-						<td th:text="${lPI60}" colspan="1"><input type="text" id="d_lPI5_a" value="" /></td>
-						<td th:text="${lPI61}" colspan="1"><input type="text" id="d_lPI5_b" value="" /></td>
-						<td th:text="${lPI62}" colspan="1"><input type="text" id="d_lPI5_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi5_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi5_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi5_c" value="" /></td>
 		
-						<td th:text="${lPI63}" colspan="1"><input type="text" id="d_lPI6_a" value="" /></td>
-						<td th:text="${lPI64}" colspan="1"><input type="text" id="d_lPI6_b" value="" /></td>
-						<td th:text="${lPI65}" colspan="1"><input type="text" id="d_lPI6_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi6_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi6_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi6_c" value="" /></td>
 		
-						<td th:text="${lPI66}" colspan="1"><input type="text" id="d_lPI7_a" value="" /></td>
-						<td th:text="${lPI67}" colspan="1"><input type="text" id="d_lPI7_b" value="" /></td>
-						<td th:text="${lPI68}" colspan="1"><input type="text" id="d_lPI7_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi7_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi7_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi7_c" value="" /></td>
 		
-						<td th:text="${lPI69}" colspan="1"><input type="text" id="d_lPI8_a" value="" /></td>
-						<td th:text="${lPI70}" colspan="1"><input type="text" id="d_lPI8_b" value="" /></td>
-						<td th:text="${lPI71}" colspan="1"><input type="text" id="d_lPI8_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi8_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi8_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi8_c" value="" /></td>
 		
-						<td th:text="${lPI72}" colspan="1"><input type="text" id="d_lPI9_a" value="" /></td>
-						<td th:text="${lPI73}" colspan="1"><input type="text" id="d_lPI9_b" value="" /></td>
-						<td th:text="${lPI74}" colspan="1"><input type="text" id="d_lPI9_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi9_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi9_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi9_c" value="" /></td>
 		
-						<td th:text="${lPI75}" colspan="1"><input type="text" id="d_lPI10_a" value="" /></td>
-						<td th:text="${lPI76}" colspan="1"><input type="text" id="d_lPI10_b" value="" /></td>
-						<td th:text="${lPI77}" colspan="1"><input type="text" id="d_lPI10_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi10_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi10_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi10_c" value="" /></td>
 		
-						<td th:text="${lPI78}" colspan="1"><input type="text" id="d_lPI11_a" value="" /></td>
-						<td th:text="${lPI79}" colspan="1"><input type="text" id="d_lPI11_b" value="" /></td>
-						<td th:text="${lPI80}" colspan="1"><input type="text" id="d_lPI11_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi11_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi11_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi11_c" value="" /></td>
 						
-						<td th:text="${lPI81}" colspan="1"><input type="text" id="d_lPI12_a" value="" /></td>
-						<td th:text="${lPI82}" colspan="1"><input type="text" id="d_lPI12_b" value="" /></td>
-						<td th:text="${lPI83}" colspan="1"><input type="text" id="d_lPI12_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi12_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi12_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi12_c" value="" /></td>
 		
-						<td th:text="${lPI84}" colspan="1"><input type="text" id="d_lPI13_a" value="" /></td>
-						<td th:text="${lPI85}" colspan="1"><input type="text" id="d_lPI13_b" value="" /></td>
-						<td th:text="${lPI86}" colspan="1"><input type="text" id="d_lPI13_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi13_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi13_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi13_c" value="" /></td>
 		
-						<td th:text="${lPI87}" colspan="1"><input type="text" id="d_lPI14_a" value="" /></td>
-						<td th:text="${lPI88}" colspan="1"><input type="text" id="d_lPI14_b" value="" /></td>
-						<td th:text="${lPI89}" colspan="1"><input type="text" id="d_lPI14_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi14_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi14_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi14_c" value="" /></td>
 		
-						<td th:text="${lPI90}" colspan="1"><input type="text" id="d_lPI15_a" value="" /></td>
-						<td th:text="${lPI91}" colspan="1"><input type="text" id="d_lPI15_b" value="" /></td>
-						<td th:text="${lPI92}" colspan="1"><input type="text" id="d_lPI15_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi15_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi15_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi15_c" value="" /></td>
 		
-						<td th:text="${lPI93}" colspan="1"><input type="text" id="d_lPI16_a" value="" /></td>
-						<td th:text="${lPI94}" colspan="1"><input type="text" id="d_lPI16_b" value="" /></td>
-						<td th:text="${lPI95}" colspan="1"><input type="text" id="d_lPI16_c" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi16_a" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi16_b" value="" /></td>
+						<td colspan="1"><input type="text" id="d_lpi16_c" value="" /></td>
 					</tr>
 					<tr>
 							<td class="back">bPI</td>
-							<td th:text="${bPI48}" colspan="1"><input type="text" id="d_bPI1_a" value="" /></td>
-							<td th:text="${bPI49}" colspan="1"><input type="text" id="d_bPI1_b" value="" /></td>
-							<td th:text="${bPI50}" colspan="1"><input type="text" id="d_bPI1_c" value="" /></td>
+							<td th:text="${bPI48}" colspan="1"><input type="text" id="d_bpi1_a" value="" /></td>
+							<td th:text="${bPI49}" colspan="1"><input type="text" id="d_bpi1_b" value="" /></td>
+							<td th:text="${bPI50}" colspan="1"><input type="text" id="d_bpi1_c" value="" /></td>
 							
-							<td th:text="${bPI51}" colspan="1"><input type="text" id="d_bPI2_a" value="" /></td>
-							<td th:text="${bPI52}" colspan="1"><input type="text" id="d_bPI2_b" value="" /></td>
-							<td th:text="${bPI53}" colspan="1"><input type="text" id="d_bPI2_c" value="" /></td>
+							<td th:text="${bPI51}" colspan="1"><input type="text" id="d_bpi2_a" value="" /></td>
+							<td th:text="${bPI52}" colspan="1"><input type="text" id="d_bpi2_b" value="" /></td>
+							<td th:text="${bPI53}" colspan="1"><input type="text" id="d_bpi2_c" value="" /></td>
 			
-							<td th:text="${bPI54}" colspan="1"><input type="text" id="d_bPI3_a" value="" /></td>
-							<td th:text="${bPI55}" colspan="1"><input type="text" id="d_bPI3_b" value="" /></td>
-							<td th:text="${bPI56}" colspan="1"><input type="text" id="d_bPI3_c" value="" /></td>
+							<td th:text="${bPI54}" colspan="1"><input type="text" id="d_bpi3_a" value="" /></td>
+							<td th:text="${bPI55}" colspan="1"><input type="text" id="d_bpi3_b" value="" /></td>
+							<td th:text="${bPI56}" colspan="1"><input type="text" id="d_bpi3_c" value="" /></td>
 			
-							<td th:text="${bPI57}" colspan="1"><input type="text" id="d_bPI4_a" value="" /></td>
-							<td th:text="${bPI58}" colspan="1"><input type="text" id="d_bPI4_b" value="" /></td>
-							<td th:text="${bPI59}" colspan="1"><input type="text" id="d_bPI4_c" value="" /></td>
+							<td th:text="${bPI57}" colspan="1"><input type="text" id="d_bpi4_a" value="" /></td>
+							<td th:text="${bPI58}" colspan="1"><input type="text" id="d_bpi4_b" value="" /></td>
+							<td th:text="${bPI59}" colspan="1"><input type="text" id="d_bpi4_c" value="" /></td>
 			
-							<td th:text="${bPI60}" colspan="1"><input type="text" id="d_bPI5_a" value="" /></td>
-							<td th:text="${bPI61}" colspan="1"><input type="text" id="d_bPI5_b" value="" /></td>
-							<td th:text="${bPI62}" colspan="1"><input type="text" id="d_bPI5_c" value="" /></td>
+							<td th:text="${bPI60}" colspan="1"><input type="text" id="d_bpi5_a" value="" /></td>
+							<td th:text="${bPI61}" colspan="1"><input type="text" id="d_bpi5_b" value="" /></td>
+							<td th:text="${bPI62}" colspan="1"><input type="text" id="d_bpi5_c" value="" /></td>
 			
-							<td th:text="${bPI63}" colspan="1"><input type="text" id="d_bPI6_a" value="" /></td>
-							<td th:text="${bPI64}" colspan="1"><input type="text" id="d_bPI6_b" value="" /></td>
-							<td th:text="${bPI65}" colspan="1"><input type="text" id="d_bPI6_c" value="" /></td>
+							<td th:text="${bPI63}" colspan="1"><input type="text" id="d_bpi6_a" value="" /></td>
+							<td th:text="${bPI64}" colspan="1"><input type="text" id="d_bpi6_b" value="" /></td>
+							<td th:text="${bPI65}" colspan="1"><input type="text" id="d_bpi6_c" value="" /></td>
 			
-							<td th:text="${bPI66}" colspan="1"><input type="text" id="d_bPI7_a" value="" /></td>
-							<td th:text="${bPI67}" colspan="1"><input type="text" id="d_bPI7_b" value="" /></td>
-							<td th:text="${bPI68}" colspan="1"><input type="text" id="d_bPI7_c" value="" /></td>
+							<td th:text="${bPI66}"colspan="1"><input type="text" id="d_bpi7_a" value="" /></td>
+							<td th:text="${bPI67}" colspan="1"><input type="text" id="d_bpi7_b" value="" /></td>
+							<td th:text="${bPI68}" colspan="1"><input type="text" id="d_bpi7_c" value="" /></td>
 			
-							<td th:text="${bPI69}" colspan="1"><input type="text" id="d_bPI8_a" value="" /></td>
-							<td th:text="${bPI70}" colspan="1"><input type="text" id="d_bPI8_b" value="" /></td>
-							<td th:text="${bPI71}" colspan="1"><input type="text" id="d_bPI8_c" value="" /></td>
+							<td th:text="${bPI69}" colspan="1"><input type="text" id="d_bpi8_a" value="" /></td>
+							<td th:text="${bPI70}" colspan="1"><input type="text" id="d_bpi8_b" value="" /></td>
+							<td th:text="${bPI71}" colspan="1"><input type="text" id="d_bpi8_c" value="" /></td>
 			
-							<td th:text="${bPI72}" colspan="1"><input type="text" id="d_bPI9_a" value="" /></td>
-							<td th:text="${bPI73}" colspan="1"><input type="text" id="d_bPI9_b" value="" /></td>
-							<td th:text="${bPI74}" colspan="1"><input type="text" id="d_bPI9_c" value="" /></td>
+							<td th:text="${bPI72}" colspan="1"><input type="text" id="d_bpi9_a" value="" /></td>
+							<td th:text="${bPI73}" colspan="1"><input type="text" id="d_bpi9_b" value="" /></td>
+							<td th:text="${bPI74}" colspan="1"><input type="text" id="d_bpi9_c" value="" /></td>
 			
-							<td th:text="${bPI75}" colspan="1"><input type="text" id="d_bPI10_a" value="" /></td>
-							<td th:text="${bPI76}" colspan="1"><input type="text" id="d_bPI10_b" value="" /></td>
-							<td th:text="${bPI77}" colspan="1"><input type="text" id="d_bPI10_c" value="" /></td>
+							<td th:text="${bPI75}" colspan="1"><input type="text" id="d_bpi10_a" value="" /></td>
+							<td th:text="${bPI76}" colspan="1"><input type="text" id="d_bpi10_b" value="" /></td>
+							<td th:text="${bPI77}" colspan="1"><input type="text" id="d_bpi10_c" value="" /></td>
 			
-							<td th:text="${bPI78}" colspan="1"><input type="text" id="d_bPI11_a" value="" /></td>
-							<td th:text="${bPI79}" colspan="1"><input type="text" id="d_bPI11_b" value="" /></td>
-							<td th:text="${bPI80}" colspan="1"><input type="text" id="d_bPI11_c" value="" /></td>
+							<td th:text="${bPI78}" colspan="1"><input type="text" id="d_bpi11_a" value="" /></td>
+							<td th:text="${bPI79}" colspan="1"><input type="text" id="d_bpi11_b" value="" /></td>
+							<td th:text="${bPI80}" colspan="1"><input type="text" id="d_bpi11_c" value="" /></td>
 							
-							<td th:text="${bPI81}" colspan="1"><input type="text" id="d_bPI12_a" value="" /></td>
-							<td th:text="${bPI82}" colspan="1"><input type="text" id="d_bPI12_b" value="" /></td>
-							<td th:text="${bPI83}" colspan="1"><input type="text" id="d_bPI12_c" value="" /></td>
+							<td th:text="${bPI81}" colspan="1"><input type="text" id="d_bpi12_a" value="" /></td>
+							<td th:text="${bPI82}" colspan="1"><input type="text" id="d_bpi12_b" value="" /></td>
+							<td th:text="${bPI83}" colspan="1"><input type="text" id="d_bpi12_c" value="" /></td>
 			
-							<td th:text="${bPI84}" colspan="1"><input type="text" id="d_bPI13_a" value="" /></td>
-							<td th:text="${bPI85}" colspan="1"><input type="text" id="d_bPI13_b" value="" /></td>
-							<td th:text="${bPI86}" colspan="1"><input type="text" id="d_bPI13_c" value="" /></td>
+							<td th:text="${bPI84}" colspan="1"><input type="text" id="d_bpi13_a" value="" /></td>
+							<td th:text="${bPI85}" colspan="1"><input type="text" id="d_bpi13_b" value="" /></td>
+							<td th:text="${bPI86}" colspan="1"><input type="text" id="d_bpi13_c" value="" /></td>
 			
-							<td th:text="${bPI87}" colspan="1"><input type="text" id="d_bPI14_a" value="" /></td>
-							<td th:text="${bPI88}" colspan="1"><input type="text" id="d_bPI14_b" value="" /></td>
-							<td th:text="${bPI89}" colspan="1"><input type="text" id="d_bPI14_c" value="" /></td>
+							<td th:text="${bPI87}" colspan="1"><input type="text" id="d_bpi14_a" value="" /></td>
+							<td th:text="${bPI88}" colspan="1"><input type="text" id="d_bpi14_b" value="" /></td>
+							<td th:text="${bPI89}"colspan="1"><input type="text" id="d_bpi14_c" value="" /></td>
 			
-							<td th:text="${bPI90}" colspan="1"><input type="text" id="d_bPI15_a" value="" /></td>
-							<td th:text="${bPI91}" colspan="1"><input type="text" id="d_bPI15_b" value="" /></td>
-							<td th:text="${bPI92}" colspan="1"><input type="text" id="d_bPI15_c" value="" /></td>
+							<td th:text="${bPI90}" colspan="1"><input type="text" id="d_bpi15_a" value="" /></td>
+							<td th:text="${bPI91}" colspan="1"><input type="text" id="d_bpi15_b" value="" /></td>
+							<td th:text="${bPI92}" colspan="1"><input type="text" id="d_bpi15_c" value="" /></td>
 			
-							<td th:text="${bPI93}" colspan="1"><input type="text" id="d_bPI16_a" value="" /></td>
-							<td th:text="${bPI94}" colspan="1"><input type="text" id="d_bPI16_b" value="" /></td>
-							<td th:text="${bPI95}" colspan="1"><input type="text" id="d_bPI16_c" value="" /></td>
+							<td th:text="${bPI93}" colspan="1"><input type="text" id="d_bpi16_a" value="" /></td>
+							<td th:text="${bPI94}" colspan="1"><input type="text" id="d_bpi16_b" value="" /></td>
+							<td th:text="${bPI95}" colspan="1"><input type="text" id="d_bpi16_c" value="" /></td>
 						</tr>
 						<tr>
 								<td class="back">GI</td>
-								<td th:text="${GI16}" colspan="3"><input type="text" id="d_GI_1" value="" /></td>
-								<td th:text="${GI17}" colspan="3"><input type="text" id="d_GI_2" value="" /></td>
-								<td th:text="${GI18}" colspan="3"><input type="text" id="d_GI_3" value="" /></td>
-								<td th:text="${GI19}" colspan="3"><input type="text" id="d_GI_4" value="" /></td>
-								<td th:text="${GI20}" colspan="3"><input type="text" id="d_GI_5" value="" /></td>
-								<td th:text="${GI21}" colspan="3"><input type="text" id="d_GI_6" value="" /></td>
-								<td th:text="${GI22}" colspan="3"><input type="text" id="d_GI_7" value="" /></td>
-								<td th:text="${GI23}" colspan="3"><input type="text" id="d_GI_8" value="" /></td>
-								<td th:text="${GI24}" colspan="3"><input type="text" id="d_GI_9" value="" /></td>
-								<td th:text="${GI25}" colspan="3"><input type="text" id="d_GI_10" value="" /></td>
-								<td th:text="${GI26}" colspan="3"><input type="text" id="d_GI_11" value="" /></td>
-								<td th:text="${GI27}" colspan="3"><input type="text" id="d_GI_12" value="" /></td>
-								<td th:text="${GI28}" colspan="3"><input type="text" id="d_GI_13" value="" /></td>
-								<td th:text="${GI29}" colspan="3"><input type="text" id="d_GI_14" value="" /></td>
-								<td th:text="${GI30}" colspan="3"><input type="text" id="d_GI_15" value="" /></td>
-								<td th:text="${GI31}" colspan="3"><input type="text" id="d_GI_16" value="" /></td>
+								<td th:text="${gi16}" colspan="3"><input type="text" id="d_gi_1" value="" /></td>
+								<td th:text="${gi17}" colspan="3"><input type="text" id="d_gi_2" value="" /></td>
+								<td th:text="${gi18}" colspan="3"><input type="text" id="d_gi_3" value="" /></td>
+								<td th:text="${gi19}" colspan="3"><input type="text" id="d_gi_4" value="" /></td>
+								<td th:text="${gi20}" colspan="3"><input type="text" id="d_gi_5" value="" /></td>
+								<td th:text="${gi21}" colspan="3"><input type="text" id="d_gi_6" value="" /></td>
+								<td th:text="${gi22}" colspan="3"><input type="text" id="d_gi_7" value="" /></td>
+								<td th:text="${gi23}" colspan="3"><input type="text" id="d_gi_8" value="" /></td>
+								<td th:text="${gi24}" colspan="3"><input type="text" id="d_gi_9" value="" /></td>
+								<td th:text="${gi25}" colspan="3"><input type="text" id="d_gi_10" value="" /></td>
+								<td th:text="${gi26}" colspan="3"><input type="text" id="d_gi_11" value="" /></td>
+								<td th:text="${gi27}" colspan="3"><input type="text" id="d_gi_12" value="" /></td>
+								<td th:text="${gi28}" colspan="3"><input type="text" id="d_gi_13" value="" /></td>
+								<td th:text="${gi29}" colspan="3"><input type="text" id="d_gi_14" value="" /></td>
+								<td th:text="${gi30}" colspan="3"><input type="text" id="d_gi_15" value="" /></td>
+								<td th:text="${gi31}" colspan="3"><input type="text" id="d_gi_16" value="" /></td>
 							</tr>
 							<tr>
 									<td class="back">M</td>
-									<td th:text="${M16}" colspan="3"><input type="text" id="d_M_1" value="" /></td>
-									<td th:text="${M17}" colspan="3"><input type="text" id="d_M_2" value="" /></td>
-									<td th:text="${M18}" colspan="3"><input type="text" id="d_M_3" value="" /></td>
-									<td th:text="${M19}" colspan="3"><input type="text" id="d_M_4" value="" /></td>
-									<td th:text="${M20}" colspan="3"><input type="text" id="d_M_5" value="" /></td>
-									<td th:text="${M21}" colspan="3"><input type="text" id="d_M_6" value="" /></td>
-									<td th:text="${M22}" colspan="3"><input type="text" id="d_M_7" value="" /></td>
-									<td th:text="${M23}" colspan="3"><input type="text" id="d_M_8" value="" /></td>
-									<td th:text="${M24}" colspan="3"><input type="text" id="d_M_9" value="" /></td>
-									<td th:text="${M25}" colspan="3"><input type="text" id="d_M_10" value="" /></td>
-									<td th:text="${M26}" colspan="3"><input type="text" id="d_M_11" value="" /></td>
-									<td th:text="${M27}" colspan="3"><input type="text" id="d_M_12" value="" /></td>
-									<td th:text="${M28}" colspan="3"><input type="text" id="d_M_13" value="" /></td>
-									<td th:text="${M29}" colspan="3"><input type="text" id="d_M_14" value="" /></td>
-									<td th:text="${M30}" colspan="3"><input type="text" id="d_M_15" value="" /></td>
-									<td th:text="${M31}" colspan="3"><input type="text" id="d_M_16" value="" /></td>
+									<td th:text="${m16}" colspan="3"><input type="text" id="d_m_1" value="" /></td>
+									<td th:text="${m17}" colspan="3"><input type="text" id="d_m_2" value="" /></td>
+									<td th:text="${m18}" colspan="3"><input type="text" id="d_m_3" value="" /></td>
+									<td th:text="${m19}" colspan="3"><input type="text" id="d_m_4" value="" /></td>
+									<td th:text="${m20}" colspan="3"><input type="text" id="d_m_5" value="" /></td>
+									<td th:text="${m21}" colspan="3"><input type="text" id="d_m_6" value="" /></td>
+									<td th:text="${m22}" colspan="3"><input type="text" id="d_m_7" value="" /></td>
+									<td th:text="${m23}" colspan="3"><input type="text" id="d_m_8" value="" /></td>
+									<td th:text="${m24}" colspan="3"><input type="text" id="d_m_9" value="" /></td>
+									<td th:text="${m25}" colspan="3"><input type="text" id="d_m_10" value="" /></td>
+									<td th:text="${m26}" colspan="3"><input type="text" id="d_m_11" value="" /></td>
+									<td th:text="${m27}" colspan="3"><input type="text" id="d_m_12" value="" /></td>
+									<td th:text="${m28}" colspan="3"><input type="text" id="d_m_13" value="" /></td>
+									<td th:text="${m29}" colspan="3"><input type="text" id="d_m_14" value="" /></td>
+									<td th:text="${m30}" colspan="3"><input type="text" id="d_m_15" value="" /></td>
+									<td th:text="${m31}" colspan="3"><input type="text" id="d_m_16" value="" /></td>
 								</tr>
 
 								<tr>
 										<td class="back">IB</td>
 										
-										<td th:text="${IB16}" colspan="3"><input type="text" id="d_IB_1" value="" /></td>
-										<td th:text="${IB17}" colspan="3"><input type="text" id="d_IB_2" value="" /></td>
-										<td th:text="${IB18}" colspan="3"><input type="text" id="d_IB_3" value="" /></td>
-										<td th:text="${IB19}" colspan="3"><input type="text" id="d_IB_4" value="" /></td>
-										<td th:text="${IB20}" colspan="3"><input type="text" id="d_IB_5" value="" /></td>
-										<td th:text="${IB21}" colspan="3"><input type="text" id="d_IB_6" value="" /></td>
-										<td th:text="${IB22}" colspan="3"><input type="text" id="d_IB_7" value="" /></td>
-										<td th:text="${IB23}" colspan="3"><input type="text" id="d_IB_8" value="" /></td>
-										<td th:text="${IB24}" colspan="3"><input type="text" id="d_IB_9" value="" /></td>
-										<td th:text="${IB25}" colspan="3"><input type="text" id="d_IB_10" value="" /></td>
-										<td th:text="${IB26}" colspan="3"><input type="text" id="d_IB_11" value="" /></td>
-										<td th:text="${IB27}" colspan="3"><input type="text" id="d_IB_12" value="" /></td>
-										<td th:text="${IB28}" colspan="3"><input type="text" id="d_IB_13" value="" /></td>
-										<td th:text="${IB29}" colspan="3"><input type="text" id="d_IB_14" value="" /></td>
-										<td th:text="${IB30}" colspan="3"><input type="text" id="d_IB_15" value="" /></td>
+										<td th:text="${ib16}" colspan="3"><input type="text" id="d_ib_1" value="" /></td>
+										<td th:text="${ib17}" colspan="3"><input type="text" id="d_ib_2" value="" /></td>
+										<td th:text="${ib18}" colspan="3"><input type="text" id="d_ib_3" value="" /></td>
+										<td th:text="${ib19}" colspan="3"><input type="text" id="d_ib_4" value="" /></td>
+										<td th:text="${ib20}" colspan="3"><input type="text" id="d_ib_5" value="" /></td>
+										<td th:text="${ib21}" colspan="3"><input type="text" id="d_ib_6" value="" /></td>
+										<td th:text="${ib22}" colspan="3"><input type="text" id="d_ib_7" value="" /></td>
+										<td th:text="${ib23}" colspan="3"><input type="text" id="d_ib_8" value="" /></td>
+										<td th:text="${ib24}" colspan="3"><input type="text" id="d_ib_9" value="" /></td>
+										<td th:text="${ib25}" colspan="3"><input type="text" id="d_ib_10" value="" /></td>
+										<td th:text="${ib26}" colspan="3"><input type="text" id="d_ib_11" value="" /></td>
+										<td th:text="${ib27}" colspan="3"><input type="text" id="d_ib_12" value="" /></td>
+										<td th:text="${ib28}" colspan="3"><input type="text" id="d_ib_13" value="" /></td>
+										<td th:text="${ib29}" colspan="3"><input type="text" id="d_ib_14" value="" /></td>
+										<td th:text="${ib30}" colspan="3"><input type="text" id="d_ib_15" value="" /></td>
 										<td colspan="3"><input type="text" id="d_ib_16" value="" /></td>
 										
 									</tr>
 						<tr>
 							
 								<td class="back">FI</td>
-								<td th:text="${FI18}"><input type="text" id="d_fi_1" value="" /></td>
-								<td th:text="${FI19}"><input type="text" id="d_fi_2" value="" /></td>
-								<td th:text="${FI20}"><input type="text" id="d_fi_3" value="" /></td>
-
-								<td th:text="${FI21}"><input type="text" id="d_fi_4" value="" /></td>
-								<td th:text="${FI22}"><input type="text" id="d_fi_5" value="" /></td>
-								<td th:text="${FI23}"><input type="text" id="d_fi_6" value="" /></td>
-
-								<td th:text="${FI24}"><input type="text" id="d_fi_7" value="" /></td>
-								<td th:text="${FI25}"><input type="text" id="d_fi_8" value="" /></td>
-								<td th:text="${FI26}"><input type="text" id="d_fi_9" value="" /></td>
+								<td th:text="${d_fi_0}"><input type="text" id="d_fi_1" value="" /></td>
+								<td th:text="${d_fi_1}"><input type="text" id="d_fi_2" value="" /></td>
+								<td th:text="${d_fi_2}"><input type="text" id="d_fi_3" value="" /></td>
+								
+								<td th:text="${d_fi_3}"><input type="text" id="d_fi_4" value="" /></td>
+								<td th:text="${d_fi_4}"><input type="text" id="d_fi_5" value="" /></td>
+								<td th:text="${d_fi_5}"><input type="text" id="d_fi_6" value="" /></td>
+								
+								<td th:text="${d_fi_6}"><input type="text" id="d_fi_7" value="" /></td>
+								<td th:text="${d_fi_7}"><input type="text" id="d_fi_8" value="" /></td>
+								<td th:text="${d_fi_8}"><input type="text" id="d_fi_9" value="" /></td>
 								
 								<td colspan="30"><input type="text" id="d_fi_10" value="" /></td>
 				
-								<td th:text="${FI27}"><input type="text" id="d_fi_11" value="" /></td>
-								<td th:text="${FI28}"><input type="text" id="d_fi_12" value="" /></td>
-								<td th:text="${FI29}"><input type="text" id="d_fi_13" value="" /></td>
-										
-								<td th:text="${FI30}"><input type="text" id="d_fi_14" value="" /></td>
-								<td th:text="${FI31}"><input type="text" id="d_fi_15" value="" /></td>
-								<td th:text="${FI32}"><input type="text" id="d_fi_16" value="" /></td>
-										
-								<td th:text="${FI33}"><input type="text" id="d_fi_17" value="" /></td>
-								<td th:text="${FI34}"><input type="text" id="d_fi_18" value="" /></td>
-								<td th:text="${FI35}"><input type="text" id="d_fi_19" value="" /></td>
+								<td th:text="${d_fi_9}"><input type="text" id="d_fi_11" value="" /></td>
+								<td th:text="${d_fi_10}"><input type="text" id="d_fi_12" value="" /></td>
+								<td th:text="${d_fi_11}"><input type="text" id="d_fi_13" value="" /></td>
+								
+								<td th:text="${d_fi_12}"><input type="text" id="d_fi_14" value="" /></td>
+								<td th:text="${d_fi_13}"><input type="text" id="d_fi_15" value="" /></td>
+								<td th:text="${d_fi_14}"><input type="text" id="d_fi_16" value="" /></td>
+								
+								<td th:text="${d_fi_15}"><input type="text" id="d_fi_17" value="" /></td>
+								<td th:text="${d_fi_16}"><input type="text" id="d_fi_18" value="" /></td>
+								<td th:text="${d_fi_17}"><input type="text" id="d_fi_19" value="" /></td>
 								
 							</tr>
 							

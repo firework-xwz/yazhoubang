@@ -731,7 +731,6 @@
                                         <th width="20%">ID</th>
                                         <th width="30%">Hospital</th>
                                         <th width="5%">#Delete#</th>
-                                        <th width="5%">#View#</th>
                                         <th width="5%">#Record#</th>
                                     </tr>
                                 </thead>
@@ -743,9 +742,6 @@
                                         <td th:text = "${i.get('hos_name')}"></td>
                                         <td>
                                             <button th:attr="d_id=${i.get('doc').getD_id()}" th:id="'line'+${i.get('doc').getD_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(this)">Delete</button>
-                                        </td>
-                                        <td>
-                                            <button th:attr="d_id=${i.get('doc').getD_id()}" th:id="'line'+${i.get('doc').getD_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-primary" onclick="doctorInfo(this)">View</button>
                                         </td>
                                         <td>
                                             <button th:attr="d_id=${i.get('doc').getD_id()}" th:id="'line'+${i.get('doc').getD_id()}+'edit'" type="button" style='display:none' class="btn btn-sm btn-success" onclick="doctorCheckRecord(this)">Record</button>

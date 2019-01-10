@@ -869,7 +869,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">关闭
                         </button>
-                        <button type="button" class="btn btn-info" onclick="addPatientsCheckList()">
+                        <button id="addChart" type="button" class="btn btn-info" onclick="addPatientsCheckList(this)">
                             新增
                         </button>
                     </div>
@@ -891,31 +891,7 @@
                             是否确认删除该病人？
                         </h4>
                     </div>
-                    <div class="modal-body">
-                        <div align="center">
-                            <br>身份证号
-                            <br>
-                            <input type="text" class="form-control1"
-                                   style="color:#000000" id="infoid"  disabled="disabled">
-                            <br>姓名
-                            <br>
-                            <input type="text" class="form-control1"
-                                   style="color:#000000" id="infoname"  disabled="disabled">
-
-                            <br>电话
-                            <br>
-                            <input type="text" class="form-control1"
-                                   style="color:#000000" id="infophone"  disabled="disabled">
-                            <br>性别
-                            <br>
-                            <input type="text" class="form-control1"
-                                   style="color:#000000" id="infosex"  disabled="disabled">
-                            <br>生日
-                            <br>
-                            <input type="text" class="form-control1"
-                                   style="color:#000000" id="infobirth"  disabled="disabled">
-                        </div>
-                    </div>
+                    
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal" onclick="resetID()">否
@@ -931,12 +907,6 @@
         </div>
 
     </div>
-
-
-
-
-
-
 
     <div id="page-wrapper">
         <div class="col-md-12 graphs">
@@ -961,16 +931,16 @@
                         </tr>
                         </thead>
                         <tbody>
-                            <tr th:attr="p_id=${i.value.getP_id()}" th:each="i:${patientList}" onmouseenter="lineover(this)" onmouseleave="lineout(this)">
-                                <td th:text = "${i.value.getName()}"></td>
-                                <td th:text = "${i.value.getPhone_num()}"></td>
-                                <td th:text = "${i.value.getP_id()}"></td>
-                                <td th:text = "${i.key}"></td>
+                            <tr th:attr="p_id=${i.get('patient').getP_id()}" th:each="i:${ans}" onmouseenter="lineover(this)" onmouseleave="lineout(this)">
+                                <td th:text = "${i.get('patient').getName()}"></td>
+                                <td th:text = "${i.get('patient').getPhone_num()}"></td>
+                                <td th:text = "${i.get('patient').getP_id()}"></td>
+                                <td th:text = "${i.get('last_check')}"></td>
                                 <td>
-                                    <button  th:attr="p_id=${i.value.getP_id()}" th:id="'line'+${i.value.getP_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(this)">Delete</button>
+                                    <button  th:attr="p_id=${i.get('patient').getP_id()}" th:id="'line'+${i.get('patient').getP_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="deletePatients(this)">Delete</button>
                                 </td>
                                 <td>
-                                    <button th:attr="p_id=${i.value.getP_id()}" th:id="'line'+${i.value.getP_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-info" onclick="patientCheckRecord(this)" >View</button>
+                                    <button th:attr="p_id=${i.get('patient').getP_id()}" th:id="'line'+${i.get('patient').getP_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-info" onclick="patientCheckRecord(this)" >View</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -1071,20 +1041,6 @@
         // delPatientID=pid;
         // $('#addModal').modal('show')
         // //TODO:根据id搜索病人信息并返回，显示到addModal模态框中
-        // console.log(pid);
-        // var data = {"p_id":pid};
-        // $.ajax({
-        //     type:"POST",
-        //     url:"/DIndex/addPatient",
-        //     dataType:"json",
-        //     data:data,
-        //     success:function (ans) {
-        //         console.log("success");
-        //     },
-        //     error:function () {
-        //         console.log("fail");
-        //     }
-        // })
     }
     //确认添加页面
     function confirmAddPatients(){
@@ -1139,6 +1095,7 @@
         console.log(link);
         $("#infoModal .modal-body").load(link,function () {
             $("#infoModal").modal("show");
+            $('#addChart').attr("p_id",id);
         });
     }
 
@@ -1147,20 +1104,41 @@
     function moreInfo(tar) {
         $('#infoModal').modal('hide');
         var c_id=tar.getAttribute("c_id");
-        var link="PDetailTable/"+c_id;
-        console.log(link);
-        window.open (link);
+        var postData={
+            "where":1,
+            "c_id":c_id
+        };
+        //$('#teethModal').modal('show')3
+
+        $.ajax(
+            {
+                type:"POST",
+                url:"/PDetailTable",
+                data:postData,
+                dataType: "json",
+                async:false,
+                success:function (result) {
+                    //这句要写成一行
+                },
+                error:function () {
+                    console.log("fail");
+                }
+            }
+        )
+        window.open ('PDetailTable');
     }
 
     //新增检查表
-    function addPatientsCheckList() {
-        $('#infoModal').modal('hide')
-        window.open("表格.html");//跳转到表格网页
+    function addPatientsCheckList(tar) {
+        var p_id=tar.getAttribute("p_id");
+        $('#infoModal').modal('hide');
+        var link = "/WChart/" + p_id;
+        window.open (link);
     }
+
     //重置全局变量
     function resetID(){
         delPatientID=0;
-
     }
 </script>
 </body>

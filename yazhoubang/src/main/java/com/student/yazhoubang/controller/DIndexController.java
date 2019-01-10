@@ -38,9 +38,11 @@ public class DIndexController {
     @RequestMapping("/DIndex")
     public String DIndex(Model model, HttpSession httpSession){
         System.out.println("---DIndex---");
-        Map<String, Patient> map = new HashMap<>();
+
         String d_id = (String)httpSession.getAttribute("id");
         System.out.println(d_id);
+
+        List<Map> ans = new ArrayList<>();
         //要显示的病人id
         List<String> p_idList = cureDao.selectPByD(d_id);
         //要显示的病人列表
@@ -49,24 +51,18 @@ public class DIndexController {
         List<String> last_checkList = new LinkedList<>();
 
         for(int i=0;i<p_idList.size();i++){
+            Map map  = new HashMap();
             String tp_id = p_idList.get(i);
-            String t1=cureDao.selectLByP(tp_id);
-            if(t1==null){
-                System.out.println("ok");
-                t1 = "NULL";
-            }
-            Patient patient=patientDao.selectPatientById(tp_id);
-            System.out.println(t1);
-            System.out.println(patient.getName());
-//            patientList.add(patientDao.selectPatientById(tp_id));
-//            last_checkList.add(cureDao.selectLByP(tp_id));
 
-            map.put(t1,patient);
-//            map.put(((LinkedList<String>) last_checkList).getLast(),((LinkedList<Patient>) patientList).getLast());
+            Patient patient = patientDao.selectPatientById(tp_id);
+            String last_check = cureDao.selectLByP(tp_id);
+            map.put("patient",patient);
+            map.put("last_check",last_check);
+            ans.add(map);
         }
-        System.out.println(map.size());
+
         String dname = doctorDao.selectDoctorById(d_id).getName();
-        model.addAttribute("patientList",map);
+        model.addAttribute("ans",ans);
         model.addAttribute("dname",dname);
         return "DIndex";
     }
@@ -85,8 +81,6 @@ public class DIndexController {
         }
         return "AddPatientFirst";
     }
-
-
 
     @RequestMapping("DIndex/addPatient/confirm")
     @ResponseBody
@@ -116,6 +110,5 @@ public class DIndexController {
         List<Chart>ChartList=chartDao.selectChartById(p_id);
         model.addAttribute("ChartList",ChartList);
         return "ViewChartByP_id";
-
     }
 }

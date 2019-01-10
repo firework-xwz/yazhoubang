@@ -880,6 +880,19 @@
             $('#checkRecordModal').modal('show')
             console.log(id);
             //TODO:根据id获取某一病人的所有检查记录，并以表格形式显示到模态框中
+            var data = {"p_id":id};
+            $.ajax({
+                type:"POST",
+                url:"/AMsgPatient/PatientRecord",
+                data:data,
+                dataType:"json",
+                success:function (ans) {
+
+                },
+                error:function () {
+                    console.log("fail");
+                }
+            })
         }
         //打开新窗口查看该病人的某一表格
         function moreInfo() {
