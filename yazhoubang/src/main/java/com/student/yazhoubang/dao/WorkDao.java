@@ -2,6 +2,8 @@ package com.student.yazhoubang.dao;
 
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 @Mapper
 public interface WorkDao {
     @Insert("insert into work (d_id,h_id)values(#{d_id},#{h_id})")
@@ -10,4 +12,6 @@ public interface WorkDao {
     public Integer deleteWork(String d_id);
     @Select("select h_id from work where d_id=#{d_id}")
     public String selectHByD(String d_id);
+    @Select("select d_id from work where h_id=#{h_id}")
+    public List<String> selectDByH(String h_id);
 }
