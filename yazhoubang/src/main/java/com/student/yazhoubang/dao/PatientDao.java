@@ -30,4 +30,8 @@ public interface PatientDao {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     @Select("select birthday from patient where p_id=#{p_id}")
     public Date selectBirthdaybyId(String p_id);
+
+
+    @Select("select d_id from cure where p_id=#{p_id}")
+    public List<String>selectD_idByP_id(String p_id);
 }
