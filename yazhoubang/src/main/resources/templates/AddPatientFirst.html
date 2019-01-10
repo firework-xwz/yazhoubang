@@ -22,6 +22,6 @@
            style="color:#000000" th:id="infosex"  disabled="disabled">
     <br>生日
     <br>
-    <input th:value="${p.getBirthday()}" class="form-control1"
+    <input th:value="${#dates.format(p.getBirthday(),'yyyy-MM-dd')}" class="form-control1"
            style="color:#000000" id="infobirth"  disabled="disabled">
 </div>
