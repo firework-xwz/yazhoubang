@@ -1,6 +1,6 @@
 <div  xmlns:th="http://www.thymeleaf.org">
     <h5 th:text="${name}">Chad Engle</h5>
-    <ul class="chat-ui chat-messages">
+    <ul id="chatContent" class="chat-ui chat-messages">
         <li th:each="chat:${ChatInfo}">
             <p th:if="${chat.get('status')==1}" class="avatar">
                 <img src="assets/img/avatars/49.jpg">
@@ -59,12 +59,12 @@
                         time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate()+" "+time.getHours()+":"+time.getMinutes()+":"+time.getSeconds() +
                         "</span>\n" +
                         "                                </li>";
-                    $(".chat-ui").append(text);
+                    $("#chatContent").append(text);
 
                 }
             });
             // alert(d_id);
-            document.getElementById('Chat').innerText="";
+            document.getElementById('Chat').value="";
         };
     </script>
 </div>
