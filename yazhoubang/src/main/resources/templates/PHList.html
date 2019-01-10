@@ -1,0 +1,22 @@
+ <div class="bs-example" data-example-id="hoverable-table" xmlns:th="http://www.thymeleaf.org">
+        <table class="table table-hover" id="btable">
+            <thead>
+            <tr>
+                <th>name</th>
+                <th>id</th>
+                <th>phone</th>
+                <th>option</th>
+            </tr>
+            </thead>
+            <tbody id="tableble">
+            <tr th:each="i:${doctorList}" >
+                <td th:text="${i.getName()}"></td>
+                <td th:text="${i.getD_id()}"></td>
+                <td th:text="${i.getPhone_num()}"></td>
+                <td>
+                    <!--未获取d_id-->
+                    <button id="list1btn" type="button" th:attr="d_id=${i.getD_id()}" class="btn btn-sm btn-info" onclick="applyDoctor(this)">申请</button>
+                </td>
+            </tr>
+        </table>
+    </div>

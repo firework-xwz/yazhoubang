@@ -587,21 +587,20 @@
                                                     <th width="15%">Name</th>
                                                     <th width="20%">Phone</th>
                                                     <th width="20%">ID</th>
-                                                    <th width="30%">Position</th>
-                                                    <th width="15%">#Select#</th>
+                                                    <th width="15%">#refuse#</th>
+                                                    <th width="15%">#accept#</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr th:attr="p_id=${i.get('patient').getP_id()}" th:each="i:${ans}" onmouseenter="lineover(this)" onmouseleave="lineout(this)">
-                                                    <td th:text = "${i.get('patient').getName()}"></td>
-                                                    <td th:text = "${i.get('patient').getPhone_num()}"></td>
-                                                    <td th:text = "${i.get('patient').getP_id()}"></td>
-                                                    <td th:text = "${i.get('last_check')}"></td>
+                                                <tr th:attr="p_id=${i.getP_id()}" th:each="i:${patientWait}" onmouseenter="lineover(this)" onmouseleave="lineout(this)">
+                                                    <td th:text = "${i.getName()}"></td>
+                                                    <td th:text = "${i.getPhone_num()}"></td>
+                                                    <td th:text = "${i.getP_id()}"></td>
                                                     <td>
-                                                        <button  th:attr="p_id=${i.get('patient').getP_id()}" th:id="'line'+${i.get('patient').getP_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="refuseTransfer(this)">Refuse</button>
+                                                        <button  th:attr="p_id=${i.getP_id()}" th:id="'line'+${i.getP_id()}+'delete'" type="button" style="display:none" class="btn btn-sm btn-danger" onclick="refuseTransfer(this)">Refuse</button>
                                                     </td>
                                                     <td>
-                                                        <button th:attr="p_id=${i.get('patient').getP_id()}" th:id="'line'+${i.get('patient').getP_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-info" onclick="acceptTransfer(this)" >Accept</button>
+                                                        <button th:attr="p_id=${i.getP_id()}" th:id="'line'+${i.getP_id()}+'view'" type="button" style='display:none' class="btn btn-sm btn-info" onclick="acceptTransfer(this)" >Accept</button>
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -781,11 +780,27 @@
             }
             //确认拒绝
             function confirmRefuseTransfer(id){
-                var d_id = id;
+                console.log("refuse");
+                console.log(id);
+                var p_id = id;
                 //TODO:根据id发送删除信息，回调函数成功则刷新页面，失败则弹框提示
                 //success:window.location.reload();
                 //fail:alert("删除失败")
-
+                var data = {"p_id":p_id.toString()};
+                console.log(data);
+                $.ajax({
+                    type: "POST",
+                    url: "/DChart/Refuse",
+                    dataType: "json",
+                    data: data,
+                    success:function (ans) {
+                        alert(ans.message);
+                        window.location.reload();
+                    },
+                    error:function () {
+                        alert("fail");
+                    }
+                })
                 currentTransferPatient=0;
                 $('#refuseTransferModal').modal('hide')
             }
@@ -793,15 +808,33 @@
             function acceptTransfer(tar){
                 var id=tar.getAttribute("p_id");
                 currentTransferPatient=id;
+                console.log("accept1");
+                console.log(id);
                 $('#acceptTransferModal').modal('show')
             }
             //确认接受
             function confirmAcceptTransfer(id){
-                var d_id = id;
+                console.log("Accept");
+                console.log(id);
+                var p_id = id;
                 //TODO:根据id发送同意转院信息，回调函数成功则刷新页面，失败则弹框提示
                 //success:window.location.reload();
                 //fail:alert("转院失败")
-
+                var data = {"p_id":p_id.toString()};
+                console.log(data);
+                $.ajax({
+                    type: "POST",
+                    url: "/DChart/Accept",
+                    dataType: "json",
+                    data: data,
+                    success:function (ans) {
+                        alert(ans.message);
+                        window.location.reload();
+                    },
+                    error:function () {
+                        alert("fail");
+                    }
+                })
                 currentTransferPatient=0;
                 $('#acceptTransferModal').modal('hide')
             }
