@@ -20,7 +20,7 @@
         <form action="#" class="form-horizontal" role="form">
             <div class="form-group">
                 <textarea id="Chat" class="form-control elastic" rows="1"></textarea>
-                <a th:attr="d_id=${d_id}" role="button" class="btn" id="attach_photo_btn" onclick="SaveChat(this)">
+                <a th:attr="id=${id}" role="button" class="btn" id="attach_photo_btn" onclick="SaveChat(this)">
                 <i class="fa-save s20"></i>
                 </a>
                 <!--<input type="file" name="attach_photo" id="attach_photo">-->
@@ -31,22 +31,31 @@
     <script>
         function SaveChat(tar){
             var searKeywordCache = $("#Chat").val();
-            var d_id=tar.getAttribute("d_id");
+            var id=tar.getAttribute("id");
             var time=new Date();
             var data={
                 "content":searKeywordCache,
-                "d_id":d_id,
+                "id":id,
                 "chat_time":time
             };
             $.ajax({
-                url:"/patient/addChatContent",
+                url:"/addChatContent",
                 type:"POST",
                 data:data,
                 dataType:'json',
                 success:function (result) {
+                    var img;
+                    if(result.role==0){
+                        img="assets/img/avatars/48.jpg\""
+                    }
+                    else {
+                        img="assets/img/avatars/49.jpg\""
+                    }
                     var text="<li class=\"chat-user\">\n" +
                         "                                    <p class=\"avatar\">\n" +
-                        "                                        <img src=\"assets/img/avatars/48.jpg\" alt=\"@chadengle\">\n" +
+                        "                                        <img src=\"" +
+                        img +
+                        " alt=\"@chadengle\">\n" +
                         "                                    </p>\n" +
                         "                                    <p class=\"chat-name\">" +
                         result.name +

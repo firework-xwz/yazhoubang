@@ -260,7 +260,7 @@
                             </li>
                             <li class="dropdown">
                                 <a href="#" data-toggle="dropdown">
-                                    <img class="user-avatar" src="assets/img/avatars/48.jpg" alt="SuggeElson" th:text="${dname}"></a>
+                                    <img class="user-avatar" src="assets/img/avatars/49.jpg" alt="SuggeElson" th:text="${dname}"></a>
                                 <ul class="dropdown-menu right" role="menu">
                                     <li><a href="profile.html"><i class="st-user"></i> Profile</a>
                                     </li>
@@ -379,127 +379,23 @@
                             </form>
                             <ul class="chat-ui bsAccordion">
                                 <li>
-                                    <a href="#">Favorites <span class="notification teal">4</span><i class="en-arrow-down5"></i></a>
+                                    <a href="#">病人 <span class="notification teal">1</span><i class="en-arrow-down5"></i></a>
                                     <ul class="in">
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/49.jpg" alt="@chadengle">Chad Engle
+                                        <li th:each="patient:${patientList}">
+                                            <a th:attr="p_id=${patient.getP_id()}" onclick="ChatInfo(this)" href="#" class="chat-name">
+                                                <img th:text="${patient.getName()}" class="chat-avatar" src="assets/img/avatars/48.jpg" alt="@chadengle">
                                                 <span class="has-message"><i class="im-pencil"></i></span>
                                             </a>
                                             <span class="status online"><i class="en-dot"></i></span>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/54.jpg" alt="@alagoon">Anthony Lagoon</a>
-                                            <span class="status offline"><i class="en-dot"></i></span>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/52.jpg" alt="@koridhandy">Kory Handy</a>
-                                            <span class="status"><i class="en-dot"></i></span>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/50.jpg" alt="@divya">Divia Manyan</a>
-                                            <span class="status"><i class="en-dot"></i></span>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Online <span class="notification green">3</span><i class="en-arrow-down5"></i></a>
-                                    <ul class="in">
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/51.jpg" alt="@kolage">Eric Hofman</a>
-                                            <span class="status online"><i class="en-dot"></i></span>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/55.jpg" alt="@mikebeecham">Mike Beecham</a>
-                                            <span class="status online"><i class="en-dot"></i></span>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/53.jpg" alt="@derekebradley">Darek Bradly</a>
-                                            <span class="status online"><i class="en-dot"></i></span>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Offline <span class="notification red">5</span><i class="en-arrow-down5"></i></a>
-                                    <ul>
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/56.jpg" alt="@laurengray">Lauren Grey</a>
-                                            <span class="status offline"><i class="en-dot"></i></span>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/49.jpg" alt="@chadengle">Chad Engle</a>
-                                            <span class="status offline"><i class="en-dot"></i></span>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/58.jpg" alt="@frankiefreesbie">Frankie Freesibie</a>
-                                            <span class="status offline"><i class="en-dot"></i></span>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/57.jpg" alt="@joannefournier">Joane Fornier</a>
-                                            <span class="status offline"><i class="en-dot"></i></span>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="chat-name">
-                                                <img class="chat-avatar" src="assets/img/avatars/59.jpg" alt="@aiiaiiaii">Alia Alien</a>
-                                            <span class="status offline"><i class="en-dot"></i></span>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                         <div class="chat-box">
-                            <h5>Chad Engle</h5>
                             <a id="close-user-chat" href="#" class="btn btn-xs btn-primary"><i class="en-arrow-left4"></i></a>
-                            <ul class="chat-ui chat-messages">
-                                <li class="chat-user">
-                                    <p class="avatar">
-                                        <img src="assets/img/avatars/49.jpg" alt="@chadengle">
-                                    </p>
-                                    <p class="chat-name">Chad Engle <span class="chat-time">15 seconds ago</span>
-                                    </p>
-                                    <span class="status online"><i class="en-dot"></i></span>
-                                    <p class="chat-txt">Hello Sugge check out the last order.</p>
-                                </li>
-                                <li class="chat-me">
-                                    <p class="avatar">
-                                        <img src="assets/img/avatars/48.jpg" alt="SuggeElson">
-                                    </p>
-                                    <p class="chat-name">SuggeElson <span class="chat-time">10 seconds ago</span>
-                                    </p>
-                                    <span class="status online"><i class="en-dot"></i></span>
-                                    <p class="chat-txt">Ok i will check it out.</p>
-                                </li>
-                                <li class="chat-user">
-                                    <p class="avatar">
-                                        <img src="assets/img/avatars/49.jpg" alt="@chadengle">
-                                    </p>
-                                    <p class="chat-name">Chad Engle <span class="chat-time">now</span>
-                                    </p>
-                                    <span class="status online"><i class="en-dot"></i></span>
-                                    <p class="chat-txt">Thank you, have a nice day</p>
-                                </li>
-                            </ul>
-                            <div class="chat-write">
-                                <form action="#" class="form-horizontal" role="form">
-                                    <div class="form-group">
-                                        <textarea name="sendmsg" id="sendMsg" class="form-control elastic" rows="1"></textarea>
-                                        <a role="button" class="btn" id="attach_photo_btn">
-                                            <i class="fa-picture s20"></i> 
-                                        </a>
-                                        <input type="file" name="attach_photo" id="attach_photo">
-                                    </div>
-                                    <!-- End .form-group  -->
-                                </form>
+                            <div class="chatInfo">
+
                             </div>
                         </div>
                     </div>
@@ -835,6 +731,16 @@
         <script src="assets/js/app.js"></script>
         <script src="assets/js/pages/charts.js"></script>
         <script>
+            function ChatInfo(tar) {
+                var p_id=tar.getAttribute("p_id");
+                var link="/doctor/chat/"+p_id;
+                $(".chatInfo").load(link,function () {
+
+                });
+            }
+        </script>
+        <script>
+
             var currentTransferPatient=0;//当前选中待转院病人
 
             //无权限
