@@ -21,4 +21,6 @@ public interface CureDao {
     public Integer refusePatient(@Param(value = "p_id")String p_id, @Param(value = "d_id") String d_id);
     @Update("update cure set status=1 where p_id=#{p_id} and d_id=#{d_id}")
     public Integer acceptPatient(@Param(value = "p_id")String p_id, @Param(value = "d_id")String d_id);
+    @Select("select status from cure where p_id=#{p_id} and d_id=#{d_id}")
+    public Integer selectStatus(@Param(value = "p_id")String p_id, @Param(value = "d_id")String d_id);
 }

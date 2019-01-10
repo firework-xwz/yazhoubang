@@ -10,10 +10,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
@@ -110,5 +107,24 @@ public class DIndexController {
         List<Chart>ChartList = chartDao.selectChartById(p_id);
         model.addAttribute("ChartList",ChartList);
         return "ViewChartByP_id";
+    }
+
+
+    @RequestMapping("/DIndex/ViewChartByP_id/CheckStatus")
+    @ResponseBody
+    public Msg checkStatus(@RequestParam("p_id")String p_id, Model model, HttpSession httpSession){
+        System.out.println("---CheckStatus---");
+        String d_id = (String)httpSession.getAttribute("id");
+        Msg msg = new Msg();
+
+        try{
+            Integer m = cureDao.selectStatus(p_id,d_id);
+            msg.setMessage(m.toString());
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return msg;
+
     }
 }
