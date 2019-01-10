@@ -18,7 +18,6 @@ function login() {
                     window.location.href = "/DChart";
                 }
                 else if(result.msg=="patient") {
-                    window.location.href = "/main"
                     window.location.href = "/PatientHome"
                 }
             }
