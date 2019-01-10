@@ -1,0 +1,70 @@
+<div  xmlns:th="http://www.thymeleaf.org">
+    <h5 th:text="${name}">Chad Engle</h5>
+    <ul class="chat-ui chat-messages">
+        <li th:each="chat:${ChatInfo}">
+            <p th:if="${chat.get('status')==1}" class="avatar">
+                <img src="assets/img/avatars/49.jpg">
+            </p>
+            <p th:if="${chat.get('status')==0}" class="avatar">
+                <img src="assets/img/avatars/48.jpg">
+            </p>
+            <p th:text="${chat.get('sender').getName()}" class="chat-name">Chad Engle
+            </p>
+            <span class="status online"><i class="en-dot"></i></span>
+            <p th:text="${chat.get('chat').getContent()}" class="chat-txt">Hello Sugge check out the last order.</p>
+            <span class="chat-time" th:text="${#dates.format(chat.get('chat').getChat_time(),'yyyy-MM-dd HH:mm:ss')}">15 seconds ago</span>
+        </li>
+
+    </ul>
+    <div class="chat-write">
+        <form action="#" class="form-horizontal" role="form">
+            <div class="form-group">
+                <textarea id="Chat" class="form-control elastic" rows="1"></textarea>
+                <a th:attr="d_id=${d_id}" role="button" class="btn" id="attach_photo_btn" onclick="SaveChat(this)">
+                <i class="fa-save s20"></i>
+                </a>
+                <!--<input type="file" name="attach_photo" id="attach_photo">-->
+            </div>
+            <!-- End .form-group  -->
+        </form>
+    </div>
+    <script>
+        function SaveChat(tar){
+            var searKeywordCache = $("#Chat").val();
+            var d_id=tar.getAttribute("d_id");
+            var time=new Date();
+            var data={
+                "content":searKeywordCache,
+                "d_id":d_id,
+                "chat_time":time
+            };
+            $.ajax({
+                url:"/patient/addChatContent",
+                type:"POST",
+                data:data,
+                dataType:'json',
+                success:function (result) {
+                    var text="<li class=\"chat-user\">\n" +
+                        "                                    <p class=\"avatar\">\n" +
+                        "                                        <img src=\"assets/img/avatars/48.jpg\" alt=\"@chadengle\">\n" +
+                        "                                    </p>\n" +
+                        "                                    <p class=\"chat-name\">" +
+                        result.name +
+                        "                                    </p>\n" +
+                        "                                    <span class=\"status online\"><i class=\"en-dot\"></i></span>\n" +
+                        "                                    <p class=\"chat-txt\">" +
+                        searKeywordCache +
+                        "</p>\n" +
+                        "<span class=\"chat-time\">" +
+                        time.getFullYear()+"-"+(time.getMonth()+1)+"-"+time.getDate()+" "+time.getHours()+":"+time.getMinutes()+":"+time.getSeconds() +
+                        "</span>\n" +
+                        "                                </li>";
+                    $(".chat-ui").append(text);
+
+                }
+            });
+            // alert(d_id);
+            document.getElementById('Chat').innerText="";
+        };
+    </script>
+</div>
