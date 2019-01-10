@@ -19,10 +19,11 @@
     <div class="chat-write">
         <form action="#" class="form-horizontal" role="form">
             <div class="form-group">
-                <textarea id="Chat" class="form-control elastic" rows="1"></textarea>
-                <a th:attr="id=${id}" role="button" class="btn" id="attach_photo_btn" onclick="SaveChat(this)">
+                <div style="width: 200px; display: inline-block; float: left;"><textarea id="Chat" class="form-control elastic" rows="1"></textarea></div>
+                <div style="width: 20px; display: inline-block; float: left;">&ensp;</div>
+                <div style="width: 30px; display: inline-block;float: left;"><a th:attr="id=${id}" role="button"  id="attach_photo_btn" onclick="SaveChat(this)">
                 <i class="fa-save s20"></i>
-                </a>
+                </a></div>
                 <!--<input type="file" name="attach_photo" id="attach_photo">-->
             </div>
             <!-- End .form-group  -->
