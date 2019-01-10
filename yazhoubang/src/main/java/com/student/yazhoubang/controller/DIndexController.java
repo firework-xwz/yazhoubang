@@ -93,7 +93,7 @@ public class DIndexController {
         String s_time = df.format(new Date());
         Msg msg = new Msg();
         try{
-            cureDao.addCure(d_id,p_id,s_time);
+            cureDao.addCure(d_id,p_id,s_time,null,1);
             msg.setMessage("SUCCESS!");
         }
         catch(Exception e){

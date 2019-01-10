@@ -14,6 +14,7 @@ import java.util.List;
 public class PatientHomeController {
     @Autowired
     PatientDao patientDao;
+
     @RequestMapping("/PatientHome")
     public String PatientHome(Model model, HttpSession httpSession){
         String p_id=(String)httpSession.getAttribute("id");

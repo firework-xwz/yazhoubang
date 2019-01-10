@@ -15,6 +15,6 @@ public interface CureDao {
     public String selectLByD(String d_id);
     @Select("select l_time from cure where p_id=#{p_id}")
     public String selectLByP(String p_id);
-    @Insert("Insert into cure (d_id,p_id,s_time)values(#{d_id},#{p_id},#{s_time})")
-    public Integer addCure(@Param("d_id") String d_id,@Param("p_id") String p_id,@Param("s_time") String s_time);
+    @Insert("Insert into cure (d_id,p_id,s_time,l_time,status)values(#{d_id},#{p_id},#{s_time},#{l_time},#{status})")
+    public Integer addCure(@Param("d_id") String d_id,@Param("p_id") String p_id,@Param("s_time") String s_time,@Param("l_time")String l_time,@Param("status")int Status);
 }
