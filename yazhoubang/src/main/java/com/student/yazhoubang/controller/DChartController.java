@@ -44,6 +44,15 @@ public class DChartController {
             model.addAttribute("dname",dname);
             int status = doctorDao.selectDoctorById(d_id).getStatus();
             model.addAttribute("status",status);
+            List<Patient>patientList=new ArrayList<>();
+            List<String>p_ids=cureDao.selectPByD(d_id);
+            for(int i=0;i<p_ids.size();i++){
+                Patient patient=patientDao.selectPatientById(p_ids.get(i));
+                if(patient!=null){
+                    patientList.add(patient);
+                }
+            }
+            model.addAttribute("patientList",patientList);
         }
         catch(Exception e){
             e.printStackTrace();
