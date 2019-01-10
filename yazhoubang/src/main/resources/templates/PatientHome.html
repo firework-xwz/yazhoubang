@@ -897,7 +897,7 @@
             var currentDoctor=0;
             function lineover(line) {
                 $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
-                seq=line.getAttribute("p_id");
+                seq=line.getAttribute("h_id");
                 $("#line" + seq + "delete").css('display', 'block');
                 $("#line" + seq + "view").css('display', 'block');
                 $("#line" + seq + "edit").css('display', 'block');
@@ -907,11 +907,13 @@
             function lineout(line) {
                 var count = 0;
                 $('#PatientsList tr').each(function () { $(this).css("background-color", "#ffffff"); });
-                seq=line.getAttribute("p_id");
+                seq=line.getAttribute("h_id");
                 $("#line" + seq + "delete").css('display', 'none');
                 $("#line" + seq + "view").css('display', 'none');
                 $("#line" + seq + "edit").css('display', 'none');
             }
+
+
             //modal查看医院对应的所有医生
             function viewDoctor(tar) {
                 var id = tar.getAttribute("h_id");

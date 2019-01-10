@@ -1,8 +1,10 @@
 package com.student.yazhoubang.controller;
 
 import com.student.yazhoubang.damain.Doctor;
+import com.student.yazhoubang.damain.Hospital;
 import com.student.yazhoubang.damain.Patient;
 import com.student.yazhoubang.dao.DoctorDao;
+import com.student.yazhoubang.dao.HospitalDao;
 import com.student.yazhoubang.dao.PatientDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.DataFormatException;
 
 @Controller
 public class PatientHomeController {
@@ -19,6 +22,9 @@ public class PatientHomeController {
     PatientDao patientDao;
     @Autowired
     DoctorDao doctorDao;
+    @Autowired
+    HospitalDao hospitalDao;
+
     @RequestMapping("/PatientHome")
     public String PatientHome(Model model, HttpSession httpSession){
         String p_id=(String)httpSession.getAttribute("id");
@@ -43,6 +49,16 @@ public class PatientHomeController {
 //            model.addAttribute("doctorName", doctorinformation.get(0));
 //            model.addAttribute("doctorPhone", Dphone);
 //        }
+
+        //显示医院列表
+        try{
+            List<Hospital> hospitalList = hospitalDao.getAll();
+            model.addAttribute("hospitalList", hospitalList);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
         return "PatientHome";
     }
 }
