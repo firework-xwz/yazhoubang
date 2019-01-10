@@ -110,7 +110,13 @@ public class PatientHomeController {
         String s_time = df.format(new Date());
         Msg msg = new Msg();
         try{
-            cureDao.addCure(d_id,p_id,s_time,null,0);
+            //如果曾经是该患者的医生
+            if(cureDao.selectStatus(p_id,d_id)==null){
+                cureDao.addCure(d_id,p_id,s_time,null,0);
+            }
+            else{
+                cureDao.resetPatient(p_id,d_id);
+            }
             msg.setMessage("SUCCESS!!!");
         }
         catch(Exception e){

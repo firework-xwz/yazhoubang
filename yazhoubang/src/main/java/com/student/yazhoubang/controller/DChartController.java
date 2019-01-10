@@ -111,7 +111,10 @@ public class DChartController {
         String d_id = (String)httpSession.getAttribute("id");
         System.out.println(p_id);
         System.out.println(d_id);
+
         try{
+            String td_id = cureDao.selectDoctorNow(p_id);
+            cureDao.removePatient(p_id,td_id);
             cureDao.acceptPatient(p_id,d_id);
             msg.setMessage("SUCCESS");
         }

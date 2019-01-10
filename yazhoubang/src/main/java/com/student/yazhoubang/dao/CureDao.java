@@ -9,9 +9,9 @@ import java.util.List;
 public interface CureDao {
     @Select("select p_id from cure where d_id=#{d_id}")
     public List<String> selectPByD(String d_id);
-    @Select("select l_time from cure where d_id=#{d_id}")
-    public String selectLByD(String d_id);
-    @Select("select l_time from cure where p_id=#{p_id}")
+//    @Select("select l_time from cure where d_id=#{d_id}")
+//    public String selectLByD(String d_id);
+    @Select("select l_time from cure where p_id=#{p_id} and status=1")
     public String selectLByP(String p_id);
     @Insert("Insert into cure (d_id,p_id,s_time,l_time,status)values(#{d_id},#{p_id},#{s_time},#{l_time},#{status})")
     public Integer addCure(@Param("d_id") String d_id,@Param("p_id") String p_id,@Param("s_time") String s_time,@Param("l_time")String l_time,@Param("status")int Status);
@@ -23,4 +23,10 @@ public interface CureDao {
     public Integer acceptPatient(@Param(value = "p_id")String p_id, @Param(value = "d_id")String d_id);
     @Select("select status from cure where p_id=#{p_id} and d_id=#{d_id}")
     public Integer selectStatus(@Param(value = "p_id")String p_id, @Param(value = "d_id")String d_id);
+    @Update("update cure set status=2 where p_id=#{p_id} and d_id=#{d_id}")
+    public Integer removePatient(@Param(value = "p_id")String p_id, @Param(value = "d_id")String d_id);
+    @Select("select d_id from cure where p_id=#{p_id} and status=1")
+    public String selectDoctorNow(String p_id);
+    @Update("update cure set status=0 where p_id=#{p_id} and d_id=#{d_id}")
+    public Integer resetPatient(@Param(value = "p_id")String p_id, @Param(value = "d_id")String d_id);
 }
