@@ -1096,6 +1096,37 @@
         $("#infoModal .modal-body").load(link,function () {
             $("#infoModal").modal("show");
             $('#addChart').attr("p_id",id);
+
+            //判断该医生是否能对病人增加表格
+            var data = {"p_id":$('#addChart').attr("p_id").toString()}
+            console.log(data);
+            $.ajax({
+                data:data,
+                dataType:"json",
+                url:"/DIndex/ViewChartByP_id/CheckStatus",
+                Type:"POST",
+                success:function (ans) {
+                    var status = ans.message;
+                    console.log(status);
+                    if(status==0){
+                        $('#addChart').text("未就诊");
+                        $('#addChart').attr("disabled", true);
+                    }
+                    else if(status==2){
+                        $('#addChart').text("已转诊");
+                        $('#addChart').attr("disabled", true);
+                    }
+                    else if(status==1){
+                        $('#addChart').text("新增");
+                        $('#addChart').attr("disabled", false);
+                    }
+                },
+                error:function () {
+                    console.log("FAIL");
+                }
+
+            })
+
         });
     }
 
