@@ -2,10 +2,7 @@ package com.student.yazhoubang.controller;
 
 import com.student.yazhoubang.damain.Chart;
 import com.student.yazhoubang.damain.Msg;
-import com.student.yazhoubang.dao.ChartDao;
-import com.student.yazhoubang.dao.DoctorDao;
-import com.student.yazhoubang.dao.PatientDao;
-import com.student.yazhoubang.dao.WriteDao;
+import com.student.yazhoubang.dao.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +22,8 @@ public class WChartController {
     private DoctorDao doctorDao;
     @Autowired
     private WriteDao writeDao;
+    @Autowired
+    private CureDao cureDao;
 
     @RequestMapping("/WChart/{p_id}")
     public String WChart(@PathVariable(value = "p_id")String p_id, Model model, HttpSession httpSession){
@@ -67,6 +66,7 @@ public class WChartController {
             writeDao.addWrite(d_id,chart.getC_id(),time);
             chartDao.addRead(p_id,chart.getC_id());
             chartDao.addChart(chart.getC_id(),chart.getTime(),chart.getMobility(),chart.getImplant(),chart.getFI(),chart.getGI(),chart.getBI_B(),chart.getBI_L(),chart.getPD_B(),chart.getPD_L(),chart.getCEJ_B(),chart.getCEJ_L(),chart.getPI_B(),chart.getPI_L());
+            cureDao.resetLtime(time,p_id,d_id);
             msg.setMessage("SUCCESS!!!");
         }
         catch(Exception e){

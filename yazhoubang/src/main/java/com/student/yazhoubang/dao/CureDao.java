@@ -29,4 +29,6 @@ public interface CureDao {
     public String selectDoctorNow(String p_id);
     @Update("update cure set status=0 where p_id=#{p_id} and d_id=#{d_id}")
     public Integer resetPatient(@Param(value = "p_id")String p_id, @Param(value = "d_id")String d_id);
+    @Update("update cure set l_time=#{l_time} where p_id=#{p_id} and d_id=#{d_id}")
+    public Integer resetLtime(@Param(value = "l_time")String l_time, @Param(value = "p_id")String p_id,@Param(value = "d_id")String d_id);
 }
